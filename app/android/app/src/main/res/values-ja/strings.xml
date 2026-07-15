@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- OTOMATİK ÜRETİLDİ: tools/widget-diller.py — elle düzenleme, üzerine yazılır.
+     Kaynak: lib/l10n/app_ja.arb + store/metinler/ja-JP.json -->
+<resources>
+    <string name="widget_label">Sipling</string>
+    <string name="widget_description">一口ごとに、一本の苗。</string>
+    <string name="widget_streak">🔥 %1$d日</string>
+    <string name="widget_start_today">今日から始める 🌱</string>
+    <string name="widget_amount">%1$d / %2$d ml</string>
+</resources>

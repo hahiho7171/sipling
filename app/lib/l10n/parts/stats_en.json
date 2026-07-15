@@ -1,0 +1,79 @@
+{
+  "statsTitle": "Statistics",
+  "statsDailyAverage": "Daily average",
+  "statsGoalDays": "Days goal met",
+  "statsCurrentStreak": "Current streak",
+  "statsUnitDays": "days",
+  "statsTotalTrees": "Total trees",
+  "statsLastDays": "Last {days} days",
+  "@statsLastDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "statsYourDrinks": "Your drinks",
+  "statsRangeDays": "{days} days",
+  "@statsRangeDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "statsWeekdayMon": "Mon",
+  "statsWeekdayTue": "Tue",
+  "statsWeekdayWed": "Wed",
+  "statsWeekdayThu": "Thu",
+  "statsWeekdayFri": "Fri",
+  "statsWeekdaySat": "Sat",
+  "statsWeekdaySun": "Sun",
+  "statsNoRecords": "No records yet.",
+  "statsBmiTitle": "Body mass index",
+  "statsBmiDisclaimer": "For information only,\nnot medical advice",
+  "statsAchievements": "Achievements",
+  "statsAchievementsEarned": "{count} earned",
+  "@statsAchievementsEarned": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "achScreenTitle": "Achievements",
+  "forestTitle": "Your forest",
+  "forestSubtitle": "{trees} trees • best streak {days} days",
+  "@forestSubtitle": {
+    "placeholders": {
+      "trees": {
+        "type": "int"
+      },
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "forestSpeciesTooltip": "Tree species",
+  "forestEmptyTitle": "Your forest is still empty",
+  "forestEmptyBody": "When you drink your first glass, a sapling will appear here.",
+  "speciesScreenTitle": "Tree species",
+  "speciesScreenIntro": "You can choose the species of tomorrow's sapling. The old trees in your forest keep the species they were planted as.",
+  "speciesScreenSelected": "Selected",
+  "speciesScreenUnlocked": "Unlocked",
+  "speciesScreenUnlockTitle": "Unlock the {name} tree",
+  "@speciesScreenUnlockTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "speciesScreenRewardBody": "Watch a short ad to unlock this species for good. The ad is entirely optional — there are no forced ads anywhere in the app.",
+  "speciesScreenCancel": "Cancel",
+  "speciesScreenWatchAd": "Watch ad",
+  "seasonScreenTitle": "Forest theme",
+  "seasonScreenIntro": "Your forest's colors change, not its trees. No theme affects your tracking, goal, or streak.",
+  "seasonScreenProOnly": "Pro members only",
+  "seasonScreenSelected": "Selected"
+}

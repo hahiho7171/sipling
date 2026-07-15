@@ -1,0 +1,34 @@
+{
+  "_aciklama": [
+    "Sipling'in desteklediği 20 dil. Tek kaynak burasıdır:",
+    "  arb    -> lib/l10n/app_<arb>.arb dosya adı (Flutter locale kodu)",
+    "  web    -> tarayıcıya söylenen navigator.language (ekran görüntüsü çekerken)",
+    "  play   -> Google Play Console'un dil kodu (mağaza kaydı)",
+    "  ad     -> dilin kendi adı",
+    "  rtl    -> sağdan sola yazılıyor mu",
+    "  slogan -> öne çıkan grafikteki iki satır",
+    "Yeni dil eklerken: buraya satır ekle, app_<arb>.arb yaz, tools/*.js otomatik alır."
+  ],
+  "diller": [
+    { "arb": "en",      "web": "en-US", "play": "en-US", "ad": "English",            "rtl": false },
+    { "arb": "tr",      "web": "tr-TR", "play": "tr-TR", "ad": "Türkçe",             "rtl": false },
+    { "arb": "es",      "web": "es-ES", "play": "es-ES", "ad": "Español",            "rtl": false },
+    { "arb": "pt",      "web": "pt-BR", "play": "pt-BR", "ad": "Português (Brasil)", "rtl": false },
+    { "arb": "de",      "web": "de-DE", "play": "de-DE", "ad": "Deutsch",            "rtl": false },
+    { "arb": "fr",      "web": "fr-FR", "play": "fr-FR", "ad": "Français",           "rtl": false },
+    { "arb": "it",      "web": "it-IT", "play": "it-IT", "ad": "Italiano",           "rtl": false },
+    { "arb": "ru",      "web": "ru-RU", "play": "ru-RU", "ad": "Русский",            "rtl": false },
+    { "arb": "id",      "web": "id-ID", "play": "id",    "ad": "Bahasa Indonesia",   "rtl": false },
+    { "arb": "hi",      "web": "hi-IN", "play": "hi-IN", "ad": "हिन्दी",               "rtl": false },
+    { "arb": "ja",      "web": "ja-JP", "play": "ja-JP", "ad": "日本語",              "rtl": false },
+    { "arb": "ko",      "web": "ko-KR", "play": "ko-KR", "ad": "한국어",              "rtl": false },
+    { "arb": "zh",      "web": "zh-CN", "play": "zh-CN", "ad": "简体中文",            "rtl": false },
+    { "arb": "zh_Hant", "web": "zh-TW", "play": "zh-TW", "ad": "繁體中文",            "rtl": false },
+    { "arb": "vi",      "web": "vi-VN", "play": "vi",    "ad": "Tiếng Việt",         "rtl": false },
+    { "arb": "th",      "web": "th-TH", "play": "th",    "ad": "ไทย",                "rtl": false },
+    { "arb": "pl",      "web": "pl-PL", "play": "pl-PL", "ad": "Polski",             "rtl": false },
+    { "arb": "nl",      "web": "nl-NL", "play": "nl-NL", "ad": "Nederlands",         "rtl": false },
+    { "arb": "uk",      "web": "uk-UA", "play": "uk",    "ad": "Українська",         "rtl": false },
+    { "arb": "ar",      "web": "ar-SA", "play": "ar",    "ad": "العربية",             "rtl": true  }
+  ]
+}

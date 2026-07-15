@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sipling'i indir (test)</title>
+<style>
+  :root { --ink:#17384A; --soft:#5A7A8A; --water:#4FB3E8; --leaf:#2F8F5B; --bg:#F5FAFD; --card:#fff; }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink:#E6F1F6; --soft:#9FB4C0; --bg:#101C24; --card:#172833; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+    background:var(--bg); color:var(--ink);
+    font:16px/1.6 -apple-system,"Segoe UI",Roboto,Arial,sans-serif; padding:24px; }
+  .box { text-align:center; max-width:420px; width:100%; }
+  svg.logo { width:96px; height:96px; }
+  h1 { font-size:28px; margin:16px 0 4px; }
+  .sub { color:var(--soft); margin:0 0 28px; }
+  a.btn { display:block; background:var(--water); color:#fff; text-decoration:none;
+    padding:16px; border-radius:16px; font-size:17px; font-weight:700;
+    box-shadow:0 6px 18px rgba(79,179,232,.35); }
+  a.btn:active { transform:translateY(1px); }
+  .card { background:var(--card); border-radius:16px; padding:18px 20px; margin-top:22px;
+    text-align:left; box-shadow:0 2px 12px rgba(23,56,74,.08); }
+  .card h2 { font-size:15px; margin:0 0 10px; }
+  ol { margin:0; padding-left:20px; }
+  li { margin:7px 0; font-size:14px; color:var(--ink); }
+  .note { font-size:12px; color:var(--soft); margin-top:16px; }
+</style>
+</head>
+<body>
+<div class="box">
+  <svg class="logo" viewBox="0 0 1024 1024" aria-hidden="true">
+    <defs>
+      <linearGradient id="w2l" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0.05" stop-color="#66C2F0"/><stop offset="0.40" stop-color="#4FB3E8"/>
+        <stop offset="0.66" stop-color="#4CAF7D"/><stop offset="1" stop-color="#2F8F5B"/>
+      </linearGradient>
+    </defs>
+    <rect width="1024" height="1024" rx="230" fill="#EAF6FC"/>
+    <g transform="translate(512 512) scale(0.62) translate(-512 -531)">
+      <path d="M512 120 C512 120 806 468 806 648 A294 294 0 1 1 218 648 C218 468 512 120 512 120 Z" fill="url(#w2l)"/>
+      <path d="M512 902 L512 296" stroke="#fff" stroke-width="28" stroke-linecap="round" opacity="0.9"/>
+      <g stroke="#fff" stroke-width="22" stroke-linecap="round" opacity="0.75" fill="none">
+        <path d="M512 760 C440 748 388 690 372 616"/><path d="M512 760 C584 748 636 690 652 616"/>
+        <path d="M512 596 C452 586 410 538 398 478"/><path d="M512 596 C572 586 614 538 626 478"/>
+      </g>
+    </g>
+  </svg>
+
+  <h1>Sipling</h1>
+  <p class="sub">Test sürümü · yalnız Android</p>
+
+  <a class="btn" href="/sipling-test.bin" download="Sipling.apk">📥 Uygulamayı indir (55 MB)</a>
+
+  <div class="card">
+    <h2>Bu sürümde yeni</h2>
+    <ol>
+      <li><b>Bildirimden ekle:</b> hatırlatma gelince, uygulamayı açmadan bildirimin üstündeki
+        <b>+ ml</b> düğmesiyle suyu tek dokunuşla ekle.</li>
+      <li><b>Orman Özetin:</b> İstatistik → “Orman Özetin” — tüm yolculuğunu tek kartta
+        paylaş (Instagram/WhatsApp).</li>
+      <li><b>Ana ekran widget'ı:</b> Ayarlar → “Ana ekrana widget ekle” ile tek dokunuşla ekle.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>Kurulum (1 dakika)</h2>
+    <ol>
+      <li>Yukarıdaki butona dokun, dosya insin.</li>
+      <li>İnen dosyaya dokun (bildirim çubuğundan ya da "İndirilenler"den).</li>
+      <li>"Bilinmeyen kaynak / bu kaynağa izin ver" çıkarsa <b>izin ver</b> → sonra <b>Yükle</b>.</li>
+      <li>Aç, dene. Bildirim izni isterse ver — hatırlatmaları o zaman görürsün.</li>
+    </ol>
+  </div>
+
+  <p class="note">
+    Android 8.0 ve üstü gerekir. Bu, henüz Play Store'da olmayan bir test sürümüdür;
+    güvenlidir, kendi imza anahtarımızla imzalıdır. iPhone'da çalışmaz.
+  </p>
+</div>
+</body>
+</html>

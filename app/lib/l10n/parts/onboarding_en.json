@@ -1,0 +1,32 @@
+{
+  "onbContinue": "Continue",
+  "onbFinish": "Plant my sapling",
+  "onbWelcomeTagline": "Every sip, a sapling.\nDrink water and your tree grows; as the days pass, so does your forest.",
+  "onbWelcomeNoPenalty": "Your tree never withers. No penalties here.",
+  "onbGenderTitle": "Let's get to know you",
+  "onbGenderSubtitle": "Your daily water goal is calculated from this. It all stays on your phone and is never sent anywhere.",
+  "onbGenderFemale": "Female",
+  "onbGenderMale": "Male",
+  "onbGenderOther": "Prefer not to say",
+  "onbBodyTitle": "Height, weight, age",
+  "onbBodySubtitle": "Slide to adjust.",
+  "onbBodyAge": "Age",
+  "onbBodyHeight": "Height",
+  "onbBodyWeight": "Weight",
+  "onbBodyBmiLabel": "Your body mass index",
+  "onbBodyDisclaimer": "For information only, not medical advice.",
+  "onbActivityTitle": "How active are you?",
+  "onbActivitySubtitle": "The more you sweat, the more water you need.",
+  "onbGoalTitle": "Your daily goal",
+  "onbGoalSubtitle": "You can change it anytime in Settings.",
+  "onbGoalUnit": "milliliters / day",
+  "onbGoalGlasses": "about {glasses} glasses",
+  "@onbGoalGlasses": {
+    "placeholders": {
+      "glasses": {
+        "type": "int"
+      }
+    }
+  },
+  "onbGoalReference": "This goal is adapted to your weight and activity level, based on the adequate water intake reference from the European Food Safety Authority (EFSA, 2010). Water you get from food is not included in this number."
+}

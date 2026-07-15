@@ -1,0 +1,97 @@
+{
+  "homeNewAchievement": "New achievement",
+  "homeUndoLast": "Undo last entry",
+  "homeStageSeed": "Your seed is in the soil, waiting for its first sip",
+  "homeStageSprout": "It sprouted 🌱",
+  "homeStageSapling": "Your sapling is growing",
+  "homeStageAlmost": "Almost a tree!",
+  "homeStageReady": "Today's tree is ready 🌳",
+  "homePaceDone": "A new sapling is waiting for you tomorrow",
+  "homePaceStart": "Start your day with a glass",
+  "homePaceBehind": "You're {ml} ml behind for this hour — you can still catch up",
+  "@homePaceBehind": {
+    "placeholders": {
+      "ml": {
+        "type": "int"
+      }
+    }
+  },
+  "homePaceOnTrack": "You're right on pace 👌",
+  "homeGoalDone": "You've hit your daily goal",
+  "homeRemaining": "{ml} ml left",
+  "@homeRemaining": {
+    "placeholders": {
+      "ml": {
+        "type": "int"
+      }
+    }
+  },
+  "homeStreakDays": "{days} days",
+  "@homeStreakDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "homeCelebrateTitle": "Your tree has grown!",
+  "homeCelebrateBody": "You've hit today's goal. This tree is now part of your forest.",
+  "homeStreakLabel": "{days}-day streak",
+  "@homeStreakLabel": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "homeCelebrateOk": "Great",
+  "addWhatTitle": "What did you drink?",
+  "addAmount": "Amount",
+  "addConfirm": "Add",
+  "addFactorWater": "Counts fully toward your goal.",
+  "addFactorAlcohol": "Alcohol dehydrates you, so it's subtracted from your goal.",
+  "addFactorPercent": "Counts {percent}% toward your goal.",
+  "@addFactorPercent": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sumTitle": "Yesterday's summary",
+  "sumTreeGrown": "Your tree has grown 🌳",
+  "sumSaplingOnWay": "Your sapling is on its way 🌱",
+  "sumBodyDone": "You hit your goal. This tree is part of your forest.",
+  "sumPercent": "You reached {percent}% of your goal yesterday. Your sapling is waiting right where you left it — no tree ever withers.",
+  "@sumPercent": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sumStatCounted": "Counted",
+  "sumStatGoal": "Goal",
+  "sumStatStreak": "Streak",
+  "sumStreakDays": "{days} days",
+  "@sumStreakDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "sumStartToday": "Start today",
+  "sumWhatDrank": "What you drank",
+  "sumDrinkAmount": "{name} {ml} ml",
+  "@sumDrinkAmount": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "ml": {
+        "type": "int"
+      }
+    }
+  }
+}

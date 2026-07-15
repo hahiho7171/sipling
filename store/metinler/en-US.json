@@ -1,0 +1,15 @@
+{
+  "_limits": "title<=30, short<=80, full<=4000 (Google Play)",
+  "title": "Sipling: Water Reminder",
+  "short": "Track your water, get reminders, and grow a forest — one sip at a time.",
+  "full": "Sipling turns drinking water into something you can see.\n\nEvery glass waters a sapling. Hit your daily goal and it becomes a tree in your own forest. Miss a day? Nothing dies. Your sapling simply waits for you.\n\n🌱 A FOREST THAT NEVER WITHERS\nMost habit apps punish you. Sipling doesn't. There is no guilt, no dying plant, no broken heart icon. A day you missed is just a young sapling, still standing.\n\n💧 A GOAL THAT FITS YOU\nYour daily target is calculated from your weight, sex, age and activity level, based on the European Food Safety Authority's reference values for water from drinks. You can always adjust it yourself.\n\n☕ NOT EVERYTHING COUNTS THE SAME\nTea, coffee, milk, juice and soda are counted with their own hydration factors — 250 ml of coffee is not 250 ml of water. Alcohol counts against you, honestly.\n\n🔔 REMINDERS THAT ACTUALLY ARRIVE\nSipling reminds you between your waking hours, at the interval you choose, and goes quiet once you reach your goal. If your phone's battery settings are blocking notifications, there is a built-in guide that shows you exactly where to look — for Xiaomi, Samsung, Huawei and Oppo.\n\n📱 HOME SCREEN WIDGET\nAdd a glass without opening the app. Your tree grows right there on your home screen.\n\n❤️ HEALTH CONNECT (OPTIONAL)\nSipling can write what you drink to Android's shared health record. It only writes — it never reads anything. Off by default.\n\n🔒 YOUR DATA STAYS ON YOUR PHONE\nSipling has no server and no account. It doesn't even have permission to access the internet. Everything you enter lives on your device and nowhere else. You can erase all of it in one tap.\n\n🌳 EIGHT TREE SPECIES, TEN ACHIEVEMENTS\nOak, pine, sakura, maple, acacia, olive and more. Unlock them by keeping streaks and growing trees — never by paying for the basics.\n\n✨ SIPLING PRO\nPro removes ads and unlocks seasonal forest themes and a few cosmetic trees. Tracking, goals, statistics, reminders and your forest are free, forever. We will never put a paywall in front of the things that matter.\n\n— No interstitial ads between screens.\n— No ads during celebrations.\n— No account, no sign-up, no tracking.\n\nDrink water. Grow a forest. Be kind to yourself.",
+  "_notlar": [
+    "Fiyat YOK - Play Console'da minimum gorulunce yazilacak.",
+    "AdMob eklenince 'no interstitial ads' iddiasi hala dogru olacak ama 'reklam yok' DEME.",
+    "'internete baglanma izni yok' iddiasi AdMob gelince gecersiz olur - metni guncelle."
+  ],
+  "slogan1": "Every sip, a sapling.",
+  "slogan2": "Drink water, grow your forest.",
+  "chip1": "No ad bombardment",
+  "chip2": "Your tree never withers"
+}

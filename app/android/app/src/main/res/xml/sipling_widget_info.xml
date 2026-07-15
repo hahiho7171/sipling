@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Widget'ın launcher'a tanıtımı. 4x2 hücre ≈ 250x110dp.
+     targetCellWidth/Height ve description Android 12'den itibaren okunur;
+     eski sürümler minWidth/minHeight'e bakar, bilinmeyen alanları yok sayar. -->
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="250dp"
+    android:minHeight="110dp"
+    android:targetCellWidth="4"
+    android:targetCellHeight="2"
+    android:minResizeWidth="180dp"
+    android:minResizeHeight="110dp"
+    android:resizeMode="horizontal|vertical"
+    android:widgetCategory="home_screen"
+    android:initialLayout="@layout/sipling_widget"
+    android:previewLayout="@layout/sipling_widget"
+    android:previewImage="@mipmap/ic_launcher"
+    android:label="@string/widget_label"
+    android:description="@string/widget_description"
+    android:updatePeriodMillis="1800000"/>

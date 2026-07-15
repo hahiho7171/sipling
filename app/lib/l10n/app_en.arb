@@ -1,0 +1,448 @@
+{
+  "@@locale": "en",
+  "appName": "Sipling",
+  "drinkWater": "Water",
+  "drinkTea": "Tea",
+  "drinkCoffee": "Coffee",
+  "drinkMilk": "Milk",
+  "drinkJuice": "Juice",
+  "drinkSoda": "Soda",
+  "drinkAlcohol": "Alcohol",
+  "speciesOak": "Oak",
+  "speciesPine": "Pine",
+  "speciesCherry": "Sakura",
+  "speciesAcacia": "Acacia",
+  "speciesMaple": "Maple",
+  "speciesOlive": "Olive",
+  "speciesGolden": "Golden Leaf",
+  "speciesJacaranda": "Jacaranda",
+  "unlockFree": "Unlocked",
+  "unlockStreak": "Hit your goal {days} days in a row",
+  "@unlockStreak": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockTotalTrees": "Grow {count} trees in total",
+  "@unlockTotalTrees": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockRewardedAd": "Watch a short ad",
+  "unlockPro": "Pro members only",
+  "achFirstSproutTitle": "First Sprout",
+  "achFirstSproutDesc": "You drank your first glass",
+  "achFirstTreeTitle": "First Tree",
+  "achFirstTreeDesc": "You completed a daily goal",
+  "achStreak3Title": "A Habit Begins",
+  "achStreak3Desc": "You hit your goal 3 days in a row",
+  "achStreak7Title": "A Full Week",
+  "achStreak7Desc": "You hit your goal 7 days in a row",
+  "achStreak30Title": "A Month Unbroken",
+  "achStreak30Desc": "You hit your goal 30 days in a row",
+  "achTrees10Title": "Little Grove",
+  "achTrees10Desc": "You grew 10 trees",
+  "achTrees50Title": "Forest Keeper",
+  "achTrees50Desc": "You grew 50 trees",
+  "achEarlyBirdTitle": "Early Riser",
+  "achEarlyBirdDesc": "You drank water before 9 a.m.",
+  "achVarietyTitle": "Varied Palate",
+  "achVarietyDesc": "You logged at least 4 different drinks",
+  "achPerfectWeekTitle": "Perfect Week",
+  "achPerfectWeekDesc": "You hit your goal every day for 7 days",
+  "seasonClassicName": "Classic",
+  "seasonClassicDesc": "Evergreen, all year round",
+  "seasonAutoName": "Automatic",
+  "seasonAutoDesc": "Let your forest follow the calendar",
+  "seasonSpringName": "Spring",
+  "seasonSpringDesc": "Fresh leaves, bright sky",
+  "seasonSummerName": "Summer",
+  "seasonSummerDesc": "Deep, saturated greens",
+  "seasonAutumnName": "Autumn",
+  "seasonAutumnDesc": "Orange leaves, warm light",
+  "seasonWinterName": "Winter",
+  "seasonWinterDesc": "Snowy hills, cold light",
+  "bmiUnderweight": "Underweight",
+  "bmiNormal": "Normal",
+  "bmiOverweight": "Overweight",
+  "bmiObese": "Obese",
+  "notifTitle1": "Time for water 💧",
+  "notifBody1": "Your sapling is waiting — shall we have a glass?",
+  "notifTitle2": "One more sip",
+  "notifBody2": "Small sips make big trees.",
+  "notifTitle3": "Your sapling is thirsty 🌱",
+  "notifBody3": "A glass of water helps it grow a little more.",
+  "notifTitle4": "Reminder",
+  "notifBody4": "One step closer to today's tree.",
+  "notifTitle5": "Water break",
+  "notifBody5": "The glass you drink now is tonight's tree.",
+  "activityLow": "Sedentary",
+  "activityLowHint": "Desk job, little walking",
+  "activityMedium": "Moderate",
+  "activityMediumHint": "Exercise 1-3 days a week",
+  "activityHigh": "Active",
+  "activityHighHint": "Exercise 4+ days a week",
+  "cupGlass": "Glass",
+  "cupBottle": "Bottle",
+  "cupLarge": "Large",
+  "homeNewAchievement": "New achievement",
+  "homeUndoLast": "Undo last entry",
+  "homeStageSeed": "Your seed is in the soil, waiting for its first sip",
+  "homeStageSprout": "It sprouted 🌱",
+  "homeStageSapling": "Your sapling is growing",
+  "homeStageAlmost": "Almost a tree!",
+  "homeStageReady": "Today's tree is ready 🌳",
+  "homePaceDone": "A new sapling is waiting for you tomorrow",
+  "homePaceStart": "Start your day with a glass",
+  "homePaceBehind": "You're {ml} ml behind for this hour — you can still catch up",
+  "@homePaceBehind": {
+    "placeholders": {
+      "ml": {
+        "type": "int"
+      }
+    }
+  },
+  "homePaceOnTrack": "You're right on pace 👌",
+  "homeGoalDone": "You've hit your daily goal",
+  "homeRemaining": "{ml} ml left",
+  "@homeRemaining": {
+    "placeholders": {
+      "ml": {
+        "type": "int"
+      }
+    }
+  },
+  "homeStreakDays": "{days} days",
+  "@homeStreakDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "homeCelebrateTitle": "Your tree has grown!",
+  "homeCelebrateBody": "You've hit today's goal. This tree is now part of your forest.",
+  "homeStreakLabel": "{days}-day streak",
+  "@homeStreakLabel": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "homeCelebrateOk": "Great",
+  "addWhatTitle": "What did you drink?",
+  "addAmount": "Amount",
+  "addConfirm": "Add",
+  "addFactorWater": "Counts fully toward your goal.",
+  "addFactorAlcohol": "Alcohol dehydrates you, so it's subtracted from your goal.",
+  "addFactorPercent": "Counts {percent}% toward your goal.",
+  "@addFactorPercent": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sumTitle": "Yesterday's summary",
+  "sumTreeGrown": "Your tree has grown 🌳",
+  "sumSaplingOnWay": "Your sapling is on its way 🌱",
+  "sumBodyDone": "You hit your goal. This tree is part of your forest.",
+  "sumPercent": "You reached {percent}% of your goal yesterday. Your sapling is waiting right where you left it — no tree ever withers.",
+  "@sumPercent": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sumStatCounted": "Counted",
+  "sumStatGoal": "Goal",
+  "sumStatStreak": "Streak",
+  "sumStreakDays": "{days} days",
+  "@sumStreakDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "sumStartToday": "Start today",
+  "sumWhatDrank": "What you drank",
+  "sumDrinkAmount": "{name} {ml} ml",
+  "@sumDrinkAmount": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "ml": {
+        "type": "int"
+      }
+    }
+  },
+  "navToday": "Today",
+  "navForest": "Forest",
+  "navStats": "Stats",
+  "navSettings": "Settings",
+  "onbContinue": "Continue",
+  "onbFinish": "Plant my sapling",
+  "onbWelcomeTagline": "Every sip, a sapling.\nDrink water and your tree grows; as the days pass, so does your forest.",
+  "onbWelcomeNoPenalty": "Your tree never withers. No penalties here.",
+  "onbGenderTitle": "Let's get to know you",
+  "onbGenderSubtitle": "Your daily water goal is calculated from this. It all stays on your phone and is never sent anywhere.",
+  "onbGenderFemale": "Female",
+  "onbGenderMale": "Male",
+  "onbGenderOther": "Prefer not to say",
+  "onbBodyTitle": "Height, weight, age",
+  "onbBodySubtitle": "Slide to adjust.",
+  "onbBodyAge": "Age",
+  "onbBodyHeight": "Height",
+  "onbBodyWeight": "Weight",
+  "onbBodyBmiLabel": "Your body mass index",
+  "onbBodyDisclaimer": "For information only, not medical advice.",
+  "onbActivityTitle": "How active are you?",
+  "onbActivitySubtitle": "The more you sweat, the more water you need.",
+  "onbGoalTitle": "Your daily goal",
+  "onbGoalSubtitle": "You can change it anytime in Settings.",
+  "onbGoalUnit": "milliliters / day",
+  "onbGoalGlasses": "about {glasses} glasses",
+  "@onbGoalGlasses": {
+    "placeholders": {
+      "glasses": {
+        "type": "int"
+      }
+    }
+  },
+  "onbGoalReference": "This goal is adapted to your weight and activity level, based on the adequate water intake reference from the European Food Safety Authority (EFSA, 2010). Water you get from food is not included in this number.",
+  "proAppBarTitle": "Sipling Pro",
+  "proHeaderTitle": "Ad-free Sipling",
+  "proHeaderSub": "Keep your forest growing",
+  "proPerkNoAdsTitle": "Zero ads",
+  "proPerkNoAdsSub": "Even the daily summary ad disappears",
+  "proPerkTreesTitle": "Every tree species",
+  "proPerkTreesSub": "Including Golden Leaf and Jacaranda",
+  "proPerkHistoryTitle": "Unlimited history",
+  "proPerkHistorySub": "Detailed stats for every month",
+  "proPerkThemesTitle": "Theme options",
+  "proPerkThemesSub": "Seasonal forest looks",
+  "proPerkSupportTitle": "Support development",
+  "proPerkSupportSub": "Sipling is a one-person project",
+  "proNotConnectedNote": "Purchases aren't connected yet. For now you can toggle Pro on and off to try it out.",
+  "proButtonOn": "Pro is on — turn off",
+  "proButtonTry": "Try Pro",
+  "batAppBarTitle": "If notifications aren't arriving",
+  "batIntro": "Some phone brands shut down background apps to save battery, so reminders can be delayed or may not arrive at all. Making the setting below once is enough.",
+  "batXiaomi1": "Settings → Apps → Sipling → Battery saver → \"No restrictions\"",
+  "batXiaomi2": "Settings → Apps → Sipling → Autostart → On",
+  "batXiaomi3": "On the recent apps screen, pull Sipling down and tap the lock icon",
+  "batSamsung1": "Settings → Apps → Sipling → Battery → \"Unrestricted\"",
+  "batSamsung2": "Settings → Battery → Background usage limits → remove Sipling from the \"Sleeping apps\" list",
+  "batHuawei1": "Settings → Battery → App launch → Sipling → turn off Manage automatically",
+  "batHuawei2": "Turn on Auto-launch, Secondary launch and Run in background",
+  "batOppo1": "Settings → Battery → High background power consumption → allow Sipling",
+  "batOppo2": "Settings → Apps → Sipling → Battery usage → Allow background activity",
+  "batFooter": "Menu names may vary a little depending on your phone model. What you're looking for is a setting like \"battery optimization\", \"background activity\" or \"autostart\".",
+  "setTitle": "Settings",
+  "setSectionGoal": "Goal",
+  "setSectionReminders": "Reminders",
+  "setSectionCups": "My Cups",
+  "setSectionHealth": "Health",
+  "setSectionAppearance": "Appearance",
+  "setSectionApp": "App",
+  "setProTagline": "Ad-free, every tree unlocked",
+  "setDailyGoal": "Daily goal",
+  "setMl": "{ml} ml",
+  "@setMl": {
+    "placeholders": {
+      "ml": {
+        "type": "int"
+      }
+    }
+  },
+  "setProfileInfo": "My profile",
+  "setWeightKg": "{kg} kg",
+  "@setWeightKg": {
+    "placeholders": {
+      "kg": {
+        "type": "int"
+      }
+    }
+  },
+  "setRemindersOn": "Reminders on",
+  "setFrequency": "Frequency",
+  "setAwakeHours": "My waking hours",
+  "setStopWhenDone": "Stop when goal is met",
+  "setStopWhenDoneSub": "Once you hit your daily goal, the remaining reminders are cancelled",
+  "setSilent": "Silent notification",
+  "setSilentSub": "No sound or vibration",
+  "setNotifNotArriving": "Notifications not coming through?",
+  "setNotifNotArrivingSub": "Your phone's battery settings may be blocking them",
+  "setHealthWrite": "Write to Health Connect",
+  "setHealthWriteSub": "Your water intake is also saved to Android's health record. Sipling never reads anything from there.",
+  "setDarkTheme": "Dark theme",
+  "setForestTheme": "Forest theme",
+  "setTreeSpecies": "Tree species",
+  "setMyData": "My data",
+  "setMyDataSub": "Everything stays on your phone and is never sent anywhere",
+  "setResetAll": "Reset all data",
+  "setEveryHours": "{h, plural, one{Every hour} other{Every {h} hours}}",
+  "@setEveryHours": {
+    "placeholders": {
+      "h": {
+        "type": "int"
+      }
+    }
+  },
+  "setEveryMinutes": "{m, plural, one{Every minute} other{Every {m} minutes}}",
+  "@setEveryMinutes": {
+    "placeholders": {
+      "m": {
+        "type": "int"
+      }
+    }
+  },
+  "setHealthNoConnect": "This device doesn't have Health Connect.",
+  "setHealthNotInstalledTitle": "Health Connect isn't installed",
+  "setHealthNeedsUpdateTitle": "Health Connect needs updating",
+  "setHealthInstallBody": "The Health Connect app is needed to write your water intake to Android's health record.",
+  "setOpenPlayStore": "Open in Play Store",
+  "setHealthPermissionDenied": "Permission denied, nothing will be written to the health record.",
+  "setHealthEnabled": "From now on your water intake will also be written to Health Connect.",
+  "setCancel": "Cancel",
+  "setSave": "Save",
+  "setSuggested": "Suggested: {ml} ml",
+  "@setSuggested": {
+    "placeholders": {
+      "ml": {
+        "type": "int"
+      }
+    }
+  },
+  "setBackToSuggested": "Back to suggested",
+  "setIntervalDialogTitle": "How often should we remind you?",
+  "setWakeHelp": "What time do you wake up?",
+  "setSleepHelp": "What time do you go to sleep?",
+  "setAwakeMin4h": "Your waking hours must be at least 4 hours",
+  "setResetConfirmTitle": "Are you sure?",
+  "setResetConfirmBody": "Your forest, streaks and all records will be deleted. This can't be undone.",
+  "setResetConfirmButton": "Reset",
+  "statsTitle": "Statistics",
+  "statsDailyAverage": "Daily average",
+  "statsGoalDays": "Days goal met",
+  "statsCurrentStreak": "Current streak",
+  "statsUnitDays": "days",
+  "statsTotalTrees": "Total trees",
+  "statsLastDays": "Last {days} days",
+  "@statsLastDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "statsYourDrinks": "Your drinks",
+  "statsRangeDays": "{days} days",
+  "@statsRangeDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "statsWeekdayMon": "Mon",
+  "statsWeekdayTue": "Tue",
+  "statsWeekdayWed": "Wed",
+  "statsWeekdayThu": "Thu",
+  "statsWeekdayFri": "Fri",
+  "statsWeekdaySat": "Sat",
+  "statsWeekdaySun": "Sun",
+  "statsNoRecords": "No records yet.",
+  "statsBmiTitle": "Body mass index",
+  "statsBmiDisclaimer": "For information only,\nnot medical advice",
+  "statsAchievements": "Achievements",
+  "statsAchievementsEarned": "{count} earned",
+  "@statsAchievementsEarned": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "achScreenTitle": "Achievements",
+  "forestTitle": "Your forest",
+  "forestSubtitle": "{trees} trees • best streak {days} days",
+  "@forestSubtitle": {
+    "placeholders": {
+      "trees": {
+        "type": "int"
+      },
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "forestSpeciesTooltip": "Tree species",
+  "forestEmptyTitle": "Your forest is still empty",
+  "forestEmptyBody": "When you drink your first glass, a sapling will appear here.",
+  "speciesScreenTitle": "Tree species",
+  "speciesScreenIntro": "You can choose the species of tomorrow's sapling. The old trees in your forest keep the species they were planted as.",
+  "speciesScreenSelected": "Selected",
+  "speciesScreenUnlocked": "Unlocked",
+  "speciesScreenUnlockTitle": "Unlock the {name} tree",
+  "@speciesScreenUnlockTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "speciesScreenRewardBody": "Watch a short ad to unlock this species for good. The ad is entirely optional — there are no forced ads anywhere in the app.",
+  "speciesScreenCancel": "Cancel",
+  "speciesScreenWatchAd": "Watch ad",
+  "seasonScreenTitle": "Forest theme",
+  "seasonScreenIntro": "Your forest's colors change, not its trees. No theme affects your tracking, goal, or streak.",
+  "seasonScreenProOnly": "Pro members only",
+  "seasonScreenSelected": "Selected",
+  "setSectionHome": "Home screen",
+  "setAddWidget": "Add widget to home screen",
+  "setAddWidgetSub": "Add water with one tap, without opening the app",
+  "setAddWidgetManual": "Long-press your home screen → Widgets → pick Sipling",
+  "wrappedTitle": "Your Forest Wrapped",
+  "wrappedHeadline": "Your journey so far",
+  "wrappedLiters": "{liters} L",
+  "@wrappedLiters": {
+    "placeholders": {
+      "liters": {
+        "type": "int"
+      }
+    }
+  },
+  "wrappedLitersLabel": "total water",
+  "wrappedTreesLabel": "trees",
+  "wrappedStreakLabel": "best streak",
+  "wrappedDaysLabel": "days",
+  "wrappedShare": "Share",
+  "wrappedShareText": "I'm growing my forest with Sipling, one sip at a time 🌱 sipling-app.web.app",
+  "homeMoreDrinks": "Other",
+  "addFactorWaterEq": "≈ {ml} ml water ({percent}%)",
+  "@addFactorWaterEq": {
+    "placeholders": {
+      "ml": { "type": "int" },
+      "percent": { "type": "int" }
+    }
+  },
+  "proPerMonth": "{price} / month",
+  "@proPerMonth": {
+    "placeholders": { "price": { "type": "String" } }
+  },
+  "proRestore": "Restore purchases",
+  "proTerms": "Terms of Use",
+  "proPrivacyLink": "Privacy Policy",
+  "proStoreUnavailable": "Store isn't available right now",
+  "proAutoRenew": "Monthly subscription, renews automatically. Cancel at least 24 hours before renewal in your store account settings; otherwise it renews."
+}

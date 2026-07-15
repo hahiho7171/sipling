@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sipling — Privacy Policy</title>
+<style>
+  :root { --ink:#17384A; --soft:#5A7A8A; --water:#4FB3E8; --leaf:#2F8F5B; --bg:#F5FAFD; --card:#fff; }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink:#E6F1F6; --soft:#9FB4C0; --bg:#101C24; --card:#172833; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+    font:16px/1.65 -apple-system,"Segoe UI",Roboto,Arial,sans-serif; }
+  .wrap { max-width:760px; margin:0 auto; padding:32px 20px 64px; }
+  header { display:flex; align-items:center; gap:14px; margin-bottom:8px; }
+  .logo { width:44px; height:44px; flex:none; }
+  h1 { font-size:27px; margin:0; }
+  .sub { color:var(--soft); font-size:14px; margin:2px 0 26px; }
+  .card { background:var(--card); border-radius:18px; padding:20px 22px; margin:18px 0;
+    box-shadow:0 2px 14px rgba(23,56,74,.07); }
+  h2 { font-size:18px; margin:26px 0 8px; }
+  .card h2:first-child { margin-top:0; }
+  .big { font-size:19px; font-weight:600; color:var(--leaf); }
+  ul { padding-left:20px; }
+  li { margin:6px 0; }
+  code { background:rgba(79,179,232,.13); padding:1px 6px; border-radius:5px; font-size:13px; }
+  table { width:100%; border-collapse:collapse; margin-top:10px; font-size:14px; }
+  th,td { text-align:left; padding:9px 8px; border-bottom:1px solid rgba(90,122,138,.22); vertical-align:top; }
+  th { color:var(--soft); font-weight:600; }
+  footer { color:var(--soft); font-size:13px; margin-top:34px; }
+  a { color:var(--water); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <svg class="logo" viewBox="0 0 1024 1024" aria-hidden="true">
+    <defs>
+      <linearGradient id="w2l" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0.05" stop-color="#66C2F0"/><stop offset="0.40" stop-color="#4FB3E8"/>
+        <stop offset="0.66" stop-color="#4CAF7D"/><stop offset="1" stop-color="#2F8F5B"/>
+      </linearGradient>
+    </defs>
+    <path d="M512 120 C512 120 806 468 806 648 A294 294 0 1 1 218 648 C218 468 512 120 512 120 Z" fill="url(#w2l)"/>
+    <path d="M512 902 L512 296" stroke="#fff" stroke-width="28" stroke-linecap="round" opacity="0.9"/>
+    <g stroke="#fff" stroke-width="22" stroke-linecap="round" opacity="0.75" fill="none">
+      <path d="M512 760 C440 748 388 690 372 616"/><path d="M512 760 C584 748 636 690 652 616"/>
+      <path d="M512 596 C452 586 410 538 398 478"/><path d="M512 596 C572 586 614 538 626 478"/>
+    </g>
+  </svg>
+  <div>
+    <h1>Sipling — Privacy Policy</h1>
+    <p class="sub">Last updated: 9 July 2026 · App version 1.0</p>
+  </div>
+</header>
+
+<div class="card">
+  <p class="big">Sipling collects, stores and shares no personal data.</p>
+  <p>Everything you enter — your height, weight, age, what you drink, your trees — stays in your
+  phone's own storage. It is never sent to us or to anyone else, because
+  <strong>the app has no permission to access the internet.</strong></p>
+  <p>Sipling has no server. You are never asked to create an account. Your advertising ID is not
+  read. No analytics or crash reporting tools are used.</p>
+</div>
+
+<h2>What data do we process?</h2>
+<div class="card">
+  <table>
+    <tr><th>Data</th><th>Where it lives</th><th>Why</th></tr>
+    <tr>
+      <td>Profile: sex, age, height, weight, activity level, waking hours</td>
+      <td>On your phone only</td>
+      <td>To calculate your daily water goal</td>
+    </tr>
+    <tr>
+      <td>Your drinks: amount, drink type, time</td>
+      <td>On your phone only</td>
+      <td>To show your progress, your streak and your forest</td>
+    </tr>
+    <tr>
+      <td>Preferences: reminder times, cups, theme</td>
+      <td>On your phone only</td>
+      <td>To run the app the way you want</td>
+    </tr>
+  </table>
+  <p>You can erase all of it at any time with <strong>Settings → Reset all data</strong>.
+  Uninstalling the app does the same. There is no copy on our side, so you never need to send us
+  a deletion request.</p>
+</div>
+
+<h2>Health Connect</h2>
+<div class="card">
+  <p>An <strong>optional</strong> feature you can enable in Settings writes the water you drink to
+  Android's shared health record (Health Connect). This feature is <strong>off by default</strong>
+  and nothing is written until you turn it on and grant permission.</p>
+  <ul>
+    <li>Sipling only <strong>writes</strong>. It <strong>never reads</strong> anything from Health
+        Connect — the read permission is not even declared.</li>
+    <li>The only thing written is the amount and time of the liquid you drank
+        (<code>Hydration</code>).</li>
+    <li>This data never leaves your phone; Health Connect also runs on your device.</li>
+    <li>You can turn the feature off in Settings and revoke the permission in the Health Connect
+        app. Records already written can be deleted from Health Connect.</li>
+  </ul>
+</div>
+
+<h2>Permissions and why they are requested</h2>
+<div class="card">
+  <table>
+    <tr><th>Permission</th><th>Why</th></tr>
+    <tr><td><code>POST_NOTIFICATIONS</code></td><td>To show water reminders</td></tr>
+    <tr><td><code>RECEIVE_BOOT_COMPLETED</code></td><td>To re-create reminders after the phone restarts</td></tr>
+    <tr><td><code>VIBRATE</code></td><td>Reminder vibration (can be turned off in Settings)</td></tr>
+    <tr><td><code>health.WRITE_HYDRATION</code></td><td>The optional Health Connect feature described above</td></tr>
+    <tr><td><code>WAKE_LOCK</code>, <code>ACCESS_NETWORK_STATE</code></td>
+        <td>Required by Android's work manager so the home screen widget can run in the background.
+            <strong>They do not grant internet access.</strong></td></tr>
+  </table>
+  <p>The app has <strong>no</strong> <code>INTERNET</code> permission. Location, camera, microphone,
+  contacts and file permissions are not requested either.</p>
+</div>
+
+<h2>Children</h2>
+<div class="card">
+  <p>Sipling is suitable for all ages and, because it collects no data at all, it collects no data
+  from children either.</p>
+</div>
+
+<h2>Changes</h2>
+<div class="card">
+  <p>If this policy changes, this page is updated and the date above changes. If advertising or
+  in-app purchases are added, data processing will change and this policy will be updated
+  <strong>before that release</strong>.</p>
+</div>
+
+<h2>Contact</h2>
+<div class="card">
+  <p>For questions or requests: <a href="mailto:asim_gokcek@hotmail.com">asim_gokcek@hotmail.com</a></p>
+</div>
+
+<footer>
+  Sipling · Water tracking and reminders · This page is listed as the privacy policy for the app
+  on Google Play.
+</footer>
+
+</div>
+</body>
+</html>

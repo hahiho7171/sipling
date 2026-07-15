@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "sipling-tarayici": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp@latest",
+        "--cdp-endpoint",
+        "http://localhost:9360"
+      ],
+      "env": {}
+    }
+  }
+}

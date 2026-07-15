@@ -1,0 +1,48 @@
+# 🚨 İmza anahtarı ve parolası — asla sürüm kontrolüne girmez.
+app/android/key.properties
+app/android/upload-keystore.jks
+*.jks
+*.keystore
+
+# Flutter / Dart
+app/build/
+app/.dart_tool/
+app/.flutter-plugins*
+.dart_tool/
+build/
+
+# Araç çıktıları
+tools/node_modules/
+site/.firebase/
+
+# Büyük derlenmiş/üretilmiş dosyalar (kaynak değil, gerektiğinde yeniden üretilir)
+# ⚠️ .gitignore'da satır-içi yorum YOK — yorum ayrı satırda olmalı, yoksa desene karışır.
+# 54 MB test APK — indir sayfası için kopyalanır:
+site/sipling-test.bin
+# dil önekli görsel kopyaları (Play yüklemesi için):
+store/.yukleme/
+
+# iOS / CocoaPods (Codemagic bulut Mac'te yeniden üretir)
+app/ios/Pods/
+app/ios/.symlinks/
+app/ios/Flutter/Flutter.framework
+app/ios/Flutter/Flutter.podspec
+app/ios/Flutter/ephemeral/
+app/ios/Runner/GeneratedPluginRegistrant.*
+
+# 🚨 Apple imzalama gizli anahtarları — asla depoya girmez
+*.p8
+*.p12
+*.mobileprovision
+*.cer
+*.certSigningRequest
+
+# Android gradle önbelleği
+app/android/.gradle/
+app/.gradle/
+# (Üretilen l10n `app_localizations*.dart` BİLEREK commit'lenir → CI'da kesin var olsun.)
+
+# Geçici / gizli
+scratchpad/
+keys/
+_DEGERLER.md

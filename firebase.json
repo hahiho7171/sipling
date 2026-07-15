@@ -1,0 +1,20 @@
+{
+  "hosting": {
+    "public": "site",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "cleanUrls": true,
+    "headers": [
+      {
+        "source": "**/*.html",
+        "headers": [{ "key": "Cache-Control", "value": "public, max-age=600" }]
+      },
+      {
+        "source": "/sipling-test.bin",
+        "headers": [
+          { "key": "Content-Type", "value": "application/vnd.android.package-archive" },
+          { "key": "Content-Disposition", "value": "attachment; filename=\"Sipling.apk\"" }
+        ]
+      }
+    ]
+  }
+}

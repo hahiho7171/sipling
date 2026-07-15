@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sipling</title>
+<style>
+  :root { --ink:#17384A; --soft:#5A7A8A; --water:#4FB3E8; --bg:#F5FAFD; --card:#fff; }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink:#E6F1F6; --soft:#9FB4C0; --bg:#101C24; --card:#172833; }
+  }
+  body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+    background:var(--bg); color:var(--ink);
+    font:16px/1.6 -apple-system,"Segoe UI",Roboto,Arial,sans-serif; }
+  .box { text-align:center; padding:34px 26px; max-width:420px; }
+  svg { width:88px; height:88px; }
+  h1 { font-size:30px; margin:14px 0 4px; }
+  p { color:var(--soft); margin:0 0 26px; }
+  a { display:block; background:var(--card); color:var(--ink); text-decoration:none;
+      padding:14px 18px; border-radius:14px; margin:10px 0; font-weight:600;
+      box-shadow:0 2px 12px rgba(23,56,74,.08); }
+  a:hover { outline:2px solid var(--water); }
+  .sub { font-size:13px; color:var(--soft); font-weight:400; margin-top:2px; }
+</style>
+</head>
+<body>
+<div class="box">
+  <svg viewBox="0 0 1024 1024" aria-hidden="true">
+    <defs>
+      <linearGradient id="w2l" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0.05" stop-color="#66C2F0"/><stop offset="0.40" stop-color="#4FB3E8"/>
+        <stop offset="0.66" stop-color="#4CAF7D"/><stop offset="1" stop-color="#2F8F5B"/>
+      </linearGradient>
+    </defs>
+    <path d="M512 120 C512 120 806 468 806 648 A294 294 0 1 1 218 648 C218 468 512 120 512 120 Z" fill="url(#w2l)"/>
+    <path d="M512 902 L512 296" stroke="#fff" stroke-width="28" stroke-linecap="round" opacity="0.9"/>
+    <g stroke="#fff" stroke-width="22" stroke-linecap="round" opacity="0.75" fill="none">
+      <path d="M512 760 C440 748 388 690 372 616"/><path d="M512 760 C584 748 636 690 652 616"/>
+      <path d="M512 596 C452 586 410 538 398 478"/><path d="M512 596 C572 586 614 538 626 478"/>
+    </g>
+  </svg>
+  <h1>Sipling</h1>
+  <p>Su içme takibi ve hatırlatıcı · Water tracking and reminders</p>
+
+  <a href="/gizlilik">Gizlilik Politikası<div class="sub">Türkçe</div></a>
+  <a href="/privacy">Privacy Policy<div class="sub">English</div></a>
+</div>
+
+<script>
+  // Türkçe cihazlarda doğrudan Türkçe politikaya götür; başka dillerde bu sayfa kalsın.
+  // Adres çubuğuna elle "/" yazan biri seçim yapabilsin diye yönlendirme yalnız ilk gelişte.
+  if (!document.referrer && (navigator.language || '').toLowerCase().startsWith('tr')) {
+    location.replace('/gizlilik');
+  }
+</script>
+</body>
+</html>

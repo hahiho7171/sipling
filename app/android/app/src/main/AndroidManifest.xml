@@ -1,0 +1,170 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Android 13+ (API 33): bildirim göndermek için runtime izni şart. -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <!-- Telefon yeniden başlatılınca hatırlatmaları yeniden kurabilmek için. -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
+    <!--
+      🚨 SCHEDULE_EXACT_ALARM / USE_EXACT_ALARM BİLEREK İSTENMİYOR.
+      Google Play politikası bu izni yalnız alarm-saat ve takvim uygulamalarına
+      veriyor; su hatırlatıcısı kapsam dışı ve inceleme reddedilir.
+      flutter_local_notifications kendi manifest'inde SCHEDULE_EXACT_ALARM
+      tanımladığı için birleştirme sırasında kaldırıyoruz. Bildirimler
+      AndroidScheduleMode.inexactAllowWhileIdle ile planlanır.
+    -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"
+        tools:node="remove"/>
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM"
+        tools:node="remove"/>
+
+    <!--
+      Ana ekran widget'ı `home_widget` → WorkManager bağımlılığını getiriyor.
+      WorkManager kendi manifest'inde üç izin tanımlıyor; ikisi gerçekten gerekli:
+        WAKE_LOCK           — iş çalışırken cihazın uyumaması için, kaldırırsan çöker
+        ACCESS_NETWORK_STATE— WorkManager açılışta ağ durumu izleyicisini kuruyor
+      FOREGROUND_SERVICE ise gereksiz: HomeWidgetBackgroundWorker `setExpedited`
+      kullanmıyor, yani hiçbir zaman ön plan servisi başlatmıyor. İstemediğimiz izin
+      Play'de gereksiz soru demektir → kaldırıyoruz.
+      ⚠️ İleride expedited iş kullanan bir paket eklenirse bu satırı geri al.
+    -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"
+        tools:node="remove"/>
+
+    <!--
+      Health Connect: içilen suyu Android'in ortak sağlık defterine YAZAR.
+      Yalnız yazma izni istiyoruz — okuma istemiyoruz, kimsenin verisini okumuyoruz.
+      🚨 Bu izin Play'de "hassas" sayılır: Health apps declaration formu + yayında bir
+      gizlilik politikası URL'si zorunlu. → wiki/04-yayin-play.md
+    -->
+    <uses-permission android:name="android.permission.health.WRITE_HYDRATION"/>
+
+    <application
+        android:label="Sipling"
+        android:name="${applicationName}"
+        android:icon="@mipmap/ic_launcher">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:taskAffinity=""
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize">
+            <!-- Specifies an Android theme to apply to this Activity as soon as
+                 the Android process has started. This theme is visible to the user
+                 while the Flutter UI initializes. After that, this theme continues
+                 to determine the Window background behind the Flutter UI. -->
+            <meta-data
+              android:name="io.flutter.embedding.android.NormalTheme"
+              android:resource="@style/NormalTheme"
+              />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <!-- Widget'a dokununca uygulamanın açıldığını Flutter tarafına bildirir
+                 (HomeWidget.initiallyLaunchedFromHomeWidget). -->
+            <intent-filter>
+                <action android:name="es.antonborri.home_widget.action.LAUNCH"/>
+            </intent-filter>
+            <!-- Health Connect "bu uygulama suyunu neden yazmak istiyor?" derse buraya gelir. -->
+            <intent-filter>
+                <action android:name="androidx.health.ACTION_SHOW_PERMISSIONS_RATIONALE"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Android 14+ Health Connect izin ekranındaki "gizlilik politikası" bağlantısı.
+             ⚠️ Şimdilik uygulamayı açıyor; gizlilik politikası ekranı yazılınca oraya yönlendir. -->
+        <activity-alias
+            android:name="ViewPermissionUsageActivity"
+            android:exported="true"
+            android:targetActivity=".MainActivity"
+            android:permission="android.permission.START_VIEW_PERMISSION_USAGE">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW_PERMISSION_USAGE"/>
+                <category android:name="android.intent.category.HEALTH_PERMISSIONS"/>
+            </intent-filter>
+        </activity-alias>
+
+        <!-- Ana ekran widget'ı → SiplingWidgetProvider.kt · layout/sipling_widget.xml -->
+        <receiver
+            android:name=".SiplingWidgetProvider"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/sipling_widget_info"/>
+        </receiver>
+
+        <!-- Widget'taki bardak butonu uygulama kapalıyken Dart kodunu çalıştırır.
+             Paketin kendi manifest'i boş; bu kaydı eklemezsek buton sessizce ölür. -->
+        <receiver
+            android:name="es.antonborri.home_widget.HomeWidgetBackgroundReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="es.antonborri.home_widget.action.BACKGROUND"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- 🚨 Bildirimdeki "+N ml" düğmesi bu alıcı olmadan ÇALIŞMAZ (sessizce ölür).
+             flutter_local_notifications README zorunlu kılıyor; paketin kendi
+             manifest'i yalnız izin tanımlıyor, alıcıyı host uygulama ekler. -->
+        <receiver
+            android:name="com.dexterous.flutterlocalnotifications.ActionBroadcastReceiver"
+            android:exported="false"/>
+
+        <!-- 🚨🚨 ZAMANLANMIŞ HATIRLATMALARIN ÇIKMASI İÇİN ŞART. Bu alıcı yoksa
+             `zonedSchedule` alarmı kurulur ama tetiklendiğinde bildirimi POST edecek
+             alıcı olmadığı için HİÇBİR HATIRLATMA GELMEZ. (2026-07-11'de bu eksik
+             yüzünden hiç bildirim gelmiyordu — plugin kendi manifest'inde tanımlamıyor,
+             host eklemek zorunda. flutter_local_notifications README.) -->
+        <receiver
+            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver"
+            android:exported="false"/>
+        <!-- Telefon yeniden başlayınca / uygulama güncellenince zamanlanmış
+             hatırlatmaları geri kurar (RECEIVE_BOOT_COMPLETED izniyle birlikte). -->
+        <receiver
+            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- 🚨 AdMob App ID (GERÇEK). Bu meta-data OLMADAN uygulama AÇILIŞTA ÇÖKER.
+             AdMob hesabı: randevusayfasi@gmail.com · "Sipling (Android)". -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3326866070505611~5922360769"/>
+
+        <!-- Don't delete the meta-data below.
+             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+    </application>
+    <!-- Required to query activities that can process text, see:
+         https://developer.android.com/training/package-visibility and
+         https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
+
+         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin. -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.PROCESS_TEXT"/>
+            <data android:mimeType="text/plain"/>
+        </intent>
+        <!-- Health Connect kurulu mu, izin gerekçesi ekranı var mı — bunları sorabilmek için. -->
+        <package android:name="com.google.android.apps.healthdata"/>
+        <intent>
+            <action android:name="androidx.health.ACTION_SHOW_PERMISSIONS_RATIONALE"/>
+        </intent>
+    </queries>
+</manifest>

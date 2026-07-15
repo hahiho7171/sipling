@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
+	<!-- İhracat uyumluluğu: Sipling özel şifreleme kullanmaz (yalnız standart HTTPS).
+	     Bu satır olmadan her TestFlight yüklemesinde "Missing Compliance" sorulur. -->
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Sipling</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<!-- Uygulamanın desteklediği 20 dil. App Store kaydında "diller" olarak görünür.
+	     Android/web ile aynı liste (tools/diller.json). zh-Hans=Basit, zh-Hant=Geleneksel. -->
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>en</string>
+		<string>tr</string>
+		<string>es</string>
+		<string>pt</string>
+		<string>de</string>
+		<string>fr</string>
+		<string>it</string>
+		<string>ru</string>
+		<string>ar</string>
+		<string>hi</string>
+		<string>id</string>
+		<string>ja</string>
+		<string>ko</string>
+		<string>nl</string>
+		<string>pl</string>
+		<string>th</string>
+		<string>uk</string>
+		<string>vi</string>
+		<string>zh-Hans</string>
+		<string>zh-Hant</string>
+	</array>
+	<!--
+		🚨 `health` paketi iOS'ta HealthKit framework'ünü bağlar. Sipling iOS'ta
+		HealthKit'i HİÇ ÇAĞIRMAZ (`HealthBridge` her metodda `Platform.isAndroid`
+		kontrol eder), ama Apple, framework bağlıysa bu iki açıklamayı ister;
+		yoksa inceleme reddedilir. Metinler kullanıcıya izin ekranında gösterilir.
+
+		⚠️ iOS'ta Health Connect yerine HealthKit bağlanacaksa Xcode'da "HealthKit"
+		capability'si de açılmalı — bu Windows'ta yapılamaz. → wiki/05-yayin-apple.md
+	-->
+	<key>NSHealthShareUsageDescription</key>
+	<string>Sipling does not read any health data.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Sipling can write the water you drink to Apple Health, so your hydration stays in one place. This is optional and off by default.</string>
+	<key>CFBundleName</key>
+	<string>sipling</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(FLUTTER_BUILD_NAME)</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>$(FLUTTER_BUILD_NUMBER)</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+		<key>UISceneConfigurations</key>
+		<dict>
+			<key>UIWindowSceneSessionRoleApplication</key>
+			<array>
+				<dict>
+					<key>UISceneClassName</key>
+					<string>UIWindowScene</string>
+					<key>UISceneConfigurationName</key>
+					<string>flutter</string>
+					<key>UISceneDelegateClassName</key>
+					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
+					<key>UISceneStoryboardFile</key>
+					<string>Main</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+
+	<!-- 🚨 AdMob iOS App ID (GERÇEK). AdMob: randevusayfasi@gmail.com · "Sipling (iOS)". -->
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-3326866070505611~5730789076</string>
+	<!-- iOS 14+ "seni takip etmeme izni" (ATT) sorusunda gösterilen metin. -->
+	<key>NSUserTrackingUsageDescription</key>
+	<string>Sipling shows you relevant ads only if you allow it. You can use the app fully either way, and Pro removes all ads.</string>
+	<!-- iOS 14+ reklam ilişkilendirme (SKAdNetwork). Google'ın ana kimliği + birkaçı;
+	     tam liste (~50) AdMob dokümanından eklenebilir (attribution'ı iyileştirir, zorunlu değil). -->
+	<key>SKAdNetworkItems</key>
+	<array>
+		<dict><key>SKAdNetworkIdentifier</key><string>cstr6suwn9.skadnetwork</string></dict>
+		<dict><key>SKAdNetworkIdentifier</key><string>4fzdc2evr5.skadnetwork</string></dict>
+		<dict><key>SKAdNetworkIdentifier</key><string>2fnua5tdw4.skadnetwork</string></dict>
+		<dict><key>SKAdNetworkIdentifier</key><string>ydx93a7ass.skadnetwork</string></dict>
+	</array>
+</dict>
+</plist>

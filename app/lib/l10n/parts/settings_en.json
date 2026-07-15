@@ -1,0 +1,86 @@
+{
+  "setTitle": "Settings",
+  "setSectionGoal": "Goal",
+  "setSectionReminders": "Reminders",
+  "setSectionCups": "My Cups",
+  "setSectionHealth": "Health",
+  "setSectionAppearance": "Appearance",
+  "setSectionApp": "App",
+  "setProTagline": "Ad-free, every tree unlocked",
+  "setDailyGoal": "Daily goal",
+  "setMl": "{ml} ml",
+  "@setMl": {
+    "placeholders": {
+      "ml": {
+        "type": "int"
+      }
+    }
+  },
+  "setProfileInfo": "My profile",
+  "setWeightKg": "{kg} kg",
+  "@setWeightKg": {
+    "placeholders": {
+      "kg": {
+        "type": "int"
+      }
+    }
+  },
+  "setRemindersOn": "Reminders on",
+  "setFrequency": "Frequency",
+  "setAwakeHours": "My waking hours",
+  "setStopWhenDone": "Stop when goal is met",
+  "setStopWhenDoneSub": "Once you hit your daily goal, the remaining reminders are cancelled",
+  "setSilent": "Silent notification",
+  "setSilentSub": "No sound or vibration",
+  "setNotifNotArriving": "Notifications not coming through?",
+  "setNotifNotArrivingSub": "Your phone's battery settings may be blocking them",
+  "setHealthWrite": "Write to Health Connect",
+  "setHealthWriteSub": "Your water intake is also saved to Android's health record. Sipling never reads anything from there.",
+  "setDarkTheme": "Dark theme",
+  "setForestTheme": "Forest theme",
+  "setTreeSpecies": "Tree species",
+  "setMyData": "My data",
+  "setMyDataSub": "Everything stays on your phone and is never sent anywhere",
+  "setResetAll": "Reset all data",
+  "setEveryHours": "{h, plural, one{Every hour} other{Every {h} hours}}",
+  "@setEveryHours": {
+    "placeholders": {
+      "h": {
+        "type": "int"
+      }
+    }
+  },
+  "setEveryMinutes": "{m, plural, one{Every minute} other{Every {m} minutes}}",
+  "@setEveryMinutes": {
+    "placeholders": {
+      "m": {
+        "type": "int"
+      }
+    }
+  },
+  "setHealthNoConnect": "This device doesn't have Health Connect.",
+  "setHealthNotInstalledTitle": "Health Connect isn't installed",
+  "setHealthNeedsUpdateTitle": "Health Connect needs updating",
+  "setHealthInstallBody": "The Health Connect app is needed to write your water intake to Android's health record.",
+  "setOpenPlayStore": "Open in Play Store",
+  "setHealthPermissionDenied": "Permission denied, nothing will be written to the health record.",
+  "setHealthEnabled": "From now on your water intake will also be written to Health Connect.",
+  "setCancel": "Cancel",
+  "setSave": "Save",
+  "setSuggested": "Suggested: {ml} ml",
+  "@setSuggested": {
+    "placeholders": {
+      "ml": {
+        "type": "int"
+      }
+    }
+  },
+  "setBackToSuggested": "Back to suggested",
+  "setIntervalDialogTitle": "How often should we remind you?",
+  "setWakeHelp": "What time do you wake up?",
+  "setSleepHelp": "What time do you go to sleep?",
+  "setAwakeMin4h": "Your waking hours must be at least 4 hours",
+  "setResetConfirmTitle": "Are you sure?",
+  "setResetConfirmBody": "Your forest, streaks and all records will be deleted. This can't be undone.",
+  "setResetConfirmButton": "Reset"
+}

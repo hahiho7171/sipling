@@ -1,0 +1,5 @@
+package com.sipling.sipling
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity : FlutterActivity()

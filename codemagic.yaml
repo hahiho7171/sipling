@@ -1,0 +1,84 @@
+# Sipling — iOS bulut build (Codemagic). Mac gerekmeden .ipa üretip App Store Connect'e yükler.
+#
+# 🧠 Yöntem Misyon Koruma'da KANITLANDI (2026-07-01 TestFlight canlı). En kritik ders:
+#    `environment.ios_signing` bloğu build başında olmayan profili arayıp PATLIYOR →
+#    imzalama tamamen SCRIPTTE: openssl anahtar + `fetch-signing-files --create` (sertifika+profil
+#    OLUŞTURUR) + sertifika temizliği (3-cert limiti tuzağı) + use-profiles.
+#
+# KURULUM (bir kez, kullanıcı + panel):
+#   1) Depoyu Git'e gönder (GitHub), Codemagic'e bağla.
+#   2) App Store Connect API anahtarı (.p8 + Key ID + Issuer ID) Codemagic → Integrations →
+#      App Store Connect'e "sipling_asc_key" adıyla yükle. (Apple Developer üyeliği: Tuğba Gökcek,
+#      Team SGMQ8NVKU3 — Misyon/Randevio ile aynı ÜYELİK; Sipling'in App Store Connect KAYDI ayrı.)
+#   3) App Store Connect'te uygulama oluştur: bundle com.sipling.app → sayısal App ID'yi APP_STORE_APPLE_ID'ye yaz.
+#
+# ⚠️ İlk build ana-ekran widget'ı OLMADAN (widget ikinci target + App Group profili ister; sonra iterasyon).
+
+workflows:
+  ios-testflight:
+    name: Sipling iOS → App Store Connect
+    instance_type: mac_mini_m2
+    max_build_duration: 60
+    integrations:
+      # Hesap-geneli ASC API anahtarı — Misyon/Randevio ile AYNI Apple takımı (SGMQ8NVKU3),
+      # com.sipling.app'i de imzalar. Codemagic team'inde zaten ekli.
+      app_store_connect: misyon_asc_key
+    environment:
+      # NOT: ios_signing bloğu BİLEREK YOK — Misyon'da build başında patlıyordu. İmzalama scriptte.
+      vars:
+        BUNDLE_ID: "com.sipling.app"
+        APP_STORE_APPLE_ID: "6789913186"   # App Store Connect'teki Sipling sayısal App ID
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+    scripts:
+      - name: Flutter paketleri
+        script: cd app && flutter pub get
+      - name: iOS build numarasını benzersiz yap
+        script: |
+          cd app
+          LAST=$(app-store-connect get-latest-testflight-build-number "$APP_STORE_APPLE_ID" 2>/dev/null || echo 0)
+          case "$LAST" in ''|*[!0-9]*) LAST=0;; esac
+          echo "BUILD_NUMBER=$((LAST + 1))" >> "$CM_ENV"
+          echo "iOS build number = $((LAST + 1))"
+      - name: CocoaPods
+        script: cd app/ios && pod install
+      - name: iOS imzalama dosyalarını oluştur/al (sertifika + profil)
+        script: |
+          keychain initialize
+          # Apple 3-cert limiti + eksik-yetkili profil tuzağını önle: eski dağıtım
+          # sertifikalarını (en yeni 1 hariç) ve Sipling profillerini sil → taze üret.
+          set +e
+          for CT in DISTRIBUTION IOS_DISTRIBUTION; do
+            app-store-connect certificates list --certificate-type $CT --json 2>/dev/null \
+              | jq -r 'sort_by(.attributes.expirationDate)|reverse|.[1:]|.[].id' 2>/dev/null \
+              | while read -r cid; do [ -n "$cid" ] && app-store-connect certificates delete "$cid" --yes </dev/null 2>/dev/null; done
+          done
+          app-store-connect profiles list --json 2>/dev/null \
+            | jq -r '.[]|select(.attributes.name|test("Sipling|com.sipling.app"))|.id' 2>/dev/null \
+            | while read -r pid; do [ -n "$pid" ] && app-store-connect profiles delete "$pid" --yes </dev/null 2>/dev/null; done
+          set -e
+          # Yeni hesapta sertifika yok → önce özel anahtar, sonra sertifika+profil OLUŞTUR.
+          openssl genrsa -out /tmp/cert_key.pem 2048
+          app-store-connect fetch-signing-files "$BUNDLE_ID" \
+            --type IOS_APP_STORE \
+            --certificate-key @file:/tmp/cert_key.pem \
+            --create
+          keychain add-certificates
+          xcode-project use-profiles
+      - name: IPA derle (Flutter)
+        script: |
+          cd app
+          flutter build ipa --release \
+            --build-number=$BUILD_NUMBER \
+            --export-options-plist=/Users/builder/export_options.plist
+    artifacts:
+      - app/build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+    publishing:
+      app_store_connect:
+        auth: integration
+        # Yalnız ASC'ye YÜKLE; TestFlight beta + inceleme başvurusu panelden elle.
+        # (Misyon: otomatik submit "Beta App Review Info" / "whatsNew" eksikse 409 patlıyordu.)
+        submit_to_testflight: false
+        submit_to_app_store: false

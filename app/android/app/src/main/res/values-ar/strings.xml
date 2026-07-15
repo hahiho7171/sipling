@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- OTOMATİK ÜRETİLDİ: tools/widget-diller.py — elle düzenleme, üzerine yazılır.
+     Kaynak: lib/l10n/app_ar.arb + store/metinler/ar.json -->
+<resources>
+    <string name="widget_label">Sipling</string>
+    <string name="widget_description">كل رشفة، شتلة.</string>
+    <string name="widget_streak">🔥 %1$d يومًا</string>
+    <string name="widget_start_today">ابدأ اليوم 🌱</string>
+    <string name="widget_amount">%1$d / %2$d ml</string>
+</resources>

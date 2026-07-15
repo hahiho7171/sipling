@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- OTOMATİK ÜRETİLDİ: tools/widget-diller.py — elle düzenleme, üzerine yazılır.
+     Kaynak: lib/l10n/app_id.arb + store/metinler/id.json -->
+<resources>
+    <string name="widget_label">Sipling</string>
+    <string name="widget_description">Setiap teguk, satu tunas.</string>
+    <string name="widget_streak">🔥 %1$d hari</string>
+    <string name="widget_start_today">Mulai hari ini 🌱</string>
+    <string name="widget_amount">%1$d / %2$d ml</string>
+</resources>

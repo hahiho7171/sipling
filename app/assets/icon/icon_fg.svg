@@ -1,0 +1,25 @@
+<!-- Android adaptive icon ÖN KATMANI. Şeffaf zemin.
+     flutter_launcher_icons bu görsele ayrıca %16 inset uygular (pubspec: adaptive_icon_foreground_inset).
+     Ölçek 0.90 → inset sonrası 108dp'lik adaptive tuvalde damla ~53dp olur: 66dp'lik güvenli
+     dairenin rahat içinde, legacy ikonla (icon.svg, 0.88) aynı dolgunlukta.
+     Büyütürsen daire maskede damlanın ucu kenara teğet geçer. -->
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="w2l" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0.05" stop-color="#66C2F0"/>
+      <stop offset="0.40" stop-color="#4FB3E8"/>
+      <stop offset="0.66" stop-color="#4CAF7D"/>
+      <stop offset="1" stop-color="#2F8F5B"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(512 512) scale(0.90) translate(-512 -531)">
+    <path d="M512 120 C512 120 806 468 806 648 A294 294 0 1 1 218 648 C218 468 512 120 512 120 Z" fill="url(#w2l)"/>
+    <path d="M512 902 L512 296" stroke="#FFFFFF" stroke-width="28" stroke-linecap="round" opacity="0.9"/>
+    <g stroke="#FFFFFF" stroke-width="22" stroke-linecap="round" opacity="0.75" fill="none">
+      <path d="M512 760 C440 748 388 690 372 616"/>
+      <path d="M512 760 C584 748 636 690 652 616"/>
+      <path d="M512 596 C452 586 410 538 398 478"/>
+      <path d="M512 596 C572 586 614 538 626 478"/>
+    </g>
+  </g>
+</svg>

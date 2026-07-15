@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!--
+	  Ana uygulama ile ana-ekran widget'ı (SiplingWidget) aynı veriyi görsün diye
+	  ortak App Group. `home_widget` iOS'ta veriyi bu grubun UserDefaults'ına yazar;
+	  widget oradan okur. Widget uzantısının entitlements'ında da AYNI grup olmalı.
+	  ⚠️ Bu grubu Apple Developer hesabında da tanımla (Identifiers → App Groups).
+	-->
+	<key>com.apple.security.application-groups</key>
+	<array>
+		<string>group.com.sipling.app</string>
+	</array>
+</dict>
+</plist>
