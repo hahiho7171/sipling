@@ -42,7 +42,12 @@ workflows:
           echo "BUILD_NUMBER=$((LAST + 1))" >> "$CM_ENV"
           echo "iOS build number = $((LAST + 1))"
       - name: CocoaPods
-        script: cd app/ios && pod install
+        script: |
+          cd app
+          # `pod install` ios/Flutter/Generated.xcconfig'i ister; onu üretmek için önce
+          # config-only (pub get tek başına üretmiyor → önceki build'ler burada patladı).
+          flutter build ios --config-only
+          cd ios && pod install
       - name: iOS imzalama dosyalarını oluştur/al (sertifika + profil)
         script: |
           keychain initialize
