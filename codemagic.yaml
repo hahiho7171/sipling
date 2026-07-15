@@ -58,14 +58,18 @@ workflows:
           # (silineni kendileri yeniden yapar; TestFlight/App Store Apple'ın kendi imzasını kullanır,
           # kurulu uygulamalar etkilenmez). Profil temizliği YALNIZ Sipling'e özel (izole).
           set +e
+          # ⚠️ `certificates delete`'te `--yes` YOK (geçersiz bayrak → komut patlar, hiç silmez;
+          # önceki build bu yüzden 409'da kaldı). Komut zaten onaysız siler.
           for CT in DISTRIBUTION IOS_DISTRIBUTION; do
-            app-store-connect certificates list --certificate-type $CT --json 2>/dev/null \
-              | jq -r 'sort_by(.attributes.expirationDate)|reverse|.[1:]|.[].id' 2>/dev/null \
-              | while read -r cid; do [ -n "$cid" ] && app-store-connect certificates delete "$cid" --yes </dev/null 2>/dev/null; done
+            for cid in $(app-store-connect certificates list --certificate-type $CT --json 2>/dev/null \
+              | jq -r 'sort_by(.attributes.expirationDate)|reverse|.[1:]|.[].id' 2>/dev/null); do
+              app-store-connect certificates delete "$cid" 2>/dev/null
+            done
           done
-          app-store-connect profiles list --json 2>/dev/null \
-            | jq -r '.[]|select(.attributes.name|test("Sipling|com\\.sipling\\.app"))|.id' 2>/dev/null \
-            | while read -r pid; do [ -n "$pid" ] && app-store-connect profiles delete "$pid" --yes </dev/null 2>/dev/null; done
+          for pid in $(app-store-connect profiles list --json 2>/dev/null \
+            | jq -r '.[]|select(.attributes.name|test("Sipling|com\\.sipling\\.app"))|.id' 2>/dev/null); do
+            app-store-connect profiles delete "$pid" 2>/dev/null
+          done
           set -e
           # Yeni hesapta sertifika yok → önce özel anahtar, sonra sertifika+profil OLUŞTUR.
           openssl genrsa -out /tmp/cert_key.pem 2048
