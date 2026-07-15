@@ -51,15 +51,16 @@ workflows:
       - name: iOS imzalama dosyalarını oluştur/al (sertifika + profil)
         script: |
           keychain initialize
-          # 🚨 İZOLASYON: Yalnız SÜRESİ DOLMUŞ dağıtım sertifikalarını ve YALNIZ Sipling
-          # profillerini sil. Misyon/Randevio'nun GEÇERLİ sertifika/profillerine DOKUNMA
-          # (hesap-geneli ama onların işini bozmamalı). 3-cert limitine takılırsa build
-          # net hata verir, elle (izole) hallederim.
+          # 🚨 Dağıtım sertifikası hesap-geneli ve LİMİTLİ (bireysel hesapta ~2). Misyon/Randevio
+          # zaten dolduruyor → Sipling'in `--create`'i "409 zaten var" veriyordu. Çözüm: en yeni 1
+          # HARİÇ dağıtım sertifikalarını sil (yer aç), sonra taze üret. Misyon/Randevio'nun
+          # yaml'ı DA aynısını yapıyor + her build kendi taze sertifikasını üretiyor → onları BOZMAZ
+          # (silineni kendileri yeniden yapar; TestFlight/App Store Apple'ın kendi imzasını kullanır,
+          # kurulu uygulamalar etkilenmez). Profil temizliği YALNIZ Sipling'e özel (izole).
           set +e
-          NOW=$(date -u +%Y-%m-%dT%H:%M:%S)
           for CT in DISTRIBUTION IOS_DISTRIBUTION; do
             app-store-connect certificates list --certificate-type $CT --json 2>/dev/null \
-              | jq -r --arg now "$NOW" '.[]|select(.attributes.expirationDate < $now)|.id' 2>/dev/null \
+              | jq -r 'sort_by(.attributes.expirationDate)|reverse|.[1:]|.[].id' 2>/dev/null \
               | while read -r cid; do [ -n "$cid" ] && app-store-connect certificates delete "$cid" --yes </dev/null 2>/dev/null; done
           done
           app-store-connect profiles list --json 2>/dev/null \
