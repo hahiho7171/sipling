@@ -112,9 +112,9 @@
 	<!-- 🚨 AdMob iOS App ID (GERÇEK). AdMob: randevusayfasi@gmail.com · "Sipling (iOS)". -->
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-3326866070505611~5730789076</string>
-	<!-- iOS 14+ "seni takip etmeme izni" (ATT) sorusunda gösterilen metin. -->
-	<key>NSUserTrackingUsageDescription</key>
-	<string>Sipling shows you relevant ads only if you allow it. You can use the app fully either way, and Pro removes all ads.</string>
+	<!-- ATT (izleme izni) BİLEREK YOK: Sipling kişiselleştirilmemiş reklam kullanır (nonPersonalizedAds:true),
+	     IDFA istemez, kullanıcıyı izlemez. NSUserTrackingUsageDescription eklenmemeli — yoksa App Privacy
+	     "izleme yok" olarak yayınlanamaz. Karar: kullanıcı 2026-07-15 "kişiye özel olmasın" dedi. -->
 	<!-- iOS 14+ reklam ilişkilendirme (SKAdNetwork). Google'ın ana kimliği + birkaçı;
 	     tam liste (~50) AdMob dokümanından eklenebilir (attribution'ı iyileştirir, zorunlu değil). -->
 	<key>SKAdNetworkItems</key>

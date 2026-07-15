@@ -79,7 +79,7 @@ class AdsService {
     if (_adsOff) return;
     InterstitialAd.load(
       adUnitId: _interstitialUnit,
-      request: const AdRequest(),
+      request: const AdRequest(nonPersonalizedAds: true),
       adLoadCallback: InterstitialAdLoadCallback(
         onAdLoaded: (ad) => _interstitial = ad,
         onAdFailedToLoad: (err) => _interstitial = null,
@@ -123,7 +123,7 @@ class AdsService {
     }
     RewardedAd.load(
       adUnitId: _rewardedUnit,
-      request: const AdRequest(),
+      request: const AdRequest(nonPersonalizedAds: true),
       rewardedAdLoadCallback: RewardedAdLoadCallback(
         onAdLoaded: (ad) => ad.show(onUserEarnedReward: (_, _) => onReward()),
         onAdFailedToLoad: (err) => debugPrint('Sipling ödüllü yüklenemedi: $err'),
@@ -151,7 +151,7 @@ class _AdBannerState extends State<_AdBanner> {
     _ad = BannerAd(
       adUnitId: AdsService._bannerUnit,
       size: AdSize.banner,
-      request: const AdRequest(),
+      request: const AdRequest(nonPersonalizedAds: true),
       listener: BannerAdListener(
         onAdLoaded: (_) {
           if (mounted) setState(() => _loaded = true);
