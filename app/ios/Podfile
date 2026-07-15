@@ -1,7 +1,7 @@
 # 🚨 Sipling iOS Podfile. Proje Windows'ta geliştirildiği için Flutter bunu otomatik
 # üretmemişti → Codemagic'te `pod install` "Podfile yok" ile patlıyordu. Standart Flutter
-# şablonu; platform 13.0 (google_mobile_ads + in_app_purchase için yeterli).
-platform :ios, '13.0'
+# şablonu; platform 14.0 (health paketi iOS 14 istiyor; diğerleri 13).
+platform :ios, '14.0'
 
 # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
@@ -41,9 +41,9 @@ end
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     flutter_additional_ios_build_settings(target)
-    # Tüm pod'ları 13.0'a sabitle — "deployment target daha düşük" hatalarını önler.
+    # Tüm pod'ları 14.0'a sabitle — "deployment target daha düşük" hatalarını önler.
     target.build_configurations.each do |config|
-      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '14.0'
     end
   end
 end
