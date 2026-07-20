@@ -926,4 +926,104 @@ class LPl extends L {
   @override
   String get proAutoRenew =>
       'Subskrypcja miesięczna, odnawia się automatycznie. Anuluj co najmniej 24 godziny przed odnowieniem w ustawieniach konta sklepu; w przeciwnym razie się odnowi.';
+
+  @override
+  String get homeCalcNeed => 'Moje zapotrzebowanie na wodę';
+
+  @override
+  String get needTitle => 'Twoje dzienne zapotrzebowanie na wodę';
+
+  @override
+  String get needIntro =>
+      'Podaj swój wzrost, wagę i poziom aktywności, a Sipling obliczy, ile wody potrzebujesz dziennie.';
+
+  @override
+  String get needResultLabel => 'Sugerowane dla ciebie';
+
+  @override
+  String needCurrentGoal(int ml) {
+    return 'Twój obecny cel: $ml ml';
+  }
+
+  @override
+  String get needApply => 'Ustaw to jako mój cel';
+
+  @override
+  String get needApplied => 'Twój cel został zaktualizowany';
+
+  @override
+  String get needMeasuresTitle => 'Twoje pomiary';
+
+  @override
+  String get needLearnTitle => 'Woda i twoje ciało';
+
+  @override
+  String get factNotifTitle1 => 'Trzy czwarte to woda';
+
+  @override
+  String get factNotifBody1 =>
+      'Mniej więcej trzy czwarte twojego mózgu to woda. Dbaj, by mu jej nie zabrakło.';
+
+  @override
+  String get factNotifTitle2 => 'Koncentracja potrzebuje wody';
+
+  @override
+  String get factNotifBody2 =>
+      'Utrata zaledwie 1-2% wody w organizmie może utrudnić koncentrację.';
+
+  @override
+  String get factNotifTitle3 => 'Pragnienie przychodzi późno';
+
+  @override
+  String get factNotifBody3 =>
+      'Zanim poczujesz pragnienie, twój organizm już zaczyna odczuwać brak wody.';
+
+  @override
+  String get factNotifTitle4 => 'Twój wbudowany system chłodzenia';
+
+  @override
+  String get factNotifBody4 =>
+      'Pocenie się to sposób, w jaki twoje ciało się chłodzi, a robi to kosztem wody.';
+
+  @override
+  String get factNotifTitle5 => 'Sprawdź kolor';
+
+  @override
+  String get factNotifBody5 =>
+      'Jasnożółty zwykle oznacza, że jesteś dobrze nawodniony. Ciemniejszy — czas się napić.';
+
+  @override
+  String get factLearn1Title => 'Ponad połowa ciebie to woda';
+
+  @override
+  String get factLearn1Body =>
+      'Woda stanowi około 50-60% ciała dorosłego człowieka i około 73% mózgu. Transportuje składniki odżywcze, amortyzuje stawy i utrzymuje stałą temperaturę ciała.';
+
+  @override
+  String get factLearn2Title => 'Co się dzieje, gdy pijesz za mało';
+
+  @override
+  String get factLearn2Body =>
+      'Nawet łagodne odwodnienie, czyli utrata około 1-2% wody z organizmu, wiąże się ze zmęczeniem, bólami głowy, słabszą koncentracją i gorszym nastrojem. W dłuższej perspektywie picie za mało wody zwiększa ryzyko zaparć i kamieni nerkowych.';
+
+  @override
+  String get factLearn3Title => 'Pragnienie to spóźniony sygnał';
+
+  @override
+  String get factLearn3Body =>
+      'Pragnienie zwykle pojawia się dopiero wtedy, gdy organizm już stracił wodę, a z wiekiem to odczucie słabnie. Picie w regularnych odstępach działa lepiej niż czekanie, aż poczujesz pragnienie.';
+
+  @override
+  String get factLearn4Title => 'Kolor moczu to najprostszy sprawdzian';
+
+  @override
+  String get factLearn4Body =>
+      'Jasny, słomkowy kolor zwykle oznacza dobre nawodnienie, a ciemnożółty sugeruje, że potrzebujesz więcej wody. Niektóre witaminy i leki zmieniają kolor, więc traktuj to jako wskazówkę, a nie ostateczny wyrok.';
+
+  @override
+  String get factLearn5Title => 'Ile to wystarczająco dużo?';
+
+  @override
+  String get factLearn5Body =>
+      'Wartość referencyjna EFSA dla odpowiedniego spożycia płynów to około 2 litrów dziennie dla kobiet i 2,5 litra dla mężczyzn, w klimacie umiarkowanym przy umiarkowanej aktywności. Upał, ćwiczenia, ciąża i karmienie piersią zwiększają to zapotrzebowanie. Sipling dostosowuje tę wartość do twojej wagi i poziomu aktywności.';
 }

@@ -4,6 +4,13 @@
 > her şey yapıldı. Kalanlar Mac/Codemagic + Apple hesabı ister (bu makinede iOS derlenemez).
 > Genel playbook: memory `reference_apple_store_yayin_playbook.md` — **önce onu oku.**
 
+## 🔑 Apple giriş bilgisi (TÜM projelerle ORTAK — Misyon/Randevio/Sipling aynı)
+
+- **Apple ID (giriş e-postası):** `gokcektugba198@gmail.com` · sahip **Tuğba Gökcek** · Team `SGMQ8NVKU3`.
+- Sipling App Store App ID (sayısal): **`6789913186`** · sürüm sayfası `/apps/6789913186/distribution`.
+- Parola + 2FA **kullanıcıda** (kural 7) — oturum düşünce Apple 2FA ister, ben sadece e-postayı yazarım.
+- Kaynak: Misyon-Koruma-App `IOS-PLAN.md` (kullanıcı 2026-07-17'de "Apple hepsinde ortak" dedi, oradan alındı).
+
 ## Durum
 
 | Alan | Değer |

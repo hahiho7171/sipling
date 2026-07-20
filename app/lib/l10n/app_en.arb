@@ -444,5 +444,41 @@
   "proTerms": "Terms of Use",
   "proPrivacyLink": "Privacy Policy",
   "proStoreUnavailable": "Store isn't available right now",
-  "proAutoRenew": "Monthly subscription, renews automatically. Cancel at least 24 hours before renewal in your store account settings; otherwise it renews."
+  "proAutoRenew": "Monthly subscription, renews automatically. Cancel at least 24 hours before renewal in your store account settings; otherwise it renews.",
+  "homeCalcNeed": "My water need",
+  "needTitle": "Your daily water need",
+  "needIntro": "Enter your height, weight and activity level and Sipling works out how much you need in a day.",
+  "needResultLabel": "Recommended for you",
+  "needCurrentGoal": "Your current goal: {ml} ml",
+  "@needCurrentGoal": {
+    "placeholders": {
+      "ml": {
+        "type": "int"
+      }
+    }
+  },
+  "needApply": "Make this my goal",
+  "needApplied": "Your goal has been updated",
+  "needMeasuresTitle": "Your measurements",
+  "needLearnTitle": "Water and your body",
+  "factNotifTitle1": "Three quarters water",
+  "factNotifBody1": "Roughly three quarters of your brain is water. Keep it topped up.",
+  "factNotifTitle2": "Focus needs water",
+  "factNotifBody2": "Losing just 1-2% of your body water can make it harder to concentrate.",
+  "factNotifTitle3": "Thirst arrives late",
+  "factNotifBody3": "By the time you feel thirsty, your body has already started running low.",
+  "factNotifTitle4": "Your built-in cooling",
+  "factNotifBody4": "Sweating is how your body cools itself, and it spends water doing it.",
+  "factNotifTitle5": "Check the colour",
+  "factNotifBody5": "Pale yellow usually means you are well hydrated. Darker means drink up.",
+  "factLearn1Title": "More than half of you is water",
+  "factLearn1Body": "Water makes up roughly 50-60% of an adult body and about 73% of the brain. It carries nutrients, cushions your joints and keeps your temperature steady.",
+  "factLearn2Title": "What happens when you drink too little",
+  "factLearn2Body": "Even mild dehydration, losing about 1-2% of your body water, is linked to tiredness, headaches, weaker concentration and a lower mood. Over the longer term, drinking too little makes constipation and kidney stones more likely.",
+  "factLearn3Title": "Thirst is a late signal",
+  "factLearn3Body": "Thirst usually kicks in after your body has already lost water, and the feeling gets weaker with age. Drinking at regular intervals works better than waiting until you feel thirsty.",
+  "factLearn4Title": "Urine colour is the simplest check",
+  "factLearn4Body": "A pale straw colour usually means you are well hydrated, while dark yellow suggests you need more. Some vitamins and medicines change the colour, so treat it as a hint rather than a verdict.",
+  "factLearn5Title": "How much is enough?",
+  "factLearn5Body": "EFSA's reference for adequate intake from drinks is about 2 litres a day for women and 2.5 litres for men, in a temperate climate with moderate activity. Hot weather, exercise, pregnancy and breastfeeding all raise the need. Sipling adjusts this to your weight and activity level."
 }

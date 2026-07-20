@@ -897,4 +897,98 @@ class LKo extends L {
   @override
   String get proAutoRenew =>
       '월간 구독, 자동으로 갱신됩니다. 갱신 최소 24시간 전에 스토어 계정 설정에서 취소하세요. 취소하지 않으면 갱신됩니다.';
+
+  @override
+  String get homeCalcNeed => '내 수분 필요량';
+
+  @override
+  String get needTitle => '하루 수분 필요량';
+
+  @override
+  String get needIntro => '키, 몸무게, 활동량을 입력하면 Sipling이 하루에 필요한 수분량을 계산해 드려요.';
+
+  @override
+  String get needResultLabel => '맞춤 추천량';
+
+  @override
+  String needCurrentGoal(int ml) {
+    return '현재 목표: $ml ml';
+  }
+
+  @override
+  String get needApply => '내 목표로 설정하기';
+
+  @override
+  String get needApplied => '목표가 업데이트됐어요';
+
+  @override
+  String get needMeasuresTitle => '내 신체 정보';
+
+  @override
+  String get needLearnTitle => '물과 내 몸';
+
+  @override
+  String get factNotifTitle1 => '몸의 4분의 3은 수분';
+
+  @override
+  String get factNotifBody1 => '뇌의 약 4분의 3은 수분이에요. 충분히 채워 주세요.';
+
+  @override
+  String get factNotifTitle2 => '집중엔 수분이 필요해요';
+
+  @override
+  String get factNotifBody2 => '몸의 수분이 1~2%만 줄어도 집중하기 어려워질 수 있어요.';
+
+  @override
+  String get factNotifTitle3 => '갈증은 늦게 와요';
+
+  @override
+  String get factNotifBody3 => '갈증을 느낄 때쯤엔 이미 몸속 수분이 부족해지기 시작한 거예요.';
+
+  @override
+  String get factNotifTitle4 => '내 몸의 냉각 장치';
+
+  @override
+  String get factNotifBody4 => '땀은 몸이 스스로를 식히는 방법이고, 그 과정에서 수분을 써요.';
+
+  @override
+  String get factNotifTitle5 => '색을 확인하세요';
+
+  @override
+  String get factNotifBody5 => '옅은 노란색이면 수분이 충분한 거예요. 색이 진하면 물을 마셔야 해요.';
+
+  @override
+  String get factLearn1Title => '몸의 절반 이상은 수분이에요';
+
+  @override
+  String get factLearn1Body =>
+      '수분은 성인 몸의 약 50~60%, 뇌의 약 73%를 차지해요. 영양분을 운반하고, 관절을 보호하며, 체온을 일정하게 유지해 줘요.';
+
+  @override
+  String get factLearn2Title => '물을 너무 적게 마시면 생기는 일';
+
+  @override
+  String get factLearn2Body =>
+      '몸의 수분이 약 1~2% 줄어드는 가벼운 탈수만으로도 피로감, 두통, 집중력 저하, 기분 저하와 관련이 있어요. 장기적으로 물을 너무 적게 마시면 변비와 신장 결석의 위험도 커져요.';
+
+  @override
+  String get factLearn3Title => '갈증은 늦게 오는 신호예요';
+
+  @override
+  String get factLearn3Body =>
+      '갈증은 보통 몸이 이미 수분을 잃은 뒤에 느껴지고, 나이가 들수록 그 느낌은 약해져요. 갈증을 느낄 때까지 기다리기보다 일정한 간격으로 물을 마시는 게 더 효과적이에요.';
+
+  @override
+  String get factLearn4Title => '소변 색이 가장 간단한 확인법이에요';
+
+  @override
+  String get factLearn4Body =>
+      '옅은 볏짚 색이면 수분이 충분하다는 뜻이고, 진한 노란색이면 물이 더 필요하다는 신호예요. 일부 비타민이나 약은 색을 바꿀 수 있으니, 확정적인 판단이 아니라 참고용 힌트로 보세요.';
+
+  @override
+  String get factLearn5Title => '얼마나 마셔야 충분할까요?';
+
+  @override
+  String get factLearn5Body =>
+      '온화한 기후에서 적당한 활동량을 기준으로, EFSA가 제시하는 음료를 통한 적정 수분 섭취량은 여성 하루 약 2리터, 남성 2.5리터예요. 더운 날씨, 운동, 임신, 수유는 모두 필요량을 늘려요. Sipling은 이를 몸무게와 활동량에 맞게 조정해요.';
 }

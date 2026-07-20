@@ -916,4 +916,104 @@ class LTr extends L {
   @override
   String get proAutoRenew =>
       'Aylık abonelik, otomatik yenilenir. Yenilemeden en az 24 saat önce mağaza hesap ayarlarından iptal edin; iptal etmezseniz yenilenir.';
+
+  @override
+  String get homeCalcNeed => 'Su ihtiyacım';
+
+  @override
+  String get needTitle => 'Günlük su ihtiyacın';
+
+  @override
+  String get needIntro =>
+      'Boyunu, kilonu ve hareket düzeyini gir; Sipling günde ne kadar suya ihtiyacın olduğunu hesaplasın.';
+
+  @override
+  String get needResultLabel => 'Senin için önerilen';
+
+  @override
+  String needCurrentGoal(int ml) {
+    return 'Şu anki hedefin: $ml ml';
+  }
+
+  @override
+  String get needApply => 'Bunu hedefim yap';
+
+  @override
+  String get needApplied => 'Hedefin güncellendi';
+
+  @override
+  String get needMeasuresTitle => 'Ölçülerin';
+
+  @override
+  String get needLearnTitle => 'Su ve vücudun';
+
+  @override
+  String get factNotifTitle1 => 'Dörtte üçü su';
+
+  @override
+  String get factNotifBody1 =>
+      'Beyninin kabaca dörtte üçü sudur. Deposunu dolu tut.';
+
+  @override
+  String get factNotifTitle2 => 'Odaklanmak su ister';
+
+  @override
+  String get factNotifBody2 =>
+      'Vücut suyunun yalnızca %1-2\'sini kaybetmek bile odaklanmayı zorlaştırabilir.';
+
+  @override
+  String get factNotifTitle3 => 'Susuzluk geç haber verir';
+
+  @override
+  String get factNotifBody3 =>
+      'Sen susadığını hissettiğinde vücudun çoktan azalmaya başlamıştır.';
+
+  @override
+  String get factNotifTitle4 => 'Vücudunun soğutma sistemi';
+
+  @override
+  String get factNotifBody4 =>
+      'Terlemek vücudunun serinleme yöntemidir ve bunu suyunu harcayarak yapar.';
+
+  @override
+  String get factNotifTitle5 => 'Rengine bak';
+
+  @override
+  String get factNotifBody5 =>
+      'Açık sarı genelde yeterli su içtiğini gösterir. Koyulaştıysa suyunu artır.';
+
+  @override
+  String get factLearn1Title => 'Yarıdan fazlan su';
+
+  @override
+  String get factLearn1Body =>
+      'Yetişkin bir vücudun kabaca %50-60\'ı, beynin ise yaklaşık %73\'ü sudur. Su besinleri taşır, eklemlerini yastıklar ve vücut ısını dengede tutar.';
+
+  @override
+  String get factLearn2Title => 'Az su içince ne olur';
+
+  @override
+  String get factLearn2Body =>
+      'Hafif su kaybı bile, yani vücut suyunun yaklaşık %1-2\'si, yorgunluk, baş ağrısı, odaklanma güçlüğü ve ruh halinde düşüşle ilişkilendirilir. Uzun vadede az su içmek kabızlık ve böbrek taşı olasılığını artırır.';
+
+  @override
+  String get factLearn3Title => 'Susuzluk geç gelen bir sinyaldir';
+
+  @override
+  String get factLearn3Body =>
+      'Susuzluk hissi genelde vücudun suyunu kaybetmeye başladıktan sonra devreye girer ve yaşla birlikte körelir. Susamayı beklemek yerine düzenli aralıklarla içmek daha iyi çalışır.';
+
+  @override
+  String get factLearn4Title => 'En pratik gösterge: idrar rengi';
+
+  @override
+  String get factLearn4Body =>
+      'Açık saman rengi genelde yeterli su içtiğini gösterir; koyu sarı ise daha fazlasına ihtiyacın olduğunu düşündürür. Bazı vitamin ve ilaçlar rengi değiştirir, bu yüzden kesin hüküm değil ipucu say.';
+
+  @override
+  String get factLearn5Title => 'Ne kadar yeterli?';
+
+  @override
+  String get factLearn5Body =>
+      'EFSA\'nın içeceklerden yeterli alım referansı, ılıman iklimde ve orta düzey hareketlilikte kadınlar için günde yaklaşık 2 litre, erkekler için 2,5 litredir. Sıcak hava, spor, gebelik ve emzirme bu ihtiyacı yükseltir. Sipling bunu kilona ve hareket düzeyine göre ayarlar.';
 }

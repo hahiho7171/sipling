@@ -915,4 +915,103 @@ class LTh extends L {
   @override
   String get proAutoRenew =>
       'การสมัครสมาชิกรายเดือน ต่ออายุอัตโนมัติ ยกเลิกอย่างน้อย 24 ชั่วโมงก่อนต่ออายุในการตั้งค่าบัญชีสโตร์ มิฉะนั้นจะต่ออายุ';
+
+  @override
+  String get homeCalcNeed => 'ความต้องการน้ำของฉัน';
+
+  @override
+  String get needTitle => 'ความต้องการน้ำรายวันของคุณ';
+
+  @override
+  String get needIntro =>
+      'กรอกส่วนสูง น้ำหนัก และระดับการเคลื่อนไหวของคุณ แล้ว Sipling จะคำนวณว่าคุณต้องการน้ำเท่าไรต่อวัน';
+
+  @override
+  String get needResultLabel => 'แนะนำสำหรับคุณ';
+
+  @override
+  String needCurrentGoal(int ml) {
+    return 'เป้าหมายปัจจุบันของคุณ: $ml ml';
+  }
+
+  @override
+  String get needApply => 'ใช้ค่านี้เป็นเป้าหมายของฉัน';
+
+  @override
+  String get needApplied => 'อัปเดตเป้าหมายของคุณแล้ว';
+
+  @override
+  String get needMeasuresTitle => 'สัดส่วนร่างกายของคุณ';
+
+  @override
+  String get needLearnTitle => 'น้ำกับร่างกายของคุณ';
+
+  @override
+  String get factNotifTitle1 => 'สามในสี่คือน้ำ';
+
+  @override
+  String get factNotifBody1 =>
+      'สมองของคุณประมาณสามในสี่เป็นน้ำ ดื่มน้ำให้เพียงพอไว้เสมอ';
+
+  @override
+  String get factNotifTitle2 => 'สมาธิต้องการน้ำ';
+
+  @override
+  String get factNotifBody2 =>
+      'แค่เสียน้ำในร่างกาย 1-2% ก็ทำให้มีสมาธิยากขึ้นได้';
+
+  @override
+  String get factNotifTitle3 => 'ความกระหายมาช้า';
+
+  @override
+  String get factNotifBody3 => 'พอคุณรู้สึกกระหาย ร่างกายก็เริ่มขาดน้ำไปแล้ว';
+
+  @override
+  String get factNotifTitle4 => 'ระบบทำความเย็นในตัวคุณ';
+
+  @override
+  String get factNotifBody4 =>
+      'การขับเหงื่อคือวิธีที่ร่างกายทำให้ตัวเย็นลง และต้องใช้น้ำในการทำเช่นนั้น';
+
+  @override
+  String get factNotifTitle5 => 'ดูสี';
+
+  @override
+  String get factNotifBody5 =>
+      'สีเหลืองอ่อนมักหมายความว่าคุณได้รับน้ำเพียงพอ สีเข้มขึ้นควรดื่มน้ำเพิ่ม';
+
+  @override
+  String get factLearn1Title => 'ร่างกายของคุณกว่าครึ่งคือน้ำ';
+
+  @override
+  String get factLearn1Body =>
+      'น้ำคิดเป็นประมาณ 50-60% ของร่างกายผู้ใหญ่ และประมาณ 73% ของสมอง น้ำช่วยลำเลียงสารอาหาร รองรับแรงกระแทกที่ข้อต่อ และรักษาอุณหภูมิร่างกายให้คงที่';
+
+  @override
+  String get factLearn2Title => 'จะเกิดอะไรขึ้นเมื่อคุณดื่มน้ำน้อยเกินไป';
+
+  @override
+  String get factLearn2Body =>
+      'แม้แต่ภาวะขาดน้ำเล็กน้อย คือการเสียน้ำในร่างกายประมาณ 1-2% ก็เชื่อมโยงกับความเหนื่อยล้า ปวดหัว สมาธิลดลง และอารมณ์แย่ลง ในระยะยาว การดื่มน้ำน้อยเกินไปยังเพิ่มโอกาสท้องผูกและนิ่วในไต';
+
+  @override
+  String get factLearn3Title => 'ความกระหายเป็นสัญญาณที่มาช้า';
+
+  @override
+  String get factLearn3Body =>
+      'ความกระหายมักเกิดขึ้นหลังจากร่างกายเสียน้ำไปแล้ว และความรู้สึกนี้จะอ่อนลงตามอายุที่มากขึ้น การดื่มน้ำเป็นระยะอย่างสม่ำเสมอได้ผลดีกว่าการรอจนกระหายแล้วค่อยดื่ม';
+
+  @override
+  String get factLearn4Title => 'สีปัสสาวะเป็นวิธีตรวจสอบที่ง่ายที่สุด';
+
+  @override
+  String get factLearn4Body =>
+      'สีเหลืองอ่อนคล้ายฟางมักหมายความว่าคุณได้รับน้ำเพียงพอ ส่วนสีเหลืองเข้มบ่งบอกว่าคุณต้องการน้ำเพิ่ม วิตามินและยาบางชนิดอาจเปลี่ยนสีได้ ดังนั้นให้ถือเป็นเพียงข้อสังเกต ไม่ใช่ข้อสรุปที่แน่นอน';
+
+  @override
+  String get factLearn5Title => 'เท่าไรถึงจะเพียงพอ?';
+
+  @override
+  String get factLearn5Body =>
+      'ค่าอ้างอิงของ EFSA สำหรับปริมาณน้ำที่เพียงพอจากเครื่องดื่มอยู่ที่ประมาณ 2 ลิตรต่อวันสำหรับผู้หญิง และ 2.5 ลิตรสำหรับผู้ชาย ในสภาพภูมิอากาศอบอุ่นและมีการเคลื่อนไหวระดับปานกลาง อากาศร้อน การออกกำลังกาย การตั้งครรภ์ และการให้นมบุตร ล้วนเพิ่มความต้องการนี้ Sipling ปรับค่านี้ตามน้ำหนักและระดับการเคลื่อนไหวของคุณ';
 }

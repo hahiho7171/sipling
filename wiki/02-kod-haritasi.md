@@ -23,6 +23,7 @@
 | Hedef dolunca çıkan 🌳 kutlama penceresi | `screens/home_screen.dart:420` | `_CelebrationDialog` |
 | "Yeni başarım" yeşil bildirim çubuğu | `screens/home_screen.dart:47` | `_showNewAchievements()` |
 | "Son eklemeyi geri al" | `screens/home_screen.dart` (buton) → `data/store.dart:171` | `undoLastSip()` |
+| **"Su ihtiyacım"** butonu (geri al'ın yanında) | `screens/home_screen.dart` → `screens/water_needs_screen.dart:24` | `WaterNeedsScreen` |
 | **Su eklendiğinde ne olur** (kayıt + kutlama + bildirim + widget + Health Connect) | `screens/home_screen.dart:23` | `_record()` |
 
 ## 🌲 Orman sekmesi
@@ -83,6 +84,26 @@
 | 4. Hareket düzeyi | `:331` `_ActivityPage` |
 | 5. Hesaplanan hedef + EFSA açıklaması | `:362` `_GoalPage` |
 | Kurulum + dünün özeti ne zaman açılır | `main.dart:88` `_bootstrap()` |
+
+## 💧 Su ihtiyacı hesaplayıcı + "Su ve vücudun"
+
+| Ekranda gördüğün şey | Dosya : satır |
+|---|---|
+| Ekranın tamamı | `screens/water_needs_screen.dart:24` `WaterNeedsScreen` |
+| Ana ekrandaki giriş butonu | `screens/home_screen.dart` (geri al butonunun yanındaki `Row`) |
+| Canlı hesap (elle hedefi yok sayar) | `water_needs_screen.dart` `_calculated` → `goal_calculator.dart:15` |
+| "Bunu hedefim yap" | `water_needs_screen.dart` `_apply()` → `store.saveProfile` + `reschedule` |
+| Hareket düzeyi seçim satırı | `water_needs_screen.dart` `_ActivityTile` |
+| Bilgi kartlarının metni | `data/hydration_facts.dart` `learnFacts(l)` |
+| Bildirimlerdeki bilgiler | `data/hydration_facts.dart` `notificationFacts(l)` → `services/notifications.dart` `_messages()` |
+
+🚨 Hesap **sıfırdan yazılmadı** — kurulum akışıyla aynı `calculateGoalMl` çağrılıyor ki iki
+yerde iki farklı sonuç çıkmasın. Ekran hesaplarken `clearCustomGoal: true` veriyor; vermezse
+`calculateGoalMl` elle ayarlanmış hedefi döndürür ve kaydırıcılar hiçbir şeyi değiştirmez
+(testi var: `test/goal_calculator_test.dart` "su ihtiyacı hesabı elle hedefi yok sayar").
+
+🚨 `hydration_facts.dart` içindeki bilgiler **kaynaklı** (EFSA 2010, USGS, Armstrong 2012).
+Dosyanın başındaki kaynak listesine bakmadan yeni madde ekleme, uydurma sağlık iddiası yazma.
 
 ## 🧮 Hesaplar ve kurallar (ekran değil, mantık)
 

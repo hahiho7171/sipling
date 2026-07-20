@@ -894,4 +894,98 @@ class LJa extends L {
   @override
   String get proAutoRenew =>
       '月額サブスクリプション、自動更新されます。更新の24時間前までにストアのアカウント設定で解約してください。解約しない場合は更新されます。';
+
+  @override
+  String get homeCalcNeed => '水分必要量';
+
+  @override
+  String get needTitle => 'あなたの1日の水分必要量';
+
+  @override
+  String get needIntro => '身長、体重、活動量を入力すると、Siplingが1日に必要な水分量を計算します。';
+
+  @override
+  String get needResultLabel => 'あなたへのおすすめ';
+
+  @override
+  String needCurrentGoal(int ml) {
+    return '現在の目標: $ml ml';
+  }
+
+  @override
+  String get needApply => 'これを目標にする';
+
+  @override
+  String get needApplied => '目標を更新しました';
+
+  @override
+  String get needMeasuresTitle => 'あなたの測定値';
+
+  @override
+  String get needLearnTitle => '水とあなたの体';
+
+  @override
+  String get factNotifTitle1 => '体の4分の3は水';
+
+  @override
+  String get factNotifBody1 => '脳の約4分の3は水分です。しっかり補給しましょう。';
+
+  @override
+  String get factNotifTitle2 => '集中力には水が必要';
+
+  @override
+  String get factNotifBody2 => '体の水分が1〜2%減るだけで、集中しにくくなることがあります。';
+
+  @override
+  String get factNotifTitle3 => 'のどの渇きは遅れてくる';
+
+  @override
+  String get factNotifBody3 => 'のどの渇きを感じたときには、すでに体は水分不足になり始めています。';
+
+  @override
+  String get factNotifTitle4 => '体に備わった冷却装置';
+
+  @override
+  String get factNotifBody4 => '汗をかくのは体が自分を冷やす仕組みで、そのために水分を使います。';
+
+  @override
+  String get factNotifTitle5 => '色をチェック';
+
+  @override
+  String get factNotifBody5 => '薄い黄色なら水分は足りています。濃い色なら水を飲みましょう。';
+
+  @override
+  String get factLearn1Title => 'あなたの半分以上は水でできている';
+
+  @override
+  String get factLearn1Body =>
+      '水は成人の体の約50〜60%、脳の約73%を占めています。栄養を運び、関節を保護し、体温を安定させる役割があります。';
+
+  @override
+  String get factLearn2Title => '水分が足りないとどうなるか';
+
+  @override
+  String get factLearn2Body =>
+      '体の水分が約1〜2%減るだけの軽い脱水でも、疲労感、頭痛、集中力の低下、気分の落ち込みと関係があります。長期的に水分不足が続くと、便秘や腎結石のリスクも高まります。';
+
+  @override
+  String get factLearn3Title => 'のどの渇きは遅れて現れるサイン';
+
+  @override
+  String get factLearn3Body =>
+      'のどの渇きは、体がすでに水分を失ったあとに感じ始めることが多く、年齢とともにその感覚は弱くなります。渇きを感じるまで待つより、こまめに水を飲むほうが効果的です。';
+
+  @override
+  String get factLearn4Title => '尿の色が一番簡単なチェック方法';
+
+  @override
+  String get factLearn4Body =>
+      '薄い麦わら色なら水分は足りています。濃い黄色はもっと水分が必要というサインです。ビタミン剤や薬で色が変わることもあるので、絶対的な判断材料ではなく目安として捉えてください。';
+
+  @override
+  String get factLearn5Title => 'どのくらいが十分？';
+
+  @override
+  String get factLearn5Body =>
+      '欧州食品安全機関（EFSA）の基準では、温暖な気候で適度な活動量の場合、飲み物からの適切な水分摂取量は女性で1日約2リットル、男性で2.5リットルとされています。暑い気候、運動、妊娠、授乳はいずれも必要量を増やします。Siplingはこれをあなたの体重と活動量に合わせて調整します。';
 }

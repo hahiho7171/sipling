@@ -9,6 +9,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:timezone/data/latest_all.dart' as tzdata;
 import 'package:timezone/timezone.dart' as tz;
 
+import '../data/hydration_facts.dart';
 import '../data/models.dart';
 import '../l10n/app_localizations.dart';
 import 'home_widget_service.dart';
@@ -96,12 +97,24 @@ class NotificationService {
         ? Locale(device.languageCode)
         : const Locale('en');
     final l = await L.delegate.load(supported);
-    return [
+    // Motive eden 5 mesaj + suyun vücuttaki rolüyle ilgili 5 bilgi, DÖNÜŞÜMLÜ.
+    // Sırayı bilerek "bir motivasyon, bir bilgi" diye örüyoruz: arka arkaya
+    // beş bilgi gelirse hatırlatma ders anlatmaya başlar, amaç o değil.
+    final motivation = [
       (l.notifTitle1, l.notifBody1),
       (l.notifTitle2, l.notifBody2),
       (l.notifTitle3, l.notifBody3),
       (l.notifTitle4, l.notifBody4),
       (l.notifTitle5, l.notifBody5),
+    ];
+    final facts = notificationFacts(l)
+        .map((f) => (f.title, f.body))
+        .toList(growable: false);
+    return [
+      for (var i = 0; i < motivation.length; i++) ...[
+        motivation[i],
+        if (i < facts.length) facts[i],
+      ],
     ];
   }
 

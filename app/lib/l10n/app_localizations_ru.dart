@@ -922,4 +922,104 @@ class LRu extends L {
   @override
   String get proAutoRenew =>
       'Ежемесячная подписка, продлевается автоматически. Отмените не позднее чем за 24 часа до продления в настройках аккаунта магазина; иначе она продлится.';
+
+  @override
+  String get homeCalcNeed => 'Моя потребность в воде';
+
+  @override
+  String get needTitle => 'Твоя дневная потребность в воде';
+
+  @override
+  String get needIntro =>
+      'Укажи рост, вес и уровень активности — и Sipling подсчитает, сколько воды тебе нужно в день.';
+
+  @override
+  String get needResultLabel => 'Рекомендовано для тебя';
+
+  @override
+  String needCurrentGoal(int ml) {
+    return 'Твоя текущая цель: $ml ml';
+  }
+
+  @override
+  String get needApply => 'Сделать это моей целью';
+
+  @override
+  String get needApplied => 'Твоя цель обновлена';
+
+  @override
+  String get needMeasuresTitle => 'Твои параметры';
+
+  @override
+  String get needLearnTitle => 'Вода и твоё тело';
+
+  @override
+  String get factNotifTitle1 => 'Три четверти воды';
+
+  @override
+  String get factNotifBody1 =>
+      'Примерно три четверти твоего мозга — вода. Не давай запасу иссякать.';
+
+  @override
+  String get factNotifTitle2 => 'Концентрации нужна вода';
+
+  @override
+  String get factNotifBody2 =>
+      'Потеря всего 1-2% воды в организме может затруднить концентрацию.';
+
+  @override
+  String get factNotifTitle3 => 'Жажда приходит поздно';
+
+  @override
+  String get factNotifBody3 =>
+      'Когда ты чувствуешь жажду, организму уже не хватает воды.';
+
+  @override
+  String get factNotifTitle4 => 'Твоё встроенное охлаждение';
+
+  @override
+  String get factNotifBody4 =>
+      'Потоотделение — способ тела охлаждаться, и на это тратится вода.';
+
+  @override
+  String get factNotifTitle5 => 'Проверь цвет';
+
+  @override
+  String get factNotifBody5 =>
+      'Светло-жёлтый обычно значит, что воды достаточно. Темнее — пора пить.';
+
+  @override
+  String get factLearn1Title => 'Больше половины тебя — вода';
+
+  @override
+  String get factLearn1Body =>
+      'Вода составляет примерно 50-60% тела взрослого человека и около 73% мозга. Она переносит питательные вещества, смягчает суставы и поддерживает стабильную температуру тела.';
+
+  @override
+  String get factLearn2Title => 'Что происходит, если пить слишком мало';
+
+  @override
+  String get factLearn2Body =>
+      'Даже лёгкое обезвоживание — потеря около 1-2% воды в организме — связано с усталостью, головными болями, ухудшением концентрации и снижением настроения. В долгосрочной перспективе недостаток воды повышает риск запоров и камней в почках.';
+
+  @override
+  String get factLearn3Title => 'Жажда — запоздалый сигнал';
+
+  @override
+  String get factLearn3Body =>
+      'Жажда обычно возникает уже после того, как организм потерял воду, и с возрастом это ощущение слабеет. Пить через регулярные промежутки времени эффективнее, чем ждать, пока захочется пить.';
+
+  @override
+  String get factLearn4Title => 'Цвет мочи — самый простой способ проверки';
+
+  @override
+  String get factLearn4Body =>
+      'Светло-соломенный цвет обычно означает хорошую гидратацию, а тёмно-жёлтый говорит о том, что нужно пить больше. Некоторые витамины и лекарства меняют цвет, так что воспринимай это как подсказку, а не как диагноз.';
+
+  @override
+  String get factLearn5Title => 'Сколько воды достаточно?';
+
+  @override
+  String get factLearn5Body =>
+      'По референсу EFSA, достаточное потребление воды из напитков — около 2 литров в день для женщин и 2,5 литра для мужчин, в умеренном климате при средней активности. Жара, физические нагрузки, беременность и грудное вскармливание увеличивают эту потребность. Sipling подстраивает её под твой вес и уровень активности.';
 }

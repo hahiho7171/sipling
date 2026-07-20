@@ -920,4 +920,104 @@ class LUk extends L {
   @override
   String get proAutoRenew =>
       'Місячна підписка, поновлюється автоматично. Скасуйте щонайменше за 24 години до поновлення в налаштуваннях облікового запису магазину; інакше вона поновиться.';
+
+  @override
+  String get homeCalcNeed => 'Моя потреба у воді';
+
+  @override
+  String get needTitle => 'Твоя денна потреба у воді';
+
+  @override
+  String get needIntro =>
+      'Введи свій зріст, вагу та рівень активності, і Sipling розрахує, скільки води тобі потрібно на день.';
+
+  @override
+  String get needResultLabel => 'Рекомендовано для тебе';
+
+  @override
+  String needCurrentGoal(int ml) {
+    return 'Твоя поточна ціль: $ml ml';
+  }
+
+  @override
+  String get needApply => 'Зробити це моєю ціллю';
+
+  @override
+  String get needApplied => 'Твою ціль оновлено';
+
+  @override
+  String get needMeasuresTitle => 'Твої показники';
+
+  @override
+  String get needLearnTitle => 'Вода і твоє тіло';
+
+  @override
+  String get factNotifTitle1 => 'Три чверті — вода';
+
+  @override
+  String get factNotifBody1 =>
+      'Приблизно три чверті твого мозку — вода. Підтримуй її рівень.';
+
+  @override
+  String get factNotifTitle2 => 'Концентрації потрібна вода';
+
+  @override
+  String get factNotifBody2 =>
+      'Втрата лише 1-2% води в організмі може ускладнити концентрацію.';
+
+  @override
+  String get factNotifTitle3 => 'Спрага приходить пізно';
+
+  @override
+  String get factNotifBody3 =>
+      'Коли ти відчуваєш спрагу, твій організм уже почав відчувати нестачу води.';
+
+  @override
+  String get factNotifTitle4 => 'Твоя вбудована система охолодження';
+
+  @override
+  String get factNotifBody4 =>
+      'Потовиділення — це спосіб, яким твоє тіло охолоджується, і на це витрачається вода.';
+
+  @override
+  String get factNotifTitle5 => 'Перевір колір';
+
+  @override
+  String get factNotifBody5 =>
+      'Блідо-жовтий зазвичай означає, що тобі вистачає води. Темніший — час випити ще.';
+
+  @override
+  String get factLearn1Title => 'Більше половини тебе — вода';
+
+  @override
+  String get factLearn1Body =>
+      'Вода становить приблизно 50-60% тіла дорослої людини і близько 73% мозку. Вона переносить поживні речовини, амортизує суглоби й підтримує стабільну температуру тіла.';
+
+  @override
+  String get factLearn2Title => 'Що відбувається, коли ти п\'єш занадто мало';
+
+  @override
+  String get factLearn2Body =>
+      'Навіть легке зневоднення, тобто втрата приблизно 1-2% води в організмі, пов\'язане з втомою, головним болем, гіршою концентрацією та зниженим настроєм. У довгостроковій перспективі недостатнє споживання води підвищує ймовірність запорів і каменів у нирках.';
+
+  @override
+  String get factLearn3Title => 'Спрага — це запізнілий сигнал';
+
+  @override
+  String get factLearn3Body =>
+      'Спрага зазвичай з\'являється вже після того, як організм втратив воду, і з віком це відчуття слабшає. Пити через регулярні проміжки часу ефективніше, ніж чекати, поки відчуєш спрагу.';
+
+  @override
+  String get factLearn4Title => 'Колір сечі — найпростіша перевірка';
+
+  @override
+  String get factLearn4Body =>
+      'Блідо-солом\'яний колір зазвичай означає, що тобі вистачає води, тоді як темно-жовтий свідчить про потребу пити більше. Деякі вітаміни та ліки змінюють колір, тож сприймай це як підказку, а не остаточний висновок.';
+
+  @override
+  String get factLearn5Title => 'Скільки достатньо?';
+
+  @override
+  String get factLearn5Body =>
+      'Референсне значення EFSA для достатнього споживання рідини становить близько 2 літрів на день для жінок і 2,5 літра для чоловіків у помірному кліматі за помірної активності. Спека, фізичні навантаження, вагітність і годування груддю підвищують цю потребу. Sipling адаптує це значення до твоєї ваги та рівня активності.';
 }

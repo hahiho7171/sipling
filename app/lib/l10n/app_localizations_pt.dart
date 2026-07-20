@@ -935,4 +935,105 @@ class LPt extends L {
   @override
   String get proAutoRenew =>
       'Assinatura mensal, renova automaticamente. Cancele pelo menos 24 horas antes da renovação nas configurações da sua conta na loja; caso contrário, renova.';
+
+  @override
+  String get homeCalcNeed => 'Minha necessidade de água';
+
+  @override
+  String get needTitle => 'Sua necessidade diária de água';
+
+  @override
+  String get needIntro =>
+      'Informe sua altura, peso e nível de atividade, e o Sipling calcula quanta água você precisa por dia.';
+
+  @override
+  String get needResultLabel => 'Recomendado para você';
+
+  @override
+  String needCurrentGoal(int ml) {
+    return 'Sua meta atual: $ml ml';
+  }
+
+  @override
+  String get needApply => 'Usar como minha meta';
+
+  @override
+  String get needApplied => 'Sua meta foi atualizada';
+
+  @override
+  String get needMeasuresTitle => 'Suas medidas';
+
+  @override
+  String get needLearnTitle => 'A água e seu corpo';
+
+  @override
+  String get factNotifTitle1 => 'Três quartos de água';
+
+  @override
+  String get factNotifBody1 =>
+      'Cerca de três quartos do seu cérebro é água. Mantenha o nível em dia.';
+
+  @override
+  String get factNotifTitle2 => 'Concentração precisa de água';
+
+  @override
+  String get factNotifBody2 =>
+      'Perder só 1-2% da água do corpo já pode dificultar a concentração.';
+
+  @override
+  String get factNotifTitle3 => 'A sede chega tarde';
+
+  @override
+  String get factNotifBody3 =>
+      'Quando você sente sede, seu corpo já começou a ficar com pouca água.';
+
+  @override
+  String get factNotifTitle4 => 'Seu sistema de resfriamento';
+
+  @override
+  String get factNotifBody4 =>
+      'Suar é como seu corpo se refresca, e isso gasta água.';
+
+  @override
+  String get factNotifTitle5 => 'Observe a cor';
+
+  @override
+  String get factNotifBody5 =>
+      'Amarelo claro geralmente indica boa hidratação. Mais escuro, beba mais água.';
+
+  @override
+  String get factLearn1Title => 'Mais da metade de você é água';
+
+  @override
+  String get factLearn1Body =>
+      'A água representa cerca de 50-60% de um corpo adulto e cerca de 73% do cérebro. Ela transporta nutrientes, amortece suas articulações e mantém sua temperatura estável.';
+
+  @override
+  String get factLearn2Title => 'O que acontece quando você bebe pouco';
+
+  @override
+  String get factLearn2Body =>
+      'Mesmo uma desidratação leve, com perda de cerca de 1-2% da água do corpo, está associada a cansaço, dores de cabeça, menor concentração e pior humor. A longo prazo, beber pouca água aumenta a chance de prisão de ventre e pedras nos rins.';
+
+  @override
+  String get factLearn3Title => 'A sede é um sinal tardio';
+
+  @override
+  String get factLearn3Body =>
+      'A sede geralmente aparece depois que o corpo já perdeu água, e essa sensação enfraquece com a idade. Beber em intervalos regulares funciona melhor do que esperar sentir sede.';
+
+  @override
+  String get factLearn4Title =>
+      'A cor da urina é a forma mais simples de checar';
+
+  @override
+  String get factLearn4Body =>
+      'Uma cor de palha clara geralmente indica boa hidratação, enquanto amarelo escuro sugere que você precisa beber mais. Algumas vitaminas e remédios mudam a cor, então trate isso como uma dica, não como um veredito.';
+
+  @override
+  String get factLearn5Title => 'Quanto é suficiente?';
+
+  @override
+  String get factLearn5Body =>
+      'A referência da EFSA para ingestão adequada por bebidas é de cerca de 2 litros por dia para mulheres e 2,5 litros para homens, em clima temperado e atividade moderada. Calor, exercício, gravidez e amamentação aumentam essa necessidade. O Sipling ajusta isso ao seu peso e nível de atividade.';
 }

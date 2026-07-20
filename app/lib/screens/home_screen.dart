@@ -11,6 +11,7 @@ import '../theme.dart';
 import '../l10n/labels.dart';
 import '../widgets/add_drink_sheet.dart';
 import '../widgets/garden_scene.dart';
+import 'water_needs_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -147,13 +148,36 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: 14),
             _QuickAddBar(cups: state.cups, onAdd: _record, onMore: _openSheet),
             const SizedBox(height: 4),
-            TextButton.icon(
-              onPressed: day.sips.isEmpty
-                  ? null
-                  : () => context.read<AppState>().undoLastSip(),
-              icon: const Icon(Icons.undo, size: 18),
-              label: Text(l.homeUndoLast),
-              style: TextButton.styleFrom(foregroundColor: p.inkSoft),
+            // Geri al + "su ihtiyacım" yan yana. Uzun dillerde taşmasın diye
+            // ikisi de Flexible ve tek satıra kırpılıyor.
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Flexible(
+                  child: TextButton.icon(
+                    onPressed: day.sips.isEmpty
+                        ? null
+                        : () => context.read<AppState>().undoLastSip(),
+                    icon: const Icon(Icons.undo, size: 18),
+                    label: Text(l.homeUndoLast,
+                        maxLines: 1, overflow: TextOverflow.ellipsis),
+                    style: TextButton.styleFrom(foregroundColor: p.inkSoft),
+                  ),
+                ),
+                Flexible(
+                  child: TextButton.icon(
+                    onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (_) => const WaterNeedsScreen(),
+                      ),
+                    ),
+                    icon: const Icon(Icons.calculate_outlined, size: 18),
+                    label: Text(l.homeCalcNeed,
+                        maxLines: 1, overflow: TextOverflow.ellipsis),
+                    style: TextButton.styleFrom(foregroundColor: p.inkSoft),
+                  ),
+                ),
+              ],
             ),
             const SizedBox(height: 6),
           ],

@@ -931,4 +931,104 @@ class LEn extends L {
   @override
   String get proAutoRenew =>
       'Monthly subscription, renews automatically. Cancel at least 24 hours before renewal in your store account settings; otherwise it renews.';
+
+  @override
+  String get homeCalcNeed => 'My water need';
+
+  @override
+  String get needTitle => 'Your daily water need';
+
+  @override
+  String get needIntro =>
+      'Enter your height, weight and activity level and Sipling works out how much you need in a day.';
+
+  @override
+  String get needResultLabel => 'Recommended for you';
+
+  @override
+  String needCurrentGoal(int ml) {
+    return 'Your current goal: $ml ml';
+  }
+
+  @override
+  String get needApply => 'Make this my goal';
+
+  @override
+  String get needApplied => 'Your goal has been updated';
+
+  @override
+  String get needMeasuresTitle => 'Your measurements';
+
+  @override
+  String get needLearnTitle => 'Water and your body';
+
+  @override
+  String get factNotifTitle1 => 'Three quarters water';
+
+  @override
+  String get factNotifBody1 =>
+      'Roughly three quarters of your brain is water. Keep it topped up.';
+
+  @override
+  String get factNotifTitle2 => 'Focus needs water';
+
+  @override
+  String get factNotifBody2 =>
+      'Losing just 1-2% of your body water can make it harder to concentrate.';
+
+  @override
+  String get factNotifTitle3 => 'Thirst arrives late';
+
+  @override
+  String get factNotifBody3 =>
+      'By the time you feel thirsty, your body has already started running low.';
+
+  @override
+  String get factNotifTitle4 => 'Your built-in cooling';
+
+  @override
+  String get factNotifBody4 =>
+      'Sweating is how your body cools itself, and it spends water doing it.';
+
+  @override
+  String get factNotifTitle5 => 'Check the colour';
+
+  @override
+  String get factNotifBody5 =>
+      'Pale yellow usually means you are well hydrated. Darker means drink up.';
+
+  @override
+  String get factLearn1Title => 'More than half of you is water';
+
+  @override
+  String get factLearn1Body =>
+      'Water makes up roughly 50-60% of an adult body and about 73% of the brain. It carries nutrients, cushions your joints and keeps your temperature steady.';
+
+  @override
+  String get factLearn2Title => 'What happens when you drink too little';
+
+  @override
+  String get factLearn2Body =>
+      'Even mild dehydration, losing about 1-2% of your body water, is linked to tiredness, headaches, weaker concentration and a lower mood. Over the longer term, drinking too little makes constipation and kidney stones more likely.';
+
+  @override
+  String get factLearn3Title => 'Thirst is a late signal';
+
+  @override
+  String get factLearn3Body =>
+      'Thirst usually kicks in after your body has already lost water, and the feeling gets weaker with age. Drinking at regular intervals works better than waiting until you feel thirsty.';
+
+  @override
+  String get factLearn4Title => 'Urine colour is the simplest check';
+
+  @override
+  String get factLearn4Body =>
+      'A pale straw colour usually means you are well hydrated, while dark yellow suggests you need more. Some vitamins and medicines change the colour, so treat it as a hint rather than a verdict.';
+
+  @override
+  String get factLearn5Title => 'How much is enough?';
+
+  @override
+  String get factLearn5Body =>
+      'EFSA\'s reference for adequate intake from drinks is about 2 litres a day for women and 2.5 litres for men, in a temperate climate with moderate activity. Hot weather, exercise, pregnancy and breastfeeding all raise the need. Sipling adjusts this to your weight and activity level.';
 }

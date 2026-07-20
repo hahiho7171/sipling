@@ -21,7 +21,10 @@
       Uygulama simgesi varsayılan (en-US) dilde bir kez. Hepsi doğrulandı, kaydedildi.
       🚨 Aynı dile iki kez görsel yüklersen sayaç 10/8 olur ve Play kaydetmez —
       `button[aria-label="Telefon ekran görüntüleri öğesini kaldır"]` ile temizlenir.
-- [ ] Play Console → **Health apps declaration** formu + Data Safety + Reklam-Kimliği beyanı
+- [~] Play Console beyanları: Data Safety ✅ + Reklam-Kimliği (AD_ID) ✅ (2026-07-15 girildi).
+      ⬜ **Health apps declaration** formu HÂLÂ EKSİK — `WRITE_HYDRATION` izni Play'de "hassas"
+      sayılıyor. Üretime çıkmadan önce zorunlu. (2026-07-20: Play Console oturumu düşmüş,
+      kullanıcı şifre+2FA verince doldurulacak.)
 - [~] **Kapalı test sürümü + AAB yükleme** — Alpha kanalı hazır (`tracks/4699878750164991262`),
       taslak sürüm oluşturuldu, Play imzalama otomatik kuruldu ("Google Play tarafından imzalanan
       sürümler ✓"). AAB HENÜZ YÜKLENEMEDİ: bu makinede headless Chrome 44 MB'lık AAB'yi işlerken
@@ -42,6 +45,9 @@ hariç tutulan tek madde **arkadaşla seri yarışması** (sunucu gerektiriyor).
       (emülatörde ana ekrana widget eklemek mümkün olmadı).
       ⚠️ iOS widget'ı YOK — `home_widget` iOS'ta ayrı bir WidgetKit eklentisi + App Group ister.
 - [x] **2. Health Connect** — bitti. Ayarlar → "Health Connect'e yaz" (varsayılan kapalı).
+      🩺 **2026-07-20 DÜZELTME:** gerçek telefonda izin ekranı hiç açılmıyordu ("İzin verilmedi"
+      diyordu). Sebep `MainActivity`'nin `FlutterActivity` olması — `health` paketi
+      `FlutterFragmentActivity` istiyor. Düzeltildi → `wiki/08-tuzaklar.md` "Health Connect §0".
       Yalnız **yazar**, hiçbir şey okumaz. Widget'tan eklenen su da yazılır, geri alınca silinir.
       Emülatörde (Android 14) uçtan uca doğrulandı: izin ekranı, yazma, `0.3 L` kaydı.
       ⚠️ minSdk 24 → **26** oldu; Android 7.x cihazlar düştü.

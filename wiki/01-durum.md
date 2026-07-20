@@ -2,20 +2,253 @@
 
 > Her oturum sonunda **buraya** yaz. Başka yere durum yazma.
 
-## ▶️ SIRADAKİ OTURUMDA İLK İŞ (2026-07-11 sonu itibarıyla)
+## 🩺💧 2026-07-20 — SÜRÜM 1.0.1: HEALTH CONNECT DÜZELDİ + SU BİLGİLERİ + İHTİYAÇ HESAPLAYICI
 
-**Android + iOS + Wear kod tarafı TAM.** Kalan her şey hesap/donanım ister:
+**Kullanıcı isteği:** (a) profilde çıkış/giriş sistemi, (b) Health Connect neden çalışmıyor,
+(c) bildirimlerde su bilgileri + ana ekranda "günlük su ihtiyacını hesapla" butonu.
 
-1. **AAB'yi Play'e yükle** — Desktop'ta **`Sipling-Play-yukle.aab`** (44,2 MB, taze). Kullanıcı elle
-   sürükleyip bırakacak (headless Chrome AAB'yi işlerken çöktü). → `wiki/04-yayin-play.md`.
-2. **Kapalı test: 12 testçi / 14 gün** (Play zorunlu). Testçiler → `https://sipling-app.web.app/indir`.
-3. **iOS'u yayınla** → `wiki/05-yayin-apple.md`: git remote + Codemagic bağla, ASC kaydı + API anahtarı,
-   App Group'u Apple'da tanımla, widget Xcode hedefini ekle. Kod hazır, hepsi hesap/Mac işi.
-4. **AdMob + Play Billing** — bilerek en sonda; fiyat + kullanıcı kararı gerek. **Sorulmadan yapma.**
+**(a) GİRİŞ SİSTEMİ — YAPILMADI, kullanıcı vazgeçti.** Sebep: uygulamada giriş sistemi
+*hiç yoktu* (kullanıcı olduğunu sanıyordu; "Profil bilgilerim" aslında boy/kilo ekranı).
+Eklemek Firebase Auth + sunucu + iki mağazada gizlilik beyanının yeniden doldurulmasını
+gerektiriyordu ve "sunucu yok, maliyet sıfır" kararını bozuyordu. Kullanıcıya seçenekler
+sunuldu → **"Vazgeçtim, giriş eklemeyelim"** dedi. Veri telefonda kalmaya devam ediyor.
+
+**(b) 🎉 HEALTH CONNECT ÇÖZÜLDÜ — tek satır.** `MainActivity` `FlutterActivity`'den
+türüyordu; `health` paketi izin isterken `registerForActivityResult` kullandığı için
+`FlutterFragmentActivity` şart. İzin ekranı hiç açılmıyor, çağrı sessizce `false` dönüyordu
+→ kullanıcı "İzin verilmedi, sağlık defterine yazılmayacak" görüyordu. Kaynak: `health`
+13.3.1 README "Android 14" bölümü. Düzeltildi → `wiki/08-tuzaklar.md` "Health Connect §0".
+
+**(c) Su bilgileri + hesaplayıcı — eklendi:**
+- `lib/data/hydration_facts.dart` — TEK KAYNAK. 5 kısa (bildirim) + 5 uzun (ekran) bilgi.
+  🚨 Hepsi kaynaklı (EFSA 2010, USGS, Armstrong 2012); dosya başında kaynak listesi var.
+- Bildirimler artık **bir motivasyon / bir bilgi** dönüşümlü (`notifications.dart _messages()`).
+  Arka arkaya bilgi gelirse hatırlatma ders anlatmaya başlıyor, bilerek örüldü.
+- `lib/screens/water_needs_screen.dart` — canlı hesap + "Bunu hedefim yap" + "Su ve vücudun".
+  Hesap SIFIRDAN yazılmadı, kurulum akışıyla aynı `calculateGoalMl` çağrılıyor.
+  🚨 `clearCustomGoal: true` şart — yoksa elle hedef döner, kaydırıcılar hiçbir şeyi değiştirmez.
+- Ana ekranda "Su ihtiyacım" butonu (geri al butonunun yanına, `Row` içinde).
+- **29 yeni çeviri anahtarı × 20 dil.** Mevcut anahtarlar (cinsiyet/boy/kilo/aktivite/EFSA
+  açıklaması) yeniden kullanıldı, gereksiz çeviri yükü alınmadı.
+  Yeni araç: `tools/yeni-anahtar-ekle.py` (kuru deneme + JSON doğrulama, CLAUDE.md kural 9).
+
+**Sürüm 1.0.0+1 → 1.0.1+2.** Testers Community'nin şart koştuğu "16 gün içinde 2-3 küçük
+güncelleme"nin **BİRİNCİSİ** bu olacak.
+
+✅ **PLAY KAPALI TESTE GÖNDERİLDİ (2026-07-21).** AAB (versionCode **3**, 1.0.1, 50,1 MB, upload
+key imzalı) kapalı test "Alpha" kanalına yüklendi, 20 dilde sürüm notu yazıldı, **incelemeye
+gönderildi** → "İncelenmekte olan değişiklikler". Bu, Testers Community'nin şart koştuğu "16 gün
+içinde 2-3 güncelleme"nin **BİRİNCİSİ**. (Play Console oturumu açıkmış; önceki "düştü" tespitim
+sayfa yüklenmeden bakmaktan kaynaklı yanlıştı.)
+
+🪤 Üç yeni yükleme tuzağı yaşandı → hepsi `wiki/08-tuzaklar.md` "Play Console'a AAB yükleme":
+(1) 50,1 MB AAB Playwright `setInputFiles` sınırını aşıyor → `tools/aab-yukle.js` (fileChooser +
+`DOM.setFileInputFiles`). (2) Her "işliyor" aslında başarılı yükleme; taslak kutusu boş görünüyor
+ama paket kitaplığa gidiyor → versionCode 2 ve 3 boşuna yandı, kod 3 **"Kitaplıktan ekle"** ile
+bağlandı (`tools/_kitaplik-tam.js`). (3) Ekran görüntüsüne değil DOM'daki hata metnine bak.
+
+⏳ Play "Health apps declaration" formu HÂLÂ işaretsiz (`wiki/09`) — üretime çıkmadan zorunlu,
+ama kapalı testi engellemiyor.
+
+⚠️ **Apple'a bu turda DOKUNULMADI.** iOS 1.0 hâlâ inceleme kuyruğunda (15 Tem'den beri);
+yeni sürüm göndermek mevcut gönderimi iptal etmeyi ve kuyruk sırasını kaybetmeyi gerektirir.
+Karar: 1.0 sonuçlansın, bu değişiklikler 1.0.1 olarak arkasından gitsin.
+
+## 🧪 2026-07-18/19 — 12 TESTÇİ SERVİSİ SATIN ALINDI, KAPALI TESTE EKLENDİ (Misyon oturumundan yapıldı)
+
+**Ne yapıldı:** Play'in "üretime geçmek için 12 testçi × 14 gün kesintisiz" şartı için **Testers Community** servisinden 3'lü paket alındı (₺1.422, Small Portfolio, %5 indirim). Sipling bu paketin bir kredisiyle gönderildi.
+
+- **Servis:** testerscommunity.com · panele **Google ile giriş** (`randevusayfasi@gmail.com`) · plan **Starter = 15 testçi/uygulama** · 16 gün (14 gün şart + 2 gün tampon) · "üretim erişimi garantisi, yoksa tam iade".
+- **Play tarafında yapılan:** servisin grubu **`testers-community@googlegroups.com`** kapalı test kanalının *Google Gruplar* alanına **eklendi** (mevcut `sipling-water-testers@googlegroups.com` SİLİNMEDİ, yanına eklendi) → değişiklik **incelemeye gönderildi** → ✅ **2026-07-19 ONAYLANDI ve teyit edildi** ("İncelenmekte" kalktı; `Test kullanıcıları` ekranında hem `sipling-water-testers@` hem `testers-community@googlegroups.com` canlı). Servis paneli **Day 0/16 · 0 testçi** — atama başlamadı.
+- Kanal durumu: Kapalı test - Alpha · Sürüm 1 (1.0.0) · 177 ülke · Etkin.
+- Paket adı: `com.sipling.app` · test katılım linki `play.google.com/apps/testing/com.sipling.app`.
+- Servise verilen not: giriş gerekmiyor, bildirimlere izin verilsin, 14 gün kurulu kalsın.
+
+**⚠️ SIRADAKİ ŞART:** 16 günlük test süresince **2-3 küçük güncelleme** yayınlanmalı — servis bunu açıkça şart koşuyor, atlanırsa Google üretim başvurusunu reddedebiliyor.
+**14 gün dolunca:** servisin panelinden "Production Access Report" indirilip Play'de üretime başvurulacak.
+
+🪤 **Play Console dersi:** testçi grubu eklerken ham JS ile alan doldurmak çalışmıyor (Angular formu "değişmedi" sayıyor, Kaydet pasif kalıyor). Playwright `connectOverCDP` + gerçek klavye girişi + Tab gerekiyor.
+
+
+## 🔎 2026-07-17 — APPLE CANLI KONTROL (Sipling tarayıcısı 9360)
+
+Kullanıcı "Apple onaylanmadı mı hâlâ" dedi → ASC'ye girildi (oturum düşmüştü, 2FA kullanıcıdan).
+**DEĞİŞİKLİK YOK — dünkü durumla birebir aynı, hâlâ kuyrukta:**
+- iOS App **Version 1.0 = 🟡 Waiting for Review** (build #2 / 1.0.0 bağlı, otomatik yayın seçili).
+- Abonelik grubu **Sipling Pro = 🟡 In Review**; ürün **Sipling Pro Monthly** (`sipling_pro_monthly`,
+  1 ay) = 🟡 **Waiting for Review**. Grup ID `22239340`.
+- Yani ~2 gündür (15 Tem 18:55 gönderim) kuyrukta, Apple daha aktif incelemeye almadı. Ne onay ne ret.
+- 🔑 **Apple giriş e-postası artık kayıtlı:** `gokcektugba198@gmail.com` (Tuğba Gökcek) →
+  `wiki/05-yayin-apple.md` başındaki "🔑 Apple giriş bilgisi". Bir daha başka projeye bakma.
+
+## 🔎 2026-07-16 — CANLI KONTROL (iki mağaza, Sipling tarayıcısı 9360)
+
+Kullanıcı isteğiyle her iki konsola girip durum tazelendi:
+
+- **🟢 PLAY — kapalı test İNCELEMEYİ GEÇTİ, artık YAYINDA.** "Kapalı test - Alpha" track:
+  *Etkin* · Sürüm 1 (1.0.0) **"Belirli test kullanıcıları tarafından kullanılabilir"** (yeşil onay)
+  · 177 ülke · 15 Tem 21:54'te sunuldu. Dün "incelemede"ydi, **Google onayladı.** Testçiler artık
+  Play Store'dan indirebilir. **Üretim hâlâ "Etkin değil"** — dashboard'daki üretim-erişim şartı:
+  ✅ kapalı test yayınlandı · ⬜ **12 test kullanıcısı kayıtlı olsun (ŞU AN 0)** · ⬜ 12 kişiyle 14 gün.
+  "Üretime başvur" butonu bu ikisi bitene kadar gri. **Darboğaz artık teknik değil → 12 gerçek kişi.**
+- **🟡 APPLE — hâlâ "Waiting for Review"** (kuyrukta, henüz aktif incelemeye alınmamış). iOS App 1.0
+  = *Waiting for Review*. **Pro aboneliği İNCELEMEYE DAHİL** (dünkü app-only riski çözülmüş):
+  grup "Sipling Pro" = *In Review*, ürün `sipling_pro_monthly` (1 ay) = *Waiting for Review*.
+  ⚠️ ASC oturumu belli aralıkla düşüyor (2FA), kontrol için kullanıcı girişi gerekti.
+- **Özet:** Hiçbiri henüz halka açık değil. Play = incelemeyi geçti ama 12 testçi/14 gün şartında
+  bekliyor · Apple = inceleme kuyruğunda (~1 gün oldu, tipik 24-48s).
+- **📨 TESTÇİ LİNKLERİ + adım adım + kopyala-gönder mesaj → `wiki/04-yayin-play.md` "🧪 TESTÇİ
+  KATILIM" bölümü.** Kullanıcı "testçi linklerini ver" derse oradan çek (grup: Sipling Testers,
+  `sipling-water-testers@googlegroups.com`; opt-in: `play.google.com/apps/testing/com.sipling.app`).
+
+## ✅ 2026-07-15 (PLAY ÜRETİM) — KAPALI TEST GOOGLE'A GÖNDERİLDİ + LİNKLER ALINDI
+
+Play üretimi için **kişisel hesap zorunlu kapalı test**: **12 testçi × 14 gün** (şu an 0 kayıtlı).
+Dahili test BUNU SAYMIYOR — ayrı "Kapalı test" gerekti. **Kuruldu ve incelemeye gönderildi.**
+
+**TAMAMLANDI (33 değişiklik "İncelenmekte"):**
+- "Kapalı test - Alpha" kanalı (track ID 4699878750164991262), **177 ülke**.
+- Testçiler = **Google Grubu** `sipling-water-testers@googlegroups.com` (kullanıcı CAPTCHA'yı kendi
+  çözüp grubu oluşturdu; "Herkes katılabilir"). Play'e bu grup eklendi.
+- Sürüm: mevcut App bundle **versionCode 1 (1.0.0)** "Kitaplıktan ekle" ile eklendi, 12,1 MB.
+- **Reklam kimliği (AD_ID) beyanı** tamamlandı ("Evet" + "Reklam veya pazarlama").
+- "33 değişikliği incelemeye gönder" → onaylandı → **Yayın özeti = "İncelenmekte olan değişiklikler"**.
+
+**🔗 KATILIM LİNKLERİ (kullanıcıya verildi):**
+- **Web opt-in (paylaşılacak olan):** `https://play.google.com/apps/testing/com.sipling.app`
+- Android (Play Store deep-link): `https://play.google.com/store/apps/details?id=com.sipling.app`
+- Not: linke tıklayan kişi **önce gruba üye olmalı** (grup "Herkes katılabilir" → herkes kendi
+  girebilir), sonra opt-in sayfasında "Testçi ol" → uygulamayı indirir. 12 gerçek kişi bunu yapıp
+  14 gün kalınca üretim erişimi için başvurulur.
+
+**SONRAKİ:** Google closed-test incelemesi (~birkaç gün) bitince testçiler kurabilir; 12 kişi × 14
+gün sayaç dolunca Play Console'da **üretim erişim başvurusu** yapılır.
+
+## 🎉 2026-07-15 (SON) — APPLE'A GÖNDERİLDİ (uygulama + Pro aboneliği BİRLİKTE)
+
+**iOS 1.0 + Sipling Pro Monthly ($0,99/ay) İNCELEMEDE — "Waiting for Review" (Submission bugün 18:55).**
+Abonelik durumu da "Waiting for Review" = birlikte inceleniyor. Eski app-only gönderim (17:48) iptal
+edildi ("Removed").
+
+**ÇÖZÜLEN KRİTİK TUZAK (wiki/08'e de eklendi):** Sürüm sayfasındaki "In-App Purchases and
+Subscriptions" bölümü, sürüm **gönderilmiş/"Ready for Review" durumundayken KİLİTLİ** (salt-gösterim
+gri kutu, tıklanamaz). Aboneliği eklemek için sürümün **"Prepare for Submission" / "Developer
+Rejected" (düzenlenebilir)** durumunda olması gerekiyor — o zaman kutuda gerçek **mavi "Select In-App
+Purchases or Subscriptions" butonu** çıkıyor → tıkla → aboneliği işaretle → Done → Add for Review →
+Submit. İlk seferde sürüm zaten gönderilmiş olduğu için kutu kilitliydi; **gönderimi iptal edip**
+(App Review → submission → Cancel Submission → Confirm) sürüm düzenlenebilir olunca buton çıktı.
+
+⚠️ **Release seçeneği:** iptal+yeniden-ekle'de sıfırlanmış olabilir (muhtemelen MANUAL). Yani Apple
+onaylayınca uygulama otomatik yayına GİRMEYEBİLİR — kullanıcı sürüm sayfasından "Release this
+version"a basar. (Kullanıcı zaten "yayına geçerim orada" demişti, bu ona uygun.)
+
+**Sıradaki (Apple onayı ~1-2 gün sonra):** onaylanınca "Release" (otomatik değilse) · AdMob ödeme
+profili tamamlanınca reklamlar dolmaya başlar (şu an no-fill) · sandbox'ta Pro satın-alma testi.
+
+## 🍎 2026-07-15 (2. blok) — APPLE APP STORE SÜRÜM SAYFASI NEREDEYSE TAM
+
+Apple'a giriş yapıldı (Team SGMQ8NVKU3, Tuğba Gökcek). **Business/Agreements KONTROL EDİLDİ:
+Ücretli Uygulamalar Sözleşmesi + Ziraat banka + W-8BEN vergi HEPSİ AKTİF** (hesap-geneli, Misyon/
+Randevio'dan) → Sipling için abonelik oluşturulabilir, finansal engel yok.
+
+**App Store sürüm 1.0 sayfasında YAPILDI (`/apps/6789913186/distribution`):**
+- **iPhone 6.5" ekran görüntüleri (5 adet, 1242×2688)** yüklendi. Üretim: `tools/ios-gorseller.js 65`
+  → `store/ios-65/`. (Play'inkiler 1080×1920 idi, Apple kabul etmez → iOS boyutunda yeniden üretildi.)
+- **Açıklama/keywords/promo/support/marketing URL/copyright** dolduruldu. ⚠️ Apple açıklamada EMOJİ
+  KABUL ETMİYOR (Play ediyordu) → emojisiz sürüm: `store/metinler/apple-en.txt`. "İnternet izni yok"
+  iddiası reklam yüzünden yanlış olduğu için metinden çıkarıldı.
+- **Build 1 (1.0.0)** sürüme bağlandı. **Sign-in required = kapalı** (girişsiz uygulama).
+- **İnceleme iletişim:** Asım Gökcek / asim_gokcek@hotmail.com + inceleme notu. ⏳ **TELEFON EKSİK** (kullanıcı).
+- **App Information:** Subtitle "Water tracker & reminder", Kategori Primary=Health & Fitness /
+  Secondary=Lifestyle, İçerik Hakları = "Hayır (üçüncü taraf içerik yok)".
+- **Yaş Derecesi = 9+** (7 adımlı yeni anket). Reklam=YES, Health/Wellness Topics=YES; alkol ⚠️ **None
+  seçildi** (Sipling'de "alkol" içecek kaydı var ama tanıtım yok; WaterMinder vb. hidrasyon app'leri
+  gibi 4+ mantığı, reklam yüzünden 9+ çıktı). Kullanıcı isterse 12+'a çekilebilir.
+- **Fiyat = Free (0)**, 175 ülke; **App Availability = tüm ülkeler**. Model: bedava indirme+reklam,
+  Pro (reklamsız) **0,99$/ay** ayrı abonelik (kullanıcı 2026-07-15 netleştirdi).
+- **App Privacy:** Gizlilik URL = `/gizlilik`. 5 veri türü (Device ID, Product Interaction,
+  Advertising Data, Crash Data, Performance Data) hepsi **"kimliğe bağlı değil + izleme YOK"** dürüst
+  beyanla dolduruldu (kodda ATT çağrısı yok → iOS'ta kişiselleştirilmemiş reklam).
+
+### ✅ 2026-07-15 (3. blok) — APPLE NEREDEYSE GÖNDERİLDİ, TEK KALAN ADIM
+ATT sorunu çözüldü: `nonPersonalizedAds:true` + Info.plist'ten ATT metni kaldırıldı → commit d0b484f
+push → Codemagic build **6a577bf4** başarılı → **Build 2** (ATT'siz) ASC'de. Build 2 sürüme bağlandı,
+**App Privacy YAYINLANDI** (izleme yok), yaş 9+, tıbbi cihaz "Hayır", fiyat Free/175 ülke,
+iPhone 6.5" (5) + **iPad 13" (4) ekran görüntüleri** yüklendi (`tools/ipad-gorseller.js`), inceleme
+iletişim **Asım Gökcek / +905072407015 / asim_gokcek@hotmail.com** + not, **onaydan sonra otomatik
+yayın** seçildi. Uygulama sürümü = **"Ready for Review"**, taslak gönderim (Draft Submission) oluştu.
+
+**Pro aboneliği "Ready to Submit":** grup "Sipling Pro" + ürün `sipling_pro_monthly` 0,99$/ay, 175
+ülke, localization (Sipling Pro / "Remove all ads..."), **grup görünen adı "Sipling Pro"** (eksikti,
+"Missing Metadata"nın sebebi buydu → eklendi), inceleme ekran görüntüsü = paywall
+(`store/ios-65/paywall.png`, `tools/ios-paywall.js`), inceleme notu.
+
+**⚠️ UYGULAMA GÖNDERİLDİ (app-only) — "Waiting for Review" (2026-07-15, ~48s):** "Submit for Review"
+basıldı, **"1 Item Submitted"** = SADECE uygulama gitti, **Pro aboneliği DAHİL OLMADI.**
+
+Sebep: Sürüm sayfasındaki "In-App Purchases and Subscriptions" gri kutusu **salt-gösterim** (DOM'da
+cursor:auto, onClick yok, React event-delegation bile yok — `elementFromPoint` inert P döndürüyor).
+Yani abonelik oraya CDP tıklamasıyla EKLENEMİYOR; gerçek insan tıklaması gerekiyor. Abonelik hâlâ
+**"Ready to Submit"** (Apple ID 6791177254) ama gönderime bağlanamadı.
+
+**RİSK:** app-only sürümde Pro paywall'ı "Store isn't available right now" gösterir → Apple 2.1'den
+**büyük ihtimalle reddeder** (IAP fonksiyonel değil). Kullanıcıya karar soruldu.
+**Kurtarma yolları:** (a) gönderimi geri çek → kullanıcı sürüm sayfasında gri kutuya elle tıklayıp
+`Sipling Pro Monthly` seçsin → yeniden gönder; (b) app-only inceleme sonucunu bekle, reddedilirse Pro
+bağlı yeniden gönder; (c) app onaylanırsa Pro'yu 1.0.1 ile ekle. App Store App ID 6789913186.
+⚠️ AdMob ödeme profili hâlâ eksik (kullanıcı) → reklamlar no-fill (inceleme için sorun değil).
+
+### 🔴 AÇIK ENGEL — ATT/izleme tutarsızlığı (Publish kilitli) [ÇÖZÜLDÜ — yukarı bak]
+`Info.plist`'te **NSUserTrackingUsageDescription VAR** ama kod ATT prompt'u çağırmıyor. Apple:
+"ya bir veri türünü 'izleme için' işaretle, ya binary'yi güncelle" diyor → **App Privacy Publish
+kilitli**. Doğru çözüm (marka=gizlilik-öncelikli): **NSUserTrackingUsageDescription'ı Info.plist'ten
+kaldır → Codemagic yeniden derle → yeni build'i sürüme bağla → App Privacy no-tracking olarak publish.**
+Alternatif (kişiselleştirilmiş reklam + ATT prompt kodu) daha çok gelir ama marka/UX'e ters.
+**Kullanıcıya soruldu (ATT kararı) + telefon istendi. Karar gelince: rebuild + Pro aboneliği (0,99$)
+oluştur + submit.**
+
+Yardımcı scriptler: `tools/asc-*.js` (upload, fill-version, pickbuild, age-step, priv-flow, click-xy).
+
+## ✅ 2026-07-15 — PLAY DAHİLİ TEST YAYINDA + iOS TESTFLIGHT'TA + TESTÇİ EKLENDİ
+
+Bir önceki blokların "kalan hesap işi" dediklerinin çoğu **yapıldı** (izole, kendi kayıtları altında):
+
+- **Play Dahili test AKTİF** — AAB yüklendi, sürüm 1 (1.0.0) "Etkin". Uygulama "com.sipling.app
+  (unreviewed)" durumunda (Play ilk inceleme sürüyor).
+- **Testçi listesi (İZOLE):** yeni **"Sipling Testçiler"** e-posta listesi oluşturuldu, içine
+  `asim_gokcek@hotmail.com` eklendi ve Dahili test track'ine bağlandı. ⚠️ Randevio Testçiler (19)
+  ve Asim Test (Sahip) listelerine DOKUNULMADI — karışma yok.
+- **📲 Katılım linki (kullanıcının telefonu için):**
+  `https://play.google.com/apps/internaltest/4701060962389165240`
+  → bu linke aynı Google hesabıyla (`asim_gokcek@hotmail.com`) gir, "test kullanıcısı ol" de,
+  sonra Play Store'dan Sipling'i indir. (İlk inceleme bitene kadar birkaç saat "beklemede" olabilir.)
+- **iOS:** Codemagic (bulut Mac) build 5 hata düzeltilerek geçti → `.ipa` App Store Connect'e
+  yüklendi. TestFlight işleme durumunu doğrula; iOS testçi eklemek Apple'a 2FA'lı yeniden giriş ister
+  (oturum kapandı). App Store yayını için inceleme + IAP + ekran görüntüleri kaldı.
+- **Public repo temizliği** (diğer projelerin port/klasör bilgisini içeren CLAUDE.md/wiki) hâlâ
+  bekliyor — "clean" orphan branch hazır, force-push kullanıcı onayı bekliyor.
+
+## ▶️ SIRADAKİ OTURUMDA İLK İŞ (2026-07-15 itibarıyla) — İKİSİ DE GÖNDERİLDİ, BEKLEME AŞAMASI
+
+**Android + iOS + Wear kod tarafı TAM. İki mağazaya da gönderildi (yukarıdaki 2026-07-15 blokları).**
+Kalan her şey ZAMAN + kullanıcının hesap/para işi:
+
+1. **Play kapalı test incelemesi bekleniyor** (~birkaç gün). Bitince testçiler kurabilir.
+   Katılım linki: **`https://play.google.com/apps/testing/com.sipling.app`** (12 kişiye verildi).
+2. **12 gerçek kişi × 14 gün** sayacı: link+grup hazır, 12 kişi girip kurunca ve 14 gün geçince
+   Play Console **üretim (herkese açık) erişim başvurusu** açılır. Google'ın kişisel-hesap zorunluluğu.
+3. **Apple incelemesi bekleniyor** (~1-2 gün). ⚠️ Onaydan sonra yayına-alma MANUEL olabilir →
+   onay maili gelince ASC'de **"Release this version"** gerekebilir. Kontrol et.
+4. ✅ **AdMob ödeme profili TAMAMLANDI (2026-07-15).** Ayrı IBAN girmeye gerek olmadı — hesabın
+   (`randevusayfasi@gmail.com`) **ortak "Oynat ve Reklamlar" profili** (TUĞBA GÖKCEK, profil kimliği
+   `7874-4902-7827`) AdMob'a bağlandı ("Gönder" tıklandı, kullanıcı onayladı: tüm projeler aynı IBAN).
+   Ödeme profili tüm Google ürünlerinde paylaşılıyor. Kurulum 2/4, "ödeme tamamlanmadı" bandı gitti.
+   ⏳ Kalan: AdMob "Hesabınız henüz onaylanmadı" = Google hesabı inceliyor (kendiliğinden biter).
+   Play Billing TR fiyatı Console'da görülünce.
 5. **Wear OS** → build-hazır iskele (`Sipling-saat-test.apk`), 1.1'de senkron/ambient. → `wiki/10-wear-os.md`.
 
-İndirme linki: **https://sipling-app.web.app/indir** — Firebase ücretsiz plan `.apk` yasakladığı
-için dosya `sipling-test.bin`, `Content-Disposition` ile `Sipling.apk` olarak iniyor.
+Test/indirme linki (eski, kapalı test dışı): **https://sipling-app.web.app/indir** — Firebase ücretsiz
+plan `.apk` yasakladığı için dosya `sipling-test.bin`, `Content-Disposition` ile `Sipling.apk` iniyor.
 
 **💳🆕 2026-07-11 (6. blok) — ABONELİK + PAYWALL + REKLAM YERLEŞİMİ + APPLE HAZIRLIK → `wiki/11`:**
 - **Abonelik akışı** `purchase_service.dart` (`in_app_purchase`): satın al/geri yükle/akış dinle →

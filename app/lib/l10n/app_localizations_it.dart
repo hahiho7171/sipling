@@ -940,4 +940,105 @@ class LIt extends L {
   @override
   String get proAutoRenew =>
       'Abbonamento mensile, si rinnova automaticamente. Annulla almeno 24 ore prima del rinnovo nelle impostazioni del tuo account dello store; altrimenti si rinnova.';
+
+  @override
+  String get homeCalcNeed => 'Il mio fabbisogno idrico';
+
+  @override
+  String get needTitle => 'Il tuo fabbisogno idrico giornaliero';
+
+  @override
+  String get needIntro =>
+      'Inserisci la tua altezza, il tuo peso e il tuo livello di attività, e Sipling calcola quanta acqua ti serve al giorno.';
+
+  @override
+  String get needResultLabel => 'Consigliato per te';
+
+  @override
+  String needCurrentGoal(int ml) {
+    return 'Il tuo obiettivo attuale: $ml ml';
+  }
+
+  @override
+  String get needApply => 'Imposta come mio obiettivo';
+
+  @override
+  String get needApplied => 'Il tuo obiettivo è stato aggiornato';
+
+  @override
+  String get needMeasuresTitle => 'Le tue misure';
+
+  @override
+  String get needLearnTitle => 'L\'acqua e il tuo corpo';
+
+  @override
+  String get factNotifTitle1 => 'Tre quarti d\'acqua';
+
+  @override
+  String get factNotifBody1 =>
+      'Circa tre quarti del tuo cervello sono acqua. Tienilo sempre rifornito.';
+
+  @override
+  String get factNotifTitle2 => 'La concentrazione ha bisogno d\'acqua';
+
+  @override
+  String get factNotifBody2 =>
+      'Perdere anche solo l\'1-2% dell\'acqua corporea può rendere più difficile concentrarsi.';
+
+  @override
+  String get factNotifTitle3 => 'La sete arriva tardi';
+
+  @override
+  String get factNotifBody3 =>
+      'Quando senti sete, il tuo corpo ha già iniziato a scarseggiare d\'acqua.';
+
+  @override
+  String get factNotifTitle4 => 'Il tuo sistema di raffreddamento naturale';
+
+  @override
+  String get factNotifBody4 =>
+      'Sudare è il modo in cui il tuo corpo si rinfresca, e per farlo consuma acqua.';
+
+  @override
+  String get factNotifTitle5 => 'Controlla il colore';
+
+  @override
+  String get factNotifBody5 =>
+      'Giallo pallido di solito significa che sei ben idratato. Più scuro, bevi di più.';
+
+  @override
+  String get factLearn1Title => 'Più della metà di te è acqua';
+
+  @override
+  String get factLearn1Body =>
+      'L\'acqua costituisce circa il 50-60% di un corpo adulto e circa il 73% del cervello. Trasporta i nutrienti, ammortizza le articolazioni e mantiene stabile la tua temperatura.';
+
+  @override
+  String get factLearn2Title => 'Cosa succede se bevi troppo poco';
+
+  @override
+  String get factLearn2Body =>
+      'Anche una lieve disidratazione, con una perdita di circa l\'1-2% dell\'acqua corporea, è collegata a stanchezza, mal di testa, minore concentrazione e umore più basso. Nel lungo periodo, bere troppo poco aumenta la probabilità di stitichezza e calcoli renali.';
+
+  @override
+  String get factLearn3Title => 'La sete è un segnale tardivo';
+
+  @override
+  String get factLearn3Body =>
+      'La sete di solito compare dopo che il corpo ha già perso acqua, e questa sensazione si indebolisce con l\'età. Bere a intervalli regolari funziona meglio che aspettare di avere sete.';
+
+  @override
+  String get factLearn4Title =>
+      'Il colore delle urine è il controllo più semplice';
+
+  @override
+  String get factLearn4Body =>
+      'Un colore paglierino chiaro di solito indica buona idratazione, mentre il giallo scuro suggerisce che ne serve di più. Alcune vitamine e farmaci ne cambiano il colore, quindi consideralo un indizio, non un verdetto.';
+
+  @override
+  String get factLearn5Title => 'Quanta ne basta?';
+
+  @override
+  String get factLearn5Body =>
+      'Il riferimento EFSA per un apporto adeguato dalle bevande è di circa 2 litri al giorno per le donne e 2,5 litri per gli uomini, in un clima temperato con attività moderata. Caldo, esercizio fisico, gravidanza e allattamento aumentano tutti questo fabbisogno. Sipling lo adatta al tuo peso e al tuo livello di attività.';
 }

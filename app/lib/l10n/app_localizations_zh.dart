@@ -888,6 +888,100 @@ class LZh extends L {
 
   @override
   String get proAutoRenew => '每月订阅，自动续期。请在续期前至少24小时在商店账户设置中取消；否则将自动续期。';
+
+  @override
+  String get homeCalcNeed => '我的饮水需求';
+
+  @override
+  String get needTitle => '你的每日饮水需求';
+
+  @override
+  String get needIntro => '输入你的身高、体重和运动量，Sipling 会算出你一天需要喝多少水。';
+
+  @override
+  String get needResultLabel => '为你推荐';
+
+  @override
+  String needCurrentGoal(int ml) {
+    return '你目前的目标：$ml ml';
+  }
+
+  @override
+  String get needApply => '设为我的目标';
+
+  @override
+  String get needApplied => '你的目标已更新';
+
+  @override
+  String get needMeasuresTitle => '你的身体数据';
+
+  @override
+  String get needLearnTitle => '水与你的身体';
+
+  @override
+  String get factNotifTitle1 => '四分之三是水';
+
+  @override
+  String get factNotifBody1 => '你的大脑大约四分之三是水，记得及时补充。';
+
+  @override
+  String get factNotifTitle2 => '专注力需要水';
+
+  @override
+  String get factNotifBody2 => '体内水分只要流失 1-2%，就可能更难集中注意力。';
+
+  @override
+  String get factNotifTitle3 => '口渴来得比较晚';
+
+  @override
+  String get factNotifBody3 => '等你感到口渴时，身体其实已经开始缺水了。';
+
+  @override
+  String get factNotifTitle4 => '身体自带的降温系统';
+
+  @override
+  String get factNotifBody4 => '出汗是身体给自己降温的方式，这个过程会消耗水分。';
+
+  @override
+  String get factNotifTitle5 => '看看颜色';
+
+  @override
+  String get factNotifBody5 => '淡黄色通常说明你水分充足，颜色深了就该喝水了。';
+
+  @override
+  String get factLearn1Title => '你身体的一半以上是水';
+
+  @override
+  String get factLearn1Body =>
+      '水约占成年人体重的 50%-60%，占大脑的约 73%。它负责运送营养、缓冲关节，还能让体温保持稳定。';
+
+  @override
+  String get factLearn2Title => '喝水太少会怎样';
+
+  @override
+  String get factLearn2Body =>
+      '即使是轻度脱水，也就是体内水分流失约 1-2%，也和疲劳、头痛、注意力下降、情绪低落有关。长期喝水不足还会增加便秘和肾结石的风险。';
+
+  @override
+  String get factLearn3Title => '口渴是一个滞后的信号';
+
+  @override
+  String get factLearn3Body =>
+      '口渴的感觉通常在身体已经流失水分之后才出现，而且这种感觉会随年龄增长而变弱。与其等到口渴才喝水，不如按固定的时间间隔喝水，效果更好。';
+
+  @override
+  String get factLearn4Title => '尿液颜色是最简单的检查方式';
+
+  @override
+  String get factLearn4Body =>
+      '浅麦秆色通常说明水分充足，深黄色则说明你需要多喝点水。有些维生素和药物会改变颜色，所以这只能作为参考，而不是绝对的判断标准。';
+
+  @override
+  String get factLearn5Title => '喝多少才够？';
+
+  @override
+  String get factLearn5Body =>
+      '在温带气候、中等运动量的条件下，EFSA 给出的饮水适宜摄入量参考值为：女性每天约 2 升，男性 2.5 升。炎热天气、运动、怀孕和哺乳都会提高这个需求。Sipling 会根据你的体重和运动量对此进行调整。';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -1775,4 +1869,98 @@ class LZhHant extends LZh {
 
   @override
   String get proAutoRenew => '每月訂閱，自動續訂。請在續訂前至少24小時於商店帳戶設定中取消；否則將自動續訂。';
+
+  @override
+  String get homeCalcNeed => '我的飲水需求';
+
+  @override
+  String get needTitle => '你的每日飲水需求';
+
+  @override
+  String get needIntro => '輸入你的身高、體重和活動量，Sipling 會算出你一天需要喝多少水。';
+
+  @override
+  String get needResultLabel => '為你推薦';
+
+  @override
+  String needCurrentGoal(int ml) {
+    return '你目前的目標：$ml ml';
+  }
+
+  @override
+  String get needApply => '設為我的目標';
+
+  @override
+  String get needApplied => '你的目標已更新';
+
+  @override
+  String get needMeasuresTitle => '你的身體數據';
+
+  @override
+  String get needLearnTitle => '水與你的身體';
+
+  @override
+  String get factNotifTitle1 => '四分之三是水';
+
+  @override
+  String get factNotifBody1 => '你的大腦大約四分之三是水，記得及時補充。';
+
+  @override
+  String get factNotifTitle2 => '專注力需要水';
+
+  @override
+  String get factNotifBody2 => '體內水分只要流失 1-2%，就可能更難集中注意力。';
+
+  @override
+  String get factNotifTitle3 => '口渴來得比較晚';
+
+  @override
+  String get factNotifBody3 => '等你感到口渴時，身體其實已經開始缺水了。';
+
+  @override
+  String get factNotifTitle4 => '身體自帶的降溫系統';
+
+  @override
+  String get factNotifBody4 => '流汗是身體為自己降溫的方式，這個過程會消耗水分。';
+
+  @override
+  String get factNotifTitle5 => '看看顏色';
+
+  @override
+  String get factNotifBody5 => '淡黃色通常代表你水分充足，顏色變深就該喝水了。';
+
+  @override
+  String get factLearn1Title => '你身體的一半以上是水';
+
+  @override
+  String get factLearn1Body =>
+      '水約占成年人體重的 50%-60%，占大腦的約 73%。它負責運送養分、緩衝關節，還能讓體溫保持穩定。';
+
+  @override
+  String get factLearn2Title => '水喝太少會怎樣';
+
+  @override
+  String get factLearn2Body =>
+      '即使是輕度脫水，也就是體內水分流失約 1-2%，也和疲勞、頭痛、注意力下降、情緒低落有關。長期水喝不夠，還會增加便秘和腎結石的風險。';
+
+  @override
+  String get factLearn3Title => '口渴是遲來的訊號';
+
+  @override
+  String get factLearn3Body =>
+      '口渴的感覺通常在身體已經流失水分之後才出現，而且這種感覺會隨年齡增長而變弱。與其等到口渴才喝水，不如按固定的時間間隔喝水，效果更好。';
+
+  @override
+  String get factLearn4Title => '尿液顏色是最簡單的檢查方式';
+
+  @override
+  String get factLearn4Body =>
+      '淺麥稈色通常代表水分充足，深黃色則代表你需要多喝點水。有些維生素和藥物會改變顏色，所以這只能當作參考，而不是絕對的判斷標準。';
+
+  @override
+  String get factLearn5Title => '喝多少才夠？';
+
+  @override
+  String get factLearn5Body =>
+      '在溫帶氣候、中等活動量的情況下，EFSA 提出的飲水適宜攝取量參考值為：女性每天約 2 公升，男性 2.5 公升。炎熱天氣、運動、懷孕和哺乳都會提高這個需求。Sipling 會依你的體重和活動量調整這個數字。';
 }

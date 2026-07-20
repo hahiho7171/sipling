@@ -922,4 +922,105 @@ class LId extends L {
   @override
   String get proAutoRenew =>
       'Langganan bulanan, diperpanjang otomatis. Batalkan setidaknya 24 jam sebelum perpanjangan di pengaturan akun toko Anda; jika tidak, akan diperpanjang.';
+
+  @override
+  String get homeCalcNeed => 'Kebutuhan airku';
+
+  @override
+  String get needTitle => 'Kebutuhan air harianmu';
+
+  @override
+  String get needIntro =>
+      'Masukkan tinggi, berat, dan tingkat aktivitasmu, lalu Sipling akan menghitung berapa banyak air yang kamu butuhkan dalam sehari.';
+
+  @override
+  String get needResultLabel => 'Disarankan untukmu';
+
+  @override
+  String needCurrentGoal(int ml) {
+    return 'Target harianmu saat ini: $ml ml';
+  }
+
+  @override
+  String get needApply => 'Jadikan ini targetku';
+
+  @override
+  String get needApplied => 'Targetmu telah diperbarui';
+
+  @override
+  String get needMeasuresTitle => 'Ukuran tubuhmu';
+
+  @override
+  String get needLearnTitle => 'Air dan tubuhmu';
+
+  @override
+  String get factNotifTitle1 => 'Tiga perempat air';
+
+  @override
+  String get factNotifBody1 =>
+      'Otakmu kira-kira tiga perempatnya air. Jaga agar tetap terisi.';
+
+  @override
+  String get factNotifTitle2 => 'Fokus butuh air';
+
+  @override
+  String get factNotifBody2 =>
+      'Kehilangan 1-2% saja cairan tubuhmu bisa membuat sulit berkonsentrasi.';
+
+  @override
+  String get factNotifTitle3 => 'Haus datang terlambat';
+
+  @override
+  String get factNotifBody3 =>
+      'Saat kamu merasa haus, tubuhmu sudah mulai kekurangan cairan.';
+
+  @override
+  String get factNotifTitle4 => 'Pendingin bawaanmu';
+
+  @override
+  String get factNotifBody4 =>
+      'Berkeringat adalah cara tubuhmu mendinginkan diri, dan itu menghabiskan cairan.';
+
+  @override
+  String get factNotifTitle5 => 'Cek warnanya';
+
+  @override
+  String get factNotifBody5 =>
+      'Kuning pucat biasanya berarti cairanmu cukup. Makin gelap, makin perlu minum.';
+
+  @override
+  String get factLearn1Title => 'Lebih dari separuh dirimu adalah air';
+
+  @override
+  String get factLearn1Body =>
+      'Air membentuk sekitar 50-60% tubuh orang dewasa dan sekitar 73% otak. Air membawa nutrisi, melindungi sendi, dan menjaga suhu tubuh tetap stabil.';
+
+  @override
+  String get factLearn2Title => 'Apa yang terjadi jika kamu kurang minum';
+
+  @override
+  String get factLearn2Body =>
+      'Bahkan dehidrasi ringan, yaitu kehilangan sekitar 1-2% cairan tubuh, dikaitkan dengan kelelahan, sakit kepala, konsentrasi yang melemah, dan suasana hati yang menurun. Dalam jangka panjang, kurang minum membuat sembelit dan batu ginjal lebih mungkin terjadi.';
+
+  @override
+  String get factLearn3Title => 'Haus adalah sinyal yang terlambat';
+
+  @override
+  String get factLearn3Body =>
+      'Rasa haus biasanya muncul setelah tubuhmu sudah kehilangan cairan, dan sinyal ini melemah seiring bertambahnya usia. Minum secara teratur lebih efektif daripada menunggu sampai merasa haus.';
+
+  @override
+  String get factLearn4Title =>
+      'Warna urine adalah cara paling sederhana untuk memeriksa';
+
+  @override
+  String get factLearn4Body =>
+      'Warna kuning jerami pucat biasanya berarti cairanmu cukup, sedangkan kuning gelap menandakan kamu perlu minum lebih banyak. Beberapa vitamin dan obat bisa mengubah warnanya, jadi anggap ini sebagai petunjuk, bukan kepastian.';
+
+  @override
+  String get factLearn5Title => 'Berapa banyak yang cukup?';
+
+  @override
+  String get factLearn5Body =>
+      'Acuan EFSA untuk asupan cairan yang cukup dari minuman adalah sekitar 2 liter sehari untuk perempuan dan 2,5 liter untuk laki-laki, dalam iklim sedang dengan aktivitas sedang. Cuaca panas, olahraga, kehamilan, dan menyusui semuanya meningkatkan kebutuhan ini. Sipling menyesuaikannya dengan berat dan tingkat aktivitasmu.';
 }

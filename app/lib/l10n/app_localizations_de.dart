@@ -929,4 +929,104 @@ class LDe extends L {
   @override
   String get proAutoRenew =>
       'Monatliches Abo, verlängert sich automatisch. Kündige mindestens 24 Stunden vor der Verlängerung in den Kontoeinstellungen deines Stores; sonst verlängert es sich.';
+
+  @override
+  String get homeCalcNeed => 'Mein Wasserbedarf';
+
+  @override
+  String get needTitle => 'Dein täglicher Wasserbedarf';
+
+  @override
+  String get needIntro =>
+      'Gib deine Größe, dein Gewicht und dein Aktivitätsniveau ein, und Sipling berechnet, wie viel Wasser du am Tag brauchst.';
+
+  @override
+  String get needResultLabel => 'Für dich empfohlen';
+
+  @override
+  String needCurrentGoal(int ml) {
+    return 'Dein aktuelles Ziel: $ml ml';
+  }
+
+  @override
+  String get needApply => 'Als mein Ziel übernehmen';
+
+  @override
+  String get needApplied => 'Dein Ziel wurde aktualisiert';
+
+  @override
+  String get needMeasuresTitle => 'Deine Maße';
+
+  @override
+  String get needLearnTitle => 'Wasser und dein Körper';
+
+  @override
+  String get factNotifTitle1 => 'Drei Viertel Wasser';
+
+  @override
+  String get factNotifBody1 =>
+      'Etwa drei Viertel deines Gehirns bestehen aus Wasser. Halte den Vorrat gefüllt.';
+
+  @override
+  String get factNotifTitle2 => 'Konzentration braucht Wasser';
+
+  @override
+  String get factNotifBody2 =>
+      'Schon 1-2% Wasserverlust im Körper können die Konzentration erschweren.';
+
+  @override
+  String get factNotifTitle3 => 'Durst kommt spät';
+
+  @override
+  String get factNotifBody3 =>
+      'Wenn du Durst spürst, hat dein Körper schon angefangen, knapp zu werden.';
+
+  @override
+  String get factNotifTitle4 => 'Deine eingebaute Kühlung';
+
+  @override
+  String get factNotifBody4 =>
+      'Schwitzen ist, wie sich dein Körper kühlt, und dafür braucht er Wasser.';
+
+  @override
+  String get factNotifTitle5 => 'Auf die Farbe achten';
+
+  @override
+  String get factNotifBody5 =>
+      'Blassgelb bedeutet meist, dass du gut hydriert bist. Dunkler heißt: trink mehr.';
+
+  @override
+  String get factLearn1Title => 'Mehr als die Hälfte von dir ist Wasser';
+
+  @override
+  String get factLearn1Body =>
+      'Wasser macht etwa 50-60% eines erwachsenen Körpers und rund 73% des Gehirns aus. Es transportiert Nährstoffe, polstert deine Gelenke und hält deine Temperatur stabil.';
+
+  @override
+  String get factLearn2Title => 'Was passiert, wenn du zu wenig trinkst';
+
+  @override
+  String get factLearn2Body =>
+      'Schon leichte Dehydrierung, also ein Verlust von etwa 1-2% deines Körperwassers, wird mit Müdigkeit, Kopfschmerzen, schwächerer Konzentration und schlechterer Stimmung in Verbindung gebracht. Langfristig macht zu wenig Trinken Verstopfung und Nierensteine wahrscheinlicher.';
+
+  @override
+  String get factLearn3Title => 'Durst ist ein spätes Signal';
+
+  @override
+  String get factLearn3Body =>
+      'Durst setzt meist erst ein, wenn dein Körper schon Wasser verloren hat, und das Gefühl wird mit dem Alter schwächer. Regelmäßig zu trinken funktioniert besser, als zu warten, bis du Durst hast.';
+
+  @override
+  String get factLearn4Title => 'Die Urinfarbe ist der einfachste Test';
+
+  @override
+  String get factLearn4Body =>
+      'Ein blasses Strohgelb bedeutet meist, dass du gut hydriert bist, während dunkles Gelb darauf hindeutet, dass du mehr brauchst. Manche Vitamine und Medikamente verändern die Farbe, sieh sie also eher als Hinweis denn als Urteil.';
+
+  @override
+  String get factLearn5Title => 'Wie viel ist genug?';
+
+  @override
+  String get factLearn5Body =>
+      'Der EFSA-Referenzwert für eine angemessene Aufnahme über Getränke liegt bei etwa 2 Litern pro Tag für Frauen und 2,5 Litern für Männer, bei gemäßigtem Klima und moderater Aktivität. Hitze, Sport, Schwangerschaft und Stillzeit erhöhen den Bedarf. Sipling passt das an dein Gewicht und dein Aktivitätsniveau an.';
 }

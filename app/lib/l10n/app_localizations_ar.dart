@@ -930,4 +930,103 @@ class LAr extends L {
   @override
   String get proAutoRenew =>
       'اشتراك شهري يتجدد تلقائياً. ألغِ قبل 24 ساعة على الأقل من التجديد من إعدادات حساب المتجر؛ وإلا فسيتجدد.';
+
+  @override
+  String get homeCalcNeed => 'احتياجي من الماء';
+
+  @override
+  String get needTitle => 'احتياجك اليومي من الماء';
+
+  @override
+  String get needIntro =>
+      'أدخل طولك ووزنك ومستوى نشاطك، وسيحسب Sipling كمية الماء التي تحتاجها يوميًا.';
+
+  @override
+  String get needResultLabel => 'المقترح لك';
+
+  @override
+  String needCurrentGoal(int ml) {
+    return 'هدفك الحالي: $ml ml';
+  }
+
+  @override
+  String get needApply => 'اجعل هذا هدفي';
+
+  @override
+  String get needApplied => 'تم تحديث هدفك';
+
+  @override
+  String get needMeasuresTitle => 'قياساتك';
+
+  @override
+  String get needLearnTitle => 'الماء وجسمك';
+
+  @override
+  String get factNotifTitle1 => 'ثلاثة أرباع ماء';
+
+  @override
+  String get factNotifBody1 =>
+      'نحو ثلاثة أرباع دماغك ماء. حافظ على امتلائه بالماء.';
+
+  @override
+  String get factNotifTitle2 => 'التركيز يحتاج إلى ماء';
+
+  @override
+  String get factNotifBody2 => 'فقدان 1-2% فقط من ماء جسمك قد يصعّب التركيز.';
+
+  @override
+  String get factNotifTitle3 => 'العطش يصل متأخرًا';
+
+  @override
+  String get factNotifBody3 =>
+      'عندما تشعر بالعطش، يكون جسمك قد بدأ ينفد منه الماء بالفعل.';
+
+  @override
+  String get factNotifTitle4 => 'نظام التبريد المدمج فيك';
+
+  @override
+  String get factNotifBody4 =>
+      'التعرّق هو طريقة جسمك لتبريد نفسه، وهو يستهلك الماء للقيام بذلك.';
+
+  @override
+  String get factNotifTitle5 => 'تحقّق من اللون';
+
+  @override
+  String get factNotifBody5 =>
+      'الأصفر الفاتح يعني عادةً أنك رطّبت جسمك جيدًا. الأغمق يعني اشرب المزيد.';
+
+  @override
+  String get factLearn1Title => 'أكثر من نصفك ماء';
+
+  @override
+  String get factLearn1Body =>
+      'يشكّل الماء نحو 50-60% من جسم الشخص البالغ ونحو 73% من الدماغ. وهو ينقل العناصر الغذائية، ويحمي مفاصلك، ويحافظ على ثبات درجة حرارة جسمك.';
+
+  @override
+  String get factLearn2Title => 'ماذا يحدث عندما تشرب القليل جدًا';
+
+  @override
+  String get factLearn2Body =>
+      'حتى الجفاف الخفيف، أي فقدان نحو 1-2% من ماء جسمك، يرتبط بالتعب والصداع وضعف التركيز وتراجع المزاج. وعلى المدى الأطول، يزيد شرب كمية قليلة جدًا من الماء احتمال الإصابة بالإمساك وحصى الكلى.';
+
+  @override
+  String get factLearn3Title => 'العطش إشارة متأخرة';
+
+  @override
+  String get factLearn3Body =>
+      'يبدأ الشعور بالعطش عادةً بعد أن يكون جسمك قد فقد الماء بالفعل، ويضعف هذا الشعور مع التقدّم في العمر. الشرب على فترات منتظمة أفضل من انتظار الشعور بالعطش.';
+
+  @override
+  String get factLearn4Title => 'لون البول هو أبسط وسيلة للتحقّق';
+
+  @override
+  String get factLearn4Body =>
+      'اللون الأصفر الفاتح كلون القش يعني عادةً أنك رطّبت جسمك جيدًا، بينما يشير الأصفر الغامق إلى أنك تحتاج إلى المزيد. بعض الفيتامينات والأدوية تغيّر اللون، لذا اعتبره مجرّد مؤشّر لا حكمًا قاطعًا.';
+
+  @override
+  String get factLearn5Title => 'كم يكفي؟';
+
+  @override
+  String get factLearn5Body =>
+      'يبلغ مرجع EFSA للكمية الكافية من السوائل نحو 2 لتر يوميًا للنساء و2.5 لتر للرجال، في مناخ معتدل ومستوى نشاط متوسط. يرفع الطقس الحار والتمارين الرياضية والحمل والرضاعة الطبيعية هذه الحاجة. يُعدّل Sipling هذا الرقم وفق وزنك ومستوى نشاطك.';
 }

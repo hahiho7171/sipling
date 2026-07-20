@@ -926,4 +926,105 @@ class LFr extends L {
   @override
   String get proAutoRenew =>
       'Abonnement mensuel, renouvelé automatiquement. Annulez au moins 24 heures avant le renouvellement dans les réglages de votre compte de boutique ; sinon il se renouvelle.';
+
+  @override
+  String get homeCalcNeed => 'Mon besoin en eau';
+
+  @override
+  String get needTitle => 'Ton besoin en eau quotidien';
+
+  @override
+  String get needIntro =>
+      'Indique ta taille, ton poids et ton niveau d\'activité, et Sipling calcule de combien d\'eau tu as besoin par jour.';
+
+  @override
+  String get needResultLabel => 'Recommandé pour toi';
+
+  @override
+  String needCurrentGoal(int ml) {
+    return 'Ton objectif actuel : $ml ml';
+  }
+
+  @override
+  String get needApply => 'Utiliser comme mon objectif';
+
+  @override
+  String get needApplied => 'Ton objectif a été mis à jour';
+
+  @override
+  String get needMeasuresTitle => 'Tes mesures';
+
+  @override
+  String get needLearnTitle => 'L\'eau et ton corps';
+
+  @override
+  String get factNotifTitle1 => 'Trois quarts d\'eau';
+
+  @override
+  String get factNotifBody1 =>
+      'Environ les trois quarts de ton cerveau sont de l\'eau. Garde le niveau au top.';
+
+  @override
+  String get factNotifTitle2 => 'La concentration a besoin d\'eau';
+
+  @override
+  String get factNotifBody2 =>
+      'Perdre ne serait-ce que 1-2% de l\'eau de ton corps peut rendre la concentration plus difficile.';
+
+  @override
+  String get factNotifTitle3 => 'La soif arrive tard';
+
+  @override
+  String get factNotifBody3 =>
+      'Quand tu ressens la soif, ton corps a déjà commencé à manquer d\'eau.';
+
+  @override
+  String get factNotifTitle4 => 'Ta climatisation intégrée';
+
+  @override
+  String get factNotifBody4 =>
+      'Transpirer, c\'est la façon dont ton corps se rafraîchit, et ça consomme de l\'eau.';
+
+  @override
+  String get factNotifTitle5 => 'Regarde la couleur';
+
+  @override
+  String get factNotifBody5 =>
+      'Jaune pâle veut souvent dire que tu es bien hydraté. Plus foncé, bois davantage.';
+
+  @override
+  String get factLearn1Title => 'Tu es plus qu\'à moitié fait d\'eau';
+
+  @override
+  String get factLearn1Body =>
+      'L\'eau représente environ 50-60% d\'un corps adulte et environ 73% du cerveau. Elle transporte les nutriments, amortit tes articulations et maintient ta température stable.';
+
+  @override
+  String get factLearn2Title => 'Ce qui se passe quand tu bois trop peu';
+
+  @override
+  String get factLearn2Body =>
+      'Même une déshydratation légère, avec une perte d\'environ 1-2% de l\'eau de ton corps, est liée à la fatigue, aux maux de tête, à une concentration plus faible et à une humeur plus basse. Sur le long terme, boire trop peu augmente le risque de constipation et de calculs rénaux.';
+
+  @override
+  String get factLearn3Title => 'La soif est un signal tardif';
+
+  @override
+  String get factLearn3Body =>
+      'La soif se déclenche généralement après que ton corps a déjà perdu de l\'eau, et cette sensation s\'affaiblit avec l\'âge. Boire à intervalles réguliers fonctionne mieux que d\'attendre d\'avoir soif.';
+
+  @override
+  String get factLearn4Title =>
+      'La couleur de l\'urine est le contrôle le plus simple';
+
+  @override
+  String get factLearn4Body =>
+      'Une couleur paille pâle indique généralement une bonne hydratation, tandis qu\'un jaune foncé suggère que tu as besoin de plus d\'eau. Certaines vitamines et certains médicaments changent la couleur, considère donc cela comme un indice plutôt qu\'un verdict.';
+
+  @override
+  String get factLearn5Title => 'Combien, c\'est suffisant ?';
+
+  @override
+  String get factLearn5Body =>
+      'La référence de l\'EFSA pour un apport adéquat par les boissons est d\'environ 2 litres par jour pour les femmes et 2,5 litres pour les hommes, dans un climat tempéré avec une activité modérée. Chaleur, exercice, grossesse et allaitement augmentent tous ce besoin. Sipling ajuste cela à ton poids et à ton niveau d\'activité.';
 }

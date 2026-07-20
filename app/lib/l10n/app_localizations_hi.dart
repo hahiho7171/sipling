@@ -930,4 +930,104 @@ class LHi extends L {
   @override
   String get proAutoRenew =>
       'मासिक सदस्यता, स्वतः नवीनीकृत होती है। नवीनीकरण से कम से कम 24 घंटे पहले अपने स्टोर खाता सेटिंग में रद्द करें; अन्यथा यह नवीनीकृत हो जाती है।';
+
+  @override
+  String get homeCalcNeed => 'मेरी पानी की ज़रूरत';
+
+  @override
+  String get needTitle => 'आपकी दैनिक पानी की ज़रूरत';
+
+  @override
+  String get needIntro =>
+      'अपना क़द, वज़न और गतिविधि स्तर दर्ज करें, और Sipling तय करेगा कि आपको दिन में कितना पानी चाहिए।';
+
+  @override
+  String get needResultLabel => 'आपके लिए सुझाया गया';
+
+  @override
+  String needCurrentGoal(int ml) {
+    return 'आपका मौजूदा लक्ष्य: $ml ml';
+  }
+
+  @override
+  String get needApply => 'इसे मेरा लक्ष्य बनाएँ';
+
+  @override
+  String get needApplied => 'आपका लक्ष्य अपडेट कर दिया गया है';
+
+  @override
+  String get needMeasuresTitle => 'आपके माप';
+
+  @override
+  String get needLearnTitle => 'पानी और आपका शरीर';
+
+  @override
+  String get factNotifTitle1 => 'तीन-चौथाई पानी';
+
+  @override
+  String get factNotifBody1 =>
+      'आपके दिमाग़ का लगभग तीन-चौथाई हिस्सा पानी है। इसे भरा रखें।';
+
+  @override
+  String get factNotifTitle2 => 'ध्यान लगाने के लिए पानी ज़रूरी है';
+
+  @override
+  String get factNotifBody2 =>
+      'शरीर के पानी का सिर्फ़ 1-2% कम होना भी ध्यान लगाना मुश्किल बना सकता है।';
+
+  @override
+  String get factNotifTitle3 => 'प्यास देर से लगती है';
+
+  @override
+  String get factNotifBody3 =>
+      'जब तक आपको प्यास महसूस होती है, तब तक आपके शरीर में पानी की कमी शुरू हो चुकी होती है।';
+
+  @override
+  String get factNotifTitle4 => 'आपका अंदरूनी कूलिंग सिस्टम';
+
+  @override
+  String get factNotifBody4 =>
+      'पसीना आपके शरीर के ठंडा होने का तरीक़ा है, और इसमें पानी ख़र्च होता है।';
+
+  @override
+  String get factNotifTitle5 => 'रंग देखें';
+
+  @override
+  String get factNotifBody5 =>
+      'हल्का पीला रंग आमतौर पर बताता है कि आपके शरीर में पानी पर्याप्त है। गहरा रंग हो तो पानी पिएँ।';
+
+  @override
+  String get factLearn1Title => 'आपका आधे से ज़्यादा हिस्सा पानी है';
+
+  @override
+  String get factLearn1Body =>
+      'पानी एक वयस्क शरीर का लगभग 50-60% और दिमाग़ का लगभग 73% हिस्सा बनाता है। यह पोषक तत्व पहुँचाता है, जोड़ों को सहारा देता है और शरीर का तापमान स्थिर रखता है।';
+
+  @override
+  String get factLearn2Title => 'कम पानी पीने पर क्या होता है';
+
+  @override
+  String get factLearn2Body =>
+      'हल्का डिहाइड्रेशन भी, यानी शरीर के पानी का लगभग 1-2% कम होना, थकान, सिरदर्द, कमज़ोर एकाग्रता और उदास मन से जुड़ा है। लंबे समय में कम पानी पीने से क़ब्ज़ और किडनी की पथरी की आशंका बढ़ जाती है।';
+
+  @override
+  String get factLearn3Title => 'प्यास एक देर से मिलने वाला संकेत है';
+
+  @override
+  String get factLearn3Body =>
+      'प्यास आमतौर पर तब लगती है जब शरीर पहले ही पानी खो चुका होता है, और उम्र बढ़ने के साथ यह एहसास कमज़ोर पड़ता जाता है। प्यास लगने का इंतज़ार करने के बजाय नियमित अंतराल पर पानी पीना बेहतर काम करता है।';
+
+  @override
+  String get factLearn4Title => 'पेशाब का रंग सबसे आसान जाँच है';
+
+  @override
+  String get factLearn4Body =>
+      'हल्का भूसे जैसा रंग आमतौर पर बताता है कि आपके शरीर में पानी पर्याप्त है, जबकि गहरा पीला रंग बताता है कि आपको और पानी चाहिए। कुछ विटामिन और दवाइयाँ रंग बदल देती हैं, इसलिए इसे पक्का फ़ैसला नहीं, बस एक संकेत मानें।';
+
+  @override
+  String get factLearn5Title => 'कितना पानी काफ़ी है?';
+
+  @override
+  String get factLearn5Body =>
+      'समशीतोष्ण जलवायु और मध्यम गतिविधि में, EFSA का पेय पदार्थों से पर्याप्त सेवन का संदर्भ महिलाओं के लिए लगभग 2 लीटर प्रतिदिन और पुरुषों के लिए 2.5 लीटर है। गर्म मौसम, कसरत, गर्भावस्था और स्तनपान — ये सभी ज़रूरत बढ़ा देते हैं। Sipling इसे आपके वज़न और गतिविधि स्तर के अनुसार समायोजित करता है।';
 }

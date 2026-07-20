@@ -23,6 +23,49 @@
 gerekli, kullanıcı halledecek) ve Android geliştirici doğrulaması — ikincisi **karşılanmış**
 ("Tüm uygulamalarınız ... başarıyla kaydedildi").
 
+## 🧪 TESTÇİ KATILIM — 12 kişiye verilecek linkler + adımlar (2026-07-16)
+
+> Gelecek oturum: kullanıcı "testçi linklerini/bilgilerini ver" derse **bu bölümü oku**, aşağıdaki
+> hazır mesajı ver. Doğrulandı (2026-07-16): kapalı test Google incelemesini geçti = YAYINDA,
+> Google Grubu "Web'deki herkes → gruba katılabilir" AÇIK. 12 testçi × 14 gün darboğazı için gerekli.
+
+**Test grubu (Google Grubu):**
+- Grup adı: **Sipling Testers** · e-posta `sipling-water-testers@googlegroups.com`
+- Sahip: `randevusayfasi@gmail.com` (Play geliştirici hesabı) · oluşturuldu 15 Tem 2026
+- Gizlilik: **herkes gruba katılabilir** (doğrulandı), 15 Tem itibarıyla 1 üye (sahip).
+- Play Console'da bu grup "Kapalı test - Alpha" track'ine testçi olarak bağlı (track ID
+  `4699878750164991262`, 177 ülke).
+
+**3 link (sırasıyla — sıra önemli):**
+| # | Ne | Link |
+|---|---|---|
+| 1 | Önce **gruba katıl** (şart; üye olmayan 2. adımda "testçi olamaz") → "Gruba katıl" | `https://groups.google.com/g/sipling-water-testers` |
+| 2 | Sonra **testçi ol** (opt-in) → "Testçi ol / Become a tester" | `https://play.google.com/apps/testing/com.sipling.app` |
+| 3 | En son **indir** → Play Store "Yükle" | `https://play.google.com/store/apps/details?id=com.sipling.app` |
+
+**Kritik kurallar (testçiye söyle):**
+- **Android telefon** gerekir, **iPhone'da çalışmaz** (Apple tarafı ayrı, hâlâ incelemede).
+- **Baştan sona aynı Gmail hesabı** — grup, opt-in, Play Store hep aynı hesap.
+- **Android 8.0+** (minSdk 26); eski cihazda "uyumlu değil" der.
+- Sayaç için: indirip **14 gün telefonda kurulu kalsın** (silmesinler). 12 gerçek kişi gerekiyor.
+- 2. adımdan sonra uygulama hemen görünmezse birkaç dk bekleyip Play Store'u yenile.
+
+**Kopyala-gönder mesaj (WhatsApp):**
+```
+Selam! Su içme hatırlatma uygulamam Sipling'i yayına almak için birkaç test kullanıcısına
+ihtiyacım var. 5 dk sürer. Android telefon gerekiyor. Sırayla:
+
+1) Önce test grubuna katıl (şart): https://groups.google.com/g/sipling-water-testers
+   → "Gruba katıl"a bas. (Hangi Gmail ile katıldıysan sonraki adımlarda da onu kullan.)
+2) Sonra testçi ol: https://play.google.com/apps/testing/com.sipling.app
+   → "Testçi ol / Become a tester"a bas.
+3) En son indir: https://play.google.com/store/apps/details?id=com.sipling.app
+   → "Yükle" de, aç, birkaç bardak su ekle. 14 gün silmeden telefonda kalsın 🙏🌱
+```
+
+**Üretime geçiş:** 12 kişi kaydolup 14 gün geçince → Play Console app-dashboard'da "Üretime başvur"
+butonu aktifleşir (şu an gri, "0 test kullanıcısı kayıtlı"). O başvuru onaylanınca herkese açılır.
+
 ## Mağaza metni — hazır taslak
 
 **Kısa açıklama (80 karakter):**

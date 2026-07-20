@@ -922,4 +922,104 @@ class LVi extends L {
   @override
   String get proAutoRenew =>
       'Gói đăng ký hàng tháng, tự động gia hạn. Hủy ít nhất 24 giờ trước khi gia hạn trong cài đặt tài khoản cửa hàng; nếu không sẽ tự gia hạn.';
+
+  @override
+  String get homeCalcNeed => 'Nhu cầu nước của tôi';
+
+  @override
+  String get needTitle => 'Nhu cầu nước hằng ngày của bạn';
+
+  @override
+  String get needIntro =>
+      'Nhập chiều cao, cân nặng và mức vận động của bạn, Sipling sẽ tính ra bạn cần bao nhiêu nước mỗi ngày.';
+
+  @override
+  String get needResultLabel => 'Đề xuất dành cho bạn';
+
+  @override
+  String needCurrentGoal(int ml) {
+    return 'Mục tiêu hiện tại của bạn: $ml ml';
+  }
+
+  @override
+  String get needApply => 'Đặt mức này làm mục tiêu của tôi';
+
+  @override
+  String get needApplied => 'Mục tiêu của bạn đã được cập nhật';
+
+  @override
+  String get needMeasuresTitle => 'Số đo của bạn';
+
+  @override
+  String get needLearnTitle => 'Nước và cơ thể bạn';
+
+  @override
+  String get factNotifTitle1 => 'Ba phần tư là nước';
+
+  @override
+  String get factNotifBody1 =>
+      'Não bạn có khoảng 3/4 là nước. Hãy uống đủ nước.';
+
+  @override
+  String get factNotifTitle2 => 'Tập trung cần có nước';
+
+  @override
+  String get factNotifBody2 =>
+      'Chỉ mất 1-2% lượng nước cơ thể cũng khiến bạn khó tập trung hơn.';
+
+  @override
+  String get factNotifTitle3 => 'Khát đến muộn';
+
+  @override
+  String get factNotifBody3 =>
+      'Khi bạn thấy khát, cơ thể đã bắt đầu thiếu nước rồi.';
+
+  @override
+  String get factNotifTitle4 => 'Hệ làm mát tự nhiên của bạn';
+
+  @override
+  String get factNotifBody4 =>
+      'Đổ mồ hôi là cách cơ thể tự làm mát, và việc đó tiêu tốn nước.';
+
+  @override
+  String get factNotifTitle5 => 'Kiểm tra màu sắc';
+
+  @override
+  String get factNotifBody5 =>
+      'Vàng nhạt thường nghĩa là bạn đủ nước. Đậm hơn thì nên uống thêm.';
+
+  @override
+  String get factLearn1Title => 'Hơn một nửa cơ thể bạn là nước';
+
+  @override
+  String get factLearn1Body =>
+      'Nước chiếm khoảng 50-60% cơ thể người trưởng thành và khoảng 73% bộ não. Nước vận chuyển dưỡng chất, đệm cho khớp và giữ nhiệt độ cơ thể ổn định.';
+
+  @override
+  String get factLearn2Title => 'Điều gì xảy ra khi bạn uống quá ít';
+
+  @override
+  String get factLearn2Body =>
+      'Ngay cả mất nước nhẹ, tức khoảng 1-2% lượng nước cơ thể, cũng liên quan đến mệt mỏi, đau đầu, giảm khả năng tập trung và tâm trạng kém đi. Về lâu dài, uống quá ít nước làm tăng nguy cơ táo bón và sỏi thận.';
+
+  @override
+  String get factLearn3Title => 'Khát là tín hiệu đến muộn';
+
+  @override
+  String get factLearn3Body =>
+      'Cảm giác khát thường chỉ xuất hiện sau khi cơ thể đã mất nước, và cảm giác này yếu dần theo tuổi tác. Uống nước đều đặn theo giờ tốt hơn là chờ đến khi thấy khát.';
+
+  @override
+  String get factLearn4Title => 'Màu nước tiểu là cách kiểm tra đơn giản nhất';
+
+  @override
+  String get factLearn4Body =>
+      'Màu vàng rơm nhạt thường nghĩa là bạn đủ nước, trong khi vàng đậm cho thấy bạn cần uống thêm. Một số vitamin và thuốc có thể làm đổi màu, vì vậy hãy xem đây là gợi ý chứ không phải kết luận chắc chắn.';
+
+  @override
+  String get factLearn5Title => 'Bao nhiêu là đủ?';
+
+  @override
+  String get factLearn5Body =>
+      'Theo tham chiếu của EFSA, lượng nước uống đủ dùng mỗi ngày là khoảng 2 lít với phụ nữ và 2,5 lít với nam giới, trong khí hậu ôn hòa với mức vận động vừa phải. Thời tiết nóng, tập luyện, mang thai và cho con bú đều làm tăng nhu cầu này. Sipling điều chỉnh con số này theo cân nặng và mức vận động của bạn.';
 }

@@ -1787,6 +1787,180 @@ abstract class L {
   /// In en, this message translates to:
   /// **'Monthly subscription, renews automatically. Cancel at least 24 hours before renewal in your store account settings; otherwise it renews.'**
   String get proAutoRenew;
+
+  /// No description provided for @homeCalcNeed.
+  ///
+  /// In en, this message translates to:
+  /// **'My water need'**
+  String get homeCalcNeed;
+
+  /// No description provided for @needTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your daily water need'**
+  String get needTitle;
+
+  /// No description provided for @needIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your height, weight and activity level and Sipling works out how much you need in a day.'**
+  String get needIntro;
+
+  /// No description provided for @needResultLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Recommended for you'**
+  String get needResultLabel;
+
+  /// No description provided for @needCurrentGoal.
+  ///
+  /// In en, this message translates to:
+  /// **'Your current goal: {ml} ml'**
+  String needCurrentGoal(int ml);
+
+  /// No description provided for @needApply.
+  ///
+  /// In en, this message translates to:
+  /// **'Make this my goal'**
+  String get needApply;
+
+  /// No description provided for @needApplied.
+  ///
+  /// In en, this message translates to:
+  /// **'Your goal has been updated'**
+  String get needApplied;
+
+  /// No description provided for @needMeasuresTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your measurements'**
+  String get needMeasuresTitle;
+
+  /// No description provided for @needLearnTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Water and your body'**
+  String get needLearnTitle;
+
+  /// No description provided for @factNotifTitle1.
+  ///
+  /// In en, this message translates to:
+  /// **'Three quarters water'**
+  String get factNotifTitle1;
+
+  /// No description provided for @factNotifBody1.
+  ///
+  /// In en, this message translates to:
+  /// **'Roughly three quarters of your brain is water. Keep it topped up.'**
+  String get factNotifBody1;
+
+  /// No description provided for @factNotifTitle2.
+  ///
+  /// In en, this message translates to:
+  /// **'Focus needs water'**
+  String get factNotifTitle2;
+
+  /// No description provided for @factNotifBody2.
+  ///
+  /// In en, this message translates to:
+  /// **'Losing just 1-2% of your body water can make it harder to concentrate.'**
+  String get factNotifBody2;
+
+  /// No description provided for @factNotifTitle3.
+  ///
+  /// In en, this message translates to:
+  /// **'Thirst arrives late'**
+  String get factNotifTitle3;
+
+  /// No description provided for @factNotifBody3.
+  ///
+  /// In en, this message translates to:
+  /// **'By the time you feel thirsty, your body has already started running low.'**
+  String get factNotifBody3;
+
+  /// No description provided for @factNotifTitle4.
+  ///
+  /// In en, this message translates to:
+  /// **'Your built-in cooling'**
+  String get factNotifTitle4;
+
+  /// No description provided for @factNotifBody4.
+  ///
+  /// In en, this message translates to:
+  /// **'Sweating is how your body cools itself, and it spends water doing it.'**
+  String get factNotifBody4;
+
+  /// No description provided for @factNotifTitle5.
+  ///
+  /// In en, this message translates to:
+  /// **'Check the colour'**
+  String get factNotifTitle5;
+
+  /// No description provided for @factNotifBody5.
+  ///
+  /// In en, this message translates to:
+  /// **'Pale yellow usually means you are well hydrated. Darker means drink up.'**
+  String get factNotifBody5;
+
+  /// No description provided for @factLearn1Title.
+  ///
+  /// In en, this message translates to:
+  /// **'More than half of you is water'**
+  String get factLearn1Title;
+
+  /// No description provided for @factLearn1Body.
+  ///
+  /// In en, this message translates to:
+  /// **'Water makes up roughly 50-60% of an adult body and about 73% of the brain. It carries nutrients, cushions your joints and keeps your temperature steady.'**
+  String get factLearn1Body;
+
+  /// No description provided for @factLearn2Title.
+  ///
+  /// In en, this message translates to:
+  /// **'What happens when you drink too little'**
+  String get factLearn2Title;
+
+  /// No description provided for @factLearn2Body.
+  ///
+  /// In en, this message translates to:
+  /// **'Even mild dehydration, losing about 1-2% of your body water, is linked to tiredness, headaches, weaker concentration and a lower mood. Over the longer term, drinking too little makes constipation and kidney stones more likely.'**
+  String get factLearn2Body;
+
+  /// No description provided for @factLearn3Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Thirst is a late signal'**
+  String get factLearn3Title;
+
+  /// No description provided for @factLearn3Body.
+  ///
+  /// In en, this message translates to:
+  /// **'Thirst usually kicks in after your body has already lost water, and the feeling gets weaker with age. Drinking at regular intervals works better than waiting until you feel thirsty.'**
+  String get factLearn3Body;
+
+  /// No description provided for @factLearn4Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Urine colour is the simplest check'**
+  String get factLearn4Title;
+
+  /// No description provided for @factLearn4Body.
+  ///
+  /// In en, this message translates to:
+  /// **'A pale straw colour usually means you are well hydrated, while dark yellow suggests you need more. Some vitamins and medicines change the colour, so treat it as a hint rather than a verdict.'**
+  String get factLearn4Body;
+
+  /// No description provided for @factLearn5Title.
+  ///
+  /// In en, this message translates to:
+  /// **'How much is enough?'**
+  String get factLearn5Title;
+
+  /// No description provided for @factLearn5Body.
+  ///
+  /// In en, this message translates to:
+  /// **'EFSA\'s reference for adequate intake from drinks is about 2 litres a day for women and 2.5 litres for men, in a temperate climate with moderate activity. Hot weather, exercise, pregnancy and breastfeeding all raise the need. Sipling adjusts this to your weight and activity level.'**
+  String get factLearn5Body;
 }
 
 class _LDelegate extends LocalizationsDelegate<L> {

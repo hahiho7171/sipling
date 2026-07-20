@@ -940,4 +940,104 @@ class LNl extends L {
   @override
   String get proAutoRenew =>
       'Maandabonnement, wordt automatisch verlengd. Zeg minstens 24 uur voor verlenging op in je store-accountinstellingen; anders wordt het verlengd.';
+
+  @override
+  String get homeCalcNeed => 'Mijn waterbehoefte';
+
+  @override
+  String get needTitle => 'Je dagelijkse waterbehoefte';
+
+  @override
+  String get needIntro =>
+      'Vul je lengte, gewicht en activiteitsniveau in en Sipling berekent hoeveel water je per dag nodig hebt.';
+
+  @override
+  String get needResultLabel => 'Aanbevolen voor jou';
+
+  @override
+  String needCurrentGoal(int ml) {
+    return 'Je huidige doel: $ml ml';
+  }
+
+  @override
+  String get needApply => 'Maak dit mijn doel';
+
+  @override
+  String get needApplied => 'Je doel is bijgewerkt';
+
+  @override
+  String get needMeasuresTitle => 'Jouw lichaamsgegevens';
+
+  @override
+  String get needLearnTitle => 'Water en je lichaam';
+
+  @override
+  String get factNotifTitle1 => 'Driekwart water';
+
+  @override
+  String get factNotifBody1 =>
+      'Ongeveer driekwart van je hersenen bestaat uit water. Houd het op peil.';
+
+  @override
+  String get factNotifTitle2 => 'Focus heeft water nodig';
+
+  @override
+  String get factNotifBody2 =>
+      'Het verliezen van slechts 1-2% van je lichaamswater kan concentreren lastiger maken.';
+
+  @override
+  String get factNotifTitle3 => 'Dorst komt laat';
+
+  @override
+  String get factNotifBody3 =>
+      'Tegen de tijd dat je dorst voelt, heeft je lichaam al een tekort.';
+
+  @override
+  String get factNotifTitle4 => 'Je ingebouwde koeling';
+
+  @override
+  String get factNotifBody4 =>
+      'Zweten is hoe je lichaam zichzelf koelt, en dat kost water.';
+
+  @override
+  String get factNotifTitle5 => 'Bekijk de kleur';
+
+  @override
+  String get factNotifBody5 =>
+      'Lichtgeel betekent meestal dat je goed gehydrateerd bent. Donkerder betekent: tijd om te drinken.';
+
+  @override
+  String get factLearn1Title => 'Meer dan de helft van jou is water';
+
+  @override
+  String get factLearn1Body =>
+      'Water vormt ongeveer 50-60% van een volwassen lichaam en zo\'n 73% van de hersenen. Het vervoert voedingsstoffen, dempt je gewrichten en houdt je temperatuur stabiel.';
+
+  @override
+  String get factLearn2Title => 'Wat er gebeurt als je te weinig drinkt';
+
+  @override
+  String get factLearn2Body =>
+      'Zelfs milde uitdroging, het verlies van ongeveer 1-2% van je lichaamswater, wordt in verband gebracht met vermoeidheid, hoofdpijn, minder concentratie en een somberdere stemming. Op de langere termijn maakt te weinig drinken constipatie en nierstenen waarschijnlijker.';
+
+  @override
+  String get factLearn3Title => 'Dorst is een laat signaal';
+
+  @override
+  String get factLearn3Body =>
+      'Dorst treedt meestal pas op nadat je lichaam al water heeft verloren, en dat gevoel wordt zwakker naarmate je ouder wordt. Op regelmatige tijdstippen drinken werkt beter dan wachten tot je dorst voelt.';
+
+  @override
+  String get factLearn4Title => 'Urinekleur is de eenvoudigste check';
+
+  @override
+  String get factLearn4Body =>
+      'Een lichte strogele kleur betekent meestal dat je goed gehydrateerd bent, terwijl donkergeel erop wijst dat je meer nodig hebt. Sommige vitamines en medicijnen veranderen de kleur, dus zie het als een aanwijzing, niet als een oordeel.';
+
+  @override
+  String get factLearn5Title => 'Hoeveel is genoeg?';
+
+  @override
+  String get factLearn5Body =>
+      'De EFSA-referentie voor voldoende inname uit dranken is ongeveer 2 liter per dag voor vrouwen en 2,5 liter voor mannen, in een gematigd klimaat met matige activiteit. Warm weer, sporten, zwangerschap en borstvoeding verhogen allemaal de behoefte. Sipling past dit aan op basis van je gewicht en activiteitsniveau.';
 }

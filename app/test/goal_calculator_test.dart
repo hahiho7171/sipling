@@ -83,4 +83,29 @@ void main() {
       expect(expectedProgressAt(p, DateTime(2026, 1, 1, 15)), closeTo(0.5, 0.001));
     });
   });
+
+  // "Günlük su ihtiyacını hesapla" ekranı (water_needs_screen.dart) hesabı
+  // yaparken elle ayarlanmış hedefi BİLEREK temizliyor. Temizlemezse
+  // calculateGoalMl doğrudan o eski hedefi döndürür ve kaydırıcıları
+  // oynatmak sonucu hiç değiştirmez — ekran donmuş gibi görünür.
+  group('su ihtiyacı hesabı elle hedefi yok sayar', () {
+    test('customGoalMl varken ham hesap değil, elle hedef döner', () {
+      const p = Profile(
+          gender: Gender.male, weightKg: 70, customGoalMl: 1500);
+      expect(calculateGoalMl(p), 1500);
+    });
+
+    test('clearCustomGoal ile ölçülerden taze hesap gelir', () {
+      const p = Profile(
+          gender: Gender.male, weightKg: 70, customGoalMl: 1500);
+      expect(calculateGoalMl(p.copyWith(clearCustomGoal: true)), 2500);
+    });
+
+    test('kilo değişince taze hesap da değişir', () {
+      const p = Profile(
+          gender: Gender.male, weightKg: 70, customGoalMl: 1500);
+      final agir = p.copyWith(weightKg: 80, clearCustomGoal: true);
+      expect(calculateGoalMl(agir), 2600);
+    });
+  });
 }
