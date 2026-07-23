@@ -35,10 +35,20 @@ BAYATTI, yorum düzeltildi. Native taban sağlam. Çıkış/giriş tuşu yok = b
 **20 dil:** 16 yeni anahtar 20 dile de eklendi (`tools/yeni-anahtar-ekle.py` + gen-l10n).
 Yeni test: `test/boost_and_style_test.dart` (10 test — efektif hedef + stil göçü).
 
-**Sürüm 1.0.1+3 → 1.0.2+4** (`pubspec.yaml` bump'landı, build'e hazır).
-⏳ **KALAN:** ① gerçek cihazda test (senkron düzelmesi, sıcak-gün, kayıt-sil, 3 hatırlatma stili,
-bildirim "+N ml" düğmesi — bu hiç cihazda basılmamıştı) ② APK/AAB + iOS build (Codemagic) ③ iki
-mağazaya gönderim (Play kapalı test 16-gün şartına da sayılır). 🚨 **git commit ≠ mağazada canlı.**
+**Sürüm 1.0.1+3 → 1.0.2+4.** ✅ **İKİ MAĞAZAYA DA GÖNDERİLDİ (2026-07-23, ikisi de incelemede):**
+- 🤖 **Play:** AAB (versionCode **4**, 1.0.2, 50.2MB, upload-key imzalı) Alpha kapalı testine yüklendi
+  (9360 tarayıcı + `tools/aab-yukle.js`), sürüm notu tr+en yazıldı → **"4 (1.0.2) sürümü incelemede"**
+  (track sayfasından teyitli). Play kapalı test 16-gün/2-3 güncelleme şartına da sayılır. Bu sefer
+  versionCode YAKILMADI (tek denemede 4). 🪤 Yeni akış: Kaydet→İleri→review Kaydet→**Yayınlama özeti**→
+  "1 değişikliği incelemeye gönder"→onay diyaloğu. (Play appId `4974431994893643882`, track `4699878750164991262`.)
+- 🍎 **iOS:** Codemagic build #11 (app `6a572a79c0d939a624244645`, API token'la TETİKLENDİ — tarayıcı
+  gerekmedi) → IPA build "4" ASC'de VALID → **ASC API ile tamamen otonom submit** (2FA yok, `.p8`
+  `AuthKey-JYW9GVD5XJ`): sürüm 1.0.2 (`d8389187...`) oluştur→build 4 bağla→whatsNew(en-US)→reviewSubmission
+  →submitted:true → **appStoreState WAITING_FOR_REVIEW, releaseType AFTER_APPROVAL** (Apple onaylayınca
+  otomatik yayın). ASC App `6789913186`. Codemagic Sipling app id `6a572a79c0d939a624244645`, workflow `ios-testflight`.
+⚠️ **Cihazda hâlâ test EDİLMEDİ** (kullanıcı store'a doğrudan gitmeyi seçti): senkron düzelmesi,
+sıcak-gün, kayıt-sil, 3 hatırlatma stili (Android kanal), bildirim "+N ml" düğmesi. Play kapalı test +
+Apple incelemesi + TestFlight birer geçit — canlıya çıkmadan cihazda denenebilir. 🚨 **git commit ≠ mağazada canlı.**
 Değişen dosyalar: `data/models.dart`, `data/store.dart`, `main.dart`, `services/notifications.dart`,
 `services/home_widget_service.dart`, `screens/home_screen.dart`, `screens/settings_screen.dart`,
 `screens/stats_screen.dart`, `screens/pro_screen.dart`, `widgets/boost_sheet.dart`(yeni),
