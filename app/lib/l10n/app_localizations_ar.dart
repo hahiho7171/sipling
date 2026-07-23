@@ -1029,4 +1029,55 @@ class LAr extends L {
   @override
   String get factLearn5Body =>
       'يبلغ مرجع EFSA للكمية الكافية من السوائل نحو 2 لتر يوميًا للنساء و2.5 لتر للرجال، في مناخ معتدل ومستوى نشاط متوسط. يرفع الطقس الحار والتمارين الرياضية والحمل والرضاعة الطبيعية هذه الحاجة. يُعدّل Sipling هذا الرقم وفق وزنك ومستوى نشاطك.';
+
+  @override
+  String get homeBoost => 'يوم حار / رياضة';
+
+  @override
+  String get boostTitle => 'زد هدف اليوم';
+
+  @override
+  String get boostBody =>
+      'في يوم حار أو بعد التمرين، أضف قليلاً إلى هدف اليوم. سيُعاد ضبطه تلقائيًا غدًا.';
+
+  @override
+  String get boostReset => 'إعادة تعيين';
+
+  @override
+  String boostActive(int ml) {
+    return 'أُضيف +$ml مل اليوم';
+  }
+
+  @override
+  String get logTitle => 'سجلات اليوم';
+
+  @override
+  String get logEmpty => 'لا توجد سجلات اليوم بعد';
+
+  @override
+  String get logOpen => 'سجلات اليوم';
+
+  @override
+  String get logDelete => 'حذف';
+
+  @override
+  String get setReminderStyle => 'نمط التذكير';
+
+  @override
+  String get styleNormal => 'عادي';
+
+  @override
+  String get styleNormalSub => 'صوت واهتزاز';
+
+  @override
+  String get styleGentle => 'لطيف';
+
+  @override
+  String get styleGentleSub => 'اهتزاز فقط، بدون صوت';
+
+  @override
+  String get styleSilent => 'صامت';
+
+  @override
+  String get styleSilentSub => 'بدون صوت أو اهتزاز';
 }

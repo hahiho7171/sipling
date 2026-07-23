@@ -1014,4 +1014,55 @@ class LTh extends L {
   @override
   String get factLearn5Body =>
       'ค่าอ้างอิงของ EFSA สำหรับปริมาณน้ำที่เพียงพอจากเครื่องดื่มอยู่ที่ประมาณ 2 ลิตรต่อวันสำหรับผู้หญิง และ 2.5 ลิตรสำหรับผู้ชาย ในสภาพภูมิอากาศอบอุ่นและมีการเคลื่อนไหวระดับปานกลาง อากาศร้อน การออกกำลังกาย การตั้งครรภ์ และการให้นมบุตร ล้วนเพิ่มความต้องการนี้ Sipling ปรับค่านี้ตามน้ำหนักและระดับการเคลื่อนไหวของคุณ';
+
+  @override
+  String get homeBoost => 'วันร้อน / ออกกำลังกาย';
+
+  @override
+  String get boostTitle => 'เพิ่มเป้าหมายวันนี้';
+
+  @override
+  String get boostBody =>
+      'ในวันที่อากาศร้อนหรือหลังออกกำลังกาย เพิ่มปริมาณให้เป้าหมายวันนี้ พรุ่งนี้จะรีเซ็ตเอง';
+
+  @override
+  String get boostReset => 'รีเซ็ต';
+
+  @override
+  String boostActive(int ml) {
+    return 'เพิ่ม +$ml ml วันนี้แล้ว';
+  }
+
+  @override
+  String get logTitle => 'รายการของวันนี้';
+
+  @override
+  String get logEmpty => 'ยังไม่มีรายการวันนี้';
+
+  @override
+  String get logOpen => 'รายการของวันนี้';
+
+  @override
+  String get logDelete => 'ลบ';
+
+  @override
+  String get setReminderStyle => 'รูปแบบการเตือน';
+
+  @override
+  String get styleNormal => 'ปกติ';
+
+  @override
+  String get styleNormalSub => 'เสียงและการสั่น';
+
+  @override
+  String get styleGentle => 'นุ่มนวล';
+
+  @override
+  String get styleGentleSub => 'สั่นอย่างเดียว ไม่มีเสียง';
+
+  @override
+  String get styleSilent => 'เงียบ';
+
+  @override
+  String get styleSilentSub => 'ไม่มีเสียงและการสั่น';
 }

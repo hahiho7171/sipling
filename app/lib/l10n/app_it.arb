@@ -304,5 +304,21 @@
   "factLearn4Title": "Il colore delle urine è il controllo più semplice",
   "factLearn4Body": "Un colore paglierino chiaro di solito indica buona idratazione, mentre il giallo scuro suggerisce che ne serve di più. Alcune vitamine e farmaci ne cambiano il colore, quindi consideralo un indizio, non un verdetto.",
   "factLearn5Title": "Quanta ne basta?",
-  "factLearn5Body": "Il riferimento EFSA per un apporto adeguato dalle bevande è di circa 2 litri al giorno per le donne e 2,5 litri per gli uomini, in un clima temperato con attività moderata. Caldo, esercizio fisico, gravidanza e allattamento aumentano tutti questo fabbisogno. Sipling lo adatta al tuo peso e al tuo livello di attività."
+  "factLearn5Body": "Il riferimento EFSA per un apporto adeguato dalle bevande è di circa 2 litri al giorno per le donne e 2,5 litri per gli uomini, in un clima temperato con attività moderata. Caldo, esercizio fisico, gravidanza e allattamento aumentano tutti questo fabbisogno. Sipling lo adatta al tuo peso e al tuo livello di attività.",
+  "homeBoost": "Giornata calda / sport",
+  "boostTitle": "Aumenta l'obiettivo di oggi",
+  "boostBody": "In una giornata calda o dopo lo sport, aggiungi un extra all'obiettivo di oggi. Si azzera da solo domani.",
+  "boostReset": "Reimposta",
+  "boostActive": "+{ml} ml aggiunti oggi",
+  "logTitle": "Voci di oggi",
+  "logEmpty": "Nessuna voce oggi per ora",
+  "logOpen": "Voci di oggi",
+  "logDelete": "Elimina",
+  "setReminderStyle": "Stile promemoria",
+  "styleNormal": "Normale",
+  "styleNormalSub": "Suono e vibrazione",
+  "styleGentle": "Delicato",
+  "styleGentleSub": "Solo vibrazione, senza suono",
+  "styleSilent": "Silenzioso",
+  "styleSilentSub": "Senza suono né vibrazione"
 }

@@ -304,5 +304,21 @@
   "factLearn4Title": "Urinekleur is de eenvoudigste check",
   "factLearn4Body": "Een lichte strogele kleur betekent meestal dat je goed gehydrateerd bent, terwijl donkergeel erop wijst dat je meer nodig hebt. Sommige vitamines en medicijnen veranderen de kleur, dus zie het als een aanwijzing, niet als een oordeel.",
   "factLearn5Title": "Hoeveel is genoeg?",
-  "factLearn5Body": "De EFSA-referentie voor voldoende inname uit dranken is ongeveer 2 liter per dag voor vrouwen en 2,5 liter voor mannen, in een gematigd klimaat met matige activiteit. Warm weer, sporten, zwangerschap en borstvoeding verhogen allemaal de behoefte. Sipling past dit aan op basis van je gewicht en activiteitsniveau."
+  "factLearn5Body": "De EFSA-referentie voor voldoende inname uit dranken is ongeveer 2 liter per dag voor vrouwen en 2,5 liter voor mannen, in een gematigd klimaat met matige activiteit. Warm weer, sporten, zwangerschap en borstvoeding verhogen allemaal de behoefte. Sipling past dit aan op basis van je gewicht en activiteitsniveau.",
+  "homeBoost": "Warme dag / sport",
+  "boostTitle": "Verhoog het doel van vandaag",
+  "boostBody": "Voeg op een warme dag of na het sporten iets extra toe aan het doel van vandaag. Morgen wordt het vanzelf gereset.",
+  "boostReset": "Resetten",
+  "boostActive": "+{ml} ml vandaag toegevoegd",
+  "logTitle": "Items van vandaag",
+  "logEmpty": "Nog geen items vandaag",
+  "logOpen": "Items van vandaag",
+  "logDelete": "Verwijderen",
+  "setReminderStyle": "Herinneringsstijl",
+  "styleNormal": "Normaal",
+  "styleNormalSub": "Geluid en trillen",
+  "styleGentle": "Zacht",
+  "styleGentleSub": "Alleen trillen, geen geluid",
+  "styleSilent": "Stil",
+  "styleSilentSub": "Geen geluid of trillen"
 }

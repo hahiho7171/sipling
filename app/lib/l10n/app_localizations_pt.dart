@@ -1036,4 +1036,55 @@ class LPt extends L {
   @override
   String get factLearn5Body =>
       'A referência da EFSA para ingestão adequada por bebidas é de cerca de 2 litros por dia para mulheres e 2,5 litros para homens, em clima temperado e atividade moderada. Calor, exercício, gravidez e amamentação aumentam essa necessidade. O Sipling ajusta isso ao seu peso e nível de atividade.';
+
+  @override
+  String get homeBoost => 'Dia quente / esporte';
+
+  @override
+  String get boostTitle => 'Aumente a meta de hoje';
+
+  @override
+  String get boostBody =>
+      'Em um dia quente ou após o exercício, adicione um extra à meta de hoje. Ela se redefine sozinha amanhã.';
+
+  @override
+  String get boostReset => 'Redefinir';
+
+  @override
+  String boostActive(int ml) {
+    return '+$ml ml adicionados hoje';
+  }
+
+  @override
+  String get logTitle => 'Registros de hoje';
+
+  @override
+  String get logEmpty => 'Ainda não há registros hoje';
+
+  @override
+  String get logOpen => 'Registros de hoje';
+
+  @override
+  String get logDelete => 'Excluir';
+
+  @override
+  String get setReminderStyle => 'Estilo de lembrete';
+
+  @override
+  String get styleNormal => 'Normal';
+
+  @override
+  String get styleNormalSub => 'Som e vibração';
+
+  @override
+  String get styleGentle => 'Suave';
+
+  @override
+  String get styleGentleSub => 'Só vibração, sem som';
+
+  @override
+  String get styleSilent => 'Silencioso';
+
+  @override
+  String get styleSilentSub => 'Sem som nem vibração';
 }

@@ -991,4 +991,54 @@ class LKo extends L {
   @override
   String get factLearn5Body =>
       '온화한 기후에서 적당한 활동량을 기준으로, EFSA가 제시하는 음료를 통한 적정 수분 섭취량은 여성 하루 약 2리터, 남성 2.5리터예요. 더운 날씨, 운동, 임신, 수유는 모두 필요량을 늘려요. Sipling은 이를 몸무게와 활동량에 맞게 조정해요.';
+
+  @override
+  String get homeBoost => '더운 날 / 운동';
+
+  @override
+  String get boostTitle => '오늘 목표 늘리기';
+
+  @override
+  String get boostBody => '더운 날이나 운동 후 오늘 목표에 추가하세요. 내일 자동으로 초기화됩니다.';
+
+  @override
+  String get boostReset => '초기화';
+
+  @override
+  String boostActive(int ml) {
+    return '오늘 +$ml ml 추가됨';
+  }
+
+  @override
+  String get logTitle => '오늘 기록';
+
+  @override
+  String get logEmpty => '오늘 아직 기록이 없어요';
+
+  @override
+  String get logOpen => '오늘 기록';
+
+  @override
+  String get logDelete => '삭제';
+
+  @override
+  String get setReminderStyle => '알림 스타일';
+
+  @override
+  String get styleNormal => '일반';
+
+  @override
+  String get styleNormalSub => '소리와 진동';
+
+  @override
+  String get styleGentle => '부드럽게';
+
+  @override
+  String get styleGentleSub => '진동만, 소리 없음';
+
+  @override
+  String get styleSilent => '무음';
+
+  @override
+  String get styleSilentSub => '소리와 진동 없음';
 }

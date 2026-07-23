@@ -94,7 +94,7 @@ class RootShell extends StatefulWidget {
   State<RootShell> createState() => _RootShellState();
 }
 
-class _RootShellState extends State<RootShell> {
+class _RootShellState extends State<RootShell> with WidgetsBindingObserver {
   int _index = 0;
 
   static const _pages = [
@@ -107,7 +107,26 @@ class _RootShellState extends State<RootShell> {
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
     WidgetsBinding.instance.addPostFrameCallback((_) => _bootstrap());
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  /// Uygulama arka plandan öne gelince diskteki en güncel veriyi tekrar oku.
+  /// Bildirimdeki "+N ml" düğmesi ya da ana ekran widget'ı, uygulama arka
+  /// plandayken ayrı bir isolate'te suyu diske yazmış olabilir; bunu ancak
+  /// yeniden okuyunca görürüz. Okumazsak eklenen su hem görünmez hem de bir
+  /// sonraki elle eklemede üzerine yazılıp SİLİNİR. → `AppState.reload()`
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState lifecycle) {
+    if (lifecycle == AppLifecycleState.resumed) {
+      context.read<AppState>().reload();
+    }
   }
 
   /// İlk açılışta kurulum akışını göster, sonra dünün özetini, sonra

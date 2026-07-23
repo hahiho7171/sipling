@@ -304,5 +304,21 @@
   "factLearn4Title": "El color de la orina es la forma más sencilla de comprobarlo",
   "factLearn4Body": "Un color paja pálido suele indicar buena hidratación, mientras que el amarillo oscuro sugiere que necesitas beber más. Algunas vitaminas y medicamentos cambian el color, así que tómalo como una pista, no como un diagnóstico.",
   "factLearn5Title": "¿Cuánto es suficiente?",
-  "factLearn5Body": "La referencia de la EFSA para una ingesta adecuada a través de bebidas es de unos 2 litros al día para mujeres y 2,5 litros para hombres, en un clima templado y con actividad moderada. El calor, el ejercicio, el embarazo y la lactancia aumentan esta necesidad. Sipling la ajusta según tu peso y tu nivel de actividad."
+  "factLearn5Body": "La referencia de la EFSA para una ingesta adecuada a través de bebidas es de unos 2 litros al día para mujeres y 2,5 litros para hombres, en un clima templado y con actividad moderada. El calor, el ejercicio, el embarazo y la lactancia aumentan esta necesidad. Sipling la ajusta según tu peso y tu nivel de actividad.",
+  "homeBoost": "Día caluroso / deporte",
+  "boostTitle": "Aumenta la meta de hoy",
+  "boostBody": "En un día caluroso o después de hacer ejercicio, añade un extra a la meta de hoy. Se restablece solo mañana.",
+  "boostReset": "Restablecer",
+  "boostActive": "+{ml} ml añadidos hoy",
+  "logTitle": "Registros de hoy",
+  "logEmpty": "Aún no hay registros hoy",
+  "logOpen": "Registros de hoy",
+  "logDelete": "Eliminar",
+  "setReminderStyle": "Estilo de recordatorio",
+  "styleNormal": "Normal",
+  "styleNormalSub": "Sonido y vibración",
+  "styleGentle": "Suave",
+  "styleGentleSub": "Solo vibración, sin sonido",
+  "styleSilent": "Silencioso",
+  "styleSilentSub": "Sin sonido ni vibración"
 }

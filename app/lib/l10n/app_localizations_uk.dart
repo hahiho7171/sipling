@@ -1020,4 +1020,55 @@ class LUk extends L {
   @override
   String get factLearn5Body =>
       'Референсне значення EFSA для достатнього споживання рідини становить близько 2 літрів на день для жінок і 2,5 літра для чоловіків у помірному кліматі за помірної активності. Спека, фізичні навантаження, вагітність і годування груддю підвищують цю потребу. Sipling адаптує це значення до твоєї ваги та рівня активності.';
+
+  @override
+  String get homeBoost => 'Спекотний день / спорт';
+
+  @override
+  String get boostTitle => 'Збільшити ціль на сьогодні';
+
+  @override
+  String get boostBody =>
+      'У спекотний день або після тренування додайте трохи до сьогоднішньої цілі. Завтра вона скинеться сама.';
+
+  @override
+  String get boostReset => 'Скинути';
+
+  @override
+  String boostActive(int ml) {
+    return 'Сьогодні додано +$ml мл';
+  }
+
+  @override
+  String get logTitle => 'Записи за сьогодні';
+
+  @override
+  String get logEmpty => 'Сьогодні ще немає записів';
+
+  @override
+  String get logOpen => 'Записи за сьогодні';
+
+  @override
+  String get logDelete => 'Видалити';
+
+  @override
+  String get setReminderStyle => 'Стиль нагадувань';
+
+  @override
+  String get styleNormal => 'Звичайний';
+
+  @override
+  String get styleNormalSub => 'Звук і вібрація';
+
+  @override
+  String get styleGentle => 'Делікатний';
+
+  @override
+  String get styleGentleSub => 'Лише вібрація, без звуку';
+
+  @override
+  String get styleSilent => 'Беззвучний';
+
+  @override
+  String get styleSilentSub => 'Без звуку та вібрації';
 }

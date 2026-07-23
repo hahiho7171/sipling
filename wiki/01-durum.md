@@ -2,6 +2,48 @@
 
 > Her oturum sonunda **buraya** yaz. Başka yere durum yazma.
 
+## 🛠️ 2026-07-23 — SÜRÜM 1.0.2: KRİTİK SENKRON HATASI + 3 ÖZELLİK (kod hazır, mağazaya gönderilmedi)
+
+**Kullanıcı isteği:** komple denetim — çalışmayan/eksik ne var, rakiplere göre ne eklenebilir,
+düzgün yapılandır, sonra iki mağazaya güncelleme. **Tüm kod baştan sona okundu.**
+
+**🔴 GERÇEK HATA — düzeltildi: bildirim/widget'tan eklenen su kayboluyordu.** `AppState` bir kez
+açılışta okunup bellekte kalıyordu; uygulama arka plandayken bildirimdeki "+N ml" düğmesi ya da
+ana ekran widget'ı AYRI bir isolate'te suyu diske yazıyor, ana uygulama diski **yeniden okumadığı**
+için (a) eklenen su görünmüyor, (b) sonraki elle eklemede eski bellek diske geri yazılıp arka
+plandaki eklemeyi **siliyordu**. Çözüm: `AppState.reload()` (`_prefs.reload()` + tüm alanları
+yeniden oku) + `RootShell`'de `didChangeAppLifecycleState` → uygulama öne gelince `reload()`.
+`store.dart` `init()` → ortak `_readFromPrefs()`'e ayrıldı. **`flutter analyze` temiz, 63 test geçer.**
+
+**Denetim sonucu:** ölü/çalışmayan buton YOK (tarama temiz). Para (reklam+Pro) GERÇEK ve bağlı
+(`in_app_purchase` + gerçek AdMob birimleri) — `wiki/09` "sahte" notu ve `pro_screen` yorumu
+BAYATTI, yorum düzeltildi. Native taban sağlam. Çıkış/giriş tuşu yok = bilinçli (hesap sistemi yok).
+
+**🆕 3 özellik eklendi (hepsi felsefeye uygun: sunucu yok, internetsiz):**
+1. **Sıcak gün / spor artırıcı** — ana ekranda buton → `widgets/boost_sheet.dart` (+250/+500/+750,
+   bugüne özel). `DayRecord.boostMl` + `effectiveGoalMl` (ilerleme/tamamlanma/header/widget/stats
+   hep efektif hedefi kullanır). Ertesi gün kendiliğinden 0. `store.addBoost/resetBoost`.
+2. **Bugünün kayıtları + tek tek silme** — header'da 🕘 ikonu → `widgets/day_log_sheet.dart`
+   (eskiden yalnız "son eklemeyi geri al" vardı). `store.removeSip(sip)`.
+3. **Hatırlatma stili (Normal/Nazik/Sessiz)** — Ayarlar'da "Sessiz bildirim" anahtarı yerine
+   3'lü seçici. `ReminderStyle` enum; eski `silent` bool'undan **otomatik göç**. 🚨 Android'de her
+   stil AYRI kanal (`notifications.dart _channelFor`) — kanal sesi oluşturulduktan sonra
+   değişmediği için şart; eski `sipling_reminders` kanalı `init`'te siliniyor.
+   ⚠️ **Gerçek cihaz testi gerekir** (kullanıcı bilerek istedi; iOS'ta yalnız ses kontrol edilir).
+   → CSV dışa aktarma kullanıcı tarafından ELENDI, yapılmadı.
+
+**20 dil:** 16 yeni anahtar 20 dile de eklendi (`tools/yeni-anahtar-ekle.py` + gen-l10n).
+Yeni test: `test/boost_and_style_test.dart` (10 test — efektif hedef + stil göçü).
+
+**Sürüm 1.0.1+3 → 1.0.2+4** (`pubspec.yaml` bump'landı, build'e hazır).
+⏳ **KALAN:** ① gerçek cihazda test (senkron düzelmesi, sıcak-gün, kayıt-sil, 3 hatırlatma stili,
+bildirim "+N ml" düğmesi — bu hiç cihazda basılmamıştı) ② APK/AAB + iOS build (Codemagic) ③ iki
+mağazaya gönderim (Play kapalı test 16-gün şartına da sayılır). 🚨 **git commit ≠ mağazada canlı.**
+Değişen dosyalar: `data/models.dart`, `data/store.dart`, `main.dart`, `services/notifications.dart`,
+`services/home_widget_service.dart`, `screens/home_screen.dart`, `screens/settings_screen.dart`,
+`screens/stats_screen.dart`, `screens/pro_screen.dart`, `widgets/boost_sheet.dart`(yeni),
+`widgets/day_log_sheet.dart`(yeni), 20 `.arb`, `test/boost_and_style_test.dart`(yeni).
+
 ## 🩺💧 2026-07-20 — SÜRÜM 1.0.1: HEALTH CONNECT DÜZELDİ + SU BİLGİLERİ + İHTİYAÇ HESAPLAYICI
 
 **Kullanıcı isteği:** (a) profilde çıkış/giriş sistemi, (b) Health Connect neden çalışmıyor,
@@ -49,6 +91,30 @@ bağlandı (`tools/_kitaplik-tam.js`). (3) Ekran görüntüsüne değil DOM'daki
 
 ⏳ Play "Health apps declaration" formu HÂLÂ işaretsiz (`wiki/09`) — üretime çıkmadan zorunlu,
 ama kapalı testi engellemiyor.
+
+### ✅ APPLE 1.0.1 GÖNDERİLDİ (2026-07-21) — "1.0 Waiting for Review", build 1.0.1(3)
+Kullanıcı onayı: *"öncekini iptal edip bu yeni kodlanmış halini de gönderebilirsin."* **YAPILDI:**
+- git push (`11a68b5`) → ama **Codemagic otomatik trigger YOK** (`triggering` bloğu yok, `wiki/05`
+  §başı). Push build başlatmadı → **Codemagic panelinden ELLE başlatıldı** (kullanıcı GitHub ile
+  giriş yaptı, ben Builds→Sipling ▶→branch main→workflow ios-testflight). Build **başarılı**
+  (commit 11a68b5, 4m40s, `sipling.ipa` 25,8 MB, Publishing→ASC).
+- Apple'a giriş (kullanıcı şifre+2FA girdi) → ASC'de **mevcut 1.0 "Waiting for Review" İPTAL
+  edildi** ("remove this version from review" → Remove) → sürüm "Developer Rejected" (düzenlenebilir)
+  → Build bölümünde eski build 2 kaldırılıp **build 3 (1.0.1) bağlandı** (kırmızı "-" + "Add Build"
+  → radio → Done → Save). ⚠️ Apple app version "1.0"a build "1.0.1"i **sorunsuz kabul etti**
+  (version mismatch endişesi çıkmadı). → "Add for Review" → Draft Submission → **"Submit for
+  Review" → "1 Item Submitted"**. App = **1.0 Waiting for Review**.
+- 🍎 **Pro aboneliği:** `sipling_pro_monthly` **zaten "Waiting for Review"** (grup "In Review"),
+  "Add for Review" gri (disabled). Yani Pro Apple'a ÖNCEDEN gönderilmişti, hâlâ kuyrukta. App
+  submission'ına EKLENEMEDİ (disabled) → **"1 Item Submitted" = SADECE app**. ⚠️ App ve Pro AYRI
+  submission'larda ama İKİSİ DE "Waiting for Review" (ikisi de Apple'da). Bu, 2026-07-15 tuzağından
+  FARKLI: o zaman Pro "Ready to Submit" (Apple'a hiç gitmemiş) idi; şimdi Pro Apple'ın elinde.
+  Apple app'i incelerken Waiting-for-Review subscription'ı sandbox'ta test edebilir. **Onay ~48 saat.**
+- ⚠️ Apple onaylayınca yayına-alma MANUEL olabilir → "Release this version". İnceleme sonucu maili beklenecek.
+- ⚠️ iOS ekran görüntüleri değişmedi (yeni "Su ihtiyacım" ekranı ekstra, mevcut 5 iPhone+4 iPad geçerli).
+- ℹ️ Health Connect düzeltmesi Android'e özgü (Kotlin), iOS'u etkilemez; iOS'ta yeni olan
+  su bilgileri bildirimleri + "Su ihtiyacım" ekranı + 20 dil (hepsi Dart, platform bağımsız).
+- 🧰 Yeni kalıcı araç: `tools/aab-yukle.js` (Play 50 MB AAB), `tools/yeni-anahtar-ekle.py` (l10n).
 
 ⚠️ **Apple'a bu turda DOKUNULMADI.** iOS 1.0 hâlâ inceleme kuyruğunda (15 Tem'den beri);
 yeni sürüm göndermek mevcut gönderimi iptal etmeyi ve kuyruk sırasını kaybetmeyi gerektirir.

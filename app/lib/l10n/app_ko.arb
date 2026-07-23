@@ -304,5 +304,21 @@
   "factLearn4Title": "소변 색이 가장 간단한 확인법이에요",
   "factLearn4Body": "옅은 볏짚 색이면 수분이 충분하다는 뜻이고, 진한 노란색이면 물이 더 필요하다는 신호예요. 일부 비타민이나 약은 색을 바꿀 수 있으니, 확정적인 판단이 아니라 참고용 힌트로 보세요.",
   "factLearn5Title": "얼마나 마셔야 충분할까요?",
-  "factLearn5Body": "온화한 기후에서 적당한 활동량을 기준으로, EFSA가 제시하는 음료를 통한 적정 수분 섭취량은 여성 하루 약 2리터, 남성 2.5리터예요. 더운 날씨, 운동, 임신, 수유는 모두 필요량을 늘려요. Sipling은 이를 몸무게와 활동량에 맞게 조정해요."
+  "factLearn5Body": "온화한 기후에서 적당한 활동량을 기준으로, EFSA가 제시하는 음료를 통한 적정 수분 섭취량은 여성 하루 약 2리터, 남성 2.5리터예요. 더운 날씨, 운동, 임신, 수유는 모두 필요량을 늘려요. Sipling은 이를 몸무게와 활동량에 맞게 조정해요.",
+  "homeBoost": "더운 날 / 운동",
+  "boostTitle": "오늘 목표 늘리기",
+  "boostBody": "더운 날이나 운동 후 오늘 목표에 추가하세요. 내일 자동으로 초기화됩니다.",
+  "boostReset": "초기화",
+  "boostActive": "오늘 +{ml} ml 추가됨",
+  "logTitle": "오늘 기록",
+  "logEmpty": "오늘 아직 기록이 없어요",
+  "logOpen": "오늘 기록",
+  "logDelete": "삭제",
+  "setReminderStyle": "알림 스타일",
+  "styleNormal": "일반",
+  "styleNormalSub": "소리와 진동",
+  "styleGentle": "부드럽게",
+  "styleGentleSub": "진동만, 소리 없음",
+  "styleSilent": "무음",
+  "styleSilentSub": "소리와 진동 없음"
 }

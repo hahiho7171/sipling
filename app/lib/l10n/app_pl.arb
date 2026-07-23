@@ -304,5 +304,21 @@
   "factLearn4Title": "Kolor moczu to najprostszy sprawdzian",
   "factLearn4Body": "Jasny, słomkowy kolor zwykle oznacza dobre nawodnienie, a ciemnożółty sugeruje, że potrzebujesz więcej wody. Niektóre witaminy i leki zmieniają kolor, więc traktuj to jako wskazówkę, a nie ostateczny wyrok.",
   "factLearn5Title": "Ile to wystarczająco dużo?",
-  "factLearn5Body": "Wartość referencyjna EFSA dla odpowiedniego spożycia płynów to około 2 litrów dziennie dla kobiet i 2,5 litra dla mężczyzn, w klimacie umiarkowanym przy umiarkowanej aktywności. Upał, ćwiczenia, ciąża i karmienie piersią zwiększają to zapotrzebowanie. Sipling dostosowuje tę wartość do twojej wagi i poziomu aktywności."
+  "factLearn5Body": "Wartość referencyjna EFSA dla odpowiedniego spożycia płynów to około 2 litrów dziennie dla kobiet i 2,5 litra dla mężczyzn, w klimacie umiarkowanym przy umiarkowanej aktywności. Upał, ćwiczenia, ciąża i karmienie piersią zwiększają to zapotrzebowanie. Sipling dostosowuje tę wartość do twojej wagi i poziomu aktywności.",
+  "homeBoost": "Upalny dzień / sport",
+  "boostTitle": "Zwiększ dzisiejszy cel",
+  "boostBody": "W upalny dzień lub po treningu dodaj trochę do dzisiejszego celu. Jutro zresetuje się samo.",
+  "boostReset": "Resetuj",
+  "boostActive": "Dziś dodano +{ml} ml",
+  "logTitle": "Dzisiejsze wpisy",
+  "logEmpty": "Brak wpisów na dziś",
+  "logOpen": "Dzisiejsze wpisy",
+  "logDelete": "Usuń",
+  "setReminderStyle": "Styl przypomnień",
+  "styleNormal": "Normalny",
+  "styleNormalSub": "Dźwięk i wibracje",
+  "styleGentle": "Delikatny",
+  "styleGentleSub": "Tylko wibracje, bez dźwięku",
+  "styleSilent": "Cichy",
+  "styleSilentSub": "Bez dźwięku i wibracji"
 }

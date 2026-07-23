@@ -1031,4 +1031,55 @@ class LEn extends L {
   @override
   String get factLearn5Body =>
       'EFSA\'s reference for adequate intake from drinks is about 2 litres a day for women and 2.5 litres for men, in a temperate climate with moderate activity. Hot weather, exercise, pregnancy and breastfeeding all raise the need. Sipling adjusts this to your weight and activity level.';
+
+  @override
+  String get homeBoost => 'Hot day / sport';
+
+  @override
+  String get boostTitle => 'Boost today\'s goal';
+
+  @override
+  String get boostBody =>
+      'On a hot day or after exercise, add extra to today\'s goal. It resets by itself tomorrow.';
+
+  @override
+  String get boostReset => 'Reset';
+
+  @override
+  String boostActive(int ml) {
+    return '+$ml ml added today';
+  }
+
+  @override
+  String get logTitle => 'Today\'s entries';
+
+  @override
+  String get logEmpty => 'No entries yet today';
+
+  @override
+  String get logOpen => 'Today\'s entries';
+
+  @override
+  String get logDelete => 'Delete';
+
+  @override
+  String get setReminderStyle => 'Reminder style';
+
+  @override
+  String get styleNormal => 'Normal';
+
+  @override
+  String get styleNormalSub => 'Sound and vibration';
+
+  @override
+  String get styleGentle => 'Gentle';
+
+  @override
+  String get styleGentleSub => 'Vibration only, no sound';
+
+  @override
+  String get styleSilent => 'Silent';
+
+  @override
+  String get styleSilentSub => 'No sound or vibration';
 }

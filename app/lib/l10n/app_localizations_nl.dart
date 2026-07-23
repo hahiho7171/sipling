@@ -1040,4 +1040,55 @@ class LNl extends L {
   @override
   String get factLearn5Body =>
       'De EFSA-referentie voor voldoende inname uit dranken is ongeveer 2 liter per dag voor vrouwen en 2,5 liter voor mannen, in een gematigd klimaat met matige activiteit. Warm weer, sporten, zwangerschap en borstvoeding verhogen allemaal de behoefte. Sipling past dit aan op basis van je gewicht en activiteitsniveau.';
+
+  @override
+  String get homeBoost => 'Warme dag / sport';
+
+  @override
+  String get boostTitle => 'Verhoog het doel van vandaag';
+
+  @override
+  String get boostBody =>
+      'Voeg op een warme dag of na het sporten iets extra toe aan het doel van vandaag. Morgen wordt het vanzelf gereset.';
+
+  @override
+  String get boostReset => 'Resetten';
+
+  @override
+  String boostActive(int ml) {
+    return '+$ml ml vandaag toegevoegd';
+  }
+
+  @override
+  String get logTitle => 'Items van vandaag';
+
+  @override
+  String get logEmpty => 'Nog geen items vandaag';
+
+  @override
+  String get logOpen => 'Items van vandaag';
+
+  @override
+  String get logDelete => 'Verwijderen';
+
+  @override
+  String get setReminderStyle => 'Herinneringsstijl';
+
+  @override
+  String get styleNormal => 'Normaal';
+
+  @override
+  String get styleNormalSub => 'Geluid en trillen';
+
+  @override
+  String get styleGentle => 'Zacht';
+
+  @override
+  String get styleGentleSub => 'Alleen trillen, geen geluid';
+
+  @override
+  String get styleSilent => 'Stil';
+
+  @override
+  String get styleSilentSub => 'Geen geluid of trillen';
 }

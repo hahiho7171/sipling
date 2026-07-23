@@ -1022,4 +1022,55 @@ class LRu extends L {
   @override
   String get factLearn5Body =>
       'По референсу EFSA, достаточное потребление воды из напитков — около 2 литров в день для женщин и 2,5 литра для мужчин, в умеренном климате при средней активности. Жара, физические нагрузки, беременность и грудное вскармливание увеличивают эту потребность. Sipling подстраивает её под твой вес и уровень активности.';
+
+  @override
+  String get homeBoost => 'Жаркий день / спорт';
+
+  @override
+  String get boostTitle => 'Увеличить цель на сегодня';
+
+  @override
+  String get boostBody =>
+      'В жаркий день или после тренировки добавьте немного к сегодняшней цели. Завтра всё сбросится само.';
+
+  @override
+  String get boostReset => 'Сбросить';
+
+  @override
+  String boostActive(int ml) {
+    return 'Сегодня добавлено +$ml мл';
+  }
+
+  @override
+  String get logTitle => 'Записи за сегодня';
+
+  @override
+  String get logEmpty => 'Сегодня пока нет записей';
+
+  @override
+  String get logOpen => 'Записи за сегодня';
+
+  @override
+  String get logDelete => 'Удалить';
+
+  @override
+  String get setReminderStyle => 'Стиль напоминаний';
+
+  @override
+  String get styleNormal => 'Обычный';
+
+  @override
+  String get styleNormalSub => 'Звук и вибрация';
+
+  @override
+  String get styleGentle => 'Мягкий';
+
+  @override
+  String get styleGentleSub => 'Только вибрация, без звука';
+
+  @override
+  String get styleSilent => 'Без звука';
+
+  @override
+  String get styleSilentSub => 'Без звука и вибрации';
 }

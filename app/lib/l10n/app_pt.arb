@@ -304,5 +304,21 @@
   "factLearn4Title": "A cor da urina é a forma mais simples de checar",
   "factLearn4Body": "Uma cor de palha clara geralmente indica boa hidratação, enquanto amarelo escuro sugere que você precisa beber mais. Algumas vitaminas e remédios mudam a cor, então trate isso como uma dica, não como um veredito.",
   "factLearn5Title": "Quanto é suficiente?",
-  "factLearn5Body": "A referência da EFSA para ingestão adequada por bebidas é de cerca de 2 litros por dia para mulheres e 2,5 litros para homens, em clima temperado e atividade moderada. Calor, exercício, gravidez e amamentação aumentam essa necessidade. O Sipling ajusta isso ao seu peso e nível de atividade."
+  "factLearn5Body": "A referência da EFSA para ingestão adequada por bebidas é de cerca de 2 litros por dia para mulheres e 2,5 litros para homens, em clima temperado e atividade moderada. Calor, exercício, gravidez e amamentação aumentam essa necessidade. O Sipling ajusta isso ao seu peso e nível de atividade.",
+  "homeBoost": "Dia quente / esporte",
+  "boostTitle": "Aumente a meta de hoje",
+  "boostBody": "Em um dia quente ou após o exercício, adicione um extra à meta de hoje. Ela se redefine sozinha amanhã.",
+  "boostReset": "Redefinir",
+  "boostActive": "+{ml} ml adicionados hoje",
+  "logTitle": "Registros de hoje",
+  "logEmpty": "Ainda não há registros hoje",
+  "logOpen": "Registros de hoje",
+  "logDelete": "Excluir",
+  "setReminderStyle": "Estilo de lembrete",
+  "styleNormal": "Normal",
+  "styleNormalSub": "Som e vibração",
+  "styleGentle": "Suave",
+  "styleGentleSub": "Só vibração, sem som",
+  "styleSilent": "Silencioso",
+  "styleSilentSub": "Sem som nem vibração"
 }

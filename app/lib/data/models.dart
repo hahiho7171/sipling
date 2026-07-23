@@ -55,11 +55,16 @@ class DayRecord {
   final int goalMl;
   final String treeSpeciesId;
 
+  /// Bugüne özel geçici hedef artışı ("sıcak gün / spor"). Yalnız bu günü
+  /// etkiler; ertesi günün kaydı sıfırdan başladığı için kendiliğinden 0 olur.
+  final int boostMl;
+
   const DayRecord({
     required this.dateKey,
     required this.sips,
     required this.goalMl,
     required this.treeSpeciesId,
+    this.boostMl = 0,
   });
 
   double get totalMl =>
@@ -68,7 +73,12 @@ class DayRecord {
   /// Ham içilen miktar (katsayısız) — istatistikte "ne kadar sıvı aldın" için.
   int get rawMl => sips.fold(0, (a, s) => a + s.ml);
 
-  double get progress => goalMl == 0 ? 0 : (totalMl / goalMl).clamp(0.0, 1.0);
+  /// O günün GEÇERLİ hedefi = temel hedef + geçici artış. İlerleme, tamamlanma,
+  /// halka, widget ve "kalan" hep bunu kullanır ki artış her yere yansısın.
+  int get effectiveGoalMl => goalMl + boostMl;
+
+  double get progress =>
+      effectiveGoalMl == 0 ? 0 : (totalMl / effectiveGoalMl).clamp(0.0, 1.0);
   bool get completed => progress >= 1.0;
 
   Map<String, dynamic> toJson() => {
@@ -76,23 +86,30 @@ class DayRecord {
         'g': goalMl,
         'sp': treeSpeciesId,
         's': sips.map((e) => e.toJson()).toList(),
+        if (boostMl != 0) 'b': boostMl,
       };
 
   factory DayRecord.fromJson(Map<String, dynamic> j) => DayRecord(
         dateKey: j['d'] as String,
         goalMl: j['g'] as int,
         treeSpeciesId: (j['sp'] as String?) ?? 'oak',
+        boostMl: (j['b'] as int?) ?? 0,
         sips: (j['s'] as List)
             .map((e) => Sip.fromJson(Map<String, dynamic>.from(e as Map)))
             .toList(),
       );
 
-  DayRecord copyWith({List<Sip>? sips, int? goalMl, String? treeSpeciesId}) =>
+  DayRecord copyWith(
+          {List<Sip>? sips,
+          int? goalMl,
+          String? treeSpeciesId,
+          int? boostMl}) =>
       DayRecord(
         dateKey: dateKey,
         sips: sips ?? this.sips,
         goalMl: goalMl ?? this.goalMl,
         treeSpeciesId: treeSpeciesId ?? this.treeSpeciesId,
+        boostMl: boostMl ?? this.boostMl,
       );
 }
 
@@ -194,6 +211,18 @@ class Profile {
       );
 }
 
+/// Hatırlatma sesi/titreşimi stili.
+///
+/// 🚨 Android'de her stil AYRI bir bildirim kanalıdır (`notifications.dart`).
+/// Bir kanalın sesi/titreşimi oluşturulduktan SONRA değiştirilemez (sistem
+/// kilitler); o yüzden stil değişince başka bir kanala geçilir, yoksa değişiklik
+/// telefonda hiç etki etmezdi.
+enum ReminderStyle {
+  normal, // ses + titreşim
+  gentle, // yalnız titreşim, ses yok
+  silent, // ses yok, titreşim yok
+}
+
 /// Bildirim tercihleri.
 ///
 /// Hatırlatmalar yalnız uyanık saatler arasında planlanır; ayrıca
@@ -203,40 +232,52 @@ class ReminderSettings {
   final bool enabled;
   final int intervalMinutes; // 60, 90, 120, 180
   final bool stopWhenDone;
-  final bool silent; // sessiz bildirim (ses/titreşim yok)
+  final ReminderStyle style;
 
   const ReminderSettings({
     this.enabled = true,
     this.intervalMinutes = 120,
     this.stopWhenDone = true,
-    this.silent = false,
+    this.style = ReminderStyle.normal,
   });
 
   Map<String, dynamic> toJson() => {
         'e': enabled,
         'i': intervalMinutes,
         'b': stopWhenDone,
-        's': silent,
+        'st': style.name,
       };
 
   factory ReminderSettings.fromJson(Map<String, dynamic> j) => ReminderSettings(
         enabled: j['e'] as bool,
         intervalMinutes: j['i'] as int,
         stopWhenDone: (j['b'] as bool?) ?? true,
-        silent: (j['s'] as bool?) ?? false,
+        style: _styleFromJson(j),
       );
+
+  /// Yeni alan `st` (stil adı). Eski sürümlerde yalnız `s` (bool sessiz) vardı —
+  /// onu da okuyup göç ettiriyoruz ki güncelleyen kullanıcının tercihi kaybolmasın.
+  static ReminderStyle _styleFromJson(Map<String, dynamic> j) {
+    final st = j['st'];
+    if (st is String) {
+      return ReminderStyle.values
+          .firstWhere((e) => e.name == st, orElse: () => ReminderStyle.normal);
+    }
+    if (j['s'] == true) return ReminderStyle.silent;
+    return ReminderStyle.normal;
+  }
 
   ReminderSettings copyWith({
     bool? enabled,
     int? intervalMinutes,
     bool? stopWhenDone,
-    bool? silent,
+    ReminderStyle? style,
   }) =>
       ReminderSettings(
         enabled: enabled ?? this.enabled,
         intervalMinutes: intervalMinutes ?? this.intervalMinutes,
         stopWhenDone: stopWhenDone ?? this.stopWhenDone,
-        silent: silent ?? this.silent,
+        style: style ?? this.style,
       );
 }
 

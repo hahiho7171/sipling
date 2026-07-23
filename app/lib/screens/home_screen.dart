@@ -10,6 +10,8 @@ import '../services/notifications.dart';
 import '../theme.dart';
 import '../l10n/labels.dart';
 import '../widgets/add_drink_sheet.dart';
+import '../widgets/boost_sheet.dart';
+import '../widgets/day_log_sheet.dart';
 import '../widgets/garden_scene.dart';
 import 'water_needs_screen.dart';
 
@@ -92,13 +94,65 @@ class _HomeScreenState extends State<HomeScreen> {
     if (result != null) await _record(result.$1, result.$2);
   }
 
+  /// "Sıcak gün / spor" — bugünün hedefine geçici ekleme.
+  Future<void> _boost() async {
+    final state = context.read<AppState>();
+    final choice = await showModalBottomSheet<int>(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Palette.of(context).bg,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(26)),
+      ),
+      builder: (_) => const BoostSheet(),
+    );
+    if (choice == null || !mounted) return;
+    if (choice == 0) {
+      await state.resetBoost();
+    } else {
+      await state.addBoost(choice);
+    }
+    if (!mounted) return;
+    // Hedef değişti → "hedefi tutunca sus" doğru çalışsın diye yeniden planla.
+    await NotificationService.reschedule(
+      profile: state.profile,
+      settings: state.reminder,
+      todayCompleted: state.today.completed,
+      cups: state.cups,
+    );
+  }
+
+  /// "Bugünün kayıtları" — listeler ve tek tek silmeye izin verir.
+  Future<void> _openLog() async {
+    final state = context.read<AppState>();
+    await showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Palette.of(context).bg,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(26)),
+      ),
+      builder: (_) => DayLogSheet(
+        onDelete: (sip) async {
+          await state.removeSip(sip);
+          await NotificationService.reschedule(
+            profile: state.profile,
+            settings: state.reminder,
+            todayCompleted: state.today.completed,
+            cups: state.cups,
+          );
+        },
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final state = context.watch<AppState>();
     final l = context.l;
     final p = Palette.of(context);
     final day = state.today;
-    final remaining = math.max(0, day.goalMl - day.totalMl.round());
+    final remaining = math.max(0, day.effectiveGoalMl - day.totalMl.round());
 
     return Scaffold(
       body: SafeArea(
@@ -106,9 +160,11 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             _Header(
               total: day.totalMl.round(),
-              goal: day.goalMl,
+              goal: day.effectiveGoalMl,
               remaining: remaining,
               streak: state.currentStreak,
+              boost: day.boostMl,
+              onTapLog: _openLog,
             ),
             const SizedBox(height: 6),
             Expanded(
@@ -162,6 +218,18 @@ class _HomeScreenState extends State<HomeScreen> {
                     label: Text(l.homeUndoLast,
                         maxLines: 1, overflow: TextOverflow.ellipsis),
                     style: TextButton.styleFrom(foregroundColor: p.inkSoft),
+                  ),
+                ),
+                Flexible(
+                  child: TextButton.icon(
+                    onPressed: _boost,
+                    icon: const Icon(Icons.wb_sunny_outlined, size: 18),
+                    label: Text(l.homeBoost,
+                        maxLines: 1, overflow: TextOverflow.ellipsis),
+                    style: TextButton.styleFrom(
+                        foregroundColor: day.boostMl > 0
+                            ? SiplingColors.streak
+                            : p.inkSoft),
                   ),
                 ),
                 Flexible(
@@ -249,12 +317,16 @@ class _Header extends StatelessWidget {
   final int goal;
   final int remaining;
   final int streak;
+  final int boost;
+  final VoidCallback onTapLog;
 
   const _Header({
     required this.total,
     required this.goal,
     required this.remaining,
     required this.streak,
+    required this.boost,
+    required this.onTapLog,
   });
 
   @override
@@ -295,9 +367,32 @@ class _Header extends StatelessWidget {
                 remaining == 0 ? l.homeGoalDone : l.homeRemaining(remaining),
                 style: TextStyle(fontSize: 13, color: p.inkSoft),
               ),
+              if (boost > 0) ...[
+                const SizedBox(height: 3),
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Icon(Icons.wb_sunny_outlined,
+                        size: 13, color: SiplingColors.streak),
+                    const SizedBox(width: 4),
+                    Text(l.boostActive(boost),
+                        style: const TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w600,
+                            color: SiplingColors.streak)),
+                  ],
+                ),
+              ],
             ],
           ),
           const Spacer(),
+          IconButton(
+            onPressed: onTapLog,
+            icon: Icon(Icons.history, color: p.inkSoft),
+            tooltip: l.logOpen,
+            visualDensity: VisualDensity.compact,
+          ),
+          const SizedBox(width: 2),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
             decoration: BoxDecoration(

@@ -1016,4 +1016,55 @@ class LTr extends L {
   @override
   String get factLearn5Body =>
       'EFSA\'nın içeceklerden yeterli alım referansı, ılıman iklimde ve orta düzey hareketlilikte kadınlar için günde yaklaşık 2 litre, erkekler için 2,5 litredir. Sıcak hava, spor, gebelik ve emzirme bu ihtiyacı yükseltir. Sipling bunu kilona ve hareket düzeyine göre ayarlar.';
+
+  @override
+  String get homeBoost => 'Sıcak gün / spor';
+
+  @override
+  String get boostTitle => 'Bugünün hedefini artır';
+
+  @override
+  String get boostBody =>
+      'Sıcak havada ya da spor sonrası bugünün hedefine ekstra ekle. Yarın kendiliğinden sıfırlanır.';
+
+  @override
+  String get boostReset => 'Sıfırla';
+
+  @override
+  String boostActive(int ml) {
+    return 'Bugün +$ml ml eklendi';
+  }
+
+  @override
+  String get logTitle => 'Bugünün kayıtları';
+
+  @override
+  String get logEmpty => 'Bugün henüz kayıt yok';
+
+  @override
+  String get logOpen => 'Bugünkü kayıtlar';
+
+  @override
+  String get logDelete => 'Sil';
+
+  @override
+  String get setReminderStyle => 'Hatırlatma stili';
+
+  @override
+  String get styleNormal => 'Normal';
+
+  @override
+  String get styleNormalSub => 'Ses ve titreşim';
+
+  @override
+  String get styleGentle => 'Nazik';
+
+  @override
+  String get styleGentleSub => 'Sadece titreşim, ses yok';
+
+  @override
+  String get styleSilent => 'Sessiz';
+
+  @override
+  String get styleSilentSub => 'Ses ve titreşim yok';
 }

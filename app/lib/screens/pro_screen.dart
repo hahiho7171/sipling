@@ -9,10 +9,10 @@ import '../theme.dart';
 
 /// Pro tanıtım ekranı.
 ///
-/// ⚠️ Buradaki satın alma HENÜZ GERÇEK DEĞİL. Google Play Billing bağlanana ve
-/// Play Console'da abonelik ürünü oluşturulana kadar buton yalnız yerel bir
-/// anahtarı çevirir. Fiyatlar da Console'daki gerçek minimumlar görülmeden
-/// yazılmamalı — bu yüzden ekranda rakam göstermiyoruz.
+/// Satın alma GERÇEK: buton `PurchaseService.buy` çağırır (Play Billing /
+/// StoreKit, `in_app_purchase`). Ürün mağazadan yüklenene kadar buton pasif
+/// kalır ve fiyat butonda mağazanın döndürdüğü yerel para birimiyle gösterilir
+/// (koda rakam yazılmaz). Geri yükleme + otomatik-yenileme metni Apple zorunlu.
 class ProScreen extends StatelessWidget {
   const ProScreen({super.key});
 

@@ -253,7 +253,9 @@ class _BarChart extends StatelessWidget {
       l.statsWeekdaySun,
     ];
     final maxVal = days.fold<double>(
-        1, (m, d) => [m, d.totalMl, d.goalMl.toDouble()].reduce((a, b) => a > b ? a : b));
+        1,
+        (m, d) => [m, d.totalMl, d.effectiveGoalMl.toDouble()]
+            .reduce((a, b) => a > b ? a : b));
 
     return Column(
       children: [
@@ -262,7 +264,7 @@ class _BarChart extends StatelessWidget {
             builder: (context, c) {
               final goalY = days.isEmpty
                   ? 0.0
-                  : c.maxHeight * (1 - days.first.goalMl / maxVal);
+                  : c.maxHeight * (1 - days.first.effectiveGoalMl / maxVal);
               return Stack(
                 children: [
                   Positioned(

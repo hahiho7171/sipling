@@ -1026,4 +1026,55 @@ class LPl extends L {
   @override
   String get factLearn5Body =>
       'Wartość referencyjna EFSA dla odpowiedniego spożycia płynów to około 2 litrów dziennie dla kobiet i 2,5 litra dla mężczyzn, w klimacie umiarkowanym przy umiarkowanej aktywności. Upał, ćwiczenia, ciąża i karmienie piersią zwiększają to zapotrzebowanie. Sipling dostosowuje tę wartość do twojej wagi i poziomu aktywności.';
+
+  @override
+  String get homeBoost => 'Upalny dzień / sport';
+
+  @override
+  String get boostTitle => 'Zwiększ dzisiejszy cel';
+
+  @override
+  String get boostBody =>
+      'W upalny dzień lub po treningu dodaj trochę do dzisiejszego celu. Jutro zresetuje się samo.';
+
+  @override
+  String get boostReset => 'Resetuj';
+
+  @override
+  String boostActive(int ml) {
+    return 'Dziś dodano +$ml ml';
+  }
+
+  @override
+  String get logTitle => 'Dzisiejsze wpisy';
+
+  @override
+  String get logEmpty => 'Brak wpisów na dziś';
+
+  @override
+  String get logOpen => 'Dzisiejsze wpisy';
+
+  @override
+  String get logDelete => 'Usuń';
+
+  @override
+  String get setReminderStyle => 'Styl przypomnień';
+
+  @override
+  String get styleNormal => 'Normalny';
+
+  @override
+  String get styleNormalSub => 'Dźwięk i wibracje';
+
+  @override
+  String get styleGentle => 'Delikatny';
+
+  @override
+  String get styleGentleSub => 'Tylko wibracje, bez dźwięku';
+
+  @override
+  String get styleSilent => 'Cichy';
+
+  @override
+  String get styleSilentSub => 'Bez dźwięku i wibracji';
 }

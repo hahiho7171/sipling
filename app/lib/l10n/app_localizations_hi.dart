@@ -1030,4 +1030,55 @@ class LHi extends L {
   @override
   String get factLearn5Body =>
       'समशीतोष्ण जलवायु और मध्यम गतिविधि में, EFSA का पेय पदार्थों से पर्याप्त सेवन का संदर्भ महिलाओं के लिए लगभग 2 लीटर प्रतिदिन और पुरुषों के लिए 2.5 लीटर है। गर्म मौसम, कसरत, गर्भावस्था और स्तनपान — ये सभी ज़रूरत बढ़ा देते हैं। Sipling इसे आपके वज़न और गतिविधि स्तर के अनुसार समायोजित करता है।';
+
+  @override
+  String get homeBoost => 'गर्म दिन / व्यायाम';
+
+  @override
+  String get boostTitle => 'आज का लक्ष्य बढ़ाएँ';
+
+  @override
+  String get boostBody =>
+      'गर्म दिन में या व्यायाम के बाद आज के लक्ष्य में कुछ अतिरिक्त जोड़ें। यह कल अपने आप रीसेट हो जाएगा।';
+
+  @override
+  String get boostReset => 'रीसेट करें';
+
+  @override
+  String boostActive(int ml) {
+    return 'आज +$ml ml जोड़ा गया';
+  }
+
+  @override
+  String get logTitle => 'आज की प्रविष्टियाँ';
+
+  @override
+  String get logEmpty => 'आज अभी कोई प्रविष्टि नहीं';
+
+  @override
+  String get logOpen => 'आज की प्रविष्टियाँ';
+
+  @override
+  String get logDelete => 'हटाएँ';
+
+  @override
+  String get setReminderStyle => 'अनुस्मारक शैली';
+
+  @override
+  String get styleNormal => 'सामान्य';
+
+  @override
+  String get styleNormalSub => 'ध्वनि और कंपन';
+
+  @override
+  String get styleGentle => 'कोमल';
+
+  @override
+  String get styleGentleSub => 'केवल कंपन, कोई ध्वनि नहीं';
+
+  @override
+  String get styleSilent => 'मौन';
+
+  @override
+  String get styleSilentSub => 'न ध्वनि, न कंपन';
 }

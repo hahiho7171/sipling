@@ -169,15 +169,11 @@ class SettingsScreen extends StatelessWidget {
                   if (context.mounted) await _resync(context);
                 },
               ),
-              _SwitchTile(
-                icon: Icons.volume_off_outlined,
-                title: l.setSilent,
-                subtitle: l.setSilentSub,
-                value: r.silent,
-                onChanged: (v) async {
-                  await state.saveReminder(r.copyWith(silent: v));
-                  if (context.mounted) await _resync(context);
-                },
+              _Tile(
+                icon: Icons.notifications_none_outlined,
+                title: l.setReminderStyle,
+                trailing: _styleLabel(l, r.style),
+                onTap: () => _editStyle(context, state),
               ),
               _Tile(
                 icon: Icons.battery_alert_outlined,
@@ -270,6 +266,53 @@ class SettingsScreen extends StatelessWidget {
 
   static String _intervalLabel(L l, int m) =>
       m % 60 == 0 ? l.setEveryHours(m ~/ 60) : l.setEveryMinutes(m);
+
+  static String _styleLabel(L l, ReminderStyle s) => switch (s) {
+        ReminderStyle.normal => l.styleNormal,
+        ReminderStyle.gentle => l.styleGentle,
+        ReminderStyle.silent => l.styleSilent,
+      };
+
+  static String _styleSub(L l, ReminderStyle s) => switch (s) {
+        ReminderStyle.normal => l.styleNormalSub,
+        ReminderStyle.gentle => l.styleGentleSub,
+        ReminderStyle.silent => l.styleSilentSub,
+      };
+
+  static IconData _styleIcon(ReminderStyle s) => switch (s) {
+        ReminderStyle.normal => Icons.notifications_active_outlined,
+        ReminderStyle.gentle => Icons.vibration,
+        ReminderStyle.silent => Icons.notifications_off_outlined,
+      };
+
+  Future<void> _editStyle(BuildContext context, AppState state) async {
+    final l = context.l;
+    final result = await showDialog<ReminderStyle>(
+      context: context,
+      builder: (ctx) => SimpleDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22)),
+        title: Text(l.setReminderStyle),
+        children: [
+          for (final s in ReminderStyle.values)
+            ListTile(
+              leading: Icon(_styleIcon(s),
+                  color: state.reminder.style == s
+                      ? SiplingColors.water
+                      : null),
+              title: Text(_styleLabel(l, s)),
+              subtitle: Text(_styleSub(l, s)),
+              trailing: state.reminder.style == s
+                  ? const Icon(Icons.check, color: SiplingColors.water)
+                  : null,
+              onTap: () => Navigator.of(ctx).pop(s),
+            ),
+        ],
+      ),
+    );
+    if (result == null) return;
+    await state.saveReminder(state.reminder.copyWith(style: result));
+    if (context.mounted) await _resync(context);
+  }
 
   Future<void> _editGoal(BuildContext context, AppState state) async {
     final l = context.l;

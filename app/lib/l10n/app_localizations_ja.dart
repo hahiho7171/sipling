@@ -988,4 +988,54 @@ class LJa extends L {
   @override
   String get factLearn5Body =>
       '欧州食品安全機関（EFSA）の基準では、温暖な気候で適度な活動量の場合、飲み物からの適切な水分摂取量は女性で1日約2リットル、男性で2.5リットルとされています。暑い気候、運動、妊娠、授乳はいずれも必要量を増やします。Siplingはこれをあなたの体重と活動量に合わせて調整します。';
+
+  @override
+  String get homeBoost => '暑い日／運動';
+
+  @override
+  String get boostTitle => '今日の目標を増やす';
+
+  @override
+  String get boostBody => '暑い日や運動のあとに、今日の目標へ少し追加します。明日には自動でリセットされます。';
+
+  @override
+  String get boostReset => 'リセット';
+
+  @override
+  String boostActive(int ml) {
+    return '今日 +$ml ml 追加';
+  }
+
+  @override
+  String get logTitle => '今日の記録';
+
+  @override
+  String get logEmpty => '今日の記録はまだありません';
+
+  @override
+  String get logOpen => '今日の記録';
+
+  @override
+  String get logDelete => '削除';
+
+  @override
+  String get setReminderStyle => '通知スタイル';
+
+  @override
+  String get styleNormal => '標準';
+
+  @override
+  String get styleNormalSub => '音とバイブ';
+
+  @override
+  String get styleGentle => 'やさしい';
+
+  @override
+  String get styleGentleSub => 'バイブのみ、音なし';
+
+  @override
+  String get styleSilent => 'サイレント';
+
+  @override
+  String get styleSilentSub => '音もバイブもなし';
 }

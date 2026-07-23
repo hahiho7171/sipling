@@ -304,5 +304,21 @@
   "factLearn4Title": "Màu nước tiểu là cách kiểm tra đơn giản nhất",
   "factLearn4Body": "Màu vàng rơm nhạt thường nghĩa là bạn đủ nước, trong khi vàng đậm cho thấy bạn cần uống thêm. Một số vitamin và thuốc có thể làm đổi màu, vì vậy hãy xem đây là gợi ý chứ không phải kết luận chắc chắn.",
   "factLearn5Title": "Bao nhiêu là đủ?",
-  "factLearn5Body": "Theo tham chiếu của EFSA, lượng nước uống đủ dùng mỗi ngày là khoảng 2 lít với phụ nữ và 2,5 lít với nam giới, trong khí hậu ôn hòa với mức vận động vừa phải. Thời tiết nóng, tập luyện, mang thai và cho con bú đều làm tăng nhu cầu này. Sipling điều chỉnh con số này theo cân nặng và mức vận động của bạn."
+  "factLearn5Body": "Theo tham chiếu của EFSA, lượng nước uống đủ dùng mỗi ngày là khoảng 2 lít với phụ nữ và 2,5 lít với nam giới, trong khí hậu ôn hòa với mức vận động vừa phải. Thời tiết nóng, tập luyện, mang thai và cho con bú đều làm tăng nhu cầu này. Sipling điều chỉnh con số này theo cân nặng và mức vận động của bạn.",
+  "homeBoost": "Ngày nóng / thể thao",
+  "boostTitle": "Tăng mục tiêu hôm nay",
+  "boostBody": "Vào ngày nóng hoặc sau khi tập thể dục, hãy thêm một chút vào mục tiêu hôm nay. Ngày mai sẽ tự đặt lại.",
+  "boostReset": "Đặt lại",
+  "boostActive": "Đã thêm +{ml} ml hôm nay",
+  "logTitle": "Bản ghi hôm nay",
+  "logEmpty": "Chưa có bản ghi nào hôm nay",
+  "logOpen": "Bản ghi hôm nay",
+  "logDelete": "Xóa",
+  "setReminderStyle": "Kiểu nhắc nhở",
+  "styleNormal": "Bình thường",
+  "styleNormalSub": "Âm thanh và rung",
+  "styleGentle": "Nhẹ nhàng",
+  "styleGentleSub": "Chỉ rung, không âm thanh",
+  "styleSilent": "Im lặng",
+  "styleSilentSub": "Không âm thanh, không rung"
 }

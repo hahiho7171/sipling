@@ -304,5 +304,21 @@
   "factLearn4Title": "Die Urinfarbe ist der einfachste Test",
   "factLearn4Body": "Ein blasses Strohgelb bedeutet meist, dass du gut hydriert bist, während dunkles Gelb darauf hindeutet, dass du mehr brauchst. Manche Vitamine und Medikamente verändern die Farbe, sieh sie also eher als Hinweis denn als Urteil.",
   "factLearn5Title": "Wie viel ist genug?",
-  "factLearn5Body": "Der EFSA-Referenzwert für eine angemessene Aufnahme über Getränke liegt bei etwa 2 Litern pro Tag für Frauen und 2,5 Litern für Männer, bei gemäßigtem Klima und moderater Aktivität. Hitze, Sport, Schwangerschaft und Stillzeit erhöhen den Bedarf. Sipling passt das an dein Gewicht und dein Aktivitätsniveau an."
+  "factLearn5Body": "Der EFSA-Referenzwert für eine angemessene Aufnahme über Getränke liegt bei etwa 2 Litern pro Tag für Frauen und 2,5 Litern für Männer, bei gemäßigtem Klima und moderater Aktivität. Hitze, Sport, Schwangerschaft und Stillzeit erhöhen den Bedarf. Sipling passt das an dein Gewicht und dein Aktivitätsniveau an.",
+  "homeBoost": "Heißer Tag / Sport",
+  "boostTitle": "Heutiges Ziel erhöhen",
+  "boostBody": "An einem heißen Tag oder nach dem Sport dem heutigen Ziel etwas hinzufügen. Morgen wird es von selbst zurückgesetzt.",
+  "boostReset": "Zurücksetzen",
+  "boostActive": "+{ml} ml heute hinzugefügt",
+  "logTitle": "Heutige Einträge",
+  "logEmpty": "Heute noch keine Einträge",
+  "logOpen": "Heutige Einträge",
+  "logDelete": "Löschen",
+  "setReminderStyle": "Erinnerungsstil",
+  "styleNormal": "Normal",
+  "styleNormalSub": "Ton und Vibration",
+  "styleGentle": "Sanft",
+  "styleGentleSub": "Nur Vibration, kein Ton",
+  "styleSilent": "Lautlos",
+  "styleSilentSub": "Kein Ton, keine Vibration"
 }

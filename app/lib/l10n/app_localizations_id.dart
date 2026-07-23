@@ -1023,4 +1023,55 @@ class LId extends L {
   @override
   String get factLearn5Body =>
       'Acuan EFSA untuk asupan cairan yang cukup dari minuman adalah sekitar 2 liter sehari untuk perempuan dan 2,5 liter untuk laki-laki, dalam iklim sedang dengan aktivitas sedang. Cuaca panas, olahraga, kehamilan, dan menyusui semuanya meningkatkan kebutuhan ini. Sipling menyesuaikannya dengan berat dan tingkat aktivitasmu.';
+
+  @override
+  String get homeBoost => 'Hari panas / olahraga';
+
+  @override
+  String get boostTitle => 'Tingkatkan target hari ini';
+
+  @override
+  String get boostBody =>
+      'Saat cuaca panas atau setelah olahraga, tambahkan ekstra ke target hari ini. Besok akan diatur ulang sendiri.';
+
+  @override
+  String get boostReset => 'Atur ulang';
+
+  @override
+  String boostActive(int ml) {
+    return '+$ml ml ditambahkan hari ini';
+  }
+
+  @override
+  String get logTitle => 'Catatan hari ini';
+
+  @override
+  String get logEmpty => 'Belum ada catatan hari ini';
+
+  @override
+  String get logOpen => 'Catatan hari ini';
+
+  @override
+  String get logDelete => 'Hapus';
+
+  @override
+  String get setReminderStyle => 'Gaya pengingat';
+
+  @override
+  String get styleNormal => 'Normal';
+
+  @override
+  String get styleNormalSub => 'Suara dan getaran';
+
+  @override
+  String get styleGentle => 'Lembut';
+
+  @override
+  String get styleGentleSub => 'Hanya getaran, tanpa suara';
+
+  @override
+  String get styleSilent => 'Senyap';
+
+  @override
+  String get styleSilentSub => 'Tanpa suara atau getaran';
 }

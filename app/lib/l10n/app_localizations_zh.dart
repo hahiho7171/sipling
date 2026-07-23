@@ -982,6 +982,56 @@ class LZh extends L {
   @override
   String get factLearn5Body =>
       '在温带气候、中等运动量的条件下，EFSA 给出的饮水适宜摄入量参考值为：女性每天约 2 升，男性 2.5 升。炎热天气、运动、怀孕和哺乳都会提高这个需求。Sipling 会根据你的体重和运动量对此进行调整。';
+
+  @override
+  String get homeBoost => '炎热天 / 运动';
+
+  @override
+  String get boostTitle => '提高今天的目标';
+
+  @override
+  String get boostBody => '炎热的日子或运动后，为今天的目标额外增加一些。明天会自动重置。';
+
+  @override
+  String get boostReset => '重置';
+
+  @override
+  String boostActive(int ml) {
+    return '今天已增加 +$ml ml';
+  }
+
+  @override
+  String get logTitle => '今日记录';
+
+  @override
+  String get logEmpty => '今天还没有记录';
+
+  @override
+  String get logOpen => '今日记录';
+
+  @override
+  String get logDelete => '删除';
+
+  @override
+  String get setReminderStyle => '提醒方式';
+
+  @override
+  String get styleNormal => '正常';
+
+  @override
+  String get styleNormalSub => '声音和振动';
+
+  @override
+  String get styleGentle => '轻柔';
+
+  @override
+  String get styleGentleSub => '仅振动，无声音';
+
+  @override
+  String get styleSilent => '静音';
+
+  @override
+  String get styleSilentSub => '无声音无振动';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -1963,4 +2013,54 @@ class LZhHant extends LZh {
   @override
   String get factLearn5Body =>
       '在溫帶氣候、中等活動量的情況下，EFSA 提出的飲水適宜攝取量參考值為：女性每天約 2 公升，男性 2.5 公升。炎熱天氣、運動、懷孕和哺乳都會提高這個需求。Sipling 會依你的體重和活動量調整這個數字。';
+
+  @override
+  String get homeBoost => '炎熱天 / 運動';
+
+  @override
+  String get boostTitle => '提高今天的目標';
+
+  @override
+  String get boostBody => '炎熱的日子或運動後，為今天的目標額外增加一些。明天會自動重設。';
+
+  @override
+  String get boostReset => '重設';
+
+  @override
+  String boostActive(int ml) {
+    return '今天已增加 +$ml ml';
+  }
+
+  @override
+  String get logTitle => '今日紀錄';
+
+  @override
+  String get logEmpty => '今天還沒有紀錄';
+
+  @override
+  String get logOpen => '今日紀錄';
+
+  @override
+  String get logDelete => '刪除';
+
+  @override
+  String get setReminderStyle => '提醒方式';
+
+  @override
+  String get styleNormal => '一般';
+
+  @override
+  String get styleNormalSub => '聲音和震動';
+
+  @override
+  String get styleGentle => '輕柔';
+
+  @override
+  String get styleGentleSub => '僅震動，無聲音';
+
+  @override
+  String get styleSilent => '靜音';
+
+  @override
+  String get styleSilentSub => '無聲音無震動';
 }

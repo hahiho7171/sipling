@@ -1022,4 +1022,55 @@ class LVi extends L {
   @override
   String get factLearn5Body =>
       'Theo tham chiếu của EFSA, lượng nước uống đủ dùng mỗi ngày là khoảng 2 lít với phụ nữ và 2,5 lít với nam giới, trong khí hậu ôn hòa với mức vận động vừa phải. Thời tiết nóng, tập luyện, mang thai và cho con bú đều làm tăng nhu cầu này. Sipling điều chỉnh con số này theo cân nặng và mức vận động của bạn.';
+
+  @override
+  String get homeBoost => 'Ngày nóng / thể thao';
+
+  @override
+  String get boostTitle => 'Tăng mục tiêu hôm nay';
+
+  @override
+  String get boostBody =>
+      'Vào ngày nóng hoặc sau khi tập thể dục, hãy thêm một chút vào mục tiêu hôm nay. Ngày mai sẽ tự đặt lại.';
+
+  @override
+  String get boostReset => 'Đặt lại';
+
+  @override
+  String boostActive(int ml) {
+    return 'Đã thêm +$ml ml hôm nay';
+  }
+
+  @override
+  String get logTitle => 'Bản ghi hôm nay';
+
+  @override
+  String get logEmpty => 'Chưa có bản ghi nào hôm nay';
+
+  @override
+  String get logOpen => 'Bản ghi hôm nay';
+
+  @override
+  String get logDelete => 'Xóa';
+
+  @override
+  String get setReminderStyle => 'Kiểu nhắc nhở';
+
+  @override
+  String get styleNormal => 'Bình thường';
+
+  @override
+  String get styleNormalSub => 'Âm thanh và rung';
+
+  @override
+  String get styleGentle => 'Nhẹ nhàng';
+
+  @override
+  String get styleGentleSub => 'Chỉ rung, không âm thanh';
+
+  @override
+  String get styleSilent => 'Im lặng';
+
+  @override
+  String get styleSilentSub => 'Không âm thanh, không rung';
 }

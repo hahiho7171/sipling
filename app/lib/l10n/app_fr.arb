@@ -304,5 +304,21 @@
   "factLearn4Title": "La couleur de l'urine est le contrôle le plus simple",
   "factLearn4Body": "Une couleur paille pâle indique généralement une bonne hydratation, tandis qu'un jaune foncé suggère que tu as besoin de plus d'eau. Certaines vitamines et certains médicaments changent la couleur, considère donc cela comme un indice plutôt qu'un verdict.",
   "factLearn5Title": "Combien, c'est suffisant ?",
-  "factLearn5Body": "La référence de l'EFSA pour un apport adéquat par les boissons est d'environ 2 litres par jour pour les femmes et 2,5 litres pour les hommes, dans un climat tempéré avec une activité modérée. Chaleur, exercice, grossesse et allaitement augmentent tous ce besoin. Sipling ajuste cela à ton poids et à ton niveau d'activité."
+  "factLearn5Body": "La référence de l'EFSA pour un apport adéquat par les boissons est d'environ 2 litres par jour pour les femmes et 2,5 litres pour les hommes, dans un climat tempéré avec une activité modérée. Chaleur, exercice, grossesse et allaitement augmentent tous ce besoin. Sipling ajuste cela à ton poids et à ton niveau d'activité.",
+  "homeBoost": "Jour chaud / sport",
+  "boostTitle": "Augmenter l'objectif du jour",
+  "boostBody": "Par temps chaud ou après le sport, ajoutez un extra à l'objectif du jour. Il se réinitialise tout seul demain.",
+  "boostReset": "Réinitialiser",
+  "boostActive": "+{ml} ml ajoutés aujourd’hui",
+  "logTitle": "Entrées d'aujourd'hui",
+  "logEmpty": "Aucune entrée aujourd'hui pour l'instant",
+  "logOpen": "Entrées d'aujourd'hui",
+  "logDelete": "Supprimer",
+  "setReminderStyle": "Style de rappel",
+  "styleNormal": "Normal",
+  "styleNormalSub": "Son et vibration",
+  "styleGentle": "Doux",
+  "styleGentleSub": "Vibration seule, sans son",
+  "styleSilent": "Silencieux",
+  "styleSilentSub": "Ni son ni vibration"
 }

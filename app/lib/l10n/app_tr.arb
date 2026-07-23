@@ -304,5 +304,21 @@
   "factLearn4Title": "En pratik gösterge: idrar rengi",
   "factLearn4Body": "Açık saman rengi genelde yeterli su içtiğini gösterir; koyu sarı ise daha fazlasına ihtiyacın olduğunu düşündürür. Bazı vitamin ve ilaçlar rengi değiştirir, bu yüzden kesin hüküm değil ipucu say.",
   "factLearn5Title": "Ne kadar yeterli?",
-  "factLearn5Body": "EFSA'nın içeceklerden yeterli alım referansı, ılıman iklimde ve orta düzey hareketlilikte kadınlar için günde yaklaşık 2 litre, erkekler için 2,5 litredir. Sıcak hava, spor, gebelik ve emzirme bu ihtiyacı yükseltir. Sipling bunu kilona ve hareket düzeyine göre ayarlar."
+  "factLearn5Body": "EFSA'nın içeceklerden yeterli alım referansı, ılıman iklimde ve orta düzey hareketlilikte kadınlar için günde yaklaşık 2 litre, erkekler için 2,5 litredir. Sıcak hava, spor, gebelik ve emzirme bu ihtiyacı yükseltir. Sipling bunu kilona ve hareket düzeyine göre ayarlar.",
+  "homeBoost": "Sıcak gün / spor",
+  "boostTitle": "Bugünün hedefini artır",
+  "boostBody": "Sıcak havada ya da spor sonrası bugünün hedefine ekstra ekle. Yarın kendiliğinden sıfırlanır.",
+  "boostReset": "Sıfırla",
+  "boostActive": "Bugün +{ml} ml eklendi",
+  "logTitle": "Bugünün kayıtları",
+  "logEmpty": "Bugün henüz kayıt yok",
+  "logOpen": "Bugünkü kayıtlar",
+  "logDelete": "Sil",
+  "setReminderStyle": "Hatırlatma stili",
+  "styleNormal": "Normal",
+  "styleNormalSub": "Ses ve titreşim",
+  "styleGentle": "Nazik",
+  "styleGentleSub": "Sadece titreşim, ses yok",
+  "styleSilent": "Sessiz",
+  "styleSilentSub": "Ses ve titreşim yok"
 }

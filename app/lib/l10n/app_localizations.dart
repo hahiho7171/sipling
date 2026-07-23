@@ -1961,6 +1961,102 @@ abstract class L {
   /// In en, this message translates to:
   /// **'EFSA\'s reference for adequate intake from drinks is about 2 litres a day for women and 2.5 litres for men, in a temperate climate with moderate activity. Hot weather, exercise, pregnancy and breastfeeding all raise the need. Sipling adjusts this to your weight and activity level.'**
   String get factLearn5Body;
+
+  /// No description provided for @homeBoost.
+  ///
+  /// In en, this message translates to:
+  /// **'Hot day / sport'**
+  String get homeBoost;
+
+  /// No description provided for @boostTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Boost today\'s goal'**
+  String get boostTitle;
+
+  /// No description provided for @boostBody.
+  ///
+  /// In en, this message translates to:
+  /// **'On a hot day or after exercise, add extra to today\'s goal. It resets by itself tomorrow.'**
+  String get boostBody;
+
+  /// No description provided for @boostReset.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset'**
+  String get boostReset;
+
+  /// No description provided for @boostActive.
+  ///
+  /// In en, this message translates to:
+  /// **'+{ml} ml added today'**
+  String boostActive(int ml);
+
+  /// No description provided for @logTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'s entries'**
+  String get logTitle;
+
+  /// No description provided for @logEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No entries yet today'**
+  String get logEmpty;
+
+  /// No description provided for @logOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'s entries'**
+  String get logOpen;
+
+  /// No description provided for @logDelete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get logDelete;
+
+  /// No description provided for @setReminderStyle.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminder style'**
+  String get setReminderStyle;
+
+  /// No description provided for @styleNormal.
+  ///
+  /// In en, this message translates to:
+  /// **'Normal'**
+  String get styleNormal;
+
+  /// No description provided for @styleNormalSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Sound and vibration'**
+  String get styleNormalSub;
+
+  /// No description provided for @styleGentle.
+  ///
+  /// In en, this message translates to:
+  /// **'Gentle'**
+  String get styleGentle;
+
+  /// No description provided for @styleGentleSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Vibration only, no sound'**
+  String get styleGentleSub;
+
+  /// No description provided for @styleSilent.
+  ///
+  /// In en, this message translates to:
+  /// **'Silent'**
+  String get styleSilent;
+
+  /// No description provided for @styleSilentSub.
+  ///
+  /// In en, this message translates to:
+  /// **'No sound or vibration'**
+  String get styleSilentSub;
 }
 
 class _LDelegate extends LocalizationsDelegate<L> {

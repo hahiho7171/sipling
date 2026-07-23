@@ -107,7 +107,7 @@ class HomeWidgetService {
     }
 
     final today = state.today;
-    final goal = today.goalMl;
+    final goal = today.effectiveGoalMl; // "sıcak gün" artışı dahil
     final ml = today.totalMl.round();
 
     await HomeWidget.saveWidgetData<String>(_kToday, '$ml');

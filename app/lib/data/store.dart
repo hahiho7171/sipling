@@ -73,20 +73,54 @@ class AppState extends ChangeNotifier {
 
   Future<void> init() async {
     _prefs = await SharedPreferences.getInstance();
+    _readFromPrefs();
+    _ready = true;
+    notifyListeners();
+  }
 
+  /// Uygulama arka plandan öne gelince diskteki en güncel veriyi tekrar okur.
+  ///
+  /// 🚨 Bunun olmaması gerçek bir hataydı: bildirimdeki "+N ml" düğmesi ve ana
+  /// ekran widget'ı, uygulama arka plandayken AYRI bir isolate'te suyu doğrudan
+  /// diske yazar (bkz. [HomeWidgetService.onWidgetTap]). Ana uygulama o yazımı
+  /// ancak diski yeniden okursa görür. Okumazsak iki şey olur:
+  ///   1. Bildirimden/widget'tan eklenen su uygulamada HİÇ görünmez.
+  ///   2. Kullanıcı sonra elle bir bardak eklerse, ana uygulamanın (bayat)
+  ///      hafızası diske geri yazılır ve arka planda eklenen su SİLİNİR.
+  /// [reload] uygulama her öne geldiğinde (`RootShell` yaşam döngüsü) çağrılır.
+  ///
+  /// `SharedPreferences.getInstance()` bir kez okuyup belleğe alır; başka bir
+  /// isolate'in yazdığı diski görmez. `_prefs.reload()` bu önbelleği diskten
+  /// tazeler — bu satır olmadan yeniden okuma eski değeri döndürürdü.
+  Future<void> reload() async {
+    if (!_ready) return;
+    await _prefs.reload();
+    _readFromPrefs();
+    notifyListeners();
+  }
+
+  /// Tüm durumu SharedPreferences'tan (yeniden) yükler. Hem ilk açılış [init]
+  /// hem de öne-gelme [reload] bunu kullanır; ikisi de aynı sonucu versin diye
+  /// her alan diskteki değere ya da yokluğunda varsayılana **sıfırlanır**.
+  void _readFromPrefs() {
     final p = _prefs.getString(_kProfile);
-    if (p != null) _profile = Profile.fromJson(jsonDecode(p));
+    _profile = p != null ? Profile.fromJson(jsonDecode(p)) : const Profile();
 
     final r = _prefs.getString(_kReminder);
-    if (r != null) _reminder = ReminderSettings.fromJson(jsonDecode(r));
+    _reminder = r != null
+        ? ReminderSettings.fromJson(jsonDecode(r))
+        : const ReminderSettings();
 
     final c = _prefs.getString(_kCups);
-    if (c != null) {
-      _cups = (jsonDecode(c) as List)
-          .map((e) => CupPreset.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList();
-    }
+    _cups = c != null
+        ? (jsonDecode(c) as List)
+            .map((e) => CupPreset.fromJson(Map<String, dynamic>.from(e as Map)))
+            .toList()
+        : List.of(CupPreset.defaults);
 
+    // Diskteki `days` her zaman eksiksizdir (arka plan isolate'i tüm haritayı
+    // yeniden yazar), o yüzden birleştirmek yerine tamamen değiştiriyoruz.
+    _days.clear();
     final d = _prefs.getString(_kDays);
     if (d != null) {
       final map = jsonDecode(d) as Map<String, dynamic>;
@@ -104,9 +138,6 @@ class AppState extends ChangeNotifier {
     _rewardUnlocked = (_prefs.getStringList(_kUnlocked) ?? []).toSet();
     _seenAchievements = (_prefs.getStringList(_kSeenAchievements) ?? []).toSet();
     _selectedSpecies = _prefs.getString(_kSelected) ?? 'oak';
-
-    _ready = true;
-    notifyListeners();
   }
 
   // ---------------------------------------------------------------- günler
@@ -178,6 +209,49 @@ class AppState extends ChangeNotifier {
 
     // Sağlık defterindeki karşılığı da gitsin; yoksa geri alınan su orada kalır.
     if (_healthSync) await HealthBridge.deleteWaterAt(removed.at);
+  }
+
+  /// Bugünün listesinden BELİRLİ bir kaydı siler (ana ekrandaki "Bugünün
+  /// kayıtları" penceresi kullanır — eskiden yalnız "son eklemeyi geri al" vardı).
+  Future<void> removeSip(Sip sip) async {
+    final key = dateKeyOf(DateTime.now());
+    final current = _days[key];
+    if (current == null) return;
+    final list = List<Sip>.of(current.sips);
+    final i = list.indexWhere(
+        (s) => s.at == sip.at && s.ml == sip.ml && s.type == sip.type);
+    if (i < 0) return;
+    list.removeAt(i);
+    _days[key] = current.copyWith(sips: list);
+    await _saveDays();
+    notifyListeners();
+
+    if (_healthSync) await HealthBridge.deleteWaterAt(sip.at);
+  }
+
+  /// "Sıcak gün / spor" — bugünün hedefine geçici [ml] ekler. Ertesi gün yeni
+  /// kayıt boostsuz başladığı için kendiliğinden sıfırlanır.
+  Future<void> addBoost(int ml) async {
+    final key = dateKeyOf(DateTime.now());
+    final current = _days[key] ??
+        DayRecord(
+            dateKey: key,
+            sips: const [],
+            goalMl: goalMl,
+            treeSpeciesId: _selectedSpecies);
+    _days[key] = current.copyWith(boostMl: current.boostMl + ml, goalMl: goalMl);
+    await _saveDays();
+    notifyListeners();
+  }
+
+  /// Bugünün geçici hedef artışını sıfırlar.
+  Future<void> resetBoost() async {
+    final key = dateKeyOf(DateTime.now());
+    final current = _days[key];
+    if (current == null || current.boostMl == 0) return;
+    _days[key] = current.copyWith(boostMl: 0);
+    await _saveDays();
+    notifyListeners();
   }
 
   Future<void> _saveDays() async {

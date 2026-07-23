@@ -1029,4 +1029,55 @@ class LDe extends L {
   @override
   String get factLearn5Body =>
       'Der EFSA-Referenzwert für eine angemessene Aufnahme über Getränke liegt bei etwa 2 Litern pro Tag für Frauen und 2,5 Litern für Männer, bei gemäßigtem Klima und moderater Aktivität. Hitze, Sport, Schwangerschaft und Stillzeit erhöhen den Bedarf. Sipling passt das an dein Gewicht und dein Aktivitätsniveau an.';
+
+  @override
+  String get homeBoost => 'Heißer Tag / Sport';
+
+  @override
+  String get boostTitle => 'Heutiges Ziel erhöhen';
+
+  @override
+  String get boostBody =>
+      'An einem heißen Tag oder nach dem Sport dem heutigen Ziel etwas hinzufügen. Morgen wird es von selbst zurückgesetzt.';
+
+  @override
+  String get boostReset => 'Zurücksetzen';
+
+  @override
+  String boostActive(int ml) {
+    return '+$ml ml heute hinzugefügt';
+  }
+
+  @override
+  String get logTitle => 'Heutige Einträge';
+
+  @override
+  String get logEmpty => 'Heute noch keine Einträge';
+
+  @override
+  String get logOpen => 'Heutige Einträge';
+
+  @override
+  String get logDelete => 'Löschen';
+
+  @override
+  String get setReminderStyle => 'Erinnerungsstil';
+
+  @override
+  String get styleNormal => 'Normal';
+
+  @override
+  String get styleNormalSub => 'Ton und Vibration';
+
+  @override
+  String get styleGentle => 'Sanft';
+
+  @override
+  String get styleGentleSub => 'Nur Vibration, kein Ton';
+
+  @override
+  String get styleSilent => 'Lautlos';
+
+  @override
+  String get styleSilentSub => 'Kein Ton, keine Vibration';
 }

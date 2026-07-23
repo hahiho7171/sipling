@@ -43,7 +43,39 @@ Future<void> siplingNotificationAction(NotificationResponse response) async {
 class NotificationService {
   static final _plugin = FlutterLocalNotificationsPlugin();
   static const _daysAhead = 7;
-  static const _channelId = 'sipling_reminders';
+
+  /// 🚨 Her hatırlatma stili AYRI bir kanal. Android'de bir kanalın sesi/titreşimi
+  /// oluşturulduktan SONRA değiştirilemez (sistem kilitler); tek kanalla kalsaydık
+  /// "Nazik/Sessiz" seçimi telefonda hiç etki etmezdi. Stil değişince farklı, doğru
+  /// ayarlı kanala geçiyoruz. → [_channelFor]
+  static const _legacyChannelId = 'sipling_reminders'; // 1.0.x tek kanalı, silinir
+
+  /// Stile göre (kanalId, kanalAdı, önem, ses, titreşim).
+  static (String, String, Importance, bool, bool) _channelFor(
+          ReminderStyle style) =>
+      switch (style) {
+        ReminderStyle.normal => (
+            'sipling_rem_normal',
+            'Sipling',
+            Importance.defaultImportance,
+            true,
+            true
+          ),
+        ReminderStyle.gentle => (
+            'sipling_rem_gentle',
+            'Sipling (nazik)',
+            Importance.low,
+            false,
+            true
+          ),
+        ReminderStyle.silent => (
+            'sipling_rem_silent',
+            'Sipling (sessiz)',
+            Importance.low,
+            false,
+            false
+          ),
+      };
 
   /// Bildirimdeki hızlı-ekle düğmesinin kimliği.
   static const addActionId = 'add_water';
@@ -152,6 +184,11 @@ class NotificationService {
       onDidReceiveNotificationResponse: _onResponse,
       onDidReceiveBackgroundNotificationResponse: siplingNotificationAction,
     );
+    // Eski tek kanalı temizle — yeni sürüm stil başına ayrı kanal kullanıyor.
+    await _plugin
+        .resolvePlatformSpecificImplementation<
+            AndroidFlutterLocalNotificationsPlugin>()
+        ?.deleteNotificationChannel(channelId: _legacyChannelId);
     _initialized = true;
   }
 
@@ -203,15 +240,18 @@ class NotificationService {
     final cup = cups.isNotEmpty ? cups.first : CupPreset.defaults.first;
     final addPayload = 'sipling://add?ml=${cup.ml}&type=${cup.type.name}';
 
+    final (channelId, channelName, importance, playSound, vibrate) =
+        _channelFor(settings.style);
+
     final details = NotificationDetails(
       android: AndroidNotificationDetails(
-        _channelId,
-        'Sipling',
+        channelId,
+        channelName,
         channelDescription: 'Water reminders',
-        importance: Importance.defaultImportance,
-        priority: Priority.defaultPriority,
-        playSound: !settings.silent,
-        enableVibration: !settings.silent,
+        importance: importance,
+        priority: playSound ? Priority.defaultPriority : Priority.low,
+        playSound: playSound,
+        enableVibration: vibrate,
         actions: [
           AndroidNotificationAction(
             addActionId,
@@ -222,7 +262,8 @@ class NotificationService {
         ],
       ),
       iOS: DarwinNotificationDetails(
-        presentSound: !settings.silent,
+        // iOS'ta kanal yok; yalnız ses kontrol edilebilir (titreşim sese bağlı).
+        presentSound: settings.style == ReminderStyle.normal,
         categoryIdentifier: _iosCategoryId, // "+N ml" düğmesini bu bildirime bağlar
       ),
     );

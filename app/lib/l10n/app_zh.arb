@@ -304,5 +304,21 @@
   "factLearn4Title": "尿液颜色是最简单的检查方式",
   "factLearn4Body": "浅麦秆色通常说明水分充足，深黄色则说明你需要多喝点水。有些维生素和药物会改变颜色，所以这只能作为参考，而不是绝对的判断标准。",
   "factLearn5Title": "喝多少才够？",
-  "factLearn5Body": "在温带气候、中等运动量的条件下，EFSA 给出的饮水适宜摄入量参考值为：女性每天约 2 升，男性 2.5 升。炎热天气、运动、怀孕和哺乳都会提高这个需求。Sipling 会根据你的体重和运动量对此进行调整。"
+  "factLearn5Body": "在温带气候、中等运动量的条件下，EFSA 给出的饮水适宜摄入量参考值为：女性每天约 2 升，男性 2.5 升。炎热天气、运动、怀孕和哺乳都会提高这个需求。Sipling 会根据你的体重和运动量对此进行调整。",
+  "homeBoost": "炎热天 / 运动",
+  "boostTitle": "提高今天的目标",
+  "boostBody": "炎热的日子或运动后，为今天的目标额外增加一些。明天会自动重置。",
+  "boostReset": "重置",
+  "boostActive": "今天已增加 +{ml} ml",
+  "logTitle": "今日记录",
+  "logEmpty": "今天还没有记录",
+  "logOpen": "今日记录",
+  "logDelete": "删除",
+  "setReminderStyle": "提醒方式",
+  "styleNormal": "正常",
+  "styleNormalSub": "声音和振动",
+  "styleGentle": "轻柔",
+  "styleGentleSub": "仅振动，无声音",
+  "styleSilent": "静音",
+  "styleSilentSub": "无声音无振动"
 }

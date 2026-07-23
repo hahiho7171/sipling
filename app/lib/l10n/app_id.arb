@@ -304,5 +304,21 @@
   "factLearn4Title": "Warna urine adalah cara paling sederhana untuk memeriksa",
   "factLearn4Body": "Warna kuning jerami pucat biasanya berarti cairanmu cukup, sedangkan kuning gelap menandakan kamu perlu minum lebih banyak. Beberapa vitamin dan obat bisa mengubah warnanya, jadi anggap ini sebagai petunjuk, bukan kepastian.",
   "factLearn5Title": "Berapa banyak yang cukup?",
-  "factLearn5Body": "Acuan EFSA untuk asupan cairan yang cukup dari minuman adalah sekitar 2 liter sehari untuk perempuan dan 2,5 liter untuk laki-laki, dalam iklim sedang dengan aktivitas sedang. Cuaca panas, olahraga, kehamilan, dan menyusui semuanya meningkatkan kebutuhan ini. Sipling menyesuaikannya dengan berat dan tingkat aktivitasmu."
+  "factLearn5Body": "Acuan EFSA untuk asupan cairan yang cukup dari minuman adalah sekitar 2 liter sehari untuk perempuan dan 2,5 liter untuk laki-laki, dalam iklim sedang dengan aktivitas sedang. Cuaca panas, olahraga, kehamilan, dan menyusui semuanya meningkatkan kebutuhan ini. Sipling menyesuaikannya dengan berat dan tingkat aktivitasmu.",
+  "homeBoost": "Hari panas / olahraga",
+  "boostTitle": "Tingkatkan target hari ini",
+  "boostBody": "Saat cuaca panas atau setelah olahraga, tambahkan ekstra ke target hari ini. Besok akan diatur ulang sendiri.",
+  "boostReset": "Atur ulang",
+  "boostActive": "+{ml} ml ditambahkan hari ini",
+  "logTitle": "Catatan hari ini",
+  "logEmpty": "Belum ada catatan hari ini",
+  "logOpen": "Catatan hari ini",
+  "logDelete": "Hapus",
+  "setReminderStyle": "Gaya pengingat",
+  "styleNormal": "Normal",
+  "styleNormalSub": "Suara dan getaran",
+  "styleGentle": "Lembut",
+  "styleGentleSub": "Hanya getaran, tanpa suara",
+  "styleSilent": "Senyap",
+  "styleSilentSub": "Tanpa suara atau getaran"
 }
