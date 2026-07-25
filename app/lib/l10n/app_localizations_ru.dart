@@ -1073,4 +1073,32 @@ class LRu extends L {
 
   @override
   String get styleSilentSub => 'Без звука и вибрации';
+
+  @override
+  String get speciesScreenAdUnavailable =>
+      'Реклама сейчас недоступна. Повторите попытку чуть позже.';
+
+  @override
+  String get setHotDayTitle => 'Оповещение о жаре';
+
+  @override
+  String get setHotDaySub =>
+      'Дополнительное напоминание о воде, когда в вашем городе жарко (только iPhone)';
+
+  @override
+  String get setHotDayCity => 'Город';
+
+  @override
+  String get setHotDayCitySet => 'Выбрать';
+
+  @override
+  String get setHotDayCityHint => 'напр. Стамбул';
+
+  @override
+  String get notifHotDayTitle => 'Сегодня жарко 🌡️';
+
+  @override
+  String notifHotDayBody(int temp) {
+    return 'Сегодня $temp°C — пейте немного чаще.';
+  }
 }

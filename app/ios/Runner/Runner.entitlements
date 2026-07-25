@@ -12,5 +12,13 @@
 	<array>
 		<string>group.com.sipling.app</string>
 	</array>
+	<!--
+	  Apple WeatherKit — "Sıcak gün uyarısı" için (yalnız iOS). Ücretsiz kota
+	  Apple Developer üyeliğine dahil. ⚠️ Apple Developer portalında da App ID
+	  (com.sipling.app) için WeatherKit capability AÇILMALI, yoksa imzalama profili
+	  bu entitlement'ı içermez ve WeatherKit çağrısı yetki hatası verir.
+	-->
+	<key>com.apple.developer.weatherkit</key>
+	<true/>
 </dict>
 </plist>

@@ -320,5 +320,13 @@
   "styleGentle": "轻柔",
   "styleGentleSub": "仅振动，无声音",
   "styleSilent": "静音",
-  "styleSilentSub": "无声音无振动"
+  "styleSilentSub": "无声音无振动",
+  "speciesScreenAdUnavailable": "广告尚未准备好，请稍后再试。",
+  "setHotDayTitle": "高温日提醒",
+  "setHotDaySub": "所在城市天气炎热时的额外喝水提醒（仅限 iPhone）",
+  "setHotDayCity": "城市",
+  "setHotDayCitySet": "选择",
+  "setHotDayCityHint": "如：伊斯坦布尔",
+  "notifHotDayTitle": "今天很热 🌡️",
+  "notifHotDayBody": "今天 {temp}°C——记得多喝几次水。"
 }

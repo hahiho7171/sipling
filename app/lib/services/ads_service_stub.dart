@@ -13,6 +13,10 @@ class AdsService {
 
   static Future<void> maybeShowInterstitial() async {}
 
+  static Future<void> maybeShowAppOpen() async {}
+
   /// Reklam yoksa ödülü doğrudan ver.
-  static Future<void> showRewarded(VoidCallback onReward) async => onReward();
+  static Future<void> showRewarded(VoidCallback onReward,
+          {VoidCallback? onUnavailable}) async =>
+      onReward();
 }

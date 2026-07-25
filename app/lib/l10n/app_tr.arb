@@ -320,5 +320,13 @@
   "styleGentle": "Nazik",
   "styleGentleSub": "Sadece titreşim, ses yok",
   "styleSilent": "Sessiz",
-  "styleSilentSub": "Ses ve titreşim yok"
+  "styleSilentSub": "Ses ve titreşim yok",
+  "speciesScreenAdUnavailable": "Reklam şu an hazır değil. Birazdan tekrar dene.",
+  "setHotDayTitle": "Sıcak gün uyarısı",
+  "setHotDaySub": "Şehrinde hava sıcaksa fazladan su hatırlatması (yalnız iPhone)",
+  "setHotDayCity": "Şehir",
+  "setHotDayCitySet": "Seç",
+  "setHotDayCityHint": "Örn. İstanbul",
+  "notifHotDayTitle": "Bugün hava sıcak 🌡️",
+  "notifHotDayBody": "Bugün hava {temp}°C — biraz daha sık su içmeyi hedefle."
 }

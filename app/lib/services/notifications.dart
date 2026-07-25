@@ -120,9 +120,34 @@ class NotificationService {
     onForegroundAdd?.call(ml, type);
   }
 
+  /// Sıcak gün eşiği (°C). Bugünün en yüksek sıcaklığı bunu aşarsa hatırlatmalara
+  /// bir "fazladan su iç" mesajı eklenir. (Yalnız iOS; veri WeatherKit'ten.)
+  static const _hotThresholdC = 30;
+
+  /// main.dart uygulama öne gelince WeatherKit'ten bugünün en yüksek sıcaklığını
+  /// bu anahtarlara yazar; burada okuyup hatırlatmaya yansıtıyoruz.
+  static const _kWeatherMaxC = 'weather_maxc';
+  static const _kWeatherDate = 'weather_date';
+
+  /// Bugün için önbellekteki en yüksek sıcaklık eşiği aşıyorsa yuvarlanmış °C,
+  /// aksi halde null (eski/eksik veri de null).
+  static Future<int?> _hotDayTempToday() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final today = DateTime.now().toIso8601String().substring(0, 10);
+      if (prefs.getString(_kWeatherDate) != today) return null;
+      final t = prefs.getDouble(_kWeatherMaxC);
+      if (t == null || t < _hotThresholdC) return null;
+      return t.round();
+    } catch (_) {
+      return null;
+    }
+  }
+
   /// Bildirim metinleri için `BuildContext` yok — çeviriyi cihazın diline göre
   /// elle yüklüyoruz. Desteklenmeyen bir dilde İngilizceye düşer.
-  static Future<List<(String, String)>> _messages() async {
+  /// [hotTempC] doluysa (bugün sıcak) uyarı mesajı havuzun başına eklenir.
+  static Future<List<(String, String)>> _messages(int? hotTempC) async {
     final device = PlatformDispatcher.instance.locale;
     final supported = L.supportedLocales
             .any((l) => l.languageCode == device.languageCode)
@@ -142,12 +167,17 @@ class NotificationService {
     final facts = notificationFacts(l)
         .map((f) => (f.title, f.body))
         .toList(growable: false);
-    return [
+    final pool = [
       for (var i = 0; i < motivation.length; i++) ...[
         motivation[i],
         if (i < facts.length) facts[i],
       ],
     ];
+    // Sıcak günde uyarıyı havuzun BAŞINA koy → o günün ilk hatırlatmalarında görünsün.
+    if (hotTempC != null) {
+      return [(l.notifHotDayTitle, l.notifHotDayBody(hotTempC)), ...pool];
+    }
+    return pool;
   }
 
   static Future<void> init() async {
@@ -268,7 +298,7 @@ class NotificationService {
       ),
     );
 
-    final messages = await _messages();
+    final messages = await _messages(await _hotDayTempToday());
     final now = tz.TZDateTime.now(tz.local);
     // Son hatırlatma, uykudan bir saat önce.
     final lastCall = profile.sleepMinutes - 60;

@@ -1071,4 +1071,32 @@ class LUk extends L {
 
   @override
   String get styleSilentSub => 'Без звуку та вібрації';
+
+  @override
+  String get speciesScreenAdUnavailable =>
+      'Реклама зараз недоступна. Спробуйте ще раз за мить.';
+
+  @override
+  String get setHotDayTitle => 'Сповіщення про спеку';
+
+  @override
+  String get setHotDaySub =>
+      'Додаткове нагадування про воду, коли у вашому місті спекотно (лише iPhone)';
+
+  @override
+  String get setHotDayCity => 'Місто';
+
+  @override
+  String get setHotDayCitySet => 'Вибрати';
+
+  @override
+  String get setHotDayCityHint => 'напр. Стамбул';
+
+  @override
+  String get notifHotDayTitle => 'Сьогодні спекотно 🌡️';
+
+  @override
+  String notifHotDayBody(int temp) {
+    return 'Сьогодні $temp°C — пийте трохи частіше.';
+  }
 }

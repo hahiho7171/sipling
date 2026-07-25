@@ -1085,4 +1085,32 @@ class LEs extends L {
 
   @override
   String get styleSilentSub => 'Sin sonido ni vibración';
+
+  @override
+  String get speciesScreenAdUnavailable =>
+      'El anuncio no está listo. Inténtalo de nuevo en un momento.';
+
+  @override
+  String get setHotDayTitle => 'Aviso de día caluroso';
+
+  @override
+  String get setHotDaySub =>
+      'Recordatorio extra de agua cuando hace calor en tu ciudad (solo iPhone)';
+
+  @override
+  String get setHotDayCity => 'Ciudad';
+
+  @override
+  String get setHotDayCitySet => 'Elegir';
+
+  @override
+  String get setHotDayCityHint => 'Ej. Estambul';
+
+  @override
+  String get notifHotDayTitle => 'Hoy hace calor 🌡️';
+
+  @override
+  String notifHotDayBody(int temp) {
+    return 'Hoy hace $temp°C — intenta beber un poco más a menudo.';
+  }
 }

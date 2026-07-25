@@ -320,5 +320,13 @@
   "styleGentle": "Lembut",
   "styleGentleSub": "Hanya getaran, tanpa suara",
   "styleSilent": "Senyap",
-  "styleSilentSub": "Tanpa suara atau getaran"
+  "styleSilentSub": "Tanpa suara atau getaran",
+  "speciesScreenAdUnavailable": "Iklan belum siap. Coba lagi sebentar lagi.",
+  "setHotDayTitle": "Peringatan hari panas",
+  "setHotDaySub": "Pengingat air ekstra saat cuaca panas di kotamu (khusus iPhone)",
+  "setHotDayCity": "Kota",
+  "setHotDayCitySet": "Pilih",
+  "setHotDayCityHint": "mis. Istanbul",
+  "notifHotDayTitle": "Hari ini panas 🌡️",
+  "notifHotDayBody": "Hari ini {temp}°C — minumlah sedikit lebih sering."
 }

@@ -1074,4 +1074,32 @@ class LId extends L {
 
   @override
   String get styleSilentSub => 'Tanpa suara atau getaran';
+
+  @override
+  String get speciesScreenAdUnavailable =>
+      'Iklan belum siap. Coba lagi sebentar lagi.';
+
+  @override
+  String get setHotDayTitle => 'Peringatan hari panas';
+
+  @override
+  String get setHotDaySub =>
+      'Pengingat air ekstra saat cuaca panas di kotamu (khusus iPhone)';
+
+  @override
+  String get setHotDayCity => 'Kota';
+
+  @override
+  String get setHotDayCitySet => 'Pilih';
+
+  @override
+  String get setHotDayCityHint => 'mis. Istanbul';
+
+  @override
+  String get notifHotDayTitle => 'Hari ini panas 🌡️';
+
+  @override
+  String notifHotDayBody(int temp) {
+    return 'Hari ini $temp°C — minumlah sedikit lebih sering.';
+  }
 }

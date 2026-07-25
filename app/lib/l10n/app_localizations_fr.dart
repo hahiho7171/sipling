@@ -1078,4 +1078,32 @@ class LFr extends L {
 
   @override
   String get styleSilentSub => 'Ni son ni vibration';
+
+  @override
+  String get speciesScreenAdUnavailable =>
+      'La publicité n\'est pas prête. Réessaie dans un instant.';
+
+  @override
+  String get setHotDayTitle => 'Alerte jour chaud';
+
+  @override
+  String get setHotDaySub =>
+      'Rappel d\'eau supplémentaire quand il fait chaud dans ta ville (iPhone uniquement)';
+
+  @override
+  String get setHotDayCity => 'Ville';
+
+  @override
+  String get setHotDayCitySet => 'Choisir';
+
+  @override
+  String get setHotDayCityHint => 'ex. Istanbul';
+
+  @override
+  String get notifHotDayTitle => 'Il fait chaud aujourd\'hui 🌡️';
+
+  @override
+  String notifHotDayBody(int temp) {
+    return 'Il fait $temp°C — pense à boire un peu plus souvent.';
+  }
 }

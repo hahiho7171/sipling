@@ -1038,4 +1038,30 @@ class LJa extends L {
 
   @override
   String get styleSilentSub => '音もバイブもなし';
+
+  @override
+  String get speciesScreenAdUnavailable => '広告の準備がまだできていません。少し後にもう一度お試しください。';
+
+  @override
+  String get setHotDayTitle => '暑い日のお知らせ';
+
+  @override
+  String get setHotDaySub => '住んでいる街が暑いとき、追加の水分リマインダー（iPhoneのみ）';
+
+  @override
+  String get setHotDayCity => '都市';
+
+  @override
+  String get setHotDayCitySet => '設定';
+
+  @override
+  String get setHotDayCityHint => '例：イスタンブール';
+
+  @override
+  String get notifHotDayTitle => '今日は暑いです 🌡️';
+
+  @override
+  String notifHotDayBody(int temp) {
+    return '今日は$temp°C — いつもより少しこまめに水分をとりましょう。';
+  }
 }

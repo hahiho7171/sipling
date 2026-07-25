@@ -320,5 +320,13 @@
   "styleGentle": "Sanft",
   "styleGentleSub": "Nur Vibration, kein Ton",
   "styleSilent": "Lautlos",
-  "styleSilentSub": "Kein Ton, keine Vibration"
+  "styleSilentSub": "Kein Ton, keine Vibration",
+  "speciesScreenAdUnavailable": "Die Anzeige ist gerade nicht bereit. Versuch es gleich noch einmal.",
+  "setHotDayTitle": "Hitzewarnung",
+  "setHotDaySub": "Extra Wasser-Erinnerung, wenn es in deiner Stadt heiß ist (nur iPhone)",
+  "setHotDayCity": "Stadt",
+  "setHotDayCitySet": "Wählen",
+  "setHotDayCityHint": "z. B. Istanbul",
+  "notifHotDayTitle": "Heute ist es heiß 🌡️",
+  "notifHotDayBody": "Heute sind es {temp}°C — trink heute etwas öfter."
 }

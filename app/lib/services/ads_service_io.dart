@@ -4,6 +4,7 @@ import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 /// Reklamlar — YALNIZ ücretsiz kullanıcıya. Pro alınca [enabled]=false → hiç reklam yok.
 ///
@@ -12,20 +13,54 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 ///
 /// Reklam birimi kimlikleri GERÇEK (AdMob hesabı randevusayfasi@gmail.com ·
 /// yayıncı ca-app-pub-3326866070505611 · "Sipling (Android)" + "Sipling (iOS)").
-/// 🚨 TEST ederken emülatör/cihazı `RequestConfiguration.testDeviceIds` ile test cihazı
-/// işaretle — GERÇEK kimlikte kendi reklamına tıklamak AdMob hesabını KAPATTIRIR.
+/// 🚨 TEST ederken emülatör/cihazı test reklamına al ([_forceTestAds]=true) —
+/// GERÇEK kimlikte kendi reklamına tıklamak AdMob hesabını KAPATTIRIR.
+///
+/// Yerleşim: banner (İstatistik) · interstitial (gün-sonu özeti sonrası, 3 dk sınır) ·
+/// açılış reklamı (öne gelince, 4 saatte bir, ilk açılış hariç) · ödüllü (kozmetik açar).
 class AdsService {
   AdsService._();
 
-  static String get _bannerUnit => Platform.isIOS
-      ? 'ca-app-pub-3326866070505611/8997483187'
-      : 'ca-app-pub-3326866070505611/9255101114';
-  static String get _interstitialUnit => Platform.isIOS
-      ? 'ca-app-pub-3326866070505611/1414506632'
-      : 'ca-app-pub-3326866070505611/6628937776';
-  static String get _rewardedUnit => Platform.isIOS
-      ? 'ca-app-pub-3326866070505611/4002774438'
-      : 'ca-app-pub-3326866070505611/1637867914';
+  /// 🧪 Test reklamı anahtarı. Emülatör/cihazda butonların çalıştığını KANITLAMAK
+  /// için elle `true` yap: Google'ın test reklamları her zaman "dolar" (AdMob hesap
+  /// onayından bağımsız) ve tıklaması güvenlidir. 🚨 YAYINDA MUTLAKA `false` kalmalı.
+  static final bool _forceTestAds = false;
+
+  // Google resmî test kimlikleri (her zaman dolar, tıklaması banlatmaz).
+  static const _testBannerAndroid = 'ca-app-pub-3940256099942544/6300978111';
+  static const _testBannerIos = 'ca-app-pub-3940256099942544/2934735716';
+  static const _testInterstitialAndroid = 'ca-app-pub-3940256099942544/1033173712';
+  static const _testInterstitialIos = 'ca-app-pub-3940256099942544/4411468910';
+  static const _testRewardedAndroid = 'ca-app-pub-3940256099942544/5224354917';
+  static const _testRewardedIos = 'ca-app-pub-3940256099942544/1712485313';
+  static const _testAppOpenAndroid = 'ca-app-pub-3940256099942544/9257395921';
+  static const _testAppOpenIos = 'ca-app-pub-3940256099942544/5575463023';
+
+  // App Open (açılış) reklam birimleri — AdMob'da oluşturuldu (2026-07-25,
+  // "Sipling App Open Android/iOS", yayıncı ca-app-pub-3326866070505611).
+  static const _appOpenAndroid = 'ca-app-pub-3326866070505611/4096053447';
+  static const _appOpenIos = 'ca-app-pub-3326866070505611/8573400217';
+
+  static bool get _ios => Platform.isIOS;
+
+  static String get _bannerUnit => _forceTestAds
+      ? (_ios ? _testBannerIos : _testBannerAndroid)
+      : (_ios
+          ? 'ca-app-pub-3326866070505611/8997483187'
+          : 'ca-app-pub-3326866070505611/9255101114');
+  static String get _interstitialUnit => _forceTestAds
+      ? (_ios ? _testInterstitialIos : _testInterstitialAndroid)
+      : (_ios
+          ? 'ca-app-pub-3326866070505611/1414506632'
+          : 'ca-app-pub-3326866070505611/6628937776');
+  static String get _rewardedUnit => _forceTestAds
+      ? (_ios ? _testRewardedIos : _testRewardedAndroid)
+      : (_ios
+          ? 'ca-app-pub-3326866070505611/4002774438'
+          : 'ca-app-pub-3326866070505611/1637867914');
+  static String get _appOpenUnit => _forceTestAds
+      ? (_ios ? _testAppOpenIos : _testAppOpenAndroid)
+      : (_ios ? _appOpenIos : _appOpenAndroid);
 
   /// Pro kullanıcıda kapalı. `main.dart` isPro'ya göre ayarlar.
   static bool enabled = true;
@@ -33,6 +68,17 @@ class AdsService {
   static bool _initialized = false;
   static InterstitialAd? _interstitial;
   static DateTime? _lastInterstitial;
+
+  static AppOpenAd? _appOpenAd;
+  static bool _firstResumeSeen = false;
+  static const _kLastAppOpen = 'ad_last_app_open';
+
+  /// Açılış reklamları arasında en az bu kadar süre — "girince görür ama bunaltmaz".
+  static const _appOpenGap = Duration(hours: 4);
+
+  /// İki tam-ekran reklam üst üste binmesin (ör. ödüllü/interstitial kapanırken
+  /// tetiklenen resume'de açılış reklamı tekrar açılmasın).
+  static bool _showingFullScreenAd = false;
 
   /// İki tam-ekran reklam arasında en az bu kadar süre — "çok bunaltmadan".
   static const _interstitialGap = Duration(minutes: 3);
@@ -46,6 +92,7 @@ class AdsService {
     await _requestConsent();
     await MobileAds.instance.initialize();
     _preloadInterstitial();
+    _preloadAppOpen();
   }
 
   /// AB/İngiltere için zorunlu rıza akışı (UMP). Diğer bölgelerde sessizce geçer.
@@ -90,7 +137,7 @@ class AdsService {
   /// Sıklık sınırlı tam-ekran reklam: son gösterimden [_interstitialGap] geçmediyse
   /// ve reklam hazır değilse GÖSTERMEZ. "Standart ama bunaltmayan" için.
   static Future<void> maybeShowInterstitial() async {
-    if (_adsOff) return;
+    if (_adsOff || _showingFullScreenAd) return;
     final last = _lastInterstitial;
     if (last != null && DateTime.now().difference(last) < _interstitialGap) return;
     final ad = _interstitial;
@@ -100,12 +147,15 @@ class AdsService {
     }
     _interstitial = null;
     _lastInterstitial = DateTime.now();
+    _showingFullScreenAd = true;
     ad.fullScreenContentCallback = FullScreenContentCallback(
       onAdDismissedFullScreenContent: (ad) {
+        _showingFullScreenAd = false;
         ad.dispose();
         _preloadInterstitial();
       },
       onAdFailedToShowFullScreenContent: (ad, err) {
+        _showingFullScreenAd = false;
         ad.dispose();
         _preloadInterstitial();
       },
@@ -113,10 +163,69 @@ class AdsService {
     await ad.show();
   }
 
-  // ---- Rewarded (ödüllü — "reklam izle, tema aç") ----
+  // ---- App Open (açılış reklamı) ----
+  static void _preloadAppOpen() {
+    if (_adsOff || _appOpenUnit.isEmpty) return;
+    AppOpenAd.load(
+      adUnitId: _appOpenUnit,
+      request: const AdRequest(nonPersonalizedAds: true),
+      adLoadCallback: AppOpenAdLoadCallback(
+        onAdLoaded: (ad) => _appOpenAd = ad,
+        onAdFailedToLoad: (err) {
+          _appOpenAd = null;
+          debugPrint('Sipling açılış reklamı yüklenemedi: $err');
+        },
+      ),
+    );
+  }
+
+  /// Uygulama öne gelince açılış reklamı. Soğuk açılışın İLK resume'ünde
+  /// gösterilmez (kullanıcı doğrudan girsin); sonrasında en fazla 4 saatte bir.
+  /// `didChangeAppLifecycleState(resumed)`'dan çağrılır.
+  static Future<void> maybeShowAppOpen() async {
+    if (_adsOff || _showingFullScreenAd) return;
+    if (!_firstResumeSeen) {
+      _firstResumeSeen = true;
+      _preloadAppOpen();
+      return;
+    }
+    final prefs = await SharedPreferences.getInstance();
+    final lastMs = prefs.getInt(_kLastAppOpen);
+    if (lastMs != null &&
+        DateTime.now().difference(DateTime.fromMillisecondsSinceEpoch(lastMs)) <
+            _appOpenGap) {
+      return;
+    }
+    final ad = _appOpenAd;
+    if (ad == null) {
+      _preloadAppOpen();
+      return;
+    }
+    _appOpenAd = null;
+    _showingFullScreenAd = true;
+    await prefs.setInt(_kLastAppOpen, DateTime.now().millisecondsSinceEpoch);
+    ad.fullScreenContentCallback = FullScreenContentCallback(
+      onAdDismissedFullScreenContent: (ad) {
+        _showingFullScreenAd = false;
+        ad.dispose();
+        _preloadAppOpen();
+      },
+      onAdFailedToShowFullScreenContent: (ad, err) {
+        _showingFullScreenAd = false;
+        ad.dispose();
+        _preloadAppOpen();
+      },
+    );
+    ad.show();
+  }
+
+  // ---- Rewarded (ödüllü — "reklam izle, kozmetik aç") ----
   /// Ödüllü reklam gösterir; kullanıcı sonuna kadar izlerse [onReward] çağrılır.
+  /// Reklam yüklenemez/gösterilemezse [onUnavailable] çağrılır (kullanıcı sessiz
+  /// kalmasın, "reklam hazır değil" mesajı gösterebilsin).
   /// Pro'da/web'de doğrudan ödülü verir (reklam yok).
-  static Future<void> showRewarded(VoidCallback onReward) async {
+  static Future<void> showRewarded(VoidCallback onReward,
+      {VoidCallback? onUnavailable}) async {
     if (_adsOff) {
       onReward();
       return;
@@ -125,8 +234,25 @@ class AdsService {
       adUnitId: _rewardedUnit,
       request: const AdRequest(nonPersonalizedAds: true),
       rewardedAdLoadCallback: RewardedAdLoadCallback(
-        onAdLoaded: (ad) => ad.show(onUserEarnedReward: (_, _) => onReward()),
-        onAdFailedToLoad: (err) => debugPrint('Sipling ödüllü yüklenemedi: $err'),
+        onAdLoaded: (ad) {
+          _showingFullScreenAd = true;
+          ad.fullScreenContentCallback = FullScreenContentCallback(
+            onAdDismissedFullScreenContent: (ad) {
+              _showingFullScreenAd = false;
+              ad.dispose();
+            },
+            onAdFailedToShowFullScreenContent: (ad, err) {
+              _showingFullScreenAd = false;
+              ad.dispose();
+              onUnavailable?.call();
+            },
+          );
+          ad.show(onUserEarnedReward: (_, _) => onReward());
+        },
+        onAdFailedToLoad: (err) {
+          debugPrint('Sipling ödüllü yüklenemedi: $err');
+          onUnavailable?.call();
+        },
       ),
     );
   }

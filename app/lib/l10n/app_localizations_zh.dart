@@ -1032,6 +1032,32 @@ class LZh extends L {
 
   @override
   String get styleSilentSub => '无声音无振动';
+
+  @override
+  String get speciesScreenAdUnavailable => '广告尚未准备好，请稍后再试。';
+
+  @override
+  String get setHotDayTitle => '高温日提醒';
+
+  @override
+  String get setHotDaySub => '所在城市天气炎热时的额外喝水提醒（仅限 iPhone）';
+
+  @override
+  String get setHotDayCity => '城市';
+
+  @override
+  String get setHotDayCitySet => '选择';
+
+  @override
+  String get setHotDayCityHint => '如：伊斯坦布尔';
+
+  @override
+  String get notifHotDayTitle => '今天很热 🌡️';
+
+  @override
+  String notifHotDayBody(int temp) {
+    return '今天 $temp°C——记得多喝几次水。';
+  }
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -2063,4 +2089,30 @@ class LZhHant extends LZh {
 
   @override
   String get styleSilentSub => '無聲音無震動';
+
+  @override
+  String get speciesScreenAdUnavailable => '廣告尚未準備好，請稍後再試。';
+
+  @override
+  String get setHotDayTitle => '高溫日提醒';
+
+  @override
+  String get setHotDaySub => '所在城市天氣炎熱時的額外喝水提醒（僅限 iPhone）';
+
+  @override
+  String get setHotDayCity => '城市';
+
+  @override
+  String get setHotDayCitySet => '選擇';
+
+  @override
+  String get setHotDayCityHint => '如：伊斯坦堡';
+
+  @override
+  String get notifHotDayTitle => '今天很熱 🌡️';
+
+  @override
+  String notifHotDayBody(int temp) {
+    return '今天 $temp°C——記得多喝幾次水。';
+  }
 }

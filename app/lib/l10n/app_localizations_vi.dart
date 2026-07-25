@@ -1073,4 +1073,32 @@ class LVi extends L {
 
   @override
   String get styleSilentSub => 'Không âm thanh, không rung';
+
+  @override
+  String get speciesScreenAdUnavailable =>
+      'Quảng cáo chưa sẵn sàng. Hãy thử lại sau giây lát.';
+
+  @override
+  String get setHotDayTitle => 'Cảnh báo ngày nóng';
+
+  @override
+  String get setHotDaySub =>
+      'Nhắc uống nước thêm khi trời nóng ở thành phố của bạn (chỉ iPhone)';
+
+  @override
+  String get setHotDayCity => 'Thành phố';
+
+  @override
+  String get setHotDayCitySet => 'Chọn';
+
+  @override
+  String get setHotDayCityHint => 'vd. Istanbul';
+
+  @override
+  String get notifHotDayTitle => 'Hôm nay trời nóng 🌡️';
+
+  @override
+  String notifHotDayBody(int temp) {
+    return 'Hôm nay $temp°C — hãy uống nước thường xuyên hơn một chút.';
+  }
 }

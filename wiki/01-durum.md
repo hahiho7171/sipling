@@ -2,6 +2,118 @@
 
 > Her oturum sonunda **buraya** yaz. Başka yere durum yazma.
 
+## 📣 2026-07-25 — REKLAM DÜZENİ ELDEN GEÇİRİLDİ (kod tarafı bitti; reklamın DOLMASI hesap işi)
+
+**Kullanıcı şikâyeti:** "Reklam izle" butonuna basınca reklam açılmıyor (canlı Apple sürümünde
+kullanıcılardan geldi). Ayrıca gelir için "uygulamaya girince reklam" istendi.
+
+**🔎 Teşhis:** Kod doğru bağlıydı — sorun reklamın **"dolmaması" (no-fill)**. Kodda gerçek AdMob
+kimlikleri var; AdMob hesabı Google onayını tam almadı / mağaza uygulamalarına bağlanmadıysa reklam
+gelmez → tıkla, hiçbir şey olmaz. Üstüne reklam gelmeyince kullanıcıya **hiç geri bildirim yoktu**
+(sessiz), o yüzden "bozuk" görünüyordu. ⚠️ **"Reklam izle" butonu Premium AÇMIYOR** — sadece Orman →
+Ağaç türleri ekranında kilitli bir **ağaç türünü** (kozmetik) açıyor. "Reklam→Premium" diye bir şey yoktu.
+
+**✅ Kullanıcı kararları (bu oturum — değiştirme, sorma):**
+- **Reklam ödülü = KOZMETİK** (ağaç/tema açar). Reklamsızlık $1 Premium'da kalır (aboneliğin değeri korunsun).
+- **Premium = aylık ~$1 abonelik** (şu an $0,99/ay kurulu; Play/ASC'de fiyatı $1 kademesine çekilecek).
+- **Açılış reklamı** (App Open): uygulama öne gelince, **ilk açılış hariç, 4 saatte bir**.
+- **Su eklerken reklam YOK** (bunaltır); banner (İstatistik) + gün-sonu interstitial kalır.
+
+**✅ Kod tarafı YAPILDI (`flutter analyze` temiz · 63 test geçer):**
+- `services/ads_service_io.dart` yeniden düzenlendi:
+  - **App Open (açılış) reklamı** eklendi: `maybeShowAppOpen()` — 4 saat sınırı SharedPreferences'ta
+    kalıcı (`ad_last_app_open`), soğuk açılışın ilk resume'ünde gösterilmez, `_showingFullScreenAd`
+    ile üst-üste binme koruması (ödüllü/interstitial kapanırken tekrar tetiklenmez).
+  - **🧪 Test-reklam anahtarı** `_forceTestAds` (şu an `false`): elle `true` yapılınca Google'ın
+    HER ZAMAN dolan test reklamları gösterilir → hesap onayından bağımsız "buton çalışıyor mu" kanıtı.
+  - Ödüllü reklam **yüklenemezse geri bildirim**: `showRewarded(onReward, {onUnavailable})`.
+- `main.dart` → `didChangeAppLifecycleState(resumed)` içinde `AdsService.maybeShowAppOpen()`.
+- `species_screen.dart` → reklam gelmezse SnackBar (`l.speciesScreenAdUnavailable`, **20 dile** eklendi).
+- `services/ads_service_stub.dart` → web için API paritesi (`maybeShowAppOpen`, `onUnavailable`).
+- **`site/app-ads.txt` oluşturuldu:** `google.com, pub-3326866070505611, DIRECT, f08c47fec0942fa0`
+  (AdMob'un uygulamayı tanıması için — siteye deploy edilecek).
+
+**✅ AdMob HESAP KURULUMU YAPILDI (2026-07-25, 9360 tarayıcı · `randevusayfasi@gmail.com` girişli):**
+- 🔴 **KÖK NEDEN bulundu (canlı):** AdMob'da 4 uygulama da "Onay durumu = İnceleme gerekli ·
+  **Sınırlı reklam sunumu — Limiti kaldırmak için mağaza ekleyin**" · Mağazalar sütunu boş.
+  Uygulamalar yayınlanmış mağaza kaydına **bağlı değildi** → AdMob reklamı kısıtlıyordu (no-fill) →
+  "tıkla, açılmıyor". Kod hep doğruydu.
+- ✅ **iOS mağaza BAĞLANDI:** Sipling (iOS, AdMob app `5730789076`) → App Store kaydı
+  `apps.apple.com/us/app/sipling/id6789913186` ile bağlandı ("Mağaza bilgileri başarıyla güncellendi").
+  🪤 AdMob arama kutusu ID/isimle BULMUYOR; **tam App Store URL** ile bulundu. Bu, canlı iOS'ta
+  "sınırlı reklam sunumu" limitini kaldırır (fill birkaç saatte artar).
+- ✅ **app-ads.txt DEPLOY edildi:** `firebase deploy --only hosting` → `sipling-app.web.app/app-ads.txt`
+  canlı (HTTP 200). AdMob doğrulaması taramayla en geç ~24 saatte tamamlanır (dosya AdMob'un
+  istediğiyle birebir: `google.com, pub-3326866070505611, DIRECT, f08c47fec0942fa0`).
+- ✅ **App Open (açılış) birimleri OLUŞTURULDU + koda yazıldı:**
+  - iOS: `ca-app-pub-3326866070505611/8573400217` ("Sipling App Open iOS")
+  - Android: `ca-app-pub-3326866070505611/4096053447` ("Sipling App Open Android")
+  - `ads_service_io.dart` `_appOpenIos`/`_appOpenAndroid` dolduruldu. `flutter analyze` temiz.
+- ⏳ **Android mağaza bağlanamadı** (beklenen): Android hâlâ **kapalı testte**, Play'de herkese açık
+  değil → AdMob `com.sipling.app`'i Play'de bulamıyor. **Android üretime çıkınca** aynı akışla bağlanır.
+  (Android kullanıcıya canlı değil, gelir zaten ~0.)
+
+**⏳ KALAN:**
+1. **iOS reklamları için bekle:** mağaza bağlandı → AdMob "İnceleme gerekli"yi kaldırıp fill'i açar
+   (birkaç saat–24s). Sonra canlı iOS'ta banner/ödüllü/açılış reklamı gelmeye başlar.
+2. **App Open'ı yayına al:** yeni App Open kimlikleri KODDA ama **mağazadaki iOS sürümünde YOK** →
+   yeni bir iOS build (Codemagic) + ASC submit gerekiyor (bu değişiklikler + reklam düzeni canlıya çıksın).
+   Banner/interstitial/ödüllü kimlikleri zaten canlı sürümde vardı → onlar mağaza-bağlama ile düzelir.
+3. **$1 fiyat:** Apple'da tam **$1.00 kademesi YOK** ($0,99 veya $1,99). Şu an **$0,99/ay** kurulu =
+   pratikte istenen "~$1". Değiştirmeye gerek yok (kullanıcı $1,99 istemedikçe). Play'de de $0,99 ≈ $1.
+4. Android store bağlama → Play üretiminden sonra.
+
+**🆕 3 ÖZELLİK DENETİMİ + İŞ (2026-07-25, kullanıcı ikisini onayladı: (c)+(a)):**
+- **(b) Bildirimlere su/sağlık bilgisi — ✅ ZATEN VAR.** `notifications.dart _messages()` "bir
+  motivasyon, bir bilgi" dönüşümlü; kaynaklı (`hydration_facts.dart`, EFSA/USGS/Armstrong). Yapılacak yok.
+- **(c) Profil sonunda su ihtiyacı +/- ayar — ✅ YAPILDI.** `onboarding_screen.dart` `_GoalPage`
+  StatelessWidget → **StatefulWidget** oldu: hedef büyük gösterilir + **azalt/artır yuvarlak butonları**
+  (`_StepButton`, ±100 ml, 1000–5000 clamp). Elle ayarlanınca `customGoalMl` yazılır; önerilene
+  geri gelince temizlenir (otomatik kalsın, kilo değişince güncellensin). Onay = "Bitir". `analyze`
+  temiz, 63 test geçer. (Zaten vardı: otomatik hesap + büyük gösterim + Ayarlar/Su-ihtiyacım'da değiştirme.)
+- **(a) Otomatik hava durumu — ⛔ ÜCRETSİZ+SUNUCUSUZ YOLU YOK (araştırıldı, kaynaklı).**
+  - Open-Meteo: anahtarsız (sunucusuz mimariye ideal) AMA **ücretsiz API ticari kullanımı YASAK**
+    (Sipling reklamlı=ticari) → ticari plan **$29/ay** (1M çağrı). CC-BY atıf zorunlu.
+  - OpenWeatherMap/Visual Crossing: ücretsiz-ticari VAR ama **API anahtarı** ister → sunucusuz app'te
+    anahtar istemciye gömülür (kazınıp kötüye kullanılabilir; Sipling'in sunucusu YOK).
+  - Sonuç: her yol ya **aylık ücret** ya **gömülü-anahtar riski** getiriyor → "sıfır maliyet, sunucu yok"
+    ilkesine ters. Elle "sıcak gün" butonu zaten ihtiyacı karşılıyor.
+  - İlk karar iptaldi; **sonra kullanıcı iOS-only WeatherKit'i ONAYLADI** (Android'de gizli kalır).
+
+## 🌡️📦 2026-07-25 (akşam) — SÜRÜM 1.0.3+5: iOS HAVA DURUMU (WeatherKit) + hepsi tek build (KOD HAZIR)
+
+**Karar:** ads + App Open + profil-sonu −/+ + **iOS sıcak-gün (WeatherKit)** TEK sürüme (1.0.3+5),
+**önce Codemagic'te derle + TestFlight'ta doğrula, SONRA production'a** (canlıyı riske atmadan).
+
+**✅ Phase 1 — KOD YAZILDI (`flutter analyze` temiz, 63 test geçer):**
+- **iOS WeatherKit native** — `ios/Runner/AppDelegate.swift`: `didInitializeImplicitFlutterEngine`
+  içinde `pluginRegistry.registrar` messenger'ıyla `sipling/weather` MethodChannel (embedding-doğru).
+  `todayMaxC(city)` → CLGeocoder (şehir→koordinat, **konum izni YOK**) → WeatherKit `WeatherService.shared`
+  → `dailyForecast.first.highTemperature` °C. `@available(iOS 16.0, *)` (min 14, altı null döner).
+  ⚠️ **BURADA DERLENEMEDİ (Windows/Mac yok)** — doğrulama TestFlight'ta.
+- `Runner.entitlements` → `com.apple.developer.weatherkit` eklendi.
+- Dart köprü `services/weather/weather_service.dart` (+io MethodChannel, +stub) — iOS dışı null.
+- `models.dart` ReminderSettings → `hotDayEnabled` + `city` (elle şehir).
+- `main.dart` → `_refreshHotDayWeather` (iOS, **günde bir kez**, resume+bootstrap) → önbellek
+  (`weather_maxc`/`weather_date`) → reschedule.
+- `notifications.dart` → `_hotDayTempToday()` (bugün, ≥30°C) → `_messages()` sıcak mesajı havuzun BAŞINA.
+- `settings_screen.dart` → Hatırlatmalar'da **yalnız iPhone** (`defaultTargetPlatform==iOS`) "Sıcak gün
+  uyarısı" switch + şehir diyaloğu (`_editCity`).
+- l10n: 7 yeni anahtar × 20 dil (`notifHotDayBody` `{temp}` yer tutuculu; İtalyanca ICU tırnak tuzağı için
+  "po'"→"pochino"). Sürüm **1.0.3+5**.
+
+**⏳ KALAN FAZLAR (bu build'i canlıya almak için):**
+1. **Phase 2 — Apple WeatherKit capability:** developer.apple.com → Identifiers → `com.sipling.app` →
+   WeatherKit'i AÇ. **Apple girişi/2FA gerek (kullanıcı).** ⚠️ Bu açılmadan Codemagic imzalama profili
+   entitlement'ı içermez → build imzada PATLAR.
+2. **Phase 3 — Codemagic iOS build** (API token'la tetiklenir, tarayıcı gerekmez) → build loglarında
+   Swift/imza hatası varsa düzelt → TestFlight'a düşsün.
+3. **Phase 4 — TestFlight'ta DOĞRULA** (kullanıcı iPhone'da): sıcak-gün (şehir gir, sıcaksa bildirim) +
+   açılış reklamı + profil-sonu −/+ + reklamlar.
+4. **Phase 5 — Production submit:** ASC (App Store) + Play (AAB `flutter build appbundle` → 9360 yükle).
+   ⚠️ Apple gönderiminde Pro aboneliği (`sipling_pro_monthly`) bağlı kalsın; WeatherKit capability +
+   App Privacy/atıf ("Weather", Apple) doğru beyan edilsin.
+
 ## 🛠️ 2026-07-23 — SÜRÜM 1.0.2: KRİTİK SENKRON HATASI + 3 ÖZELLİK (kod hazır, mağazaya gönderilmedi)
 
 **Kullanıcı isteği:** komple denetim — çalışmayan/eksik ne var, rakiplere göre ne eklenebilir,

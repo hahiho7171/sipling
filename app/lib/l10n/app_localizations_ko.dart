@@ -1041,4 +1041,30 @@ class LKo extends L {
 
   @override
   String get styleSilentSub => '소리와 진동 없음';
+
+  @override
+  String get speciesScreenAdUnavailable => '광고가 아직 준비되지 않았어요. 잠시 후 다시 시도해 주세요.';
+
+  @override
+  String get setHotDayTitle => '더운 날 알림';
+
+  @override
+  String get setHotDaySub => '도시 날씨가 더울 때 추가 물 알림 (iPhone 전용)';
+
+  @override
+  String get setHotDayCity => '도시';
+
+  @override
+  String get setHotDayCitySet => '선택';
+
+  @override
+  String get setHotDayCityHint => '예: 이스탄불';
+
+  @override
+  String get notifHotDayTitle => '오늘 날씨가 덥습니다 🌡️';
+
+  @override
+  String notifHotDayBody(int temp) {
+    return '오늘 $temp°C — 평소보다 조금 더 자주 마셔요.';
+  }
 }

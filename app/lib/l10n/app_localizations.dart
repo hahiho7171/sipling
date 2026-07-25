@@ -2057,6 +2057,54 @@ abstract class L {
   /// In en, this message translates to:
   /// **'No sound or vibration'**
   String get styleSilentSub;
+
+  /// No description provided for @speciesScreenAdUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Ad isn\'t ready right now. Try again in a moment.'**
+  String get speciesScreenAdUnavailable;
+
+  /// No description provided for @setHotDayTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Hot day alert'**
+  String get setHotDayTitle;
+
+  /// No description provided for @setHotDaySub.
+  ///
+  /// In en, this message translates to:
+  /// **'Extra water reminder when it\'s hot in your city (iPhone only)'**
+  String get setHotDaySub;
+
+  /// No description provided for @setHotDayCity.
+  ///
+  /// In en, this message translates to:
+  /// **'City'**
+  String get setHotDayCity;
+
+  /// No description provided for @setHotDayCitySet.
+  ///
+  /// In en, this message translates to:
+  /// **'Set'**
+  String get setHotDayCitySet;
+
+  /// No description provided for @setHotDayCityHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. Istanbul'**
+  String get setHotDayCityHint;
+
+  /// No description provided for @notifHotDayTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'It\'s hot today 🌡️'**
+  String get notifHotDayTitle;
+
+  /// No description provided for @notifHotDayBody.
+  ///
+  /// In en, this message translates to:
+  /// **'It\'s {temp}°C today — aim to sip a bit more often.'**
+  String notifHotDayBody(int temp);
 }
 
 class _LDelegate extends LocalizationsDelegate<L> {

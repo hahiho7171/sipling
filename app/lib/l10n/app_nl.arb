@@ -320,5 +320,13 @@
   "styleGentle": "Zacht",
   "styleGentleSub": "Alleen trillen, geen geluid",
   "styleSilent": "Stil",
-  "styleSilentSub": "Geen geluid of trillen"
+  "styleSilentSub": "Geen geluid of trillen",
+  "speciesScreenAdUnavailable": "De advertentie is nog niet klaar. Probeer het zo opnieuw.",
+  "setHotDayTitle": "Waarschuwing warme dag",
+  "setHotDaySub": "Extra waterherinnering als het warm is in jouw stad (alleen iPhone)",
+  "setHotDayCity": "Stad",
+  "setHotDayCitySet": "Kiezen",
+  "setHotDayCityHint": "bijv. Istanbul",
+  "notifHotDayTitle": "Het is warm vandaag 🌡️",
+  "notifHotDayBody": "Het is {temp}°C — drink vandaag wat vaker."
 }

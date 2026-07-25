@@ -320,5 +320,13 @@
   "styleGentle": "Делікатний",
   "styleGentleSub": "Лише вібрація, без звуку",
   "styleSilent": "Беззвучний",
-  "styleSilentSub": "Без звуку та вібрації"
+  "styleSilentSub": "Без звуку та вібрації",
+  "speciesScreenAdUnavailable": "Реклама зараз недоступна. Спробуйте ще раз за мить.",
+  "setHotDayTitle": "Сповіщення про спеку",
+  "setHotDaySub": "Додаткове нагадування про воду, коли у вашому місті спекотно (лише iPhone)",
+  "setHotDayCity": "Місто",
+  "setHotDayCitySet": "Вибрати",
+  "setHotDayCityHint": "напр. Стамбул",
+  "notifHotDayTitle": "Сьогодні спекотно 🌡️",
+  "notifHotDayBody": "Сьогодні {temp}°C — пийте трохи частіше."
 }

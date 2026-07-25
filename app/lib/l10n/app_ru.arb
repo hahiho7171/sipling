@@ -320,5 +320,13 @@
   "styleGentle": "Мягкий",
   "styleGentleSub": "Только вибрация, без звука",
   "styleSilent": "Без звука",
-  "styleSilentSub": "Без звука и вибрации"
+  "styleSilentSub": "Без звука и вибрации",
+  "speciesScreenAdUnavailable": "Реклама сейчас недоступна. Повторите попытку чуть позже.",
+  "setHotDayTitle": "Оповещение о жаре",
+  "setHotDaySub": "Дополнительное напоминание о воде, когда в вашем городе жарко (только iPhone)",
+  "setHotDayCity": "Город",
+  "setHotDayCitySet": "Выбрать",
+  "setHotDayCityHint": "напр. Стамбул",
+  "notifHotDayTitle": "Сегодня жарко 🌡️",
+  "notifHotDayBody": "Сегодня {temp}°C — пейте немного чаще."
 }

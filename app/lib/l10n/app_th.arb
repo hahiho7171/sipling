@@ -320,5 +320,13 @@
   "styleGentle": "นุ่มนวล",
   "styleGentleSub": "สั่นอย่างเดียว ไม่มีเสียง",
   "styleSilent": "เงียบ",
-  "styleSilentSub": "ไม่มีเสียงและการสั่น"
+  "styleSilentSub": "ไม่มีเสียงและการสั่น",
+  "speciesScreenAdUnavailable": "โฆษณายังไม่พร้อม โปรดลองอีกครั้งในอีกสักครู่",
+  "setHotDayTitle": "แจ้งเตือนวันอากาศร้อน",
+  "setHotDaySub": "เตือนดื่มน้ำเพิ่มเมื่อเมืองของคุณอากาศร้อน (เฉพาะ iPhone)",
+  "setHotDayCity": "เมือง",
+  "setHotDayCitySet": "เลือก",
+  "setHotDayCityHint": "เช่น อิสตันบูล",
+  "notifHotDayTitle": "วันนี้อากาศร้อน 🌡️",
+  "notifHotDayBody": "วันนี้ {temp}°C — ลองจิบน้ำบ่อยขึ้นอีกนิด"
 }

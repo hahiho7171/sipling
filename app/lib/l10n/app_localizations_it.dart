@@ -1092,4 +1092,32 @@ class LIt extends L {
 
   @override
   String get styleSilentSub => 'Senza suono né vibrazione';
+
+  @override
+  String get speciesScreenAdUnavailable =>
+      'L\'annuncio non è pronto. Riprova tra un momento.';
+
+  @override
+  String get setHotDayTitle => 'Avviso giornata calda';
+
+  @override
+  String get setHotDaySub =>
+      'Promemoria acqua extra quando fa caldo nella tua città (solo iPhone)';
+
+  @override
+  String get setHotDayCity => 'Città';
+
+  @override
+  String get setHotDayCitySet => 'Scegli';
+
+  @override
+  String get setHotDayCityHint => 'es. Istanbul';
+
+  @override
+  String get notifHotDayTitle => 'Oggi fa caldo 🌡️';
+
+  @override
+  String notifHotDayBody(int temp) {
+    return 'Oggi ci sono $temp°C — bevi un pochino più spesso.';
+  }
 }

@@ -1077,4 +1077,32 @@ class LPl extends L {
 
   @override
   String get styleSilentSub => 'Bez dźwięku i wibracji';
+
+  @override
+  String get speciesScreenAdUnavailable =>
+      'Reklama nie jest teraz gotowa. Spróbuj ponownie za chwilę.';
+
+  @override
+  String get setHotDayTitle => 'Alert upalnego dnia';
+
+  @override
+  String get setHotDaySub =>
+      'Dodatkowe przypomnienie o wodzie, gdy w Twoim mieście jest gorąco (tylko iPhone)';
+
+  @override
+  String get setHotDayCity => 'Miasto';
+
+  @override
+  String get setHotDayCitySet => 'Wybierz';
+
+  @override
+  String get setHotDayCityHint => 'np. Stambuł';
+
+  @override
+  String get notifHotDayTitle => 'Dziś jest gorąco 🌡️';
+
+  @override
+  String notifHotDayBody(int temp) {
+    return 'Dziś jest $temp°C — pij trochę częściej.';
+  }
 }

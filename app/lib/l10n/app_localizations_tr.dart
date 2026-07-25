@@ -1067,4 +1067,32 @@ class LTr extends L {
 
   @override
   String get styleSilentSub => 'Ses ve titreşim yok';
+
+  @override
+  String get speciesScreenAdUnavailable =>
+      'Reklam şu an hazır değil. Birazdan tekrar dene.';
+
+  @override
+  String get setHotDayTitle => 'Sıcak gün uyarısı';
+
+  @override
+  String get setHotDaySub =>
+      'Şehrinde hava sıcaksa fazladan su hatırlatması (yalnız iPhone)';
+
+  @override
+  String get setHotDayCity => 'Şehir';
+
+  @override
+  String get setHotDayCitySet => 'Seç';
+
+  @override
+  String get setHotDayCityHint => 'Örn. İstanbul';
+
+  @override
+  String get notifHotDayTitle => 'Bugün hava sıcak 🌡️';
+
+  @override
+  String notifHotDayBody(int temp) {
+    return 'Bugün hava $temp°C — biraz daha sık su içmeyi hedefle.';
+  }
 }

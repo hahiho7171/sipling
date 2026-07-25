@@ -320,5 +320,13 @@
   "styleGentle": "Suave",
   "styleGentleSub": "Solo vibración, sin sonido",
   "styleSilent": "Silencioso",
-  "styleSilentSub": "Sin sonido ni vibración"
+  "styleSilentSub": "Sin sonido ni vibración",
+  "speciesScreenAdUnavailable": "El anuncio no está listo. Inténtalo de nuevo en un momento.",
+  "setHotDayTitle": "Aviso de día caluroso",
+  "setHotDaySub": "Recordatorio extra de agua cuando hace calor en tu ciudad (solo iPhone)",
+  "setHotDayCity": "Ciudad",
+  "setHotDayCitySet": "Elegir",
+  "setHotDayCityHint": "Ej. Estambul",
+  "notifHotDayTitle": "Hoy hace calor 🌡️",
+  "notifHotDayBody": "Hoy hace {temp}°C — intenta beber un poco más a menudo."
 }

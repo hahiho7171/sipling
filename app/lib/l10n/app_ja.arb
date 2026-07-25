@@ -320,5 +320,13 @@
   "styleGentle": "やさしい",
   "styleGentleSub": "バイブのみ、音なし",
   "styleSilent": "サイレント",
-  "styleSilentSub": "音もバイブもなし"
+  "styleSilentSub": "音もバイブもなし",
+  "speciesScreenAdUnavailable": "広告の準備がまだできていません。少し後にもう一度お試しください。",
+  "setHotDayTitle": "暑い日のお知らせ",
+  "setHotDaySub": "住んでいる街が暑いとき、追加の水分リマインダー（iPhoneのみ）",
+  "setHotDayCity": "都市",
+  "setHotDayCitySet": "設定",
+  "setHotDayCityHint": "例：イスタンブール",
+  "notifHotDayTitle": "今日は暑いです 🌡️",
+  "notifHotDayBody": "今日は{temp}°C — いつもより少しこまめに水分をとりましょう。"
 }

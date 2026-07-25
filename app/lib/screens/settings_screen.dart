@@ -1,4 +1,5 @@
-import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:flutter/foundation.dart'
+    show kIsWeb, defaultTargetPlatform, TargetPlatform;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -99,6 +100,36 @@ class SettingsScreen extends StatelessWidget {
     _snack(context, l.setHealthEnabled);
   }
 
+  /// "Sıcak gün uyarısı" için şehir girişi (WeatherKit'e verilir; konum izni yok).
+  Future<void> _editCity(BuildContext context, AppState state) async {
+    final l = context.l;
+    final controller = TextEditingController(text: state.reminder.city);
+    final city = await showDialog<String>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(l.setHotDayCity),
+        content: TextField(
+          controller: controller,
+          autofocus: true,
+          textCapitalization: TextCapitalization.words,
+          textInputAction: TextInputAction.done,
+          decoration: InputDecoration(hintText: l.setHotDayCityHint),
+          onSubmitted: (v) => Navigator.pop(ctx, v),
+        ),
+        actions: [
+          TextButton(
+              onPressed: () => Navigator.pop(ctx), child: Text(l.setCancel)),
+          FilledButton(
+              onPressed: () => Navigator.pop(ctx, controller.text),
+              child: Text(l.setSave)),
+        ],
+      ),
+    );
+    if (city == null) return;
+    await state.saveReminder(state.reminder.copyWith(city: city.trim()));
+    if (context.mounted) await _resync(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     final l = context.l;
@@ -175,6 +206,27 @@ class SettingsScreen extends StatelessWidget {
                 trailing: _styleLabel(l, r.style),
                 onTap: () => _editStyle(context, state),
               ),
+              // Sıcak gün uyarısı — yalnız iPhone (Apple WeatherKit). Android'de
+              // ücretsiz+sunucusuz hava kaynağı olmadığı için gizli.
+              if (!kIsWeb && defaultTargetPlatform == TargetPlatform.iOS) ...[
+                _SwitchTile(
+                  icon: Icons.wb_sunny_outlined,
+                  title: l.setHotDayTitle,
+                  subtitle: l.setHotDaySub,
+                  value: r.hotDayEnabled,
+                  onChanged: (v) async {
+                    await state.saveReminder(r.copyWith(hotDayEnabled: v));
+                    if (context.mounted) await _resync(context);
+                  },
+                ),
+                if (r.hotDayEnabled)
+                  _Tile(
+                    icon: Icons.location_city_outlined,
+                    title: l.setHotDayCity,
+                    trailing: r.city.isEmpty ? l.setHotDayCitySet : r.city,
+                    onTap: () => _editCity(context, state),
+                  ),
+              ],
               _Tile(
                 icon: Icons.battery_alert_outlined,
                 title: l.setNotifNotArriving,

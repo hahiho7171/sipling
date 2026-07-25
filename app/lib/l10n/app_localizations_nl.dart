@@ -1091,4 +1091,32 @@ class LNl extends L {
 
   @override
   String get styleSilentSub => 'Geen geluid of trillen';
+
+  @override
+  String get speciesScreenAdUnavailable =>
+      'De advertentie is nog niet klaar. Probeer het zo opnieuw.';
+
+  @override
+  String get setHotDayTitle => 'Waarschuwing warme dag';
+
+  @override
+  String get setHotDaySub =>
+      'Extra waterherinnering als het warm is in jouw stad (alleen iPhone)';
+
+  @override
+  String get setHotDayCity => 'Stad';
+
+  @override
+  String get setHotDayCitySet => 'Kiezen';
+
+  @override
+  String get setHotDayCityHint => 'bijv. Istanbul';
+
+  @override
+  String get notifHotDayTitle => 'Het is warm vandaag 🌡️';
+
+  @override
+  String notifHotDayBody(int temp) {
+    return 'Het is $temp°C — drink vandaag wat vaker.';
+  }
 }

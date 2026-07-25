@@ -234,11 +234,18 @@ class ReminderSettings {
   final bool stopWhenDone;
   final ReminderStyle style;
 
+  /// Sıcak gün uyarısı — YALNIZ iOS (Apple WeatherKit; Android'de ücretsiz+
+  /// sunucusuz kaynak yok, orada gizli). [city] elle girilir → konum izni YOK.
+  final bool hotDayEnabled;
+  final String city;
+
   const ReminderSettings({
     this.enabled = true,
     this.intervalMinutes = 120,
     this.stopWhenDone = true,
     this.style = ReminderStyle.normal,
+    this.hotDayEnabled = false,
+    this.city = '',
   });
 
   Map<String, dynamic> toJson() => {
@@ -246,6 +253,8 @@ class ReminderSettings {
         'i': intervalMinutes,
         'b': stopWhenDone,
         'st': style.name,
+        'hd': hotDayEnabled,
+        'city': city,
       };
 
   factory ReminderSettings.fromJson(Map<String, dynamic> j) => ReminderSettings(
@@ -253,6 +262,8 @@ class ReminderSettings {
         intervalMinutes: j['i'] as int,
         stopWhenDone: (j['b'] as bool?) ?? true,
         style: _styleFromJson(j),
+        hotDayEnabled: (j['hd'] as bool?) ?? false,
+        city: (j['city'] as String?) ?? '',
       );
 
   /// Yeni alan `st` (stil adı). Eski sürümlerde yalnız `s` (bool sessiz) vardı —
@@ -272,12 +283,16 @@ class ReminderSettings {
     int? intervalMinutes,
     bool? stopWhenDone,
     ReminderStyle? style,
+    bool? hotDayEnabled,
+    String? city,
   }) =>
       ReminderSettings(
         enabled: enabled ?? this.enabled,
         intervalMinutes: intervalMinutes ?? this.intervalMinutes,
         stopWhenDone: stopWhenDone ?? this.stopWhenDone,
         style: style ?? this.style,
+        hotDayEnabled: hotDayEnabled ?? this.hotDayEnabled,
+        city: city ?? this.city,
       );
 }
 

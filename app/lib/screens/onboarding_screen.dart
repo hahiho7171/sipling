@@ -104,7 +104,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       value: _p.activity,
                       onChanged: (a) =>
                           setState(() => _p = _p.copyWith(activity: a))),
-                  _GoalPage(profile: _p),
+                  _GoalPage(
+                    profile: _p,
+                    // Kullanıcı oklarla ayarlarsa özel hedef olur; önerilene
+                    // eşitse temizlenir (otomatik kalsın, kilo değişince güncellensin).
+                    onChanged: (custom) => setState(() => _p = custom == null
+                        ? _p.copyWith(clearCustomGoal: true)
+                        : _p.copyWith(customGoalMl: custom)),
+                  ),
                 ],
               ),
             ),
@@ -360,15 +367,49 @@ class _ActivityPage extends StatelessWidget {
   }
 }
 
-class _GoalPage extends StatelessWidget {
+/// Kurulumun son adımı: boy/kilo/aktiviteden hesaplanan günlük hedefi büyükçe
+/// gösterir ve kullanıcı isterse **oklarla** azaltıp artırabilir (onay = "Bitir").
+/// Elle ayarlanınca özel hedef olur; önerilene geri gelince temizlenir (otomatik).
+class _GoalPage extends StatefulWidget {
   final Profile profile;
-  const _GoalPage({required this.profile});
+  final ValueChanged<int?> onChanged;
+  const _GoalPage({required this.profile, required this.onChanged});
+
+  @override
+  State<_GoalPage> createState() => _GoalPageState();
+}
+
+class _GoalPageState extends State<_GoalPage> {
+  static const _step = 100;
+  static const _min = 1000;
+  static const _max = 5000;
+
+  /// Kullanıcı elle ayarladıysa dolu; null ise önerilen değeri takip eder.
+  int? _override;
+
+  @override
+  void initState() {
+    super.initState();
+    _override = widget.profile.customGoalMl;
+  }
+
+  /// Profilden hesaplanan öneri (varsa eski özel hedefi yok sayar).
+  int get _recommended =>
+      calculateGoalMl(widget.profile.copyWith(clearCustomGoal: true));
+
+  void _bump(int delta) {
+    final current = _override ?? _recommended;
+    final next = (current + delta).clamp(_min, _max);
+    // Önerilene eşitse "otomatik"e döndür (null bildir).
+    setState(() => _override = next == _recommended ? null : next);
+    widget.onChanged(_override);
+  }
 
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
     final l = context.l;
-    final goal = calculateGoalMl(profile);
+    final goal = _override ?? _recommended;
     final glasses = (goal / 250).round();
 
     return _Page(
@@ -379,7 +420,7 @@ class _GoalPage extends StatelessWidget {
           const SizedBox(height: 10),
           Container(
             width: double.infinity,
-            padding: const EdgeInsets.symmetric(vertical: 30),
+            padding: const EdgeInsets.symmetric(vertical: 26, horizontal: 12),
             decoration: BoxDecoration(
               gradient: const LinearGradient(
                 colors: [SiplingColors.water, SiplingColors.waterDeep],
@@ -388,15 +429,34 @@ class _GoalPage extends StatelessWidget {
             ),
             child: Column(
               children: [
-                Text('$goal',
-                    style: const TextStyle(
-                        fontSize: 54,
-                        fontWeight: FontWeight.w800,
-                        color: Colors.white,
-                        height: 1.0)),
-                const SizedBox(height: 4),
-                Text(l.onbGoalUnit,
-                    style: const TextStyle(fontSize: 15, color: Colors.white70)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    _StepButton(
+                      icon: Icons.remove,
+                      onTap: goal > _min ? () => _bump(-_step) : null,
+                    ),
+                    Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text('$goal',
+                            style: const TextStyle(
+                                fontSize: 52,
+                                fontWeight: FontWeight.w800,
+                                color: Colors.white,
+                                height: 1.0)),
+                        const SizedBox(height: 2),
+                        Text(l.onbGoalUnit,
+                            style: const TextStyle(
+                                fontSize: 15, color: Colors.white70)),
+                      ],
+                    ),
+                    _StepButton(
+                      icon: Icons.add,
+                      onTap: goal < _max ? () => _bump(_step) : null,
+                    ),
+                  ],
+                ),
                 const SizedBox(height: 10),
                 Text(l.onbGoalGlasses(glasses),
                     style: const TextStyle(
@@ -410,6 +470,32 @@ class _GoalPage extends StatelessWidget {
             style: TextStyle(fontSize: 12, color: p.inkSoft, height: 1.5),
           ),
         ],
+      ),
+    );
+  }
+}
+
+/// Kurulum hedef ekranındaki yuvarlak azalt/artır düğmesi (beyaz, kart üzerinde).
+class _StepButton extends StatelessWidget {
+  final IconData icon;
+  final VoidCallback? onTap;
+  const _StepButton({required this.icon, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    final disabled = onTap == null;
+    return Material(
+      color: Colors.white.withValues(alpha: disabled ? 0.10 : 0.22),
+      shape: const CircleBorder(),
+      child: InkWell(
+        customBorder: const CircleBorder(),
+        onTap: onTap,
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: Icon(icon,
+              color: Colors.white.withValues(alpha: disabled ? 0.4 : 1.0),
+              size: 26),
+        ),
       ),
     );
   }

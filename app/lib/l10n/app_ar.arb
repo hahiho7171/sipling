@@ -320,5 +320,13 @@
   "styleGentle": "لطيف",
   "styleGentleSub": "اهتزاز فقط، بدون صوت",
   "styleSilent": "صامت",
-  "styleSilentSub": "بدون صوت أو اهتزاز"
+  "styleSilentSub": "بدون صوت أو اهتزاز",
+  "speciesScreenAdUnavailable": "الإعلان غير جاهز الآن. حاول مرة أخرى بعد قليل.",
+  "setHotDayTitle": "تنبيه اليوم الحار",
+  "setHotDaySub": "تذكير إضافي بشرب الماء عندما يكون الجو حارًا في مدينتك (آيفون فقط)",
+  "setHotDayCity": "المدينة",
+  "setHotDayCitySet": "تحديد",
+  "setHotDayCityHint": "مثال: إسطنبول",
+  "notifHotDayTitle": "الجو حار اليوم 🌡️",
+  "notifHotDayBody": "درجة الحرارة اليوم {temp}°م — احرص على شرب الماء أكثر قليلاً."
 }

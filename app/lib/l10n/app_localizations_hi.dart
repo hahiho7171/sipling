@@ -1081,4 +1081,32 @@ class LHi extends L {
 
   @override
   String get styleSilentSub => 'न ध्वनि, न कंपन';
+
+  @override
+  String get speciesScreenAdUnavailable =>
+      'विज्ञापन अभी तैयार नहीं है। थोड़ी देर में फिर कोशिश करें।';
+
+  @override
+  String get setHotDayTitle => 'गर्म दिन की चेतावनी';
+
+  @override
+  String get setHotDaySub =>
+      'आपके शहर में गर्मी होने पर अतिरिक्त पानी अनुस्मारक (केवल iPhone)';
+
+  @override
+  String get setHotDayCity => 'शहर';
+
+  @override
+  String get setHotDayCitySet => 'चुनें';
+
+  @override
+  String get setHotDayCityHint => 'जैसे इस्तांबुल';
+
+  @override
+  String get notifHotDayTitle => 'आज गर्मी है 🌡️';
+
+  @override
+  String notifHotDayBody(int temp) {
+    return 'आज $temp°C है — थोड़ा और बार-बार पानी पिएँ।';
+  }
 }

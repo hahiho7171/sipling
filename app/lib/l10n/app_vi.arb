@@ -320,5 +320,13 @@
   "styleGentle": "Nhẹ nhàng",
   "styleGentleSub": "Chỉ rung, không âm thanh",
   "styleSilent": "Im lặng",
-  "styleSilentSub": "Không âm thanh, không rung"
+  "styleSilentSub": "Không âm thanh, không rung",
+  "speciesScreenAdUnavailable": "Quảng cáo chưa sẵn sàng. Hãy thử lại sau giây lát.",
+  "setHotDayTitle": "Cảnh báo ngày nóng",
+  "setHotDaySub": "Nhắc uống nước thêm khi trời nóng ở thành phố của bạn (chỉ iPhone)",
+  "setHotDayCity": "Thành phố",
+  "setHotDayCitySet": "Chọn",
+  "setHotDayCityHint": "vd. Istanbul",
+  "notifHotDayTitle": "Hôm nay trời nóng 🌡️",
+  "notifHotDayBody": "Hôm nay {temp}°C — hãy uống nước thường xuyên hơn một chút."
 }

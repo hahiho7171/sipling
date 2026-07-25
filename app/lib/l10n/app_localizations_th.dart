@@ -1065,4 +1065,32 @@ class LTh extends L {
 
   @override
   String get styleSilentSub => 'ไม่มีเสียงและการสั่น';
+
+  @override
+  String get speciesScreenAdUnavailable =>
+      'โฆษณายังไม่พร้อม โปรดลองอีกครั้งในอีกสักครู่';
+
+  @override
+  String get setHotDayTitle => 'แจ้งเตือนวันอากาศร้อน';
+
+  @override
+  String get setHotDaySub =>
+      'เตือนดื่มน้ำเพิ่มเมื่อเมืองของคุณอากาศร้อน (เฉพาะ iPhone)';
+
+  @override
+  String get setHotDayCity => 'เมือง';
+
+  @override
+  String get setHotDayCitySet => 'เลือก';
+
+  @override
+  String get setHotDayCityHint => 'เช่น อิสตันบูล';
+
+  @override
+  String get notifHotDayTitle => 'วันนี้อากาศร้อน 🌡️';
+
+  @override
+  String notifHotDayBody(int temp) {
+    return 'วันนี้ $temp°C — ลองจิบน้ำบ่อยขึ้นอีกนิด';
+  }
 }

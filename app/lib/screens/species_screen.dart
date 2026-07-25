@@ -162,6 +162,7 @@ class _RewardDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     final l = context.l;
     final p = Palette.of(context);
+    final messenger = ScaffoldMessenger.of(context);
     return AlertDialog(
       backgroundColor: p.card,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22)),
@@ -182,7 +183,16 @@ class _RewardDialog extends StatelessWidget {
             Navigator.of(context).pop();
             // Ödüllü reklamı göster; sonuna kadar izlenirse tür açılır.
             // (Pro'da/web'de reklam yok → ödül doğrudan verilir.)
-            AdsService.showRewarded(() => state.unlockWithReward(species.id));
+            // Reklam yüklenemezse kullanıcı sessiz kalmasın diye bilgi ver.
+            AdsService.showRewarded(
+              () => state.unlockWithReward(species.id),
+              onUnavailable: () => messenger.showSnackBar(
+                SnackBar(
+                  behavior: SnackBarBehavior.floating,
+                  content: Text(l.speciesScreenAdUnavailable),
+                ),
+              ),
+            );
           },
           child: Text(l.speciesScreenWatchAd),
         ),

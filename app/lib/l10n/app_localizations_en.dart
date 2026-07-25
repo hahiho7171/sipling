@@ -1082,4 +1082,32 @@ class LEn extends L {
 
   @override
   String get styleSilentSub => 'No sound or vibration';
+
+  @override
+  String get speciesScreenAdUnavailable =>
+      'Ad isn\'t ready right now. Try again in a moment.';
+
+  @override
+  String get setHotDayTitle => 'Hot day alert';
+
+  @override
+  String get setHotDaySub =>
+      'Extra water reminder when it\'s hot in your city (iPhone only)';
+
+  @override
+  String get setHotDayCity => 'City';
+
+  @override
+  String get setHotDayCitySet => 'Set';
+
+  @override
+  String get setHotDayCityHint => 'e.g. Istanbul';
+
+  @override
+  String get notifHotDayTitle => 'It\'s hot today 🌡️';
+
+  @override
+  String notifHotDayBody(int temp) {
+    return 'It\'s $temp°C today — aim to sip a bit more often.';
+  }
 }

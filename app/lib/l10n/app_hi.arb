@@ -320,5 +320,13 @@
   "styleGentle": "कोमल",
   "styleGentleSub": "केवल कंपन, कोई ध्वनि नहीं",
   "styleSilent": "मौन",
-  "styleSilentSub": "न ध्वनि, न कंपन"
+  "styleSilentSub": "न ध्वनि, न कंपन",
+  "speciesScreenAdUnavailable": "विज्ञापन अभी तैयार नहीं है। थोड़ी देर में फिर कोशिश करें।",
+  "setHotDayTitle": "गर्म दिन की चेतावनी",
+  "setHotDaySub": "आपके शहर में गर्मी होने पर अतिरिक्त पानी अनुस्मारक (केवल iPhone)",
+  "setHotDayCity": "शहर",
+  "setHotDayCitySet": "चुनें",
+  "setHotDayCityHint": "जैसे इस्तांबुल",
+  "notifHotDayTitle": "आज गर्मी है 🌡️",
+  "notifHotDayBody": "आज {temp}°C है — थोड़ा और बार-बार पानी पिएँ।"
 }

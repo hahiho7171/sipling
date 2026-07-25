@@ -1080,4 +1080,32 @@ class LDe extends L {
 
   @override
   String get styleSilentSub => 'Kein Ton, keine Vibration';
+
+  @override
+  String get speciesScreenAdUnavailable =>
+      'Die Anzeige ist gerade nicht bereit. Versuch es gleich noch einmal.';
+
+  @override
+  String get setHotDayTitle => 'Hitzewarnung';
+
+  @override
+  String get setHotDaySub =>
+      'Extra Wasser-Erinnerung, wenn es in deiner Stadt heiß ist (nur iPhone)';
+
+  @override
+  String get setHotDayCity => 'Stadt';
+
+  @override
+  String get setHotDayCitySet => 'Wählen';
+
+  @override
+  String get setHotDayCityHint => 'z. B. Istanbul';
+
+  @override
+  String get notifHotDayTitle => 'Heute ist es heiß 🌡️';
+
+  @override
+  String notifHotDayBody(int temp) {
+    return 'Heute sind es $temp°C — trink heute etwas öfter.';
+  }
 }

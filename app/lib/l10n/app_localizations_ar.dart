@@ -1080,4 +1080,32 @@ class LAr extends L {
 
   @override
   String get styleSilentSub => 'بدون صوت أو اهتزاز';
+
+  @override
+  String get speciesScreenAdUnavailable =>
+      'الإعلان غير جاهز الآن. حاول مرة أخرى بعد قليل.';
+
+  @override
+  String get setHotDayTitle => 'تنبيه اليوم الحار';
+
+  @override
+  String get setHotDaySub =>
+      'تذكير إضافي بشرب الماء عندما يكون الجو حارًا في مدينتك (آيفون فقط)';
+
+  @override
+  String get setHotDayCity => 'المدينة';
+
+  @override
+  String get setHotDayCitySet => 'تحديد';
+
+  @override
+  String get setHotDayCityHint => 'مثال: إسطنبول';
+
+  @override
+  String get notifHotDayTitle => 'الجو حار اليوم 🌡️';
+
+  @override
+  String notifHotDayBody(int temp) {
+    return 'درجة الحرارة اليوم $temp°م — احرص على شرب الماء أكثر قليلاً.';
+  }
 }

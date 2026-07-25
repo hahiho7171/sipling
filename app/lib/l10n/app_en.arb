@@ -503,5 +503,20 @@
   "styleGentle": "Gentle",
   "styleGentleSub": "Vibration only, no sound",
   "styleSilent": "Silent",
-  "styleSilentSub": "No sound or vibration"
+  "styleSilentSub": "No sound or vibration",
+  "speciesScreenAdUnavailable": "Ad isn't ready right now. Try again in a moment.",
+  "setHotDayTitle": "Hot day alert",
+  "setHotDaySub": "Extra water reminder when it's hot in your city (iPhone only)",
+  "setHotDayCity": "City",
+  "setHotDayCitySet": "Set",
+  "setHotDayCityHint": "e.g. Istanbul",
+  "notifHotDayTitle": "It's hot today 🌡️",
+  "notifHotDayBody": "It's {temp}°C today — aim to sip a bit more often.",
+  "@notifHotDayBody": {
+    "placeholders": {
+      "temp": {
+        "type": "int"
+      }
+    }
+  }
 }
