@@ -17,6 +17,11 @@ import 'pro_screen.dart';
 import 'season_screen.dart';
 import 'species_screen.dart';
 
+/// Yalnız Android'de anlamı olan bölümler için tek kaynak.
+/// Health Connect ve ana ekran widget'ı iOS'ta ÇALIŞMIYOR; gösterilirse
+/// kullanıcıya hata/boş vaat veriyor ve Apple bunu 2.1(a)'dan reddediyor.
+bool get _androidOnly => !kIsWeb && defaultTargetPlatform == TargetPlatform.android;
+
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
 
@@ -227,13 +232,16 @@ class SettingsScreen extends StatelessWidget {
                     onTap: () => _editCity(context, state),
                   ),
               ],
-              _Tile(
-                icon: Icons.battery_alert_outlined,
-                title: l.setNotifNotArriving,
-                subtitle: l.setNotifNotArrivingSub,
-                onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                    builder: (_) => const BatteryGuideScreen())),
-              ),
+              // Pil rehberi Android üreticilerine özgü (Xiaomi/Samsung/Huawei/Oppo
+              // agresif pil yönetimi). iOS'ta karşılığı yok → orada gösterilmez.
+              if (_androidOnly)
+                _Tile(
+                  icon: Icons.battery_alert_outlined,
+                  title: l.setNotifNotArriving,
+                  subtitle: l.setNotifNotArrivingSub,
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (_) => const BatteryGuideScreen())),
+                ),
             ]),
 
             _Section(title: l.setSectionCups, children: [
@@ -246,8 +254,11 @@ class SettingsScreen extends StatelessWidget {
                 ),
             ]),
 
-            // Web'de Health Connect diye bir şey yok; bölümü hiç gösterme.
-            if (!kIsWeb) ...[
+            // 🚨 YALNIZ ANDROID. Apple 1.0.3'ü tam bundan reddetti (guideline 2.1(a),
+            // "Error when syncing Apple Health", iPad Air M3): iOS'ta `HealthBridge`
+            // her zaman `unsupported` döndüğü için anahtar hata mesajı veriyordu.
+            // Sipling iOS'ta HealthKit'e HİÇ yazmıyor → bölüm iOS'ta gösterilmez.
+            if (_androidOnly) ...[
               _Section(title: l.setSectionHealth, children: [
                 _SwitchTile(
                   icon: Icons.favorite_outline,
@@ -261,7 +272,10 @@ class SettingsScreen extends StatelessWidget {
             ],
 
             // Ana ekran widget'ı — yalnız Android. Tek dokunuşla ekleme.
-            if (!kIsWeb) ...[
+            // 🚨 iOS build'inde widget hedefi YOK (codemagic.yaml'a eklenmedi) ve
+            // `requestPinWidget` zaten Android'e özel → iOS'ta bu satır boş vaat.
+            // Aynı 2.1(a) riskini doğurmasın diye Android'e kapatıldı.
+            if (_androidOnly) ...[
               _Section(title: l.setSectionHome, children: [
                 _Tile(
                   icon: Icons.widgets_outlined,
