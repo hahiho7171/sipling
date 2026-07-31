@@ -2,6 +2,63 @@
 
 > Her oturum sonunda **buraya** yaz. Başka yere durum yazma.
 
+## 🍎 2026-07-31 — 4. RET ÇÖZÜLDÜ: Guideline 5.2.5 (WeatherKit) → ÖZELLİK KALDIRILDI · ⛔ PUSH ENGELİ
+
+**Ret sebebi (Çözüm Merkezi'nden okundu, gönderim `57df0a4c`, inceleme 29 Tem, cihaz iPhone 17 Pro Max, 1.0.3 (7)):**
+> **Guideline 5.2.5 — Legal: Intellectual Property - Apple Products.** "The app appears to support WeatherKit… WeatherKit apps must clearly display the Apple Weather trademark ( Weather) and the legal source link." Apple ayrıca **fiziksel cihazda çekilmiş ekran videosu** istiyor.
+
+⚠️ **Bir önceki iki sebep DEĞİLDİ — ikisi de düzelmişti, API ile teyit edildi:** 2.3.10 (Android referansı) → 20 dilin
+açıklama/anahtar/tanıtım/yenilikler alanları tarandı, *android/google play/health connect/xiaomi/samsung/huawei/oppo/widget*
+**sıfır** eşleşme. 2.1(a) → Sağlık, ana-ekran widget'ı ve pil rehberi kodda `_androidOnly` ile iOS'ta kapalı.
+
+**KARAR (kullanıcı):** "Sıcak gün" özelliği iOS'tan **tamamen kaldırılsın** (attribution + ekran videosu yükü taşınmasın).
+- `ios/Runner/AppDelegate.swift`: `import WeatherKit` + `sipling/weather` kanalı + `CLGeocoder` + `SiplingWeather` **silindi**.
+- `ios/Runner/Runner.entitlements`: **`com.apple.developer.weatherkit` silindi.** 🚨 Bu şart — entitlement kalırsa Apple
+  özelliği hâlâ var sayıp aynı maddeden yeniden reddeder. **GERİ EKLEME.**
+- `lib/services/weather/` (3 dosya) silindi · `main.dart` `_refreshHotDayWeather` + 2 çağrısı + import kaldırıldı ·
+  `settings_screen.dart` sıcak-gün bölümü + `_editCity` kaldırıldı. `flutter analyze` → **No issues found.**
+- Model alanları (`hotDayEnabled`, `city`) ve `setHotDay*` l10n anahtarları **bilerek bırakıldı** (kayıtlı ayar uyumu; ölü ama zararsız).
+- Commit `56ef7f3` (yerelde).
+
+**🚩 KRİTİK YAKALAMA:** App Store **"Yenilikler" metni 20 dilde de kaldırılan sıcak-gün özelliğini duyuruyordu**
+("Sıcak gün hatırlatması (iPhone)… şehrini seç"). Öyle bırakılsa Apple olmayan özelliğin reklamını görürdü.
+→ 20 dilin tamamı **yeniden yazıldı** (tanıtım turu + sistem teması + iyileştirmeler), tekrar tarandı: **temiz**.
+Betik: `scratchpad/sipling_yenilikler.mjs` (`--kuru` destekli).
+
+**ASC'de hazır hâle getirilenler (API ile, tarayıcısız):**
+- Sürüm adı **1.0.3 → 1.0.4** (gelecek build `1.0.4 (8)` olacak; Codemagic build no'yu son TestFlight+1 yapıyor).
+- **App Review Information > Notes** yazıldı: WeatherKit'in nasıl kaldırıldığı madde madde + uygulamanın nasıl test edileceği.
+- Abonelik `sipling_pro_monthly` **APPROVED** (değişmedi).
+
+### ✅ SONUÇ — 1.0.4 (8) **WAITING_FOR_REVIEW** (2026-07-31 15:55Z, gönderim `57df0a4c` yeniden gönderildi)
+
+**Zincir (hepsi tarayıcısız/API, tek engel kullanıcı girişleriydi):**
+1. 🔑 **GitHub PAT süresi dolmuştu** ("Invalid username or token") · SSH yok · 3 profilde çerez vardı ama oturum düşmüştü.
+   Kullanıcı **`misyon-codemagic-profile`**'da GitHub'a girdi → `settings/tokens` → `misyon-codemagic` (classic, `repo`)
+   → **Regenerate** (30 gün, **30 Ağu 2026**'da dolar) → değer `#new-oauth-token` input'undan okundu → remote'a yazıldı → **push OK**.
+   ⚠️ Akış (`akis-ios`) ve `randevio-ios` remote'ları HÂLÂ eski token'la — orada push gerekirse aynı token'ı yaz.
+2. 🏗️ **Codemagic** `POST /builds` (app `6a572a79c0d939a624244645`, workflow `ios-testflight`) → **~4 dk'da finished**,
+   build **8** ASC'ye yüklendi (`submit_to_app_store:false` olduğu için gönderimi biz yapıyoruz).
+3. 🔗 build 8 → 1.0.4'e bağlandı (API). Sürüm REJECTED → **PREPARE_FOR_SUBMISSION**'a geçti.
+4. 💬 Çözüm Merkezi'ne cevap yazıldı (Messages 2→3): WeatherKit'in nasıl kaldırıldığı + uygulamanın nasıl test edileceği.
+5. 🚀 İncelemeye gönderildi.
+
+**🪤 GÖNDERİMDE ÖĞRENİLEN 3 TUZAK (bir daha aynı yere düşme):**
+- **API ile resubmit ÇALIŞMIYOR:** `PATCH /v1/reviewSubmissions/{id} {submitted:true}` ısrarla **409
+  "Version is not ready to be submitted yet, please try again later"** verdi — 90 sn arayla **11 deneme**, hepsi aynı.
+  Bu hata **geçici değil**; beklemekle geçmiyor.
+- **ÇÖZÜM = ASC arayüzü, ama sürüm sayfasından:** Gönderim sayfasındaki **"Resubmit to App Review" başta PASİF**.
+  Doğru yol: **sürüm sayfası** (`/distribution/ios/version/inflight`) → **"Update Review"** → açılan
+  *"Submit iOS App 1.0.4 for review"* diyaloğunda **"Continue"** → bu adımdan sonra gönderim sayfasındaki
+  **"Resubmit to App Review" AKTİFLEŞİYOR** → bas → `WAITING_FOR_REVIEW`.
+- **Teşhis için boş `reviewSubmission` AÇMA:** `POST /v1/reviewSubmissions` ile açtığım kalemsiz kayıt (`30c4c970`)
+  **silinemiyor** (DELETE 403 "operation not allowed") ve **iptal edilemiyor** (PATCH canceled 409 "not in cancellable state").
+  Hesapta öylece duruyor. Aynı tuzak Randevio'da da var (2 boş kayıt).
+
+**Kullanılan betikler (scratchpad):** `sipling_yenilikler.mjs` (20 dil whatsNew) · `sipling_review_notu.mjs` ·
+`sipling_build_bagla.mjs` · `rc_cevap3.mjs`+`rc_yaz_gonder.mjs`+`rc_reply_bas.mjs` (Çözüm Merkezi cevabı) ·
+`asc_butonlar.mjs`/`asc_dlg_gonder.mjs`/`web.mjs` (ASC arayüz sürücüsü, port 9390).
+
 ## 🤖 2026-07-30 — v1.0.4 (vc6): TESTÇİ RAPORU 2 MADDESİ → Play kapalı testte incelemede
 
 **Neden:** Testers Community panelinden **Feedback Report** indirildi
