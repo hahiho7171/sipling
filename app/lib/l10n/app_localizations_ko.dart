@@ -1067,4 +1067,57 @@ class LKo extends L {
   String notifHotDayBody(int temp) {
     return '오늘 $temp°C — 평소보다 조금 더 자주 마셔요.';
   }
+
+  @override
+  String get setThemeTitle => '테마';
+
+  @override
+  String get themeSystem => '시스템 설정 따르기';
+
+  @override
+  String get themeLight => '밝게';
+
+  @override
+  String get themeDark => '어둡게';
+
+  @override
+  String get setHowTo => 'Sipling 사용법';
+
+  @override
+  String get tourNext => '다음';
+
+  @override
+  String get tourBack => '이전';
+
+  @override
+  String get tourSkip => '건너뛰기';
+
+  @override
+  String get tourDone => '알겠어요';
+
+  @override
+  String get tourT1 => '마시고 묘목에 물 주기';
+
+  @override
+  String get tourB1 =>
+      '홈 화면에서 컵을 누르면 한 모금이 기록돼요. 한 잔마다 묘목이 자랍니다. 잘못 눌렀다면 되돌리기 화살표를 쓰세요.';
+
+  @override
+  String get tourT2 => '하루 목표';
+
+  @override
+  String get tourB2 =>
+      'Sipling이 키·몸무게·나이·활동량으로 목표를 계산해요. 설정에서 언제든 바꾸거나 ‘물과 몸’ 화면에서 다시 계산할 수 있어요.';
+
+  @override
+  String get tourT3 => '내 하루에 맞는 알림';
+
+  @override
+  String get tourB3 => '설정에서 알림을 켜고 깨어 있는 시간과 간격을 정하세요. 목표를 채우면 남은 하루는 조용해집니다.';
+
+  @override
+  String get tourT4 => '숲 키우기';
+
+  @override
+  String get tourB4 => '목표를 채우면 묘목이 숲의 나무가 돼요. 나무는 시들지 않아요. 하루 걸러도 손해는 없습니다.';
 }

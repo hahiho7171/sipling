@@ -1,0 +1,142 @@
+- generic [ref=f5e1]:
+  - generic:
+    - generic:
+      - progressbar
+      - generic: Google Play Console yükleniyor
+  - generic [ref=f5e3]:
+    - banner [ref=f5e4]:
+      - generic [ref=f5e6]:
+        - link [ref=f5e7] [cursor=pointer]:
+          - /url: /console/u/0/developers/7286802637861068803/app-list
+          - button "Google Play Console logosu" [ref=f5e8]
+        - generic [ref=f5e9]:
+          - button "Okunmamış bildirimler Bildirim merkezini aç" [ref=f5e15]:
+            - img [ref=f5e19]: notifications_unread
+            - generic [ref=f5e20]: Okunmamış bildirimler
+          - button [ref=f5e26] [cursor=pointer]:
+            - img "Geliştirici hesapları arasında geçiş yapın" [ref=f5e28]
+    - navigation [ref=f5e34]:
+      - list [ref=f5e35]:
+        - listitem "Ana Sayfa" [ref=f5e38]:
+          - button "Ana Sayfa" [ref=f5e39] [cursor=pointer]:
+            - img [ref=f5e42]: features
+        - listitem "Politika durumu" [ref=f5e46]:
+          - button "Politika durumu" [ref=f5e47] [cursor=pointer]:
+            - img [ref=f5e50]: android_security_privacy_safe
+        - listitem "Kullanıcılar ve izinler" [ref=f5e54]:
+          - button "Kullanıcılar ve izinler" [ref=f5e55] [cursor=pointer]:
+            - img [ref=f5e58]: user_attributes
+        - listitem "Sipariş yönetimi" [ref=f5e62]:
+          - button "Sipariş yönetimi" [ref=f5e63] [cursor=pointer]:
+            - img [ref=f5e66]: credit_card
+        - listitem "Raporları indirin" [ref=f5e70]:
+          - button "Raporları indirin" [ref=f5e71] [cursor=pointer]:
+            - img [ref=f5e73]: arrow_right
+            - img [ref=f5e76]: download
+        - listitem "Geliştirici hesabı" [ref=f5e80]:
+          - button "Geliştirici hesabı" [ref=f5e81] [cursor=pointer]:
+            - img [ref=f5e84]: badge
+        - listitem "Etkinlik günlüğü" [ref=f5e88]:
+          - button "Etkinlik günlüğü" [ref=f5e89] [cursor=pointer]:
+            - img [ref=f5e92]: description
+        - listitem "Ayarlar" [ref=f5e96]:
+          - button "Ayarlar" [ref=f5e97] [cursor=pointer]:
+            - img [ref=f5e100]: settings
+        - listitem "Yardım" [ref=f5e104]:
+          - button "Yardım" [ref=f5e105] [cursor=pointer]:
+            - img [ref=f5e108]: contact_support
+        - listitem "Android geliştirici doğrulaması" [ref=f5e112]:
+          - button "Android geliştirici doğrulaması" [ref=f5e113] [cursor=pointer]:
+            - img [ref=f5e116]: app_promotion
+    - generic [ref=f5e119]:
+      - generic [ref=f5e126]:
+        - generic [ref=f5e135]:
+          - generic [ref=f5e137]:
+            - generic:
+              - generic:
+                - generic:
+                  - heading [level=1]
+          - img [ref=f5e146]: brightness_1
+        - generic [ref=f5e153]:
+          - generic [ref=f5e158]:
+            - generic:
+              - generic:
+                - generic:
+                  - heading [level=3]
+          - generic [ref=f5e161]:
+            - button "Android geliştirici doğrulamasına git" [ref=f5e162]
+            - button "Kapat" [ref=f5e166]
+        - generic [ref=f5e174]:
+          - generic [ref=f5e176]:
+            - generic:
+              - generic:
+                - generic:
+                  - heading [level=2]
+            - button "\"Sabitlenen uygulamalar\" hakkında daha fazla bilgi" [ref=f5e179] [cursor=pointer]:
+              - img [ref=f5e180]: help
+          - generic [ref=f5e181]: Uygulamalara hızlıca erişmek ve önemli metrikleri görüntülemek için uygulamaları buraya sabitleyin
+        - generic [ref=f5e185]:
+          - generic [ref=f5e189]:
+            - generic [ref=f5e190]:
+              - generic:
+                - generic:
+                  - generic:
+                    - heading [level=2]
+            - link "Uygulama oluştur" [ref=f5e196] [cursor=pointer]:
+              - /url: /console/u/0/developers/7286802637861068803/create-new-app
+          - generic [ref=f5e200]:
+            - generic [ref=f5e201]:
+              - generic [ref=f5e204]:
+                - generic [ref=f5e205]: "Filtreleme ölçütü:"
+                - 'button "Filtreleme ölçütü: Genel" [ref=f5e208] [cursor=pointer]':
+                  - generic [ref=f5e209]: Genel
+                  - img [ref=f5e213]: arrow_drop_down
+              - generic [ref=f5e217]:
+                - search "Uygulama veya paket adına göre arayın":
+                  - generic [ref=f5e219]:
+                    - generic:
+                      - img: search
+                    - generic: Uygulama veya paket adına göre arayın
+                    - textbox "Uygulama veya paket adına göre arayın" [ref=f5e220]
+            - generic [ref=f5e231]:
+              - generic [ref=f5e232]:
+                - generic [ref=f5e233]: "Satırları göster:"
+                - 'button "Satırları göster: 10 seçildi." [ref=f5e236] [cursor=pointer]':
+                  - generic [ref=f5e237]: "10"
+                  - img [ref=f5e239]: arrow_drop_down
+              - generic [ref=f5e240]:
+                - generic [ref=f5e241]: 1 - 5 / 5
+                - generic [ref=f5e243]:
+                  - button "İlk sayfaya git" [disabled] [ref=f5e244]:
+                    - generic:
+                      - generic:
+                        - img: first_page
+                  - button "Önceki sayfaya git" [disabled] [ref=f5e245]:
+                    - generic:
+                      - generic:
+                        - img: chevron_left
+                  - button "Sonraki sayfaya git" [disabled] [ref=f5e246]:
+                    - generic:
+                      - generic:
+                        - img: chevron_right
+                  - button "Son sayfaya git" [disabled] [ref=f5e247]:
+                    - generic:
+                      - generic:
+                        - img: last_page
+      - generic [ref=f5e252]:
+        - generic [ref=f5e253]:
+          - link "Ürün güncellemeleri" [ref=f5e254] [cursor=pointer]:
+            - /url: https://play.google.com/console/about/whats-new/
+          - link "Durum kontrol paneli" [ref=f5e255] [cursor=pointer]:
+            - /url: https://status.play.google.com/
+          - link "Yardım" [ref=f5e256] [cursor=pointer]:
+            - /url: /console/u/0/developers/7286802637861068803/help-and-support
+        - generic [ref=f5e257]:
+          - generic [ref=f5e258]: © 2026 Google
+          - link "Gizlilik" [ref=f5e259] [cursor=pointer]:
+            - /url: https://www.google.com/policies/privacy/
+          - link "Geliştirici Dağıtım Sözleşmesi" [ref=f5e260] [cursor=pointer]:
+            - /url: https://play.google.com/about/developer-distribution-agreement.html
+          - link "Hizmet Şartları" [ref=f5e261] [cursor=pointer]:
+            - /url: https://play.google.com/about/console/terms-of-service/
+  - status [ref=f5e262]: Yaklaşık 5 satırdan 1 - 5 arası gösterilir

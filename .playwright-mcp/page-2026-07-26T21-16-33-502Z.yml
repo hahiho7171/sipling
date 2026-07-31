@@ -1,0 +1,58 @@
+- generic [ref=f39e1]:
+  - banner "App Store Connect" [ref=f39e3]:
+    - generic [ref=f39e4]:
+      - heading [level=1] [ref=f39e9]:
+        - link "App Store Connect" [ref=f39e10] [cursor=pointer]:
+          - /url: /
+      - navigation "Global":
+        - generic:
+          - list:
+            - listitem [ref=f39e11]:
+              - link "Apps" [ref=f39e12] [cursor=pointer]:
+                - /url: /apps
+            - listitem [ref=f39e13]:
+              - link "Trends" [ref=f39e14] [cursor=pointer]:
+                - /url: /trends
+            - listitem [ref=f39e15]:
+              - link "Reports" [ref=f39e16] [cursor=pointer]:
+                - /url: /itc/payments_and_financial_reports
+            - listitem [ref=f39e17]:
+              - link "Business" [ref=f39e18] [cursor=pointer]:
+                - /url: /business
+            - listitem [ref=f39e19]:
+              - link "Users and Access" [ref=f39e20] [cursor=pointer]:
+                - /url: /access/users
+      - button "TUĞBA GÖKCEK TUGBA GOKCEK Account name menu" [ref=f39e21] [cursor=pointer]
+  - generic [ref=f39e24]:
+    - generic:
+      - generic:
+        - generic:
+          - button "Apps menu"
+    - navigation "Apps" [ref=f39e26]:
+      - generic [ref=f39e27] [cursor=pointer]: Analytics
+      - list:
+        - listitem:
+          - link "Distribution":
+            - /url: /apps
+        - listitem:
+          - link "Analytics":
+            - /url: /apps
+  - contentinfo [ref=f39e34]:
+    - generic [ref=f39e35]:
+      - list [ref=f39e36]:
+        - listitem [ref=f39e37]:
+          - link "App Store Connect" [ref=f39e38] [cursor=pointer]:
+            - /url: /apps
+      - list [ref=f39e39]:
+        - listitem [ref=f39e40]: Copyright © 2026 Apple Inc. All rights reserved. |
+        - listitem [ref=f39e41]:
+          - link "Terms of Service" [ref=f39e42] [cursor=pointer]:
+            - /url: /WebObjects/iTunesConnect.woa/wa/termsOfService
+          - text: "|"
+        - listitem [ref=f39e43]:
+          - link "Privacy Policy" [ref=f39e44] [cursor=pointer]:
+            - /url: https://www.apple.com/legal/privacy
+          - text: "|"
+        - listitem [ref=f39e45]:
+          - link "Contact Us" [ref=f39e46] [cursor=pointer]:
+            - /url: /contact-us

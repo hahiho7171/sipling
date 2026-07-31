@@ -1,0 +1,33 @@
+- generic [ref=f2e1]:
+  - generic:
+    - generic:
+      - progressbar
+      - generic: Google Play Console yükleniyor
+  - generic [ref=f2e3]:
+    - banner [ref=f2e4]:
+      - generic [ref=f2e6]:
+        - link [ref=f2e7] [cursor=pointer]:
+          - /url: /console/u/0/developers/7286802637861068803/app-list
+          - button "Google Play Console logosu" [ref=f2e8]
+        - button [ref=f2e14] [cursor=pointer]:
+          - img "Geliştirici hesapları arasında geçiş yapın" [ref=f2e16]
+    - generic [ref=f2e20]:
+      - generic:
+        - navigation:
+          - list
+    - generic [ref=f2e30]:
+      - generic [ref=f2e31]:
+        - link "Ürün güncellemeleri" [ref=f2e32] [cursor=pointer]:
+          - /url: https://play.google.com/console/about/whats-new/
+        - link "Durum kontrol paneli" [ref=f2e33] [cursor=pointer]:
+          - /url: https://status.play.google.com/
+        - link "Yardım" [ref=f2e34] [cursor=pointer]:
+          - /url: /console/u/0/developers/7286802637861068803/help-and-support
+      - generic [ref=f2e35]:
+        - generic [ref=f2e36]: © 2026 Google
+        - link "Gizlilik" [ref=f2e37] [cursor=pointer]:
+          - /url: https://www.google.com/policies/privacy/
+        - link "Geliştirici Dağıtım Sözleşmesi" [ref=f2e38] [cursor=pointer]:
+          - /url: https://play.google.com/about/developer-distribution-agreement.html
+        - link "Hizmet Şartları" [ref=f2e39] [cursor=pointer]:
+          - /url: https://play.google.com/about/console/terms-of-service/

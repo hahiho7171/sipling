@@ -1,0 +1,88 @@
+Sipling: Water Tracker
+Distribution
+Distribution
+Analytics
+TestFlight
+Xcode Cloud
+App Review
+iOS Submission
+Resubmit to App Review
+
+Unresolved Issues
+
+Your app version was rejected and no other items submitted can be accepted or approved. You can make edits to your app version below.
+
+Items Submitted (1)
+You can review and make edits to your items below, or communicate with Apple. Accepted items won't be available for release until all items with issues are resubmitted and accepted. You can also remove those items and resubmit them later.
+ITEM
+	
+TYPE
+	
+REVIEW STATUS
+	
+ACTION
+	
+
+
+iOS App 1.0.3
+
+1.0.3 (7)
+
+	
+App Version
+	
+Rejected
+
+2.3.10 Performance: Accurate Metadata
+
+	
+Edit
+	
+Messages (1)
+AppleToday 10:43 PM
+
+
+Review Environment
+Submission ID: 57df0a4c-888f-47d8-9a1c-8a4ec2a96bd1
+Review date: July 28, 2026
+Review Device: iPad Air 11-inch (M3)
+Version reviewed: 1.0.3 (7)
+
+
+Guideline 2.3.10 - Performance - Accurate Metadata
+Issue Description
+
+The app or metadata includes information about third-party platforms that may not be relevant for App Store users, who are focused on experiences offered by the app itself.
+
+Next Steps
+
+Revise the app's description to remove Android references. 
+
+Reply to App Review in App Store Connect with additional information if the app's functionality and how it interacts with third-party platforms has been misunderstood.
+
+Resources
+
+Learn how to edit App Store metadata on App Store Connect Help.
+
+Support
+- Reply to this message in your preferred language if you need assistance. If you need additional support, use the Contact Us module.
+- Consult with fellow developers and Apple engineers on the Apple Developer Forums.
+- Provide feedback on this message and your review experience by completing a short survey.
+
+
+Test on the latest betas
+Betas of iOS 27, iPadOS 27, macOS 27, tvOS 27 and visionOS 27 are now available. Download the latest betas to prepare your app for upcoming software releases. Learn more about installing and using Apple beta software.
+
+
+
+Reply to App Review
+
+Date Submitted
+Jul 28, 2026 at 8:23 AM
+Submission ID
+57df0a4c-888f-47d8-9a1c-8a4ec2a96bd1
+Submitted By
+API user JYW9GVD5XJ
+Last Updated By
+Apple
+Cancel Submission

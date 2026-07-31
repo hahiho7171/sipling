@@ -16,6 +16,7 @@ import 'onboarding_screen.dart';
 import 'pro_screen.dart';
 import 'season_screen.dart';
 import 'species_screen.dart';
+import 'tour_sheet.dart';
 
 /// Yalnız Android'de anlamı olan bölümler için tek kaynak.
 /// Health Connect ve ana ekran widget'ı iOS'ta ÇALIŞMIYOR; gösterilirse
@@ -105,36 +106,6 @@ class SettingsScreen extends StatelessWidget {
     _snack(context, l.setHealthEnabled);
   }
 
-  /// "Sıcak gün uyarısı" için şehir girişi (WeatherKit'e verilir; konum izni yok).
-  Future<void> _editCity(BuildContext context, AppState state) async {
-    final l = context.l;
-    final controller = TextEditingController(text: state.reminder.city);
-    final city = await showDialog<String>(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        title: Text(l.setHotDayCity),
-        content: TextField(
-          controller: controller,
-          autofocus: true,
-          textCapitalization: TextCapitalization.words,
-          textInputAction: TextInputAction.done,
-          decoration: InputDecoration(hintText: l.setHotDayCityHint),
-          onSubmitted: (v) => Navigator.pop(ctx, v),
-        ),
-        actions: [
-          TextButton(
-              onPressed: () => Navigator.pop(ctx), child: Text(l.setCancel)),
-          FilledButton(
-              onPressed: () => Navigator.pop(ctx, controller.text),
-              child: Text(l.setSave)),
-        ],
-      ),
-    );
-    if (city == null) return;
-    await state.saveReminder(state.reminder.copyWith(city: city.trim()));
-    if (context.mounted) await _resync(context);
-  }
-
   @override
   Widget build(BuildContext context) {
     final l = context.l;
@@ -211,27 +182,6 @@ class SettingsScreen extends StatelessWidget {
                 trailing: _styleLabel(l, r.style),
                 onTap: () => _editStyle(context, state),
               ),
-              // Sıcak gün uyarısı — yalnız iPhone (Apple WeatherKit). Android'de
-              // ücretsiz+sunucusuz hava kaynağı olmadığı için gizli.
-              if (!kIsWeb && defaultTargetPlatform == TargetPlatform.iOS) ...[
-                _SwitchTile(
-                  icon: Icons.wb_sunny_outlined,
-                  title: l.setHotDayTitle,
-                  subtitle: l.setHotDaySub,
-                  value: r.hotDayEnabled,
-                  onChanged: (v) async {
-                    await state.saveReminder(r.copyWith(hotDayEnabled: v));
-                    if (context.mounted) await _resync(context);
-                  },
-                ),
-                if (r.hotDayEnabled)
-                  _Tile(
-                    icon: Icons.location_city_outlined,
-                    title: l.setHotDayCity,
-                    trailing: r.city.isEmpty ? l.setHotDayCitySet : r.city,
-                    onTap: () => _editCity(context, state),
-                  ),
-              ],
               // Pil rehberi Android üreticilerine özgü (Xiaomi/Samsung/Huawei/Oppo
               // agresif pil yönetimi). iOS'ta karşılığı yok → orada gösterilmez.
               if (_androidOnly)
@@ -288,11 +238,10 @@ class SettingsScreen extends StatelessWidget {
             ],
 
             _Section(title: l.setSectionAppearance, children: [
-              _SwitchTile(
-                icon: Icons.dark_mode_outlined,
-                title: l.setDarkTheme,
-                value: state.darkMode,
-                onChanged: state.setDarkMode,
+              // Tema: Sistem (varsayılan) / Açık / Koyu
+              _ThemeTile(
+                value: state.themeMode,
+                onChanged: state.setThemeMode,
               ),
               _Tile(
                 icon: Icons.filter_drama_outlined,
@@ -309,6 +258,11 @@ class SettingsScreen extends StatelessWidget {
             ]),
 
             _Section(title: l.setSectionApp, children: [
+              _Tile(
+                icon: Icons.help_outline,
+                title: l.setHowTo,
+                onTap: () => showSiplingTour(context),
+              ),
               _Tile(
                 icon: Icons.lock_outline,
                 title: l.setMyData,
@@ -681,6 +635,65 @@ class _Tile extends StatelessWidget {
               style: TextStyle(
                   fontSize: 13, fontWeight: FontWeight.w600, color: p.inkSoft)),
       onTap: onTap,
+    );
+  }
+}
+
+/// Tema seçici: Sistem (varsayılan) · Açık · Koyu.
+/// Eski açık/kapalı anahtarın yerine geçti — "sistemi izle" seçeneği eksikti.
+class _ThemeTile extends StatelessWidget {
+  final String value;
+  final ValueChanged<String> onChanged;
+  const _ThemeTile({required this.value, required this.onChanged});
+
+  @override
+  Widget build(BuildContext context) {
+    final l = context.l;
+    final p = Palette.of(context);
+    final secenekler = <String, String>{
+      kThemeSystem: l.themeSystem,
+      kThemeLight: l.themeLight,
+      kThemeDark: l.themeDark,
+    };
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 8, 16, 12),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(children: [
+            Icon(Icons.brightness_6_outlined, color: p.inkSoft, size: 21),
+            const SizedBox(width: 16),
+            Text(l.setThemeTitle,
+                style: TextStyle(fontSize: 14, color: p.ink)),
+          ]),
+          const SizedBox(height: 10),
+          Wrap(
+            spacing: 8,
+            children: secenekler.entries.map((e) {
+              final secili = e.key == value;
+              return ChoiceChip(
+                label: Text(e.value),
+                selected: secili,
+                onSelected: (_) => onChanged(e.key),
+                showCheckmark: false,
+                // Material 3 varsayılanı mor; palet su mavisi olsun.
+                selectedColor: SiplingColors.water.withValues(alpha: 0.14),
+                backgroundColor: Colors.transparent,
+                side: BorderSide(
+                  color: secili
+                      ? SiplingColors.water.withValues(alpha: 0.55)
+                      : p.inkSoft.withValues(alpha: 0.25),
+                ),
+                labelStyle: TextStyle(
+                  fontSize: 13,
+                  fontWeight: secili ? FontWeight.w700 : FontWeight.w500,
+                  color: secili ? SiplingColors.water : p.inkSoft,
+                ),
+              );
+            }).toList(),
+          ),
+        ],
+      ),
     );
   }
 }

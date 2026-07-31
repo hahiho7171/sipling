@@ -1,0 +1,133 @@
+- generic [ref=f5e1]:
+  - banner "App Store Connect" [ref=f5e3]:
+    - generic [ref=f5e4]:
+      - heading [level=1] [ref=f5e22]:
+        - link "App Store Connect" [ref=f5e23] [cursor=pointer]:
+          - /url: /
+      - navigation "Global":
+        - generic:
+          - list:
+            - listitem [ref=f5e24]:
+              - link "Apps" [ref=f5e25] [cursor=pointer]:
+                - /url: /apps
+            - listitem [ref=f5e26]:
+              - link "Trends" [ref=f5e27] [cursor=pointer]:
+                - /url: /trends
+            - listitem [ref=f5e28]:
+              - link "Reports" [ref=f5e29] [cursor=pointer]:
+                - /url: /itc/payments_and_financial_reports
+            - listitem [ref=f5e30]:
+              - link "Business" [ref=f5e31] [cursor=pointer]:
+                - /url: /business
+            - listitem [ref=f5e32]:
+              - link "Users and Access" [ref=f5e33] [cursor=pointer]:
+                - /url: /access/users
+      - button "TUĞBA GÖKCEK TUGBA GOKCEK Account name menu" [ref=f5e34] [cursor=pointer]
+  - generic [ref=f5e37]:
+    - button "Apps menu, Sipling, selected" [ref=f5e41] [cursor=pointer]:
+      - generic [ref=f5e42]:
+        - generic "Sipling" [ref=f5e43]:
+          - img "Sipling" [ref=f5e44]
+        - generic [ref=f5e45]: Sipling
+    - navigation "Apps" [ref=f5e50]:
+      - generic [ref=f5e51] [cursor=pointer]: Distribution
+      - list:
+        - listitem:
+          - link "Distribution":
+            - /url: /apps/6789913186/distribution
+        - listitem:
+          - link "Analytics":
+            - /url: /apps/6789913186/analytics
+        - listitem:
+          - link "TestFlight":
+            - /url: /teams/ce8ece0f-3696-4b3a-96e3-32a060b4e4f8/apps/6789913186/testflight
+        - listitem:
+          - link "Xcode Cloud":
+            - /url: /teams/ce8ece0f-3696-4b3a-96e3-32a060b4e4f8/apps/6789913186/ci
+  - main [ref=f5e59]:
+    - generic [ref=f5e66]:
+      - generic [ref=f5e70]:
+        - link [ref=f5e74] [cursor=pointer]:
+          - /url: /apps/6789913186/distribution/subscriptions
+        - generic [ref=f5e78]:
+          - heading [level=2] [ref=f5e79]:
+            - heading "Sipling Pro" [level=2] [ref=f5e80]
+            - paragraph [ref=f5e81]: In Review
+          - button "Add for Review" [disabled] [ref=f5e85]
+      - generic [ref=f5e86]:
+        - paragraph [ref=f5e87]:
+          - generic [ref=f5e88]:
+            - text: You can create a subscription after you create a subscription group. All subscriptions must be a part of a group. Users can only subscribe to one subscription in a group at a time, but can change to another subscription in the same group. If they do, you'll still receive 85% of the proceeds in the second year (after tax, if applicable).
+            - link "Learn More" [ref=f5e89] [cursor=pointer]:
+              - /url: https://developer.apple.com/help/app-store-connect/manage-subscriptions/offer-auto-renewable-subscriptions
+        - generic [ref=f5e90]:
+          - generic [ref=f5e91]:
+            - generic [ref=f5e93]:
+              - heading "Subscriptions" [level=3] [ref=f5e94]
+              - button "Create Subscription" [ref=f5e95] [cursor=pointer]
+            - button "Edit" [ref=f5e100] [cursor=pointer]
+          - paragraph [ref=f5e101]:
+            - text: Arrange your subscriptions in descending order, starting with the option that offers the highest level of service. You can add more than one subscription to each level. This order will determine your subscription's upgrade and downgrade options.
+            - link "Learn more about subscription upgrades and downgrades." [ref=f5e102] [cursor=pointer]:
+              - /url: https://developer.apple.com/go/?id=subscriptions-overview
+          - grid [ref=f5e104]:
+            - rowgroup [ref=f5e105]:
+              - row [ref=f5e106]:
+                - columnheader "Level" [ref=f5e107]
+                - columnheader "Reference Name" [ref=f5e111]
+                - columnheader "Product ID" [ref=f5e115]
+                - columnheader "Duration" [ref=f5e119]
+                - columnheader "Status" [ref=f5e123]
+            - rowgroup [ref=f5e127]:
+              - row [ref=f5e128]:
+                - rowheader "1" [ref=f5e129]
+                - gridcell [ref=f5e131]:
+                  - link "Sipling Pro Monthly" [ref=f5e133] [cursor=pointer]:
+                    - /url: /apps/6789913186/distribution/subscriptions/6791177254
+                - gridcell "sipling_pro_monthly" [ref=f5e134]
+                - gridcell "1 month" [ref=f5e136]
+                - gridcell [ref=f5e138]:
+                  - paragraph [ref=f5e140]: Waiting for Review
+        - generic [ref=f5e143]:
+          - heading "Localization" [level=3] [ref=f5e147]
+          - paragraph [ref=f5e149]:
+            - text: You can use different subscription group display names and app name display options for each localization. Users will see these names when they manage subscriptions on their devices.
+            - link "Learn More" [ref=f5e150] [cursor=pointer]:
+              - /url: https://developer.apple.com/help/app-store-connect/manage-subscriptions/offer-auto-renewable-subscriptions
+          - grid "Localization" [ref=f5e151]:
+            - rowgroup [ref=f5e152]:
+              - row [ref=f5e153]:
+                - columnheader "Localizations" [ref=f5e154]
+                - columnheader "Subscription Group Display Name" [ref=f5e158]
+                - columnheader "App Name" [ref=f5e162]
+                - columnheader "Actions" [ref=f5e166]
+            - rowgroup [ref=f5e167]:
+              - row [ref=f5e168]:
+                - rowheader [ref=f5e169]:
+                  - button "English (U.S.)" [ref=f5e172] [cursor=pointer]
+                - gridcell "Sipling Pro" [ref=f5e173]
+                - gridcell "Sipling" [ref=f5e175]
+                - gridcell [ref=f5e177]
+        - heading "Subscription Group ID" [level=6] [ref=f5e178]
+        - paragraph [ref=f5e179]: "22239340"
+        - paragraph [ref=f5e180]:
+          - button "Edit Subscription Group" [ref=f5e181] [cursor=pointer]
+  - contentinfo [ref=f5e9]:
+    - generic [ref=f5e10]:
+      - list [ref=f5e182]:
+        - listitem [ref=f5e183]:
+          - link "App Store Connect" [ref=f5e184] [cursor=pointer]:
+            - /url: /apps
+      - list [ref=f5e11]:
+        - listitem [ref=f5e12]: Copyright © 2026 Apple Inc. All rights reserved. |
+        - listitem [ref=f5e13]:
+          - link "Terms of Service" [ref=f5e14] [cursor=pointer]:
+            - /url: /WebObjects/iTunesConnect.woa/wa/termsOfService
+          - text: "|"
+        - listitem [ref=f5e15]:
+          - link "Privacy Policy" [ref=f5e16] [cursor=pointer]:
+            - /url: https://www.apple.com/legal/privacy
+          - text: "|"
+        - listitem [ref=f5e17]:
+          - link "Contact Us" [ref=f5e18] [cursor=pointer]:
+            - /url: /contact-us

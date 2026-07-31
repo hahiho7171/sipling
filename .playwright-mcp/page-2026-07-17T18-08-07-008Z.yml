@@ -1,0 +1,262 @@
+- generic [ref=f3e1]:
+  - banner "App Store Connect" [ref=f3e3]:
+    - generic [ref=f3e4]:
+      - heading [level=1] [ref=f3e9]:
+        - link "App Store Connect" [ref=f3e10] [cursor=pointer]:
+          - /url: /
+      - navigation "Global":
+        - generic:
+          - list:
+            - listitem [ref=f3e11]:
+              - link "Apps" [ref=f3e12] [cursor=pointer]:
+                - /url: /apps
+            - listitem [ref=f3e13]:
+              - link "Trends" [ref=f3e14] [cursor=pointer]:
+                - /url: /trends
+            - listitem [ref=f3e15]:
+              - link "Reports" [ref=f3e16] [cursor=pointer]:
+                - /url: /itc/payments_and_financial_reports
+            - listitem [ref=f3e17]:
+              - link "Business" [ref=f3e18] [cursor=pointer]:
+                - /url: /business
+            - listitem [ref=f3e19]:
+              - link "Users and Access" [ref=f3e20] [cursor=pointer]:
+                - /url: /access/users
+      - button "TUĞBA GÖKCEK TUGBA GOKCEK Account name menu" [ref=f3e21] [cursor=pointer]
+  - generic [ref=f3e24]:
+    - button "Apps menu, Sipling, selected" [ref=f3e50] [cursor=pointer]:
+      - generic [ref=f3e51]:
+        - generic "Sipling" [ref=f3e52]:
+          - img "Sipling" [ref=f3e53]
+        - generic [ref=f3e54]: Sipling
+    - navigation "Apps" [ref=f3e26]:
+      - generic [ref=f3e27] [cursor=pointer]: Distribution
+      - list:
+        - listitem:
+          - link "Distribution":
+            - /url: /apps/6789913186/distribution
+        - listitem:
+          - link "Analytics":
+            - /url: /apps/6789913186/analytics
+        - listitem:
+          - link "TestFlight":
+            - /url: /teams/ce8ece0f-3696-4b3a-96e3-32a060b4e4f8/apps/6789913186/testflight
+        - listitem:
+          - link "Xcode Cloud":
+            - /url: /teams/ce8ece0f-3696-4b3a-96e3-32a060b4e4f8/apps/6789913186/ci
+  - main [ref=f3e61]:
+    - generic [ref=f3e69]:
+      - generic [ref=f3e70]:
+        - generic [ref=f3e71]:
+          - generic [ref=f3e72]:
+            - heading [level=2] [ref=f3e75]:
+              - button "iOS App Version 1.0" [ref=f3e76] [cursor=pointer]
+            - paragraph [ref=f3e79]: Waiting for Review
+          - button "Save" [disabled] [ref=f3e83]
+        - separator [ref=f3e84]
+      - paragraph [ref=f3e88]:
+        - generic [ref=f3e89]: You can edit some information while your version is waiting for review. To submit a new build, you must remove this version from review.
+      - generic [ref=f3e90]:
+        - generic [ref=f3e93]:
+          - paragraph [ref=f3e95]: The assets and metadata below appear on your app’s product page, when users install your app, and will be used for web engine search results once you release your app.
+          - generic [ref=f3e98]:
+            - button "English (U.S.)" [disabled] [ref=f3e99]
+            - button "?" [ref=f3e102] [cursor=pointer]
+        - separator [ref=f3e103]
+        - generic [ref=f3e104]:
+          - heading "Previews and Screenshots" [level=3] [ref=f3e105]
+          - button "More information" [ref=f3e107] [cursor=pointer]: "?"
+        - paragraph [ref=f3e108]: Adding accurate screenshots of your app on the newest devices can help you represent the app's user experience. Keep in mind that we'll use these screenshots for all display sizes and localizations. Screenshots are only required for iOS apps, and only the first 3 will be used on the app installation sheets.
+        - generic [ref=f3e109]:
+          - tablist [ref=f3e110]:
+            - tab "iPhone" [selected] [ref=f3e111] [cursor=pointer]
+            - tab "iPad" [ref=f3e113] [cursor=pointer]
+          - paragraph [ref=f3e115]:
+            - link "View All Sizes in Media Manager" [ref=f3e116] [cursor=pointer]:
+              - /url: /apps/6789913186/distribution/ios/version/inflight/media-manager/iphone
+        - generic [ref=f3e118]:
+          - generic:
+            - alert
+          - tabpanel "iPhone" [ref=f3e119]:
+            - generic [ref=f3e120]:
+              - generic [ref=f3e129]:
+                - generic [ref=f3e130]: iPhone
+                - generic [ref=f3e131]: 6.5" Display
+              - region [ref=f3e132]:
+                - tabpanel [ref=f3e133]:
+                  - generic [ref=f3e136]:
+                    - list "App Previews from 6.5\" Display"
+                    - list "Screenshots from 6.5\" Display" [ref=f3e137]:
+                      - listitem [ref=f3e138]:
+                        - img "Screenshot 4-stats.png" [ref=f3e140] [cursor=pointer]
+                      - listitem [ref=f3e143]:
+                        - img "Screenshot 2-today.png" [ref=f3e145] [cursor=pointer]
+                      - listitem [ref=f3e148]:
+                        - img "Screenshot 3-forest.png" [ref=f3e150] [cursor=pointer]
+                      - listitem [ref=f3e153]:
+                        - img "Screenshot 5-settings.png" [ref=f3e155] [cursor=pointer]
+                      - listitem [ref=f3e158]:
+                        - img "Screenshot 1-summary.png" [ref=f3e160] [cursor=pointer]
+        - generic [ref=f3e163]:
+          - generic [ref=f3e164]:
+            - generic [ref=f3e166]:
+              - generic [ref=f3e167]: Promotional Text
+              - button "More information" [ref=f3e169] [cursor=pointer]: "?"
+            - textbox "Promotional Text" [ref=f3e171]: Grow a forest, one glass at a time. Gentle reminders, no guilt — and your water history stays on your phone.
+            - status "Characters remaining" [ref=f3e173]: "62"
+          - separator [ref=f3e175]
+          - generic [ref=f3e176]:
+            - generic [ref=f3e178]:
+              - generic [ref=f3e179]: Description
+              - button "More information" [ref=f3e181] [cursor=pointer]: "?"
+            - textbox "Description" [ref=f3e183]: Sipling turns drinking water into something you can see. Every glass waters a sapling. Hit your daily goal and it becomes a tree in your own forest. Miss a day? Nothing dies. Your sapling simply waits for you. A FOREST THAT NEVER WITHERS Most habit apps punish you. Sipling doesn't. There is no guilt, no dying plant, no broken heart icon. A day you missed is just a young sapling, still standing. A GOAL THAT FITS YOU Your daily target is calculated from your weight, sex, age and activity level, based on the European Food Safety Authority's reference values for water from drinks. You can always adjust it yourself. NOT EVERYTHING COUNTS THE SAME Tea, coffee, milk, juice and soda are counted by how much actual water they contain. 250 ml of coffee is not 250 ml of water, and every drink shows the water it really adds. Alcohol counts against you, honestly. REMINDERS THAT ACTUALLY ARRIVE Sipling reminds you between your waking hours, at the interval you choose, and goes quiet once you reach your goal. Tap the reminder to add a glass without even opening the app. HOME SCREEN WIDGET Add a glass straight from your home screen. Your tree grows right there. NO ACCOUNT, NO SIGN-UP Sipling has no account and no sign-up. Your water history is kept on your device, and there is no server that stores your log. You can erase all of it in a single tap. EIGHT TREE SPECIES, TEN ACHIEVEMENTS Oak, pine, sakura, maple, acacia, olive and more. Unlock them by keeping streaks and growing trees, never by paying for the basics. SIPLING PRO Pro removes ads and unlocks seasonal forest themes and a few cosmetic trees. Tracking, goals, statistics, reminders and your forest are free, forever. We will never put a paywall in front of the things that matter. - Celebrations are always ad-free. - No account and no sign-up. - Your water history stays on your device. Drink water. Grow a forest. Be kind to yourself.
+            - status "Characters remaining" [ref=f3e185]: "2.084"
+          - generic [ref=f3e186]:
+            - generic [ref=f3e188]:
+              - generic [ref=f3e189]: Keywords
+              - button "More information" [ref=f3e191] [cursor=pointer]: "?"
+            - textbox "Keywords" [ref=f3e193]: water tracker,drink reminder,hydration,water intake,daily water,health,habit,drink water,thirst
+            - status "Characters remaining" [ref=f3e195]: "5"
+          - generic [ref=f3e196]:
+            - generic [ref=f3e198]:
+              - generic [ref=f3e199]: Support URL
+              - button "More information" [ref=f3e201] [cursor=pointer]: "?"
+            - textbox "Support URL" [ref=f3e203]: https://sipling-app.web.app/destek
+          - generic [ref=f3e204]:
+            - generic [ref=f3e206]:
+              - generic [ref=f3e207]: Marketing URL
+              - button "More information" [ref=f3e209] [cursor=pointer]: "?"
+            - textbox "Marketing URL" [ref=f3e211]: https://sipling-app.web.app
+          - generic [ref=f3e212]:
+            - generic [ref=f3e214]:
+              - generic [ref=f3e215]: Version
+              - button "More information" [ref=f3e217] [cursor=pointer]: "?"
+            - textbox "Version" [ref=f3e219]: "1.0"
+          - generic [ref=f3e220]:
+            - generic [ref=f3e222]:
+              - generic [ref=f3e223]: Copyright
+              - button "More information" [ref=f3e225] [cursor=pointer]: "?"
+            - textbox "Copyright" [ref=f3e227]: 2026 Tuğba Gökcek
+            - status "Characters remaining" [ref=f3e229]: "183"
+          - generic [ref=f3e230]:
+            - generic [ref=f3e232]:
+              - generic [ref=f3e233]: Routing App Coverage File
+              - button "More information" [ref=f3e235] [cursor=pointer]: "?"
+            - generic [ref=f3e237] [cursor=pointer]:
+              - button "Choose File" [ref=f3e238]
+              - generic [ref=f3e239]: Choose File
+        - separator [ref=f3e241]
+        - button [ref=f3e243] [cursor=pointer]
+      - generic [ref=f3e247]:
+        - heading "Build" [level=3] [ref=f3e249]
+        - table [ref=f3e251]:
+          - rowgroup [ref=f3e252]:
+            - row [ref=f3e253]:
+              - columnheader "Build" [ref=f3e254]
+              - columnheader "Version" [ref=f3e257]
+              - columnheader "Has App Clip" [ref=f3e260]
+          - rowgroup [ref=f3e263]:
+            - row [ref=f3e264]:
+              - cell [ref=f3e265]:
+                - generic [ref=f3e267]:
+                  - link [ref=f3e268] [cursor=pointer]:
+                    - /url: /apps/6789913186/testflight/ios/ef5796fd-e9df-4f88-b207-594aacc8f213/metadata
+                    - generic "App Icon" [ref=f3e269]:
+                      - img "App Icon" [ref=f3e270]
+                  - link "2" [ref=f3e272] [cursor=pointer]:
+                    - /url: /apps/6789913186/testflight/ios/ef5796fd-e9df-4f88-b207-594aacc8f213/metadata
+              - cell "1.0.0" [ref=f3e273]
+              - cell [ref=f3e275]:
+                - paragraph [ref=f3e277]: "No"
+        - paragraph [ref=f3e278]: Included Assets
+        - generic [ref=f3e280]:
+          - button [ref=f3e281] [cursor=pointer]:
+            - generic "App Icon" [ref=f3e282]:
+              - img "App Icon" [ref=f3e283]
+          - paragraph [ref=f3e284]: App Icon
+      - generic [ref=f3e286]:
+        - generic [ref=f3e290]:
+          - checkbox "Game Center" [disabled] [ref=f3e292]
+          - text: Game Center
+        - generic [ref=f3e294]:
+          - paragraph [ref=f3e297]:
+            - text: Game Center components can now be added for review directly from the Game Center section. You can no longer select them from the app version page.
+            - link "Learn More" [ref=f3e298] [cursor=pointer]:
+              - /url: https://developer.apple.com/help/app-store-connect/manage-submissions-to-app-review/submit-game-center-components
+          - button [ref=f3e299] [cursor=pointer]
+      - separator [ref=f3e302]
+      - generic [ref=f3e303]:
+        - heading "App Review Information" [level=3] [ref=f3e304]
+        - generic [ref=f3e305]:
+          - generic [ref=f3e307]:
+            - generic [ref=f3e309]:
+              - generic [ref=f3e310]: Sign-In Information
+              - button "More information" [ref=f3e312] [cursor=pointer]: "?"
+            - paragraph [ref=f3e313]: Provide a user name and password so we can sign in to your app. We’ll need this to complete your app review.
+            - generic [ref=f3e315]:
+              - checkbox "Sign-in required" [ref=f3e316]
+              - generic [ref=f3e317]: Sign-in required
+          - generic [ref=f3e319]:
+            - generic [ref=f3e321]:
+              - generic [ref=f3e322]: Contact Information
+              - button "More information" [ref=f3e324] [cursor=pointer]: "?"
+            - textbox "First name" [ref=f3e327]: Asım
+            - textbox "Last name" [ref=f3e330]: Gökcek
+            - textbox "Phone number" [ref=f3e333]: "+905072407015"
+            - textbox "Email" [ref=f3e336]: asim_gokcek@hotmail.com
+          - generic [ref=f3e337]:
+            - generic [ref=f3e339]:
+              - generic [ref=f3e340]: Notes
+              - button "More information" [ref=f3e342] [cursor=pointer]: "?"
+            - paragraph [ref=f3e343]:
+              - generic [ref=f3e344]:
+                - text: Chinese law requires apps with news, religious, book, and magazine content to have relevant permits in order to be available on the App Store in China mainland. If applicable, enter information about your permits below.
+                - link "Learn More" [ref=f3e345] [cursor=pointer]:
+                  - /url: https://developer.apple.com/help/app-store-connect/reference/app-information
+            - textbox "Notes" [ref=f3e347]: "Sipling is a water-tracking app. It works fully without any account or sign-in - all features are available immediately on first launch, so no demo account is needed. The free version shows non-personalized ads (Google AdMob); the app does not track users and does not use the IDFA. \"Sipling Pro\" is an auto-renewable monthly subscription (product ID: sipling_pro_monthly) that removes ads and unlocks cosmetic seasonal forest themes. The paywall is reachable from the Settings tab > the \"Sipling Pro\" banner at the top, and includes a Restore Purchases button, Terms of Use and Privacy Policy links, and an auto-renewal disclosure. All user data is stored locally on the device; there is no server. HealthKit is not used on iOS. Thank you for reviewing."
+            - status "Characters remaining" [ref=f3e349]: "3.243"
+          - generic [ref=f3e350]:
+            - generic [ref=f3e352]:
+              - generic [ref=f3e353]: Attachment
+              - button "More information" [ref=f3e355] [cursor=pointer]: "?"
+            - generic [ref=f3e357] [cursor=pointer]:
+              - button "Choose File (Optional)" [ref=f3e358]
+              - generic [ref=f3e359]: Choose File (Optional)
+      - separator [ref=f3e361]
+      - generic [ref=f3e362]:
+        - heading "App Store Version Release" [level=3] [ref=f3e363]
+        - paragraph [ref=f3e364]: To make your app available on the App Store, you can automatically release it after it’s been approved by App Review. You can also manually release it on the App Store at a later date.
+        - generic [ref=f3e365]:
+          - generic [ref=f3e367]:
+            - generic [ref=f3e368]:
+              - radio "Manually release this version" [ref=f3e369]
+              - generic [ref=f3e370]: Manually release this version
+            - generic [ref=f3e372]:
+              - radio "Automatically release this version" [checked] [ref=f3e373]
+              - generic [ref=f3e374]: Automatically release this version
+            - generic [ref=f3e376]:
+              - radio "Automatically release this version after App Review, no earlier than" [ref=f3e377]
+              - generic [ref=f3e378]: Automatically release this version after App Review, no earlier than
+          - paragraph [ref=f3e381]: Your local date and time.
+          - generic [ref=f3e384]:
+            - textbox "Automatically release this version after App Review, no earlier than" [disabled] [ref=f3e385]: Jul 17, 2026 10:00 PM
+            - text: GMT+3
+  - contentinfo [ref=f3e34]:
+    - generic [ref=f3e35]:
+      - list [ref=f3e36]:
+        - listitem [ref=f3e37]:
+          - link "App Store Connect" [ref=f3e38] [cursor=pointer]:
+            - /url: /apps
+      - list [ref=f3e39]:
+        - listitem [ref=f3e40]: Copyright © 2026 Apple Inc. All rights reserved. |
+        - listitem [ref=f3e41]:
+          - link "Terms of Service" [ref=f3e42] [cursor=pointer]:
+            - /url: /WebObjects/iTunesConnect.woa/wa/termsOfService
+          - text: "|"
+        - listitem [ref=f3e43]:
+          - link "Privacy Policy" [ref=f3e44] [cursor=pointer]:
+            - /url: https://www.apple.com/legal/privacy
+          - text: "|"
+        - listitem [ref=f3e45]:
+          - link "Contact Us" [ref=f3e46] [cursor=pointer]:
+            - /url: /contact-us

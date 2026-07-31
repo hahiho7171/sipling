@@ -69,9 +69,23 @@
 | **"Ana ekrana widget ekle"** (tek dokunuş) | `screens/settings_screen.dart:217` `_addWidget()` `:35` | `home_widget_service.dart:60` `isPinSupported`/`requestPin` (web'de gizli) |
 | **Bildirim gelmiyor mu?** (pil rehberi) | `screens/battery_guide_screen.dart:8` | statik içerik |
 | Bardaklarım (3 bardak düzenle) | `screens/settings_screen.dart:177` | `_editCup()` |
-| Koyu tema | `data/store.dart` `setDarkMode()` | `theme.dart:51` `siplingTheme()` |
+| **Tema: Sistem / Açık / Koyu** | `screens/settings_screen.dart` `_ThemeTile` (Görünüm bölümü) | `data/store.dart` `setThemeMode()` → `main.dart` `MaterialApp.themeMode` |
 | Ağaç türleri | `screens/species_screen.dart:11` | `SpeciesScreen` |
+| **"Sipling nasıl kullanılır?"** (tanıtım turu) | `screens/settings_screen.dart` (Uygulama bölümü) | `screens/tour_sheet.dart` `showSiplingTour()` |
 | Tüm verileri sıfırla | `screens/settings_screen.dart:232` | `_confirmReset()` `:413` → `store.resetAll()` |
+
+> ⚠️ Eski "Koyu tema" açık/kapalı anahtarı **kaldırıldı** (v1.0.4). Yerine 3'lü tema seçimi geldi;
+> `darkMode` getter'ı `themeMode=='dark'` olarak korunuyor, `setDarkMode()` `setThemeMode()`'a yönleniyor.
+
+## 🧭 Tanıtım turu (kurulumdan sonra bir kez)
+
+| Ne | Dosya : satır |
+|---|---|
+| Tur alt sayfası (4 adım) | `screens/tour_sheet.dart` `_TourSheet` |
+| Açan fonksiyon + "görüldü" bayrağı | `showSiplingTour()` · `tourSeen()` · `kTourSeenKey = 'tour_seen_v1'` |
+| İlk açılışta tetik | `main.dart` `_bootstrap()` — kurulum akışından **sonra** |
+| Ayarlar'dan tekrar | `settings_screen.dart` "Sipling nasıl kullanılır?" |
+| Metinler | `l10n/app_*.arb` → `tourT1..tourT4` / `tourB1..tourB4` / `tourNext/Back/Skip/Done` (20 dil) |
 
 ## 🚪 Kurulum akışı (ilk açılış)
 

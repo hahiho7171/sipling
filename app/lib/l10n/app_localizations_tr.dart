@@ -1095,4 +1095,59 @@ class LTr extends L {
   String notifHotDayBody(int temp) {
     return 'Bugün hava $temp°C — biraz daha sık su içmeyi hedefle.';
   }
+
+  @override
+  String get setThemeTitle => 'Tema';
+
+  @override
+  String get themeSystem => 'Sistemi izle';
+
+  @override
+  String get themeLight => 'Açık';
+
+  @override
+  String get themeDark => 'Koyu';
+
+  @override
+  String get setHowTo => 'Sipling nasıl kullanılır?';
+
+  @override
+  String get tourNext => 'İleri';
+
+  @override
+  String get tourBack => 'Geri';
+
+  @override
+  String get tourSkip => 'Geç';
+
+  @override
+  String get tourDone => 'Anladım';
+
+  @override
+  String get tourT1 => 'İç, fidanını sula';
+
+  @override
+  String get tourB1 =>
+      'Ana ekranda bir bardağa dokun, yudumun kaydedilsin. Her bardak fidanını sular — yanlışlıkla eklediysen geri al okunu kullan.';
+
+  @override
+  String get tourT2 => 'Günlük hedefin';
+
+  @override
+  String get tourB2 =>
+      'Sipling hedefini boyuna, kilona, yaşına ve hareket düzeyine göre hesaplar. Ayarlar\'dan istediğin an değiştirebilir, “Su ve vücudun” ekranından yeniden hesaplatabilirsin.';
+
+  @override
+  String get tourT3 => 'Sana uyan hatırlatmalar';
+
+  @override
+  String get tourB3 =>
+      'Ayarlar\'dan hatırlatmaları aç; uyanık olduğun saatleri ve sıklığı sen belirle. Hedefi tutturduğunda günün geri kalanı sessiz kalır.';
+
+  @override
+  String get tourT4 => 'Ormanını büyüt';
+
+  @override
+  String get tourB4 =>
+      'Hedefi tutturunca fidanın ağaca dönüşür ve ormanına eklenir. Ağaçlar asla kurumaz — kaçırdığın gün ceza getirmez.';
 }

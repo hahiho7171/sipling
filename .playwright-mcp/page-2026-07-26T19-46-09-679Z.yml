@@ -1,0 +1,73 @@
+- generic [ref=f29e3]:
+  - button "Ana içeriğe atla" [ref=f29e5] [cursor=pointer]
+  - generic [ref=f29e8]:
+    - banner [ref=f29e9]:
+      - generic [ref=f29e10]:
+        - generic [ref=f29e11]:
+          - button "Menü" [ref=f29e13] [cursor=pointer]:
+            - img [ref=f29e16]: menu
+          - link "AdMob ana sayfasına git" [ref=f29e18] [cursor=pointer]:
+            - /url: /v2/home
+        - generic [ref=f29e24]:
+          - img [ref=f29e27]: search
+          - generic [ref=f29e28]:
+            - generic: Uygulama, reklam birimi, uyumlulaştırma grubu, rapor ve kampanya arayın
+            - combobox "Uygulamalarınızı, reklam birimlerinizi, uyumlulaştırma gruplarınızı, raporlarınızı ve kampanyalarınızı arayabileceğiniz arama kutusu" [active] [ref=f29e29]
+        - generic [ref=f29e30]:
+          - button "Bildirimleri aç" [ref=f29e33] [cursor=pointer]:
+            - generic [ref=f29e36]:
+              - img [ref=f29e38]: notifications
+              - generic: "3"
+          - button "Google hesabı" [ref=f29e42] [cursor=pointer]:
+            - img "Google hesabı (randevusayfasi@gmail.com)" [ref=f29e43]
+    - generic [ref=f29e44]:
+      - navigation [ref=f29e54]:
+        - navigation "Kenar çubuğu" [ref=f29e57]:
+          - link "Ana sayfa" [ref=f29e62] [cursor=pointer]:
+            - /url: /v2/home
+            - img [ref=f29e64]: home
+          - link "Uygulamaları aç/kapat" [ref=f29e71] [cursor=pointer]:
+            - img [ref=f29e73]: apps
+          - generic [ref=f29e75]:
+            - link "Raporlar" [ref=f29e79] [cursor=pointer]:
+              - /url: /v2/reports/library
+              - img [ref=f29e81]: assessment
+            - link "Uyumlulaştırma" [ref=f29e86] [cursor=pointer]:
+              - /url: /v2/mediation/groups/list
+            - link "Kampanyalar" [ref=f29e92] [cursor=pointer]:
+              - /url: /v2/campaigns/list
+              - img [ref=f29e94]: campaign
+          - generic [ref=f29e96]:
+            - link "Politika merkezi" [ref=f29e100] [cursor=pointer]:
+              - /url: /v2/policycenter
+              - img [ref=f29e102]: verified_user
+            - link "Gizlilik ve mesajlaşma" [ref=f29e107] [cursor=pointer]:
+              - /url: /v2/privacymessaging
+            - link "Yayıncı verileri" [ref=f29e113] [cursor=pointer]:
+              - /url: /v2/first-party-data-controls/list
+              - img [ref=f29e115]: badge
+            - link "Engelleme kontrolleri" [ref=f29e120] [cursor=pointer]:
+              - /url: /v2/pubcontrols
+              - img [ref=f29e122]: block
+            - link "Ödemeler" [ref=f29e127] [cursor=pointer]:
+              - /url: /v2/payments/overview
+            - link "Değişiklik geçmişi" [ref=f29e133] [cursor=pointer]:
+              - /url: /v2/changehistory
+              - img [ref=f29e135]: history
+            - link "Ayarlar" [ref=f29e140] [cursor=pointer]:
+              - /url: /v2/settings/personal-settings
+              - img [ref=f29e142]: settings
+            - link "Labs" [ref=f29e147] [cursor=pointer]:
+              - /url: /v2/labs/list
+              - img [ref=f29e149]: stream_science
+            - button "Yardım" [ref=f29e154] [cursor=pointer]:
+              - img [ref=f29e156]: help_outline
+            - button "Geri bildirim" [ref=f29e161] [cursor=pointer]:
+              - img [ref=f29e163]: feedback
+      - main [ref=f29e45]:
+        - generic [ref=f29e49]:
+          - text: © 2026 Google
+          - link "Gizlilikopen_in_new" [ref=f29e50] [cursor=pointer]:
+            - /url: https://www.google.com/intl/tr/policies/privacy
+          - link "Şartlaropen_in_new" [ref=f29e51] [cursor=pointer]:
+            - /url: https://adsense.google.com/adsense/terms

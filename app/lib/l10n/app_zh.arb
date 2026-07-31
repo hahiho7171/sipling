@@ -328,5 +328,22 @@
   "setHotDayCitySet": "选择",
   "setHotDayCityHint": "如：伊斯坦布尔",
   "notifHotDayTitle": "今天很热 🌡️",
-  "notifHotDayBody": "今天 {temp}°C——记得多喝几次水。"
+  "notifHotDayBody": "今天 {temp}°C——记得多喝几次水。",
+  "setThemeTitle": "主题",
+  "themeSystem": "跟随系统",
+  "themeLight": "浅色",
+  "themeDark": "深色",
+  "setHowTo": "Sipling 怎么用",
+  "tourNext": "下一步",
+  "tourBack": "上一步",
+  "tourSkip": "跳过",
+  "tourDone": "明白了",
+  "tourT1": "喝水，浇灌你的树苗",
+  "tourB1": "在主页点一下杯子就能记录一次喝水。每一杯都会浇灌你的树苗——点错了？用撤销箭头即可。",
+  "tourT2": "每日目标",
+  "tourB2": "Sipling 会根据你的身高、体重、年龄和活动量计算目标。可以随时在设置里修改，也可以在“水与你的身体”页面重新计算。",
+  "tourT3": "贴合你作息的提醒",
+  "tourB3": "在设置里打开提醒，设定你的清醒时段和提醒间隔。达成目标后，当天剩下的时间就会安静下来。",
+  "tourT4": "种出你的森林",
+  "tourB4": "达成目标，树苗就会长成森林里的一棵树。树永远不会枯萎——漏掉一天也不会有任何惩罚。"
 }

@@ -1064,4 +1064,58 @@ class LJa extends L {
   String notifHotDayBody(int temp) {
     return '今日は$temp°C — いつもより少しこまめに水分をとりましょう。';
   }
+
+  @override
+  String get setThemeTitle => 'テーマ';
+
+  @override
+  String get themeSystem => 'システムに合わせる';
+
+  @override
+  String get themeLight => 'ライト';
+
+  @override
+  String get themeDark => 'ダーク';
+
+  @override
+  String get setHowTo => 'Sipling の使い方';
+
+  @override
+  String get tourNext => '次へ';
+
+  @override
+  String get tourBack => '戻る';
+
+  @override
+  String get tourSkip => 'スキップ';
+
+  @override
+  String get tourDone => 'わかりました';
+
+  @override
+  String get tourT1 => '飲んで、苗に水をあげよう';
+
+  @override
+  String get tourB1 =>
+      'ホーム画面のコップをタップすると一口分が記録されます。1杯ごとに苗が育ちます。間違えたら取り消し矢印を使ってください。';
+
+  @override
+  String get tourT2 => '1日の目標';
+
+  @override
+  String get tourB2 =>
+      'Sipling は身長・体重・年齢・活動量から目標を計算します。設定でいつでも変更でき、「水とからだ」画面で計算し直せます。';
+
+  @override
+  String get tourT3 => 'あなたに合った通知';
+
+  @override
+  String get tourB3 =>
+      '設定でリマインダーをオンにし、起きている時間帯と間隔を決めましょう。目標を達成すると、その日は静かになります。';
+
+  @override
+  String get tourT4 => '森を育てよう';
+
+  @override
+  String get tourB4 => '目標を達成すると、苗が森の木になります。木は枯れません。1日抜けてもペナルティはありません。';
 }

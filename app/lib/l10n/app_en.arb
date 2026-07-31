@@ -432,13 +432,21 @@
   "addFactorWaterEq": "≈ {ml} ml water ({percent}%)",
   "@addFactorWaterEq": {
     "placeholders": {
-      "ml": { "type": "int" },
-      "percent": { "type": "int" }
+      "ml": {
+        "type": "int"
+      },
+      "percent": {
+        "type": "int"
+      }
     }
   },
   "proPerMonth": "{price} / month",
   "@proPerMonth": {
-    "placeholders": { "price": { "type": "String" } }
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "proRestore": "Restore purchases",
   "proTerms": "Terms of Use",
@@ -518,5 +526,22 @@
         "type": "int"
       }
     }
-  }
+  },
+  "setThemeTitle": "Theme",
+  "themeSystem": "Follow system",
+  "themeLight": "Light",
+  "themeDark": "Dark",
+  "setHowTo": "How Sipling works",
+  "tourNext": "Next",
+  "tourBack": "Back",
+  "tourSkip": "Skip",
+  "tourDone": "Got it",
+  "tourT1": "Drink, water your sapling",
+  "tourB1": "Tap a cup on the home screen to log a sip. Every glass waters your sapling — tapped one by mistake? Use the undo arrow.",
+  "tourT2": "Your daily goal",
+  "tourB2": "Sipling works out a goal from your height, weight, age and activity. Change it any time in Settings, or recalculate it on the “Water and your body” screen.",
+  "tourT3": "Reminders that fit your day",
+  "tourB3": "Turn reminders on in Settings, then set your waking hours and how often you want a nudge. Once you reach your goal, the rest of the day stays quiet.",
+  "tourT4": "Grow your forest",
+  "tourB4": "Reach your goal and your sapling becomes a tree in your forest. Trees never wither — a missed day costs you nothing."
 }

@@ -1,0 +1,73 @@
+- generic [active] [ref=f52e1]:
+  - generic:
+    - generic:
+      - progressbar
+      - generic: Google Play Console yükleniyor
+  - generic [ref=f52e3]:
+    - banner [ref=f52e4]:
+      - generic [ref=f52e6]:
+        - link [ref=f52e7] [cursor=pointer]:
+          - /url: /console/u/0/developers/7286802637861068803/app-list
+          - button "Google Play Console logosu" [ref=f52e8]
+        - generic [ref=f52e9]:
+          - button "Bildirimler Bildirim merkezini aç" [ref=f52e15]:
+            - img [ref=f52e19]: notifications
+            - generic [ref=f52e20]: Bildirimler
+          - button [ref=f52e26] [cursor=pointer]:
+            - img "Geliştirici hesapları arasında geçiş yapın" [ref=f52e28]
+    - navigation [ref=f52e34]:
+      - list [ref=f52e35]:
+        - listitem "Ana Sayfa" [ref=f52e38]:
+          - button "Ana Sayfa" [ref=f52e39] [cursor=pointer]:
+            - img [ref=f52e42]: features
+        - listitem "Politika durumu" [ref=f52e46]:
+          - button "Politika durumu" [ref=f52e47] [cursor=pointer]:
+            - img [ref=f52e50]: android_security_privacy_safe
+        - listitem "Kullanıcılar ve izinler" [ref=f52e54]:
+          - button "Kullanıcılar ve izinler" [ref=f52e55] [cursor=pointer]:
+            - img [ref=f52e58]: user_attributes
+        - listitem "Sipariş yönetimi" [ref=f52e62]:
+          - button "Sipariş yönetimi" [ref=f52e63] [cursor=pointer]:
+            - img [ref=f52e66]: credit_card
+        - listitem "Raporları indirin" [ref=f52e70]:
+          - button "Raporları indirin" [ref=f52e71] [cursor=pointer]:
+            - img [ref=f52e73]: arrow_right
+            - img [ref=f52e76]: download
+        - listitem "Geliştirici hesabı" [ref=f52e80]:
+          - button "Geliştirici hesabı" [ref=f52e81] [cursor=pointer]:
+            - img [ref=f52e84]: badge
+        - listitem "Etkinlik günlüğü" [ref=f52e88]:
+          - button "Etkinlik günlüğü" [ref=f52e89] [cursor=pointer]:
+            - img [ref=f52e92]: description
+        - listitem "Ayarlar" [ref=f52e96]:
+          - button "Ayarlar" [ref=f52e97] [cursor=pointer]:
+            - img [ref=f52e100]: settings
+        - listitem "Yardım" [ref=f52e104]:
+          - button "Yardım" [ref=f52e105] [cursor=pointer]:
+            - img [ref=f52e108]: contact_support
+        - listitem "Android geliştirici doğrulaması" [ref=f52e112]:
+          - button "Android geliştirici doğrulaması" [ref=f52e113] [cursor=pointer]:
+            - img [ref=f52e116]: app_promotion
+    - generic [ref=f52e119]:
+      - generic [ref=f52e135]:
+        - heading "Gökcek" [level=1] [ref=f52e141]
+        - generic [ref=f52e148]:
+          - generic [ref=f52e149]: Kişisel hesap
+          - img [ref=f52e151]: brightness_1
+          - generic [ref=f52e152]: "Hesap Kimliği: 7286802637861068803"
+      - generic [ref=f52e163]:
+        - generic [ref=f52e164]:
+          - link "Ürün güncellemeleri" [ref=f52e165] [cursor=pointer]:
+            - /url: https://play.google.com/console/about/whats-new/
+          - link "Durum kontrol paneli" [ref=f52e166] [cursor=pointer]:
+            - /url: https://status.play.google.com/
+          - link "Yardım" [ref=f52e167] [cursor=pointer]:
+            - /url: /console/u/0/developers/7286802637861068803/help-and-support
+        - generic [ref=f52e168]:
+          - generic [ref=f52e169]: © 2026 Google
+          - link "Gizlilik" [ref=f52e170] [cursor=pointer]:
+            - /url: https://www.google.com/policies/privacy/
+          - link "Geliştirici Dağıtım Sözleşmesi" [ref=f52e171] [cursor=pointer]:
+            - /url: https://play.google.com/about/developer-distribution-agreement.html
+          - link "Hizmet Şartları" [ref=f52e172] [cursor=pointer]:
+            - /url: https://play.google.com/about/console/terms-of-service/

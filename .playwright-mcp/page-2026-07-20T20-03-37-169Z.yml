@@ -1,0 +1,64 @@
+- generic [ref=f15e1]:
+  - generic:
+    - generic:
+      - progressbar
+      - generic: Google Play Console yükleniyor
+  - generic [ref=f15e3]:
+    - banner [ref=f15e4]:
+      - generic [ref=f15e6]:
+        - link [ref=f15e7] [cursor=pointer]:
+          - /url: /console/u/0/developers/7286802637861068803/app-list
+          - button "Google Play Console logosu" [ref=f15e8]
+        - generic [ref=f15e9]:
+          - button "Bildirimler Bildirim merkezini aç" [ref=f15e15]:
+            - img [ref=f15e19]: notifications
+            - generic [ref=f15e20]: Bildirimler
+          - generic [ref=f15e22]:
+            - 'button "Sipling: Water Reminder" [ref=f15e30] [cursor=pointer]'
+            - button [ref=f15e45] [cursor=pointer]:
+              - img "Geliştirici hesapları arasında geçiş yapın" [ref=f15e47]
+    - navigation [ref=f15e53]:
+      - link "Tüm uygulamalar" [ref=f15e54] [cursor=pointer]:
+        - /url: /console/u/0/developers/7286802637861068803/app-list
+        - img [ref=f15e56]: keyboard_backspace
+      - list [ref=f15e58]:
+        - listitem "Kontrol paneli" [ref=f15e61]:
+          - button "Kontrol paneli" [ref=f15e62] [cursor=pointer]:
+            - img [ref=f15e65]: dashboard
+        - listitem "İstatistikler" [ref=f15e69]:
+          - button "İstatistikler" [ref=f15e70] [cursor=pointer]:
+            - img [ref=f15e73]: bar_chart
+        - listitem "Yayın özeti" [ref=f15e77]:
+          - button "Yayın özeti" [ref=f15e78] [cursor=pointer]:
+            - img [ref=f15e81]: overview
+        - listitem "Google Play ile korunanlar" [ref=f15e85]:
+          - button "Google Play ile korunanlar" [ref=f15e86] [cursor=pointer]:
+            - img [ref=f15e89]: shield
+        - listitem "Test edin ve yayınlayın" [ref=f15e93]:
+          - button "Test edin ve yayınlayın" [ref=f15e94] [cursor=pointer]:
+            - img [ref=f15e97]: rocket_launch
+        - listitem "İzleyin ve geliştirin" [ref=f15e101]:
+          - button "İzleyin ve geliştirin" [ref=f15e102] [cursor=pointer]:
+            - img [ref=f15e105]: vital_signs
+        - listitem "Kullanıcı sayısını artırın" [ref=f15e109]:
+          - button "Kullanıcı sayısını artırın" [ref=f15e110] [cursor=pointer]:
+            - img [ref=f15e113]: finance_mode
+        - listitem "Google Play ile para kazanın" [ref=f15e117]:
+          - button "Google Play ile para kazanın" [ref=f15e118] [cursor=pointer]:
+            - img [ref=f15e121]: sell
+    - generic [ref=f15e142]:
+      - generic [ref=f15e143]:
+        - link "Ürün güncellemeleri" [ref=f15e144] [cursor=pointer]:
+          - /url: https://play.google.com/console/about/whats-new/
+        - link "Durum kontrol paneli" [ref=f15e145] [cursor=pointer]:
+          - /url: https://status.play.google.com/
+        - link "Yardım" [ref=f15e146] [cursor=pointer]:
+          - /url: /console/u/0/developers/7286802637861068803/help-and-support?app=4974431994893643882
+      - generic [ref=f15e147]:
+        - generic [ref=f15e148]: © 2026 Google
+        - link "Gizlilik" [ref=f15e149] [cursor=pointer]:
+          - /url: https://www.google.com/policies/privacy/
+        - link "Geliştirici Dağıtım Sözleşmesi" [ref=f15e150] [cursor=pointer]:
+          - /url: https://play.google.com/about/developer-distribution-agreement.html
+        - link "Hizmet Şartları" [ref=f15e151] [cursor=pointer]:
+          - /url: https://play.google.com/about/console/terms-of-service/

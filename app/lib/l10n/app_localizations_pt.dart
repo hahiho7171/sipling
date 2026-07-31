@@ -1115,4 +1115,59 @@ class LPt extends L {
   String notifHotDayBody(int temp) {
     return 'Hoje está $temp°C — tente beber um pouco mais vezes.';
   }
+
+  @override
+  String get setThemeTitle => 'Tema';
+
+  @override
+  String get themeSystem => 'Seguir o sistema';
+
+  @override
+  String get themeLight => 'Claro';
+
+  @override
+  String get themeDark => 'Escuro';
+
+  @override
+  String get setHowTo => 'Como o Sipling funciona';
+
+  @override
+  String get tourNext => 'Avançar';
+
+  @override
+  String get tourBack => 'Voltar';
+
+  @override
+  String get tourSkip => 'Pular';
+
+  @override
+  String get tourDone => 'Entendi';
+
+  @override
+  String get tourT1 => 'Beba e regue sua muda';
+
+  @override
+  String get tourB1 =>
+      'Toque num copo na tela inicial para registrar um gole. Cada copo rega sua muda — tocou sem querer? Use a seta de desfazer.';
+
+  @override
+  String get tourT2 => 'Sua meta diária';
+
+  @override
+  String get tourB2 =>
+      'O Sipling calcula a meta pela sua altura, peso, idade e atividade. Mude quando quiser nos Ajustes ou recalcule na tela “A água e o seu corpo”.';
+
+  @override
+  String get tourT3 => 'Lembretes no seu ritmo';
+
+  @override
+  String get tourB3 =>
+      'Ative os lembretes nos Ajustes e defina suas horas acordado e a frequência. Ao bater a meta, o resto do dia fica em silêncio.';
+
+  @override
+  String get tourT4 => 'Faça sua floresta crescer';
+
+  @override
+  String get tourB4 =>
+      'Ao bater a meta, sua muda vira uma árvore na sua floresta. As árvores nunca murcham — um dia perdido não custa nada.';
 }

@@ -328,5 +328,22 @@
   "setHotDayCitySet": "Seç",
   "setHotDayCityHint": "Örn. İstanbul",
   "notifHotDayTitle": "Bugün hava sıcak 🌡️",
-  "notifHotDayBody": "Bugün hava {temp}°C — biraz daha sık su içmeyi hedefle."
+  "notifHotDayBody": "Bugün hava {temp}°C — biraz daha sık su içmeyi hedefle.",
+  "setThemeTitle": "Tema",
+  "themeSystem": "Sistemi izle",
+  "themeLight": "Açık",
+  "themeDark": "Koyu",
+  "setHowTo": "Sipling nasıl kullanılır?",
+  "tourNext": "İleri",
+  "tourBack": "Geri",
+  "tourSkip": "Geç",
+  "tourDone": "Anladım",
+  "tourT1": "İç, fidanını sula",
+  "tourB1": "Ana ekranda bir bardağa dokun, yudumun kaydedilsin. Her bardak fidanını sular — yanlışlıkla eklediysen geri al okunu kullan.",
+  "tourT2": "Günlük hedefin",
+  "tourB2": "Sipling hedefini boyuna, kilona, yaşına ve hareket düzeyine göre hesaplar. Ayarlar'dan istediğin an değiştirebilir, “Su ve vücudun” ekranından yeniden hesaplatabilirsin.",
+  "tourT3": "Sana uyan hatırlatmalar",
+  "tourB3": "Ayarlar'dan hatırlatmaları aç; uyanık olduğun saatleri ve sıklığı sen belirle. Hedefi tutturduğunda günün geri kalanı sessiz kalır.",
+  "tourT4": "Ormanını büyüt",
+  "tourB4": "Hedefi tutturunca fidanın ağaca dönüşür ve ormanına eklenir. Ağaçlar asla kurumaz — kaçırdığın gün ceza getirmez."
 }

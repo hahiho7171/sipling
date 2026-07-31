@@ -1101,4 +1101,59 @@ class LRu extends L {
   String notifHotDayBody(int temp) {
     return 'Сегодня $temp°C — пейте немного чаще.';
   }
+
+  @override
+  String get setThemeTitle => 'Тема';
+
+  @override
+  String get themeSystem => 'Как в системе';
+
+  @override
+  String get themeLight => 'Светлая';
+
+  @override
+  String get themeDark => 'Тёмная';
+
+  @override
+  String get setHowTo => 'Как работает Sipling';
+
+  @override
+  String get tourNext => 'Далее';
+
+  @override
+  String get tourBack => 'Назад';
+
+  @override
+  String get tourSkip => 'Пропустить';
+
+  @override
+  String get tourDone => 'Понятно';
+
+  @override
+  String get tourT1 => 'Пейте и поливайте саженец';
+
+  @override
+  String get tourB1 =>
+      'Нажмите на стакан на главном экране, чтобы записать глоток. Каждый стакан поливает саженец — нажали случайно? Есть стрелка отмены.';
+
+  @override
+  String get tourT2 => 'Дневная норма';
+
+  @override
+  String get tourB2 =>
+      'Sipling считает норму по росту, весу, возрасту и активности. Меняйте её в настройках или пересчитайте на экране «Вода и ваше тело».';
+
+  @override
+  String get tourT3 => 'Напоминания под ваш день';
+
+  @override
+  String get tourB3 =>
+      'Включите напоминания в настройках, укажите часы бодрствования и частоту. Как только норма набрана, остаток дня проходит тихо.';
+
+  @override
+  String get tourT4 => 'Вырастите свой лес';
+
+  @override
+  String get tourB4 =>
+      'Выполнили норму — саженец становится деревом в вашем лесу. Деревья не засыхают: пропущенный день ничего не стоит.';
 }

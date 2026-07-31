@@ -27,18 +27,27 @@ node tools/tarayici.js tikla 195 798                      # koordinata tıkla
 node tools/tarayici.js js    "localStorage.length"        # sayfada JS çalıştır
 ```
 
-## Neden Playwright MCP kullanılmıyor
+## Hangi MCP? (2026-07-27'de güncellendi — eski "MCP kullanma" kuralı ARTIK EKSİK)
 
-`~/.claude.json` içinde MCP şöyle tanımlı:
+İki ayrı MCP var, karıştırma:
+
+| MCP adı | Bağlı port | Kullan? |
+|---|---|---|
+| `playwright` (`~/.claude.json`, **genel**) | **9334** = Randevio (Play Console oturumlu) | 🚫 **ASLA** |
+| **`sipling-tarayici`** (proje kökü `.mcp.json`) | **9360** = Sipling | ✅ **Bunu kullan** |
 
 ```json
-"playwright": { "command": "npx", "args": ["@playwright/mcp@latest", "--cdp-endpoint", "http://localhost:9334"] }
+// Sipling/.mcp.json
+{ "mcpServers": { "sipling-tarayici": {
+    "command": "npx", "args": ["-y", "@playwright/mcp@latest", "--cdp-endpoint", "http://localhost:9360"] } } }
 ```
 
-Yani **her `browser_*` çağrısı Randevio'nun tarayıcısına gider.** Bunu değiştirmek Randevio'yu
-bozar. Bu yüzden Sipling kendi `playwright-core` sürücüsünü kullanır: `tools/tarayici.js`.
+➡️ Araç adları `mcp__sipling-tarayici__browser_*`. Önce `bash tools/baslat.sh` ile tarayıcıyı aç.
+Erişilebilirlik ağacı + `browser_evaluate` işleri çok hızlandırıyor (2026-07-27 ASO işi bununla yapıldı).
+Kendi sürücüsü `tools/tarayici.js` de duruyor (foto/koordinat tıklama için pratik).
 
-➡️ **Sipling işinde MCP browser araçlarını KULLANMA.**
+🪤 **Play Console'da MCP tıklaması sık takılıyor** (yapışkan başlık pointer olaylarını yutuyor)
+→ orada `browser_evaluate` içinden **DOM tıklaması** (`el.click()`) kullan. Detay `wiki/08`.
 
 ## Notlar
 

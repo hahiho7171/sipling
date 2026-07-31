@@ -1,5 +1,33 @@
 # ✅ Yapılacaklar
 
+> ⚠️ Aşağıdaki uzun liste **1.0 yayın öncesi** dönemin arşivi — çoğu bitti.
+> **Güncel açık işler için ÖNCE bu bölümü oku.**
+
+## 🔥 AÇIK İŞLER (2026-07-28)
+
+**Bekleyenler (bizde iş yok, sonucu bekliyoruz):**
+- ⏳ **Apple 1.0.3 + build 7** — `WAITING_FOR_REVIEW`. Onaylanınca otomatik yayına çıkar.
+  Kontrol: `node tools/asc-api.js state`
+- ⏳ **Play mağaza girişi güncellemesi** (20 dil açıklama + en-US görselleri) — Google incelemesinde.
+- ⏳ **Play üretim şartı**: 12 testçi × 14 gün — **7. gündeyiz**, ~7 gün kaldı.
+  Dolunca Play Console → "Üretime başvur".
+
+**Yapılacak işler:**
+1. ⬜ **Play'de 19 dilin ekran görüntüleri** yeni tasarıma geçmedi (100 görsel
+   `store/play-market/` hazır). Play Console arayüzü direniyor → önerilen çözüm
+   **Play Developer API servis hesabı** (`edits.images.deleteall`+`upload`). Detay `wiki/08`.
+   ⏱️ Play üretime çıkmadan önce yapılmalı.
+2. ⬜ **Health apps declaration** formu (Play) — `WRITE_HYDRATION` hassas izin sayılıyor,
+   üretime çıkmadan zorunlu.
+3. ⬜ **iPad ekran görüntüleri** (App Store) hâlâ eski/İngilizce — Apple **iPad'de test ediyor**,
+   iyileştirmeye değer.
+4. ⬜ **Android'e yeni sürüm** — şu an gönderilecek kod değişikliği YOK. Testers Community'nin
+   "16 günde 2-3 güncelleme" şartı için boş sürüm basılabilir (kullanıcı kararı bekliyor).
+5. ⬜ **iOS reklam gelirini yeniden ölç** — AdMob limiti 2026-07-25'te kalktı, iOS'ta hâlâ
+   ₺0 (kullanıcı yok). 1.0.3 yayına çıkıp indirme gelince tekrar bak.
+
+---
+
 > Sıra önerisi: önce **uygulama düzgün çalışsın**, sonra para bağlansın.
 > Rakiplerin battığı yer ürün kalitesi; reklam ve abonelik en sona.
 

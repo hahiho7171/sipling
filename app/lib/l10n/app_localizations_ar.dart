@@ -1108,4 +1108,59 @@ class LAr extends L {
   String notifHotDayBody(int temp) {
     return 'درجة الحرارة اليوم $temp°م — احرص على شرب الماء أكثر قليلاً.';
   }
+
+  @override
+  String get setThemeTitle => 'المظهر';
+
+  @override
+  String get themeSystem => 'اتّباع النظام';
+
+  @override
+  String get themeLight => 'فاتح';
+
+  @override
+  String get themeDark => 'داكن';
+
+  @override
+  String get setHowTo => 'كيف يعمل Sipling';
+
+  @override
+  String get tourNext => 'التالي';
+
+  @override
+  String get tourBack => 'السابق';
+
+  @override
+  String get tourSkip => 'تخطٍّ';
+
+  @override
+  String get tourDone => 'فهمت';
+
+  @override
+  String get tourT1 => 'اشرب واسقِ شتلتك';
+
+  @override
+  String get tourB1 =>
+      'انقر كوبًا في الشاشة الرئيسية لتسجيل رشفة. كل كوب يسقي شتلتك — نقرت بالخطأ؟ استخدم سهم التراجع.';
+
+  @override
+  String get tourT2 => 'هدفك اليومي';
+
+  @override
+  String get tourB2 =>
+      'يحسب Sipling هدفك من طولك ووزنك وعمرك ونشاطك. غيّره متى شئت من الإعدادات، أو أعد حسابه من شاشة «الماء وجسمك».';
+
+  @override
+  String get tourT3 => 'تذكيرات تناسب يومك';
+
+  @override
+  String get tourB3 =>
+      'فعّل التذكيرات من الإعدادات، ثم حدّد ساعات استيقاظك وعدد مرات التنبيه. وعند بلوغ هدفك يهدأ بقية اليوم.';
+
+  @override
+  String get tourT4 => 'نمِّ غابتك';
+
+  @override
+  String get tourB4 =>
+      'عند بلوغ هدفك تتحوّل شتلتك إلى شجرة في غابتك. الأشجار لا تذبل أبدًا — واليوم الفائت لا يكلّفك شيئًا.';
 }

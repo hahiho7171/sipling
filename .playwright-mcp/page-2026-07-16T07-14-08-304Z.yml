@@ -1,0 +1,107 @@
+- generic [ref=e1]:
+  - generic:
+    - generic:
+      - progressbar
+      - generic: Google Play Console yükleniyor
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e6]:
+        - link [ref=e7] [cursor=pointer]:
+          - /url: /console/u/0/developers/7286802637861068803/app-list
+          - button "Google Play Console logosu" [ref=e8]
+        - generic [ref=e9]:
+          - button "Okunmamış bildirimler Bildirim merkezini aç" [ref=e15]:
+            - img [ref=e19]: notifications_unread
+            - generic [ref=e20]: Okunmamış bildirimler
+          - generic [ref=e22]:
+            - 'button "Sipling: Water Reminder" [ref=e30] [cursor=pointer]'
+            - button [ref=e45] [cursor=pointer]:
+              - img "Geliştirici hesapları arasında geçiş yapın" [ref=e47]
+    - navigation [ref=e53]:
+      - link "Tüm uygulamalar" [ref=e54] [cursor=pointer]:
+        - /url: /console/u/0/developers/7286802637861068803/app-list
+        - img [ref=e56]: keyboard_backspace
+      - list [ref=e58]:
+        - listitem "Kontrol paneli" [ref=e61]:
+          - button "Kontrol paneli" [ref=e62] [cursor=pointer]:
+            - img [ref=e65]: dashboard
+        - listitem "İstatistikler" [ref=e69]:
+          - button "İstatistikler" [ref=e70] [cursor=pointer]:
+            - img [ref=e73]: bar_chart
+        - listitem "Yayın özeti" [ref=e77]:
+          - button "Yayın özeti" [ref=e78] [cursor=pointer]:
+            - img [ref=e81]: overview
+        - listitem "Google Play ile korunanlar" [ref=e85]:
+          - button "Google Play ile korunanlar" [ref=e86] [cursor=pointer]:
+            - img [ref=e89]: shield
+        - listitem "Test edin ve yayınlayın" [ref=e93]:
+          - button "Test edin ve yayınlayın" [ref=e94] [cursor=pointer]:
+            - img [ref=e97]: rocket_launch
+        - listitem "İzleyin ve geliştirin" [ref=e101]:
+          - button "İzleyin ve geliştirin" [ref=e102] [cursor=pointer]:
+            - img [ref=e105]: vital_signs
+        - listitem "Kullanıcı sayısını artırın" [ref=e109]:
+          - button "Kullanıcı sayısını artırın" [ref=e110] [cursor=pointer]:
+            - img [ref=e113]: finance_mode
+        - listitem "Google Play ile para kazanın" [ref=e117]:
+          - button "Google Play ile para kazanın" [ref=e118] [cursor=pointer]:
+            - img [ref=e121]: sell
+    - generic [ref=e124]:
+      - generic [ref=e131]:
+        - generic [ref=e138]:
+          - heading "Kontrol paneli" [level=1] [ref=e144]
+          - generic [ref=e149]:
+            - text: Uygulamanızı yayınlamaya hazırlanın.
+            - button "Kontrol paneli hakkında daha fazla ayrıntı göster" [ref=e150] [cursor=pointer]: Daha fazla göster
+        - generic [ref=e155]:
+          - 'img "Sipling: Water Reminder" [ref=e157]'
+          - generic [ref=e158]:
+            - generic [ref=e159]:
+              - 'heading "Sipling: Water Reminder" [level=2] [ref=e164]'
+              - link "Sürümlere genel bakışı görüntüle" [ref=e169] [cursor=pointer]:
+                - /url: /console/u/0/developers/7286802637861068803/app/4974431994893643882/releases/overview
+            - generic [ref=e173]: com.sipling.app
+        - generic [ref=e178]:
+          - generic [ref=e181]:
+            - heading "Üretim" [level=3] [ref=e190]
+            - generic [ref=e191]: Etkin değil
+          - button "Test kanallarını göster" [ref=e200]:
+            - img [ref=e205]: expand_more
+        - generic [ref=e208]:
+          - heading "Üretim" [level=2] [ref=e217]
+          - generic [ref=e221]:
+            - generic [ref=e226]:
+              - generic [ref=e229]:
+                - heading "Üretime erişim için başvuruda bulunma" [level=3] [ref=e235]
+                - generic [ref=e238]:
+                  - text: Üretim, uygulamanızı Google Play'de milyarlarca kullanıcıya sunduğunuz yerdir. Üretim erişimi için başvuruda bulunmadan önce, ölçütlerimizi karşılayan bir kapalı test yapmanız gerekir. Başvuru sırasında da kapalı testinizle ilgili bazı soruları yanıtlamanız istenir.
+                  - link "Soruları önizleyin" [ref=e239] [cursor=pointer]:
+                    - /url: https://support.google.com/googleplay/android-developer/answer/14151465#production
+              - generic [ref=e243]:
+                - generic [ref=e245]:
+                  - img [ref=e249]: check
+                  - generic [ref=e251]: Kapalı test sürümü yayınlayın
+                - generic [ref=e258]:
+                  - text: En az 12 test kullanıcısının kapalı testinize kaydolmasını sağlayın
+                  - emphasis [ref=e260]: An itibarıyla 0 test kullanıcısı kayıtlı
+                - generic [ref=e261]: En az 12 test kullanıcısıyla en az 14 gün boyunca kapalı test yapın
+            - generic [ref=e268]:
+              - button "Üretime başvur" [disabled] [ref=e269]
+              - button "Production Access hakkında daha fazla bilgi edinin (yeni sekmede açılır)" [ref=e273]:
+                - generic [ref=e276]: Daha fazla bilgi
+      - generic [ref=e281]:
+        - generic [ref=e282]:
+          - link "Ürün güncellemeleri" [ref=e283] [cursor=pointer]:
+            - /url: https://play.google.com/console/about/whats-new/
+          - link "Durum kontrol paneli" [ref=e284] [cursor=pointer]:
+            - /url: https://status.play.google.com/
+          - link "Yardım" [ref=e285] [cursor=pointer]:
+            - /url: /console/u/0/developers/7286802637861068803/help-and-support?app=4974431994893643882
+        - generic [ref=e286]:
+          - generic [ref=e287]: © 2026 Google
+          - link "Gizlilik" [ref=e288] [cursor=pointer]:
+            - /url: https://www.google.com/policies/privacy/
+          - link "Geliştirici Dağıtım Sözleşmesi" [ref=e289] [cursor=pointer]:
+            - /url: https://play.google.com/about/developer-distribution-agreement.html
+          - link "Hizmet Şartları" [ref=e290] [cursor=pointer]:
+            - /url: https://play.google.com/about/console/terms-of-service/

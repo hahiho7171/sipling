@@ -328,5 +328,22 @@
   "setHotDayCitySet": "Wybierz",
   "setHotDayCityHint": "np. Stambuł",
   "notifHotDayTitle": "Dziś jest gorąco 🌡️",
-  "notifHotDayBody": "Dziś jest {temp}°C — pij trochę częściej."
+  "notifHotDayBody": "Dziś jest {temp}°C — pij trochę częściej.",
+  "setThemeTitle": "Motyw",
+  "themeSystem": "Jak w systemie",
+  "themeLight": "Jasny",
+  "themeDark": "Ciemny",
+  "setHowTo": "Jak działa Sipling",
+  "tourNext": "Dalej",
+  "tourBack": "Wstecz",
+  "tourSkip": "Pomiń",
+  "tourDone": "Rozumiem",
+  "tourT1": "Pij i podlewaj sadzonkę",
+  "tourB1": "Dotknij szklanki na ekranie głównym, aby zapisać łyk. Każda szklanka podlewa sadzonkę — dotknięte przez pomyłkę? Użyj strzałki cofania.",
+  "tourT2": "Twój dzienny cel",
+  "tourB2": "Sipling wylicza cel na podstawie wzrostu, wagi, wieku i aktywności. Zmień go w Ustawieniach albo przelicz na ekranie „Woda i Twoje ciało”.",
+  "tourT3": "Przypomnienia na Twoją miarę",
+  "tourB3": "Włącz przypomnienia w Ustawieniach, a potem ustaw godziny czuwania i częstotliwość. Po osiągnięciu celu reszta dnia jest cicha.",
+  "tourT4": "Wyhoduj swój las",
+  "tourB4": "Po osiągnięciu celu sadzonka staje się drzewem w Twoim lesie. Drzewa nigdy nie usychają — opuszczony dzień nic nie kosztuje."
 }

@@ -1093,4 +1093,59 @@ class LTh extends L {
   String notifHotDayBody(int temp) {
     return 'วันนี้ $temp°C — ลองจิบน้ำบ่อยขึ้นอีกนิด';
   }
+
+  @override
+  String get setThemeTitle => 'ธีม';
+
+  @override
+  String get themeSystem => 'ตามระบบ';
+
+  @override
+  String get themeLight => 'สว่าง';
+
+  @override
+  String get themeDark => 'มืด';
+
+  @override
+  String get setHowTo => 'Sipling ใช้งานอย่างไร';
+
+  @override
+  String get tourNext => 'ถัดไป';
+
+  @override
+  String get tourBack => 'ย้อนกลับ';
+
+  @override
+  String get tourSkip => 'ข้าม';
+
+  @override
+  String get tourDone => 'เข้าใจแล้ว';
+
+  @override
+  String get tourT1 => 'ดื่มแล้วรดน้ำต้นกล้า';
+
+  @override
+  String get tourB1 =>
+      'แตะแก้วบนหน้าแรกเพื่อบันทึกการดื่ม ทุกแก้วจะรดน้ำต้นกล้าของคุณ — แตะพลาดใช่ไหม ใช้ลูกศรย้อนกลับได้';
+
+  @override
+  String get tourT2 => 'เป้าหมายรายวัน';
+
+  @override
+  String get tourB2 =>
+      'Sipling คำนวณเป้าหมายจากส่วนสูง น้ำหนัก อายุ และกิจกรรมของคุณ เปลี่ยนได้ทุกเมื่อในการตั้งค่า หรือคำนวณใหม่ที่หน้า “น้ำกับร่างกายคุณ”';
+
+  @override
+  String get tourT3 => 'การเตือนที่เข้ากับวันของคุณ';
+
+  @override
+  String get tourB3 =>
+      'เปิดการเตือนในการตั้งค่า แล้วกำหนดช่วงเวลาที่คุณตื่นและความถี่ เมื่อถึงเป้าหมายแล้ว เวลาที่เหลือของวันจะเงียบ';
+
+  @override
+  String get tourT4 => 'ปลูกป่าของคุณ';
+
+  @override
+  String get tourB4 =>
+      'เมื่อถึงเป้าหมาย ต้นกล้าจะกลายเป็นต้นไม้ในป่าของคุณ ต้นไม้ไม่มีวันเหี่ยว — วันที่พลาดไปไม่มีบทลงโทษ';
 }

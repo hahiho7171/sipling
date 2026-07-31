@@ -48,6 +48,16 @@ const VIEW = { width: 1440, height: 960 };
         console.log('URL:', page.url());
         console.log('TITLE:', await page.title());
         break;
+      case 'tabs': {
+        const pages = ctx.pages();
+        for (let i = 0; i < pages.length; i++) {
+          const pg = pages[i];
+          let bl = 0;
+          try { bl = (await pg.evaluate(() => (document.body && document.body.innerText || '').length)); } catch (e) {}
+          console.log(`[${i}] len=${bl} ${pg.url().slice(0, 80)}`);
+        }
+        break;
+      }
       case 'eval':
         console.log(JSON.stringify(await page.evaluate(arg[0]), null, 1));
         break;
@@ -82,8 +92,40 @@ const VIEW = { width: 1440, height: 960 };
         console.log('clickText:', arg[0], n);
         break;
       }
+      case 'pwrole': {
+        // Playwright locator — shadow DOM'u DELER (Play/ASC gibi web-component SPA'lar için).
+        const loc = page.getByRole(arg[0], { name: new RegExp(arg[1], 'i') }).first();
+        const n = await loc.count();
+        if (n > 0) { await loc.click({ timeout: 8000 }); console.log('pwrole tık:', arg[0], arg[1]); }
+        else console.log('pwrole bulunamadı:', arg[0], arg[1]);
+        await page.waitForTimeout(1500);
+        break;
+      }
+      case 'pwtext': {
+        const loc = page.getByText(new RegExp(arg[0], 'i')).first();
+        const n = await loc.count();
+        if (n > 0) { await loc.click({ timeout: 8000 }); console.log('pwtext tık:', arg[0]); }
+        else console.log('pwtext bulunamadı:', arg[0]);
+        await page.waitForTimeout(1500);
+        break;
+      }
+      case 'pwfind': {
+        // Görünür buton/link metinlerini locator ile çıkar (shadow DOM dahil).
+        const roles = ['button', 'link', 'tab'];
+        const out = [];
+        for (const r of roles) {
+          const loc = page.getByRole(r);
+          const c = Math.min(await loc.count(), 25);
+          for (let i = 0; i < c; i++) {
+            const t = (await loc.nth(i).textContent().catch(() => '') || '').trim();
+            if (t && t.length < 40) out.push(r + ':' + t);
+          }
+        }
+        console.log(JSON.stringify([...new Set(out)].slice(0, 40), null, 1));
+        break;
+      }
       default:
-        console.log('komut: goto | shot | url | eval | click | type | press | fill | clickText');
+        console.log('komut: goto|shot|url|eval|click|type|press|fill|clickText|pwrole|pwtext|pwfind');
     }
   } finally {
     await browser.close(); // sadece CDP bağlantısını keser, pencere açık kalır

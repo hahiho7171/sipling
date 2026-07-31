@@ -1,0 +1,9 @@
+- generic [ref=f30e3]:
+  - button "Ana içeriğe atla" [ref=f30e5] [cursor=pointer]
+  - main [ref=f30e10]:
+    - generic [ref=f30e20]:
+      - text: © 2026 Google
+      - link "Gizlilikopen_in_new" [ref=f30e21] [cursor=pointer]:
+        - /url: https://www.google.com/intl/tr/policies/privacy
+      - link "Şartlaropen_in_new" [ref=f30e22] [cursor=pointer]:
+        - /url: https://adsense.google.com/adsense/terms

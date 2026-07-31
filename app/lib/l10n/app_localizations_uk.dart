@@ -1099,4 +1099,59 @@ class LUk extends L {
   String notifHotDayBody(int temp) {
     return 'Сьогодні $temp°C — пийте трохи частіше.';
   }
+
+  @override
+  String get setThemeTitle => 'Тема';
+
+  @override
+  String get themeSystem => 'Як у системі';
+
+  @override
+  String get themeLight => 'Світла';
+
+  @override
+  String get themeDark => 'Темна';
+
+  @override
+  String get setHowTo => 'Як працює Sipling';
+
+  @override
+  String get tourNext => 'Далі';
+
+  @override
+  String get tourBack => 'Назад';
+
+  @override
+  String get tourSkip => 'Пропустити';
+
+  @override
+  String get tourDone => 'Зрозуміло';
+
+  @override
+  String get tourT1 => 'Пийте та поливайте саджанець';
+
+  @override
+  String get tourB1 =>
+      'Торкніться склянки на головному екрані, щоб записати ковток. Кожна склянка поливає саджанець — торкнулися випадково? Є стрілка скасування.';
+
+  @override
+  String get tourT2 => 'Денна норма';
+
+  @override
+  String get tourB2 =>
+      'Sipling рахує норму за зростом, вагою, віком і активністю. Змініть її в налаштуваннях або перерахуйте на екрані «Вода і ваше тіло».';
+
+  @override
+  String get tourT3 => 'Нагадування під ваш день';
+
+  @override
+  String get tourB3 =>
+      'Увімкніть нагадування в налаштуваннях, задайте години неспання та частоту. Щойно норму набрано, решта дня минає тихо.';
+
+  @override
+  String get tourT4 => 'Виростіть свій ліс';
+
+  @override
+  String get tourB4 =>
+      'Виконали норму — саджанець стає деревом у вашому лісі. Дерева не всихають: пропущений день нічого не коштує.';
 }

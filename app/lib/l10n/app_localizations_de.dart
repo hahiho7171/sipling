@@ -1108,4 +1108,59 @@ class LDe extends L {
   String notifHotDayBody(int temp) {
     return 'Heute sind es $temp°C — trink heute etwas öfter.';
   }
+
+  @override
+  String get setThemeTitle => 'Design';
+
+  @override
+  String get themeSystem => 'System folgen';
+
+  @override
+  String get themeLight => 'Hell';
+
+  @override
+  String get themeDark => 'Dunkel';
+
+  @override
+  String get setHowTo => 'So funktioniert Sipling';
+
+  @override
+  String get tourNext => 'Weiter';
+
+  @override
+  String get tourBack => 'Zurück';
+
+  @override
+  String get tourSkip => 'Überspringen';
+
+  @override
+  String get tourDone => 'Verstanden';
+
+  @override
+  String get tourT1 => 'Trinken, Setzling gießen';
+
+  @override
+  String get tourB1 =>
+      'Tippe auf dem Startbildschirm auf einen Becher, um einen Schluck zu buchen. Jedes Glas gießt deinen Setzling — versehentlich getippt? Nutze den Rückgängig-Pfeil.';
+
+  @override
+  String get tourT2 => 'Dein Tagesziel';
+
+  @override
+  String get tourB2 =>
+      'Sipling berechnet dein Ziel aus Größe, Gewicht, Alter und Aktivität. Ändere es jederzeit in den Einstellungen oder berechne es im Bereich „Wasser und dein Körper“ neu.';
+
+  @override
+  String get tourT3 => 'Erinnerungen, die zu dir passen';
+
+  @override
+  String get tourB3 =>
+      'Schalte Erinnerungen in den Einstellungen ein und lege deine Wachzeiten und den Abstand fest. Ist dein Ziel erreicht, bleibt der Rest des Tages still.';
+
+  @override
+  String get tourT4 => 'Lass deinen Wald wachsen';
+
+  @override
+  String get tourB4 =>
+      'Erreichst du dein Ziel, wird dein Setzling zu einem Baum in deinem Wald. Bäume verdorren nie — ein verpasster Tag kostet dich nichts.';
 }

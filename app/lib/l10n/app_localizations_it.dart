@@ -1120,4 +1120,59 @@ class LIt extends L {
   String notifHotDayBody(int temp) {
     return 'Oggi ci sono $temp°C — bevi un pochino più spesso.';
   }
+
+  @override
+  String get setThemeTitle => 'Tema';
+
+  @override
+  String get themeSystem => 'Segui il sistema';
+
+  @override
+  String get themeLight => 'Chiaro';
+
+  @override
+  String get themeDark => 'Scuro';
+
+  @override
+  String get setHowTo => 'Come funziona Sipling';
+
+  @override
+  String get tourNext => 'Avanti';
+
+  @override
+  String get tourBack => 'Indietro';
+
+  @override
+  String get tourSkip => 'Salta';
+
+  @override
+  String get tourDone => 'Ho capito';
+
+  @override
+  String get tourT1 => 'Bevi, innaffia la tua piantina';
+
+  @override
+  String get tourB1 =>
+      'Tocca un bicchiere nella schermata principale per registrare un sorso. Ogni bicchiere innaffia la piantina — toccato per sbaglio? Usa la freccia annulla.';
+
+  @override
+  String get tourT2 => 'Il tuo obiettivo quotidiano';
+
+  @override
+  String get tourB2 =>
+      'Sipling calcola l\'obiettivo da altezza, peso, età e attività. Cambialo quando vuoi nelle Impostazioni o ricalcolalo nella schermata «L\'acqua e il tuo corpo».';
+
+  @override
+  String get tourT3 => 'Promemoria su misura';
+
+  @override
+  String get tourB3 =>
+      'Attiva i promemoria nelle Impostazioni, poi imposta le tue ore di veglia e la frequenza. Raggiunto l\'obiettivo, il resto della giornata resta in silenzio.';
+
+  @override
+  String get tourT4 => 'Fai crescere la tua foresta';
+
+  @override
+  String get tourB4 =>
+      'Raggiungi l\'obiettivo e la piantina diventa un albero della tua foresta. Gli alberi non appassiscono mai: un giorno saltato non ti costa nulla.';
 }

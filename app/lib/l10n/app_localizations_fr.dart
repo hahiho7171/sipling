@@ -1106,4 +1106,59 @@ class LFr extends L {
   String notifHotDayBody(int temp) {
     return 'Il fait $temp°C — pense à boire un peu plus souvent.';
   }
+
+  @override
+  String get setThemeTitle => 'Thème';
+
+  @override
+  String get themeSystem => 'Suivre le système';
+
+  @override
+  String get themeLight => 'Clair';
+
+  @override
+  String get themeDark => 'Sombre';
+
+  @override
+  String get setHowTo => 'Comment marche Sipling';
+
+  @override
+  String get tourNext => 'Suivant';
+
+  @override
+  String get tourBack => 'Retour';
+
+  @override
+  String get tourSkip => 'Passer';
+
+  @override
+  String get tourDone => 'Compris';
+
+  @override
+  String get tourT1 => 'Buvez, arrosez votre pousse';
+
+  @override
+  String get tourB1 =>
+      'Touchez un verre sur l\'écran d\'accueil pour enregistrer une gorgée. Chaque verre arrose votre pousse — touché par erreur ? Utilisez la flèche d\'annulation.';
+
+  @override
+  String get tourT2 => 'Votre objectif quotidien';
+
+  @override
+  String get tourB2 =>
+      'Sipling calcule votre objectif à partir de votre taille, poids, âge et activité. Modifiez-le quand vous voulez dans les Réglages, ou recalculez-le dans « L\'eau et votre corps ».';
+
+  @override
+  String get tourT3 => 'Des rappels à votre rythme';
+
+  @override
+  String get tourB3 =>
+      'Activez les rappels dans les Réglages, puis indiquez vos heures d\'éveil et la fréquence souhaitée. Une fois l\'objectif atteint, le reste de la journée reste silencieux.';
+
+  @override
+  String get tourT4 => 'Faites pousser votre forêt';
+
+  @override
+  String get tourB4 =>
+      'Objectif atteint : votre pousse devient un arbre de votre forêt. Les arbres ne se fanent jamais — un jour manqué ne coûte rien.';
 }

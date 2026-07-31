@@ -1,0 +1,130 @@
+- generic [ref=f4e1]:
+  - banner "App Store Connect" [ref=f4e3]:
+    - generic [ref=f4e4]:
+      - heading [level=1] [ref=f4e22]:
+        - link "App Store Connect" [ref=f4e23] [cursor=pointer]:
+          - /url: /
+      - navigation "Global":
+        - generic:
+          - list:
+            - listitem [ref=f4e24]:
+              - link "Apps" [ref=f4e25] [cursor=pointer]:
+                - /url: /apps
+            - listitem [ref=f4e26]:
+              - link "Trends" [ref=f4e27] [cursor=pointer]:
+                - /url: /trends
+            - listitem [ref=f4e28]:
+              - link "Reports" [ref=f4e29] [cursor=pointer]:
+                - /url: /itc/payments_and_financial_reports
+            - listitem [ref=f4e30]:
+              - link "Business" [ref=f4e31] [cursor=pointer]:
+                - /url: /business
+            - listitem [ref=f4e32]:
+              - link "Users and Access" [ref=f4e33] [cursor=pointer]:
+                - /url: /access/users
+      - button "TUĞBA GÖKCEK TUGBA GOKCEK Account name menu" [ref=f4e34] [cursor=pointer]
+  - generic [ref=f4e37]:
+    - button "Apps menu, Sipling, selected" [ref=f4e41] [cursor=pointer]:
+      - generic [ref=f4e42]:
+        - generic "Sipling" [ref=f4e43]:
+          - img "Sipling" [ref=f4e44]
+        - generic [ref=f4e45]: Sipling
+    - navigation "Apps" [ref=f4e50]:
+      - generic [ref=f4e51] [cursor=pointer]: Distribution
+      - list:
+        - listitem:
+          - link "Distribution":
+            - /url: /apps/6789913186/distribution
+        - listitem:
+          - link "Analytics":
+            - /url: /apps/6789913186/analytics
+        - listitem:
+          - link "TestFlight":
+            - /url: /teams/ce8ece0f-3696-4b3a-96e3-32a060b4e4f8/apps/6789913186/testflight
+        - listitem:
+          - link "Xcode Cloud":
+            - /url: /teams/ce8ece0f-3696-4b3a-96e3-32a060b4e4f8/apps/6789913186/ci
+  - main [ref=f4e59]:
+    - generic [ref=f4e66]:
+      - heading [level=2] [ref=f4e72]:
+        - button "Subscriptions" [ref=f4e73] [cursor=pointer]
+      - separator [ref=f4e77]
+      - heading "Auto-Renewable Subscriptions" [level=3] [ref=f4e78]
+      - paragraph [ref=f4e79]:
+        - generic [ref=f4e80]:
+          - text: A subscription is a product that allows users to purchase dynamic content for a set period. This type of subscription renews automatically unless cancelled by the user. Once your binary has been uploaded and your first subscription has been submitted for review, additional subscriptions can be submitted using the table below.
+          - link "Learn More" [ref=f4e81] [cursor=pointer]:
+            - /url: https://developer.apple.com/help/app-store-connect/manage-subscriptions/offer-auto-renewable-subscriptions
+      - generic [ref=f4e82]:
+        - generic [ref=f4e83]:
+          - generic [ref=f4e84]:
+            - generic [ref=f4e85]:
+              - heading "Subscription Groups" [level=3] [ref=f4e86]
+              - button "Create Subscription Group" [ref=f4e87] [cursor=pointer]
+            - paragraph [ref=f4e90]:
+              - generic [ref=f4e91]:
+                - text: You can create a subscription after you create a subscription group. All subscriptions must be a part of a group. Users can only subscribe to one subscription in a group at a time, but can change to another subscription in the same group. If they do, you'll still receive 85% of the proceeds in the second year (after tax, if applicable).
+                - link "Learn More" [ref=f4e92] [cursor=pointer]:
+                  - /url: https://developer.apple.com/help/app-store-connect/manage-subscriptions/offer-auto-renewable-subscriptions
+          - button [ref=f4e94] [cursor=pointer]
+        - generic [ref=f4e102]:
+          - generic:
+            - generic:
+              - grid:
+                - row [ref=f4e103]:
+                  - columnheader "[object Object]" [ref=f4e104] [cursor=pointer]:
+                    - text: Subscription Group Reference Name
+                    - generic [ref=f4e105]: 
+                  - columnheader "Subscriptions" [ref=f4e106]
+                - rowgroup "grid" [ref=f4e107]:
+                  - row [ref=f4e108]:
+                    - row [ref=f4e109]:
+                      - gridcell [ref=f4e110]:
+                        - link "Sipling Pro" [ref=f4e113] [cursor=pointer]:
+                          - /url: /apps/6789913186/distribution/subscription-groups/22239340
+                      - gridcell "1" [ref=f4e114]
+      - generic [ref=f4e117]:
+        - heading "Billing Grace Period" [level=5] [ref=f4e119]
+        - paragraph [ref=f4e120]:
+          - generic [ref=f4e121]:
+            - text: A billing grace period lets subscribers retain access to your app's paid content even after their subscription expires due to a billing issue. If Apple successfully recovers the subscription during this grace period, you will not experience any interruption in your revenue.
+            - link "Learn more" [ref=f4e122] [cursor=pointer]:
+              - /url: https://developer.apple.com/help/app-store-connect/manage-subscriptions/enable-billing-grace-period-for-auto-renewable-subscriptions
+        - paragraph [ref=f4e125]:
+          - button "Set Up Billing Grace Period" [ref=f4e126] [cursor=pointer]
+      - generic [ref=f4e127]:
+        - heading "Streamlined Purchasing" [level=5] [ref=f4e128]
+        - paragraph [ref=f4e129]:
+          - generic [ref=f4e130]:
+            - text: Streamlined purchasing lets customers buy subscriptions from outside your app. You can turn it off for subscriptions with contingent pricing or win-back offers.
+            - link "Learn More" [ref=f4e131] [cursor=pointer]:
+              - /url: https://developer.apple.com/help/app-store-connect/manage-subscriptions/manage-streamlined-purchasing
+        - generic [ref=f4e132]:
+          - paragraph [ref=f4e133]: Turned On
+          - paragraph [ref=f4e134]:
+            - button "Edit" [ref=f4e135] [cursor=pointer]
+      - separator [ref=f4e136]
+      - heading "Non-Renewing Subscriptions" [level=3] [ref=f4e137]
+      - paragraph [ref=f4e138]: Users can purchase access to services or content for a limited duration, such as a season pass to in-game content. This type of subscription doesn't renew automatically, so users need to purchase a new subscription once it concludes if they wish to retain access.
+      - paragraph [ref=f4e139]:
+        - link "Manage" [ref=f4e140] [cursor=pointer]:
+          - /url: /apps/6789913186/distribution/non-renewing-subscriptions
+  - contentinfo [ref=f4e9]:
+    - generic [ref=f4e10]:
+      - list [ref=f4e141]:
+        - listitem [ref=f4e142]:
+          - link "App Store Connect" [ref=f4e143] [cursor=pointer]:
+            - /url: /apps
+      - list [ref=f4e11]:
+        - listitem [ref=f4e12]: Copyright © 2026 Apple Inc. All rights reserved. |
+        - listitem [ref=f4e13]:
+          - link "Terms of Service" [ref=f4e14] [cursor=pointer]:
+            - /url: /WebObjects/iTunesConnect.woa/wa/termsOfService
+          - text: "|"
+        - listitem [ref=f4e15]:
+          - link "Privacy Policy" [ref=f4e16] [cursor=pointer]:
+            - /url: https://www.apple.com/legal/privacy
+          - text: "|"
+        - listitem [ref=f4e17]:
+          - link "Contact Us" [ref=f4e18] [cursor=pointer]:
+            - /url: /contact-us

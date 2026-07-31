@@ -328,5 +328,22 @@
   "setHotDayCitySet": "Wählen",
   "setHotDayCityHint": "z. B. Istanbul",
   "notifHotDayTitle": "Heute ist es heiß 🌡️",
-  "notifHotDayBody": "Heute sind es {temp}°C — trink heute etwas öfter."
+  "notifHotDayBody": "Heute sind es {temp}°C — trink heute etwas öfter.",
+  "setThemeTitle": "Design",
+  "themeSystem": "System folgen",
+  "themeLight": "Hell",
+  "themeDark": "Dunkel",
+  "setHowTo": "So funktioniert Sipling",
+  "tourNext": "Weiter",
+  "tourBack": "Zurück",
+  "tourSkip": "Überspringen",
+  "tourDone": "Verstanden",
+  "tourT1": "Trinken, Setzling gießen",
+  "tourB1": "Tippe auf dem Startbildschirm auf einen Becher, um einen Schluck zu buchen. Jedes Glas gießt deinen Setzling — versehentlich getippt? Nutze den Rückgängig-Pfeil.",
+  "tourT2": "Dein Tagesziel",
+  "tourB2": "Sipling berechnet dein Ziel aus Größe, Gewicht, Alter und Aktivität. Ändere es jederzeit in den Einstellungen oder berechne es im Bereich „Wasser und dein Körper“ neu.",
+  "tourT3": "Erinnerungen, die zu dir passen",
+  "tourB3": "Schalte Erinnerungen in den Einstellungen ein und lege deine Wachzeiten und den Abstand fest. Ist dein Ziel erreicht, bleibt der Rest des Tages still.",
+  "tourT4": "Lass deinen Wald wachsen",
+  "tourB4": "Erreichst du dein Ziel, wird dein Setzling zu einem Baum in deinem Wald. Bäume verdorren nie — ein verpasster Tag kostet dich nichts."
 }

@@ -328,5 +328,22 @@
   "setHotDayCitySet": "Scegli",
   "setHotDayCityHint": "es. Istanbul",
   "notifHotDayTitle": "Oggi fa caldo 🌡️",
-  "notifHotDayBody": "Oggi ci sono {temp}°C — bevi un pochino più spesso."
+  "notifHotDayBody": "Oggi ci sono {temp}°C — bevi un pochino più spesso.",
+  "setThemeTitle": "Tema",
+  "themeSystem": "Segui il sistema",
+  "themeLight": "Chiaro",
+  "themeDark": "Scuro",
+  "setHowTo": "Come funziona Sipling",
+  "tourNext": "Avanti",
+  "tourBack": "Indietro",
+  "tourSkip": "Salta",
+  "tourDone": "Ho capito",
+  "tourT1": "Bevi, innaffia la tua piantina",
+  "tourB1": "Tocca un bicchiere nella schermata principale per registrare un sorso. Ogni bicchiere innaffia la piantina — toccato per sbaglio? Usa la freccia annulla.",
+  "tourT2": "Il tuo obiettivo quotidiano",
+  "tourB2": "Sipling calcola l'obiettivo da altezza, peso, età e attività. Cambialo quando vuoi nelle Impostazioni o ricalcolalo nella schermata «L'acqua e il tuo corpo».",
+  "tourT3": "Promemoria su misura",
+  "tourB3": "Attiva i promemoria nelle Impostazioni, poi imposta le tue ore di veglia e la frequenza. Raggiunto l'obiettivo, il resto della giornata resta in silenzio.",
+  "tourT4": "Fai crescere la tua foresta",
+  "tourB4": "Raggiungi l'obiettivo e la piantina diventa un albero della tua foresta. Gli alberi non appassiscono mai: un giorno saltato non ti costa nulla."
 }

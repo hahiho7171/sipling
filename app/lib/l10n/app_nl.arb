@@ -328,5 +328,22 @@
   "setHotDayCitySet": "Kiezen",
   "setHotDayCityHint": "bijv. Istanbul",
   "notifHotDayTitle": "Het is warm vandaag 🌡️",
-  "notifHotDayBody": "Het is {temp}°C — drink vandaag wat vaker."
+  "notifHotDayBody": "Het is {temp}°C — drink vandaag wat vaker.",
+  "setThemeTitle": "Thema",
+  "themeSystem": "Systeem volgen",
+  "themeLight": "Licht",
+  "themeDark": "Donker",
+  "setHowTo": "Zo werkt Sipling",
+  "tourNext": "Volgende",
+  "tourBack": "Terug",
+  "tourSkip": "Overslaan",
+  "tourDone": "Duidelijk",
+  "tourT1": "Drink, geef je boompje water",
+  "tourB1": "Tik op het startscherm op een beker om een slok vast te leggen. Elk glas geeft je boompje water — per ongeluk getikt? Gebruik de pijl om ongedaan te maken.",
+  "tourT2": "Je dagdoel",
+  "tourB2": "Sipling berekent je doel op basis van lengte, gewicht, leeftijd en activiteit. Wijzig het wanneer je wilt in Instellingen of bereken het opnieuw bij ‘Water en je lichaam’.",
+  "tourT3": "Herinneringen die bij je passen",
+  "tourB3": "Zet herinneringen aan in Instellingen en stel je wakkere uren en de frequentie in. Zodra je je doel haalt, blijft de rest van de dag stil.",
+  "tourT4": "Laat je bos groeien",
+  "tourB4": "Haal je je doel, dan wordt je boompje een boom in je bos. Bomen verdorren nooit — een gemiste dag kost je niets."
 }

@@ -1,0 +1,32 @@
+- generic [ref=f10e1]:
+  - banner "App Store Connect" [ref=f10e3]:
+    - generic [ref=f10e4]:
+      - heading [level=1] [ref=f10e6]:
+        - link "App Store Connect" [ref=f10e7] [cursor=pointer]:
+          - /url: /
+      - navigation "Global" [ref=f10e8]:
+        - generic:
+          - list
+      - button "TUĞBA GÖKCEK TUGBA GOKCEK Account name menu" [ref=f10e10] [cursor=pointer]:
+        - generic:
+          - generic: TUĞBA GÖKCEK
+          - generic: TUGBA GOKCEK
+  - contentinfo [ref=f10e15]:
+    - generic [ref=f10e16]:
+      - list [ref=f10e17]:
+        - listitem [ref=f10e18]:
+          - link "App Store Connect" [ref=f10e19] [cursor=pointer]:
+            - /url: /apps
+      - list [ref=f10e20]:
+        - listitem [ref=f10e21]: Copyright © 2026 Apple Inc. All rights reserved. |
+        - listitem [ref=f10e22]:
+          - link "Terms of Service" [ref=f10e23] [cursor=pointer]:
+            - /url: /WebObjects/iTunesConnect.woa/wa/termsOfService
+          - text: "|"
+        - listitem [ref=f10e24]:
+          - link "Privacy Policy" [ref=f10e25] [cursor=pointer]:
+            - /url: https://www.apple.com/legal/privacy
+          - text: "|"
+        - listitem [ref=f10e26]:
+          - link "Contact Us" [ref=f10e27] [cursor=pointer]:
+            - /url: /contact-us

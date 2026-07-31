@@ -328,5 +328,22 @@
   "setHotDayCitySet": "Escolher",
   "setHotDayCityHint": "Ex. Istambul",
   "notifHotDayTitle": "Hoje está calor 🌡️",
-  "notifHotDayBody": "Hoje está {temp}°C — tente beber um pouco mais vezes."
+  "notifHotDayBody": "Hoje está {temp}°C — tente beber um pouco mais vezes.",
+  "setThemeTitle": "Tema",
+  "themeSystem": "Seguir o sistema",
+  "themeLight": "Claro",
+  "themeDark": "Escuro",
+  "setHowTo": "Como o Sipling funciona",
+  "tourNext": "Avançar",
+  "tourBack": "Voltar",
+  "tourSkip": "Pular",
+  "tourDone": "Entendi",
+  "tourT1": "Beba e regue sua muda",
+  "tourB1": "Toque num copo na tela inicial para registrar um gole. Cada copo rega sua muda — tocou sem querer? Use a seta de desfazer.",
+  "tourT2": "Sua meta diária",
+  "tourB2": "O Sipling calcula a meta pela sua altura, peso, idade e atividade. Mude quando quiser nos Ajustes ou recalcule na tela “A água e o seu corpo”.",
+  "tourT3": "Lembretes no seu ritmo",
+  "tourB3": "Ative os lembretes nos Ajustes e defina suas horas acordado e a frequência. Ao bater a meta, o resto do dia fica em silêncio.",
+  "tourT4": "Faça sua floresta crescer",
+  "tourB4": "Ao bater a meta, sua muda vira uma árvore na sua floresta. As árvores nunca murcham — um dia perdido não custa nada."
 }

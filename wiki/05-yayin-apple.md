@@ -1,8 +1,27 @@
-# 🍎 Apple App Store — kod build-hazır, Codemagic + hesap bekliyor
+# 🍎 Apple App Store — 1.0 YAYINDA · 1.0.3 incelemede
 
-> **Durum (2026-07-11):** iOS **kod/yapılandırma tarafı bitti** — Windows'ta yapılabilecek
-> her şey yapıldı. Kalanlar Mac/Codemagic + Apple hesabı ister (bu makinede iOS derlenemez).
-> Genel playbook: memory `reference_apple_store_yayin_playbook.md` — **önce onu oku.**
+> **Durum (2026-07-28):** Uygulama **App Store'da satışta** (sürüm 1.0 = build 3).
+> **1.0.3 + build 7** incelemede. Bu dosya kurulum/altyapı bilgisi tutar;
+> **güncel durum ve karar geçmişi TEK KAYNAK olarak `wiki/01-durum.md`'de.**
+> Genel playbook: memory `reference_apple_store_yayin_playbook.md`.
+>
+> ⚙️ **Tarayıcısız iş akışı hazır:** `tools/asc-api.js` (JWT ES256 · `state` ve `raw` komutları).
+> Sürüm/build durumu, build bağlama, gönderme hep bununla yapılıyor.
+> 🪤 Git Bash `/apps/...` yolunu bozar → komutun başına **`MSYS_NO_PATHCONV=1`**.
+>
+> 🚨 **İki ret yaşandı, ikisi de `wiki/08-tuzaklar.md`'de:**
+> **3.1.2** (abonelik varsa açıklamada Kullanım Koşulları/EULA linki ŞART) ve
+> **2.1(a)** (bir özellik iOS'ta çalışmıyorsa arayüzde GÖSTERME — Apple **iPad'de** test ediyor).
+
+## 🚨🚨 CODEMAGIC BUILD OTOMATİK TETİKLENMİYOR — ELLE BAŞLAT (2026-07-21 yaşandı)
+`codemagic.yaml`'da **`triggering` bloğu YOK.** Yani `git push` GitHub'a gitse bile Codemagic
+build'i **başlatmaz** — panelden **elle** "Start new build" gerekir (ios-testflight workflow).
+2026-07-21'de push yapıldı, 35 dk beklendi, build ASC'ye HİÇ gelmedi; sebep buydu.
+- **Build başlatmak için:** Codemagic'e giriş (codemagic.io) → **GitHub ile** (🔑 GitHub şifresi
+  KULLANICIDA, Sipling tarayıcısında GitHub oturumu açık DEĞİL) → Sipling app → "Start new build"
+  → workflow **ios-testflight** → branch main. Build ~20-30 dk, sonra ASC "Build Uploads"a düşer.
+- İstersen `codemagic.yaml`'a `triggering: { events: [push], branch_patterns: [{pattern: main}] }`
+  eklenip push'ta otomatik olması sağlanabilir (kullanıcı onayıyla). O zaman bu tuzak biter.
 
 ## 🔑 Apple giriş bilgisi (TÜM projelerle ORTAK — Misyon/Randevio/Sipling aynı)
 
@@ -23,9 +42,11 @@
 | App Group | ✅ `group.com.sipling.app` — `Runner.entitlements` + widget entitlements |
 | Ana ekran widget'ı | ✅ **Kaynak hazır** (`ios/SiplingWidget/`), hedef Xcode/CI'da eklenecek (aşağıda) |
 | Codemagic CI | ✅ `codemagic.yaml` (repo kökü) — derle + imzala + TestFlight |
-| App Store Connect kaydı | ❌ YOK (kullanıcı açacak) |
-| Apple Developer hesabı | Kullanıcıda (var/açılacak) — imzalama Codemagic'te yönetilecek |
-| Mac | yok → **Codemagic** (bulut Mac) ile derlenir |
+| App Store Connect kaydı | ✅ VAR — App ID `6789913186`, 1.0 satışta |
+| Apple Developer hesabı | ✅ Team `SGMQ8NVKU3` · imzalama Codemagic'te (her build taze sertifika) |
+| Mac | yok → **Codemagic** (bulut Mac), API ile tetikleniyor (~5 dk) |
+| Mağaza dilleri | ✅ **20 dil** (2026-07-27 ASO) — ad/alt başlık/anahtar kelime/açıklama/görsel |
+| Abonelik | ✅ `sipling_pro_monthly` **APPROVED** · 0,99 USD/ay (ASC'den doğrulandı) |
 
 ## Kurulum (kullanıcı + Codemagic, sırayla)
 

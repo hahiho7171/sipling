@@ -1101,4 +1101,59 @@ class LVi extends L {
   String notifHotDayBody(int temp) {
     return 'Hôm nay $temp°C — hãy uống nước thường xuyên hơn một chút.';
   }
+
+  @override
+  String get setThemeTitle => 'Giao diện';
+
+  @override
+  String get themeSystem => 'Theo hệ thống';
+
+  @override
+  String get themeLight => 'Sáng';
+
+  @override
+  String get themeDark => 'Tối';
+
+  @override
+  String get setHowTo => 'Sipling hoạt động thế nào';
+
+  @override
+  String get tourNext => 'Tiếp';
+
+  @override
+  String get tourBack => 'Quay lại';
+
+  @override
+  String get tourSkip => 'Bỏ qua';
+
+  @override
+  String get tourDone => 'Đã hiểu';
+
+  @override
+  String get tourT1 => 'Uống và tưới cây non';
+
+  @override
+  String get tourB1 =>
+      'Chạm vào một chiếc cốc ở màn hình chính để ghi lại ngụm nước. Mỗi cốc sẽ tưới cây non của bạn — lỡ chạm nhầm? Dùng mũi tên hoàn tác.';
+
+  @override
+  String get tourT2 => 'Mục tiêu mỗi ngày';
+
+  @override
+  String get tourB2 =>
+      'Sipling tính mục tiêu theo chiều cao, cân nặng, tuổi và mức vận động của bạn. Đổi bất cứ lúc nào trong Cài đặt, hoặc tính lại ở màn hình “Nước và cơ thể bạn”.';
+
+  @override
+  String get tourT3 => 'Nhắc nhở hợp với ngày của bạn';
+
+  @override
+  String get tourB3 =>
+      'Bật nhắc nhở trong Cài đặt, rồi đặt giờ thức và tần suất bạn muốn. Khi đạt mục tiêu, phần còn lại của ngày sẽ yên tĩnh.';
+
+  @override
+  String get tourT4 => 'Nuôi lớn khu rừng';
+
+  @override
+  String get tourB4 =>
+      'Đạt mục tiêu, cây non trở thành một cái cây trong rừng của bạn. Cây không bao giờ héo — bỏ lỡ một ngày cũng không mất gì.';
 }

@@ -9,6 +9,11 @@ import 'models.dart';
 import 'season_theme.dart';
 import 'tree_species.dart';
 
+/// Tema tercihi değerleri (SharedPreferences'ta düz metin olarak durur).
+const String kThemeSystem = 'system';
+const String kThemeLight = 'light';
+const String kThemeDark = 'dark';
+
 String dateKeyOf(DateTime d) =>
     '${d.year.toString().padLeft(4, '0')}-${d.month.toString().padLeft(2, '0')}-${d.day.toString().padLeft(2, '0')}';
 
@@ -23,6 +28,7 @@ class AppState extends ChangeNotifier {
   static const _kUnlocked = 'unlocked_species';
   static const _kSelected = 'selected_species';
   static const _kDark = 'dark_mode';
+  static const _kThemeMode = 'theme_mode';
   static const _kSeenAchievements = 'seen_achievements';
   static const _kHealthSync = 'health_sync';
   static const _kSeason = 'season_theme';
@@ -40,6 +46,7 @@ class AppState extends ChangeNotifier {
   Set<String> _rewardUnlocked = {};
   String _selectedSpecies = 'oak';
   bool _darkMode = false;
+  String _themeMode = kThemeSystem;
   Set<String> _seenAchievements = {};
   bool _healthSync = false;
   String _seasonId = kSeasonClassic.id;
@@ -50,6 +57,10 @@ class AppState extends ChangeNotifier {
   List<CupPreset> get cups => List.unmodifiable(_cups);
   bool get isPro => _isPro;
   bool get darkMode => _darkMode;
+
+  /// Tema tercihi: `system` (cihazı izle · varsayılan) · `light` · `dark`.
+  /// Eski sürümlerde yalnız `dark_mode` (açık/kapalı) vardı; ilk okumada taşınır.
+  String get themeMode => _themeMode;
   String get selectedSpeciesId => _selectedSpecies;
 
   /// İçilen su Android'in ortak sağlık defterine (Health Connect) de yazılsın mı?
@@ -131,7 +142,12 @@ class AppState extends ChangeNotifier {
     }
 
     _isPro = _prefs.getBool(_kPro) ?? false;
-    _darkMode = _prefs.getBool(_kDark) ?? false;
+    // Tema: yeni anahtar yoksa eski "dark_mode" tercihini taşı; o da yoksa sistemi izle.
+    _themeMode = _prefs.getString(_kThemeMode) ??
+        (_prefs.containsKey(_kDark)
+            ? ((_prefs.getBool(_kDark) ?? false) ? kThemeDark : kThemeLight)
+            : kThemeSystem);
+    _darkMode = _themeMode == kThemeDark;
     _healthSync = _prefs.getBool(_kHealthSync) ?? false;
     _seasonId = _prefs.getString(_kSeason) ?? kSeasonClassic.id;
     _lastSummaryDate = _prefs.getString(_kLastSummary);
@@ -423,9 +439,17 @@ class AppState extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> setDarkMode(bool v) async {
-    _darkMode = v;
-    await _prefs.setBool(_kDark, v);
+  Future<void> setDarkMode(bool v) async =>
+      setThemeMode(v ? kThemeDark : kThemeLight);
+
+  /// `system` · `light` · `dark`. Eski `dark_mode` anahtarı da yazılır ki
+  /// bir alt sürüme dönülürse tercih kaybolmasın.
+  Future<void> setThemeMode(String v) async {
+    if (v != kThemeSystem && v != kThemeLight && v != kThemeDark) v = kThemeSystem;
+    _themeMode = v;
+    _darkMode = v == kThemeDark;
+    await _prefs.setString(_kThemeMode, v);
+    await _prefs.setBool(_kDark, _darkMode);
     notifyListeners();
   }
 
@@ -480,6 +504,7 @@ class AppState extends ChangeNotifier {
     _seenAchievements = {};
     _selectedSpecies = 'oak';
     _darkMode = false;
+    _themeMode = kThemeSystem;
     _healthSync = false;
     _seasonId = kSeasonClassic.id;
     _lastSummaryDate = null;

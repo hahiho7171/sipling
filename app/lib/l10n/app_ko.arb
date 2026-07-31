@@ -328,5 +328,22 @@
   "setHotDayCitySet": "선택",
   "setHotDayCityHint": "예: 이스탄불",
   "notifHotDayTitle": "오늘 날씨가 덥습니다 🌡️",
-  "notifHotDayBody": "오늘 {temp}°C — 평소보다 조금 더 자주 마셔요."
+  "notifHotDayBody": "오늘 {temp}°C — 평소보다 조금 더 자주 마셔요.",
+  "setThemeTitle": "테마",
+  "themeSystem": "시스템 설정 따르기",
+  "themeLight": "밝게",
+  "themeDark": "어둡게",
+  "setHowTo": "Sipling 사용법",
+  "tourNext": "다음",
+  "tourBack": "이전",
+  "tourSkip": "건너뛰기",
+  "tourDone": "알겠어요",
+  "tourT1": "마시고 묘목에 물 주기",
+  "tourB1": "홈 화면에서 컵을 누르면 한 모금이 기록돼요. 한 잔마다 묘목이 자랍니다. 잘못 눌렀다면 되돌리기 화살표를 쓰세요.",
+  "tourT2": "하루 목표",
+  "tourB2": "Sipling이 키·몸무게·나이·활동량으로 목표를 계산해요. 설정에서 언제든 바꾸거나 ‘물과 몸’ 화면에서 다시 계산할 수 있어요.",
+  "tourT3": "내 하루에 맞는 알림",
+  "tourB3": "설정에서 알림을 켜고 깨어 있는 시간과 간격을 정하세요. 목표를 채우면 남은 하루는 조용해집니다.",
+  "tourT4": "숲 키우기",
+  "tourB4": "목표를 채우면 묘목이 숲의 나무가 돼요. 나무는 시들지 않아요. 하루 걸러도 손해는 없습니다."
 }

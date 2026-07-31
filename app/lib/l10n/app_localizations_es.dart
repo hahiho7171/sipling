@@ -1113,4 +1113,59 @@ class LEs extends L {
   String notifHotDayBody(int temp) {
     return 'Hoy hace $temp°C — intenta beber un poco más a menudo.';
   }
+
+  @override
+  String get setThemeTitle => 'Tema';
+
+  @override
+  String get themeSystem => 'Seguir al sistema';
+
+  @override
+  String get themeLight => 'Claro';
+
+  @override
+  String get themeDark => 'Oscuro';
+
+  @override
+  String get setHowTo => 'Cómo funciona Sipling';
+
+  @override
+  String get tourNext => 'Siguiente';
+
+  @override
+  String get tourBack => 'Atrás';
+
+  @override
+  String get tourSkip => 'Saltar';
+
+  @override
+  String get tourDone => 'Entendido';
+
+  @override
+  String get tourT1 => 'Bebe y riega tu plantón';
+
+  @override
+  String get tourB1 =>
+      'Toca un vaso en la pantalla principal para registrar un sorbo. Cada vaso riega tu plantón; ¿lo tocaste sin querer? Usa la flecha de deshacer.';
+
+  @override
+  String get tourT2 => 'Tu objetivo diario';
+
+  @override
+  String get tourB2 =>
+      'Sipling calcula tu objetivo según tu altura, peso, edad y actividad. Cámbialo cuando quieras en Ajustes o recalcúlalo en la pantalla «El agua y tu cuerpo».';
+
+  @override
+  String get tourT3 => 'Recordatorios a tu medida';
+
+  @override
+  String get tourB3 =>
+      'Activa los recordatorios en Ajustes y define tus horas de vigilia y cada cuánto quieres un aviso. Al alcanzar tu objetivo, el resto del día queda en silencio.';
+
+  @override
+  String get tourT4 => 'Haz crecer tu bosque';
+
+  @override
+  String get tourB4 =>
+      'Al cumplir tu objetivo, tu plantón se convierte en un árbol de tu bosque. Los árboles nunca se secan: un día perdido no te cuesta nada.';
 }

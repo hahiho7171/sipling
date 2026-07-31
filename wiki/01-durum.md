@@ -2,6 +2,307 @@
 
 > Her oturum sonunda **buraya** yaz. Başka yere durum yazma.
 
+## 🤖 2026-07-30 — v1.0.4 (vc6): TESTÇİ RAPORU 2 MADDESİ → Play kapalı testte incelemede
+
+**Neden:** Testers Community panelinden **Feedback Report** indirildi
+(`storage.googleapis.com/testing-community-ec6g1l.appspot.com/reports/com.sipling.app_feedback.pdf`).
+**Çökme/hata YOK** ("no critical issues, all functionality operated as intended"); 4 iyileştirme önerisi var.
+Ayrıca servisin **"16 günde 2-3 küçük güncelleme"** şartı → bu sürüm onu da karşılıyor.
+Panel durumu (aynı gün): Sipling **Gün 11/16 · 15/15 testçi · 2/2 rapor hazır**.
+
+**Yapılan 2 madde:**
+1. **Tanıtım turu** (`lib/screens/tour_sheet.dart` — YENİ). Kurulum akışından (`onboarding_screen.dart`,
+   profil bilgisi toplar) **ayrı**: uygulamanın nasıl kullanıldığını anlatan 4 adımlı alt sayfa
+   (bardağa dokun/geri al · günlük hedef · hatırlatmalar · ormanı büyüt). Bayrak
+   `SharedPreferences tour_seen_v1`; `main.dart _bootstrap()` içinde kurulumdan **sonra** bir kez açılır
+   (kurulumu daha önce bitirmiş kullanıcılara da bir kez gösterilir).
+   **Ayarlar > Uygulama > "Sipling nasıl kullanılır?"** ile her zaman tekrar açılır.
+2. **Tema: "Sistemi izle" seçeneği** (rapordaki "Absence of System Theme Option"). Eski `bool darkMode`
+   → `themeMode` (`system`/`light`/`dark`, **varsayılan `system`**). `MaterialApp` artık
+   `theme` + `darkTheme` + `themeMode` kullanıyor → cihazın açık/koyu ayarını kendiliğinden izler.
+   **Göç:** `theme_mode` yoksa eski `dark_mode` anahtarı okunur (varsa dark/light, yoksa system) →
+   mevcut kullanıcının tercihi kaybolmaz. `setDarkMode()` korundu (setThemeMode'a yönleniyor).
+   Ayarlar'daki açık/kapalı anahtar yerine 3'lü seçim (`_ThemeTile`, ChoiceChip; M3 varsayılan moru
+   yerine su mavisi verildi).
+
+**Yapılmayan 2 madde (bilerek):** Play ekran görüntüleri = **mağaza tarafı, kod değil**.
+"Premium özellikler kullanılamıyor" = testçi kapalı testte Pro'yu satın alamadığı için;
+kodda değil **abonelik ürünü/test hesabı** tarafında — dokunulmadı, ayrıca bakılmalı.
+
+**🌍 20 DİL:** 17 yeni metin **20 arb dosyasının hepsine** eklendi (`tools/yeni_metinler.json` +
+`tools/arb_ekle.py`, `--kuru` kuru denemeyle doğrulandı; inline regex YOK). `flutter gen-l10n` çalıştırıldı.
+
+**Doğrulama:** `flutter analyze` → **No issues found** ✅ ·
+web derlemesi (8792) + Sipling'in kendi tarayıcısı (**9360**, MCP kullanılmadı) ile ekran görüntüsü:
+tur açılıyor (4 nokta, "Geç"/"İleri") ✅, Ayarlar'da **GÖRÜNÜM > Tema: Sistemi izle / Açık / Koyu** ✅,
+**UYGULAMA > "Sipling nasıl kullanılır?"** ✅.
+**İzin kontrolü (proje kuralı #1):** derlenen manifestte `SCHEDULE_EXACT_ALARM` **YOK** ✅.
+
+**Sürüm:** `pubspec 1.0.3+5 → 1.0.4+6`. AAB **50,3 MB**.
+### ✅ PLAY — GÖNDERİLDİ (2026-07-30): **6 (1.0.4) → Kapalı test-Alpha, "İncelenmekte olan değişiklikler"** (%100, TR notu).
+- Kapalı test track id: `4699878750164991262` · app id `4974431994893643882`.
+- 🪤 Play Console otomasyonu **9345 profilinden** yapıldı; `randevio-play-profile` (9334) ile yayın-özeti
+  tablosu boş geliyor ve "incelemeye gönder" sessizce çalışmıyor.
+- 🪤 50 MB üstü AAB: ham CDP `DOM.setFileInputFiles` ile yüklendi (Playwright `setInputFiles` patlıyor).
+
+## 🍎 2026-07-29 — 3. RET: Guideline 2.3.10 "Android referansları" → DÜZELTİLDİ, yeniden gönderildi
+
+**Apple'ın mesajı** (gönderim `57df0a4c`, inceleme 28 Tem, cihaz **iPad Air 11" M3**, sürüm 1.0.3 (7)):
+> Guideline 2.3.10 — Performance: Accurate Metadata · "The app or metadata includes information
+> about **third-party platforms**…" · **Next Steps: "Revise the app's description to remove Android references."**
+
+⚠️ Kod/build sorunu **değil** — yalnız mağaza açıklaması. Yeni build derlenmedi, build 7 aynı kaldı.
+
+**🔎 Kök neden:** App Store açıklaması **Play açıklamasından kopyalanmıştı**. 20 dilin hepsinde
+üç Android'e özel parça vardı (yerel `store/metinler/apple-*.js`'te YOK — doğrudan Play metninden gelmiş):
+
+| Silinen | Neden |
+|---|---|
+| `HEALTH CONNECT` bloğu (blok 7) | "Android'in ortak sağlık defteri" — hem Android referansı hem iOS'ta yalan (`HealthBridge` iOS'ta çağrılmıyor) |
+| `ANA EKRAN WIDGET'I` bloğu (blok 6) | iOS'ta widget hedefi YOK (`project.pbxproj`'da `SiplingWidget` = 0 eşleşme) → 2.3 riski |
+| Pil rehberi cümlesi (blok 5'in 2. cümlesi) | "Xiaomi, Samsung, Huawei ve Oppo" — Android marka listesi, iOS'ta böyle rehber yok (751a430'da arayüzden zaten gizlenmişti, metinde kalmış) |
+
+**✅ Yapılan:** `tools/asc-desc-temizle.js` yazıldı (kuru deneme + geri okuma doğrulaması).
+20 dilde açıklama temizlendi, her dilde **başlık + ilk cümle** korundu. Karakterler: en-US 2737→2314, tr 2674→2264.
+`keywords`/`promotionalText`/`whatsNew` **zaten temizdi** (tarandı).
+
+**📌 Sonuç:** 20/20 dil doğrulandı (Android/Xiaomi/Samsung/Huawei/Oppo/Health Connect = 0 eşleşme) →
+sürüm sayfasında **"Update Review" → "Continue"** ile sürüm `READY_FOR_REVIEW` yapıldı →
+API `PATCH submitted:true` → **28 Tem 21:53 UTC `WAITING_FOR_REVIEW`**. Yayındaki 1.0 etkilenmedi.
+
+🪤 Bu işte iki tuzak çıktı (`wiki/08-tuzaklar.md`'ye eklendi): API cevabını parça parça metne
+çevirince Tayca bozuldu · reddedilen sürüm API'den doğrudan yeniden gönderilemiyor, önce panelden
+"Update Review" gerekiyor.
+
+## 🍎 2026-07-28 — 2. RET: Guideline 2.1(a) "Apple Health hatası" → DÜZELTİLDİ, build 7 gönderildi
+
+**Apple'ın mesajı** (Resolution Center, gönderim `718536c4`, inceleme 27 Tem,
+cihaz **iPad Air 11" M3 / iPadOS 26.5.2**, sürüm 1.0.3 (6)):
+> Guideline 2.1(a) — Performance: App Completeness · "The app exhibited one or more bugs…
+> Steps to reproduce bug: **1. Error when syncing Apple Health**"
+
+**🔎 Kök neden (koddan doğrulandı):** `HealthBridge` iOS'ta her zaman
+`HealthAvailability.unsupported` döndürüyor (`health_bridge_io.dart:27` → `!Platform.isAndroid`),
+ama `settings_screen.dart`'taki Sağlık bölümü `if (!kIsWeb)` ile **iOS'ta da gösteriliyordu**.
+Anahtara dokunan inceleyici `setHealthNoConnect` hata mesajını gördü. Sipling iOS'ta HealthKit'e
+zaten hiç yazmıyor — yani özellik yoktu, sadece ölü bir düğme vardı.
+
+**✅ Düzeltme (commit `751a430`, `flutter analyze` temiz, 63 test geçti):**
+`settings_screen.dart`'a tek kaynak `_androidOnly` eklendi
+(`!kIsWeb && defaultTargetPlatform == TargetPlatform.android`) ve **aynı sınıftan üç satır** iOS'ta gizlendi:
+| Gizlenen | Neden iOS'ta ölüydü |
+|---|---|
+| Sağlık senkronizasyonu anahtarı | `HealthBridge` iOS'ta `unsupported` → hata mesajı (**ret sebebi**) |
+| "Ana ekrana widget ekle" | iOS build'inde widget hedefi YOK (`codemagic.yaml`'a eklenmedi) + `requestPinWidget` Android'e özel |
+| "Bildirimler gelmiyor mu?" pil rehberi | İçerik tamamen Xiaomi/Samsung/Huawei/Oppo pil yönetimi |
+
+🚨 **iOS'ta HİÇBİR ÖZELLİK KAYBEDİLMEDİ** — hatırlatmalar, uyanık saatler, "hedefte sus",
+hatırlatma tarzı ve **yalnız iPhone'da olan sıcak-gün uyarısı** aynen duruyor. Android hiç etkilenmedi.
+
+**📌 Sonuç (API ile doğrulandı):** Codemagic `6a68349ca68bcd30ce1dfa7f` başarılı →
+**build 7** (`c32e449a-…`, VALID) sürüme bağlandı · inceleme notuna düzeltmenin açıklaması yazıldı ·
+eski gönderim iptal edildi (sürümü tutuyordu, `409 ENTITY_STATE_INVALID` veriyordu) →
+yeni gönderim `57df0a4c-…` **28 Tem 08:23'te WAITING_FOR_REVIEW**. Yayındaki 1.0 etkilenmedi.
+
+## 🤖 2026-07-27 — PLAY TARAFI ASO (Apple'la simetri kuruldu)
+
+**Apple ile Play'in ASO'su AYNI DEĞİL — fark önemli:**
+| | Apple | Google Play |
+|---|---|---|
+| Aramada indekslenen | ad(30) + alt başlık(30) + **anahtar kelime alanı**(100) | başlık(30) + kısa açıklama(80) + **TAM AÇIKLAMA**(4000) |
+| Açıklama indeksleniyor mu | **HAYIR** | **EVET** |
+| Ayrı anahtar kelime alanı | var | **yok** |
+
+**Play'de zaten iyi olan:** 20 dil ekli · başlıklar anahtar kelimeli (`Sipling: Su Hatırlatıcı`,
+`Sipling: Wassererinnerung`, `Sipling：喝水提醒`…) · kısa açıklamalar dolu.
+**Play'in eksiği:** tam açıklamalar 4000'in ancak yarısını kullanıyordu (850–2565) ⇒ Google'ın
+indekslediği alanın **%40-75'i boştu**; ekran görüntüleri başlıksız çıplak ekran; tablet görselleri yok.
+
+**✅ Yapılan:**
+- `store/metinler/play-ek.js` — 20 dilde **"NELER VAR" özellik listesi + mini SSS** bloğu.
+  SSS soruları gerçek arama ifadeleri: *"günde ne kadar su içmeliyim"*, *"su içme hatırlatıcısını
+  nasıl ayarlarım"*, *"kahve ve çay su sayılır mı"*, *"internet gerekiyor mu"*. Doğal metin,
+  anahtar kelime yığma değil. Sonuç: açıklamalar **1299–3986/4000** aralığına çıktı.
+  🚨 Bloktaki HER İDDİA koddan doğrulandı: 8 ağaç türü (`data/tree_species.dart`), 10 başarı
+  (`data/achievements.dart`), istatistik 7/30 gün (`stats_screen.dart:162`), EFSA temelli hedef.
+- `tools/play-liste-guncelle.js` — 20 dilin tam açıklamasını Play Console'a yazar
+  (kuru deneme varsayılan, `yaz` ile uygular).
+- **Play görselleri**: `tools/aso-gorsel.js` artık `play` hedefini destekliyor →
+  `store/play-market/<dil>/1..5.png`, **1080x1920**, 20 dil × 5 = **100 görsel** üretildi.
+  🚨 **Play'in oran kuralı:** en büyük kenar en küçüğün 2 katını GEÇEMEZ. iOS görseli
+  1242x2688 = 1:2,16 → **Play reddeder**; o yüzden Play için ayrı ölçü üretiliyor (1:1,78).
+
+**📌 SONUÇ (canlı Play Console'dan doğrulandı):** 20 dilin tam açıklaması yazıldı —
+**yazıldı 19 · atlandı 1 (zaten günceldi) · hata 0.**
+
+**🚀 2026-07-27 12:27 — PLAY'E GÖNDERİLDİ.** Yayın özeti → "19 değişikliği incelemeye gönder" →
+onay penceresi → "Değişikliği incelemeye gönder". Panel şu an: **"Değişiklikleriniz şu anda
+inceleniyor."** Google önce otomatik kalite/politika kontrollerini çalıştırıp sonra incelemeye alıyor;
+inceleme genelde ≤7 gün. Gönderilen: 20 dilin yeni açıklamaları + en-US'in yeni başlıklı görselleri.
+⚠️ Bu bir **mağaza girişi güncellemesi**, yeni APK/AAB değil — uygulama sürümü hâlâ 1.0.3 (vc5).
+
+**🟡 Play ekran görüntüleri — en-US BİTTİ, diğer 19 dil bekliyor.**
+- ✅ **en-US**: yeni başlıklı 5 görsel yüklendi, kaydedildi, sayfa yenilenerek doğrulandı (5/8).
+- ⏳ **19 dil**: kendi dillerindeki **eski (başlıksız) görselleri** duruyor — yani eksik değil,
+  sadece yeni tasarım uygulanmadı. 100 görsel `store/play-market/<dil>/` altında hazır bekliyor.
+- Engel: varsayılan dışı dile geçince silme düğmesi tıklamayı yutuyor; 7 ayrı yöntem denendi
+  (gerçek fare dahil), hiçbiri tutmadı → detay ve önerilen çözüm (**Play Developer API**) `wiki/08`.
+- ✅ Doğrulandı, **hiçbir şey bozulmadı**: uygulama simgesi 1/1, özellik grafiği 1/1, tüm dillerde
+  5 telefon görseli yerinde.
+- Aciliyet düşük: Play kapalı testte, mağazada kimse görmüyor. Üretime çıkmadan (≈7 gün) bitmesi yeter.
+
+🪤 Play Console tuzakları (→ `wiki/08`): `?language=xx` URL parametresi **çalışmıyor**, dil
+açılır menüden seçilmeli · ham JS ile `textarea.value=` Angular'da sayılmıyor → Playwright `fill()` ·
+"Öğe ekle" adı **uygulama simgesinde de var**, körlemesine `.first()` alma.
+
+## 🔍 2026-07-27 — APP STORE ASO KOMPLE ELDEN GEÇİRİLDİ (20 dil) · 1.0.3 incelemeden çekildi
+
+**Neden:** iOS'ta 90 günde **2 indirme** var (bir üstteki bölüm). Sorun reklam değil, **görünürlük**.
+
+### 📊 Karar veren veri (Apple'ın kendi iTunes Search API'si, `itunes.apple.com/search`)
+Zirvedeki her rakip **uygulama adını her ülkeye çeviriyor** ve kendi ülkesinde 1. sırada:
+| Ülke | 1. sıra | Oy |
+|---|---|---|
+| US | Water tracker Waterllama | 157.549 |
+| DE | Wasser trinken Erinnerung Lama | 25.104 |
+| ES | Aqua Reminder - Beber agua | 2.389 |
+| FR | Eau Reminder - Boire de l'eau | 9.191 |
+| **TR** | *(Türkçe adlı güçlü rakip YOK)* — "Kuzeyden – Su Takibi" **13 oy**, "Watermoon" **0 oy** | — |
+🎯 **TR pazarı boş** — Türkçe adlı ciddi rakip yok, ilk sıradakiler İngilizce adlı yabancı uygulamalar.
+Sipling'in adı ise her mağazada sadece **"Sipling"** idi (kimsenin aramadığı uydurma kelime, 30
+karakterin 23'ü boş). Apple aramada **YALNIZ ad(30) + alt başlık(30) + anahtar kelime(100)**
+indeksler; **açıklamayı İNDEKSLEMEZ**.
+
+### ✅ Yapılanlar (hepsi canlı ASC'de doğrulandı)
+- **1.0.3 incelemeden ÇEKİLDİ** (`reviewSubmissions … canceled:true`) → `DEVELOPER_REJECTED`.
+  Sebep: inceleme sırasında ASC **dil ekleme butonunu kilitliyor**. Kullanıcı onayı alındı.
+  Yayındaki **1.0 READY_FOR_SALE etkilenmedi**. Yeni build GEREKMEDİ.
+- **20 mağaza dili eklendi** (önce sadece en-US vardı): tr, de-DE, es-ES, fr-FR, it, pt-BR, nl-NL,
+  pl, ru, uk, ja, ko, zh-Hans, zh-Hant, id, vi, th, hi, ar-SA.
+  Her biri için **ad + alt başlık + anahtar kelime + açıklama + sürüm notu** yazıldı. Örnek:
+  `Sipling: Su Takibi` / `Su içme hatırlatıcısı ve hedef` · `Sipling: Wasser Tracker` ·
+  `Sipling: Boire de l'eau` · `Sipling：喝水提醒`
+- **Anahtar kelime disiplini:** adda/alt başlıkta geçen kelime tekrar edilmedi, virgülden sonra
+  boşluk yok, rakip markası yazılmadı. Doğrulayıcı 20 dilde **0 hata / 0 uyarı**.
+- **Ekran görüntüleri — 20 DİLİN HEPSİ:** çıplak ekran yerine **başlıklı pazarlama görselleri**
+  (1242x2688, üstte büyük başlık + çerçeveli uygulama ekranı), her dilde **o dilin arayüzü**.
+  🚨 Ekran görüntüsü yalnız bir dile yüklenirse **bütün ülkelerde o görünür** (Apple metni çevirir,
+  görseli çevirmez) → 20 dilin her birine ayrı set yüklendi.
+  🪤 Kaynak olarak **Play için 2026-07-15'te çekilmiş `store/<dil>/` görselleri** kullanıldı
+  (1080x1920, içlerinde gerçek veri var: 1035/2300 ml, büyümüş ağaç). iOS boyutunda yeniden
+  çekim denendi ama uygulama **boş durumda** açıldı (0 ml, çıplak toprak) → kullanılmadı.
+  Sıra: Bugün → Orman → İstatistik → Ayarlar → Gün özeti (ilk 3 indirmenin çoğunu belirler).
+
+### 🧰 Yeni araçlar (hepsi tekrar kullanılabilir)
+| Araç | İş |
+|---|---|
+| `store/metinler/apple-aso.js` | 20 dilin ad/alt başlık/anahtar kelimesi (TEK KAYNAK) |
+| `store/metinler/apple-blok.js` | 20 dilde abonelik+EULA bloğu ve sürüm notu |
+| `tools/_aso-metin.js` | açıklama üretici + **emoji temizleyici** (Apple emoji kabul etmiyor) |
+| `tools/aso-dogrula.js` | yazmadan önce sınır/tekrar/emoji denetimi |
+| `tools/aso-uygula.js` | ASC'ye yazar (`yaz` argümanı olmadan kuru deneme) |
+| `tools/aso-gorsel.js` | başlıklı pazarlama görseli üretir |
+| `tools/aso-gorsel-yukle.js` | ekran görüntüsünü ASC'ye yükler (3 adımlı Apple akışı) |
+| `tools/ios-gorseller.js` | artık **dil argümanı** + `SIPLING_WEB_PORT` + başlık doğrulaması |
+
+🪤 Bu oturumda 4 tuzak yaşandı → `wiki/08-tuzaklar.md`: **port 8792 projeler arası ortak**
+(yanlış uygulamanın ekranı çekildi), **Apple açıklamada emoji kabul etmiyor**, **yeni dil eklenince
+sürüm yerelleştirmesi otomatik oluşuyor** (POST değil PATCH), **ITMS-90035 imza iptali**.
+
+### ✅ ITMS-90035 çözüldü — build 6 ile GÖNDERİLDİ (2026-07-27 03:08)
+Apple maili **ITMS-90035 Invalid Signature** → sürüm `INVALID_BINARY`. Sebep: `codemagic.yaml`
+her build'de dağıtım sertifikalarını siliyor, başka proje build alınca build 5'in imzası iptal oldu
+(detay `wiki/08`). ASO'nun tamamı ASC'de kayıtlıydı, kaybolmadı — yalnız yeni binary gerekti.
+- ✅ Codemagic `6a6690ed7021ec7d686e3d01` → **5 dakikada başarılı**, 10 adımın hepsi `success`,
+  ASC'ye yüklendi. **Build 6** (`ac8d974f-…`, `processingState VALID`).
+- ✅ `PATCH /appStoreVersions/<id>/relationships/build` → build 6 bağlandı ⇒ `INVALID_BINARY`
+  **kendiliğinden temizlendi**, sürüm `PREPARE_FOR_SUBMISSION` oldu.
+- ✅ reviewSubmission `718536c4-93c3-4e04-9ac3-a977b8fcddc4` → `submitted:true`.
+
+**📌 CANLI DURUM (API ile doğrulandı):** `1.0.3` **WAITING_FOR_REVIEW** · build **6** ·
+**20 dil** yerelleştirme · **95 ekran görüntüsü** (20 dil × 5, hepsi `COMPLETE`) ·
+yayındaki **1.0 READY_FOR_SALE** etkilenmedi. Onaylanınca otomatik yayına çıkar.
+
+## 🍎 2026-07-26 — iOS 1.0.3 REDDEDİLDİ → düzeltildi → YENİDEN GÖNDERİLDİ (aynı gece)
+
+**Ne oldu:** Apple 1.0.3'ü **otomatik** reddetti. Gerekçe (Resolution Center, guideline
+**3.1.2 Business: Payments – Subscriptions**):
+> "The submission offers auto-renewable subscriptions but does not include a functional link to
+> the **Terms of Use (EULA)** in the app's **metadata**. If you are using the standard Apple
+> Terms of Use (EULA), include a link to the Terms of Use in the **App Description**."
+
+Yani koddan/build'den kaynaklı DEĞİL — **mağaza açıklaması** eksikti. Uygulama içi paywall'da
+(`pro_screen.dart:149,153`) linkler zaten vardı, ama Apple **App Description'da** da istiyor.
+
+**✅ Yapılan (sadece metadata, yeni build GEREKMEDİ):**
+- `appStoreVersionLocalizations` (en-US, tek dil) **description**'ına sona blok eklendi
+  (1916 → 2490 karakter, sınır 4000). Aynı metin `store/metinler/apple-en.txt`'ye de yazıldı:
+  - `SIPLING PRO SUBSCRIPTION` — otomatik yenilenen, **1 ay**, **0,99 USD/ay**
+    (fiyat ASC API'den doğrulandı: `subscriptionPricePoints` customerPrice `0.99`, proceeds `0.84`)
+  - Otomatik yenileme/iptal açıklaması
+  - `Terms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/`
+  - `Privacy Policy: https://sipling-app.web.app/gizlilik`
+- **Neden standart Apple EULA linki:** `GET /apps/6789913186/endUserLicenseAgreement` → `data: null`
+  ⇒ özel EULA tanımlı değil ⇒ standart Apple EULA geçerli ⇒ Apple'ın verdiği URL kullanıldı.
+- Üç hukuki URL canlı doğrulandı: `/kosullar`, `/gizlilik`, `/destek` → hepsi **HTTP 200**.
+- ASC panelinden **"Update Review" → "Resubmit to App Review"**.
+
+**📌 Sonuç (API ile doğrulandı, `node tools/asc-api.js state`):**
+`1.0.3 → WAITING_FOR_REVIEW` · gönderim 26 Tem 2026 02:14 · Submission ID `4017b12e-…a5d02`.
+Yayındaki **1.0 READY_FOR_SALE** etkilenmedi. Sürüm onaylanınca yayına çıkışı
+**"Automatically release after App Review"** ayarında.
+
+⚠️ Bu sürüm reklam düzeni + App Open reklamını da taşıyor (aşağıdaki 07-25 maddesi) — onaylanınca
+canlı iOS'ta açılış reklamı devreye girer.
+
+### 🔍 2026-07-26 16:15 üç cephe kontrolü (hepsi canlı panelden doğrulandı)
+
+| Cephe | Durum |
+|---|---|
+| **Apple 1.0.3** | ⏳ `WAITING_FOR_REVIEW` — yeni Apple mesajı YOK (Resolution Center'da hâlâ tek/eski mesaj) |
+| **Apple canlı sürüm** | `1.0` = **build 3** (20 Tem yüklendi) `READY_FOR_SALE` ⇒ kullanıcıların iPhone'unda **1.0.1 kodu** var. App Open reklamı + yeni birimler + "reklam gelmedi" uyarısı **henüz kullanıcıda YOK**, 1.0.3 onayını bekliyor. |
+| **Play** | Kapalı test **Etkin · son sürüm 5 (1.0.3) · 177 ülke** ⇒ 1.0.3 testçilerde YAYINDA. **Üretimde DEĞİL** (herkese açık değil). |
+| **Play üretim şartı** | ✅ kapalı test yayını · ✅ 12 testçi kaydı · ⏳ **"12 testçi kesintisiz 7 gündür kayıtlı"** — 14 gün gerekiyor ⇒ **~7 gün sonra "Üretime başvur"** açılır. |
+| **AdMob hesabı** | ✅ **"Hesabınız onaylandı — reklam sunumunuz etkinleştirildi."** |
+| **AdMob Sipling iOS** | ✅ `~5730789076` **Hazır / Reklam sunma etkin** · App Store `6789913186` bağlı · 4 birim etkin ⇒ 07-25'teki "sınırlı reklam sunumu" **KALKTI**. |
+| **AdMob Sipling Android** | ⚠️ `~5922360769` hâlâ "İnceleme gerekli / Sınırlı reklam sunumu / mağaza ekle" — beklenen, Play'de herkese açık olmadığı için bağlanamıyor. Üretime çıkınca bağlanacak. |
+| **Gerçek reklam verisi (son 7 gün)** | Hesap geneli: istek **355** · eşleşme **%79,7** · **gösterim 5** · kazanç **₺0,61**. |
+| 🚨 **Gelir HANGİ taraftan?** | **AdMob Ağı raporu, boyut=Uygulama → tek satır: "Sipling (Android) ₺0,61". Tablo "1-1/1".** ⇒ **Gelirin TAMAMI Android kapalı testten**, canlı iOS'tan **₺0**. iOS'un AdMob limiti daha dün (07-25) kalktı; canlı build'de (build 3 = commit `11a68b5`) `GADApplicationIdentifier` = `ca-app-pub-3326866070505611~5730789076` **doğru bağlı** — yani kod sorunu değil, ya süre ya kullanıcı azlığı. Birkaç gün sonra tekrar bak. |
+| **app-ads.txt** | `sipling-app.web.app/app-ads.txt` HTTP 200, içerik doğru. |
+
+**🔬 iOS reklam tarafı denetlendi (kullanıcı "hata var galiba" dedi) — HATA BULUNAMADI:**
+- Apple'da yeni ret/mesaj **yok** (`state` + Resolution Center kontrol edildi).
+- Yayındaki build'de (`11a68b5`) `Info.plist` → `GADApplicationIdentifier` =
+  `ca-app-pub-3326866070505611~5730789076` ✅ AdMob'daki "Sipling iOS" kaydıyla **aynı**.
+- `main.dart:30` → `await AdsService.init()` çağrılıyor ✅ (`enabled = !isPro`).
+- iOS birim kimlikleri yayındaki build ile bugünkü kodda **birebir aynı** (banner `/8997483187`,
+  geçiş `/1414506632`, ödüllü `/4002774438`) ✅ — sürüm farkı kaynaklı uyuşmazlık yok.
+- `SKAdNetworkItems` var (4 kimlik — az; ilerde Google'ın tam listesi eklenebilir, fill'i tamamen
+  engellemez ama eBGBM'yi düşürür).
+- ⇒ **iOS'un ₺0 olmasının sebebi büyük olasılıkla kod değil:** iOS'un AdMob limiti **07-25'te**
+  kalktı, rapor penceresi "son 7 gün" ⇒ 6 günü limitli geçti. Doğal sonuç.
+- ⚠️ **Doğrulanamayan:** 4 iOS biriminin AdMob'da gerçekten `~5730789076` uygulamasına bağlı olduğu —
+  AdMob paneli uygulama-içi sayfaları bu oturumda **hiç render etmedi** (blank). Sayılar tutuyor
+  (kodda 4 iOS birimi, AdMob "4 etkin") ama gözle görülmedi.
+
+### 🎯 2026-07-27 — iOS'ta reklam geliri neden ₺0: **KULLANICI YOK** (ASC Analytics, kesin)
+
+Kullanıcı ASC'ye girdi, App Analytics açıldı. **Apr 27 – Jul 25 aralığı:**
+
+| Ölçüm | Değer |
+|---|---|
+| **First-Time Downloads (toplam)** | **2** — yalnız 22 Tem (1) ve 25 Tem (1); diğer tüm günler 0 |
+| Redownloads | 1 |
+| **App Store Impressions (toplam)** | **63** — hepsi 22–25 Tem arası (18 · 20 · 18 · 7); 22 Tem öncesi **sıfır** |
+| Product Page Views | 2 |
+| Conversion Rate | %1,92 |
+| Proceeds / Paying Users / Subscriptions | "Not Enough Data" |
+
+⇒ Uygulama App Store aramalarında **ancak ~22 Temmuz'da görünür olmuş**; 4 günde 63 gösterim,
+**2 indirme**. **Reklam kodunda hata YOK — reklam gösterecek kullanıcı yok.**
+🚨 Bundan sonra iOS için doğru soru "reklam neden gelmiyor" değil, **"indirme nasıl artar"**
+(ASO: anahtar kelimeler, ekran görüntüleri, alt başlık, tanıtım metni).
+
 ## 📣 2026-07-25 — REKLAM DÜZENİ ELDEN GEÇİRİLDİ (kod tarafı bitti; reklamın DOLMASI hesap işi)
 
 **Kullanıcı şikâyeti:** "Reklam izle" butonuna basınca reklam açılmıyor (canlı Apple sürümünde
@@ -102,7 +403,54 @@ Ağaç türleri ekranında kilitli bir **ağaç türünü** (kozmetik) açıyor.
 - l10n: 7 yeni anahtar × 20 dil (`notifHotDayBody` `{temp}` yer tutuculu; İtalyanca ICU tırnak tuzağı için
   "po'"→"pochino"). Sürüm **1.0.3+5**.
 
-**⏳ KALAN FAZLAR (bu build'i canlıya almak için):**
+**✅ Phase 2 YAPILDI (2026-07-25):** Apple Developer portal → `com.sipling.app` (bundleId `3RVHCG2564`)
+→ **WeatherKit capability AÇILDI** (checked=true, Confirm'lendi). Kullanıcı Apple girişi yaptı
+(gokcektugba198@gmail.com), capability'yi ben açtım (9360 tarayıcı, `tools/_drv.js` + JS).
+
+**✅ Phase 3 YAPILDI — iOS BUILD BAŞARILI (commit `994a59f` push→GitHub):**
+- Codemagic API ile tetiklendi (`x-auth-token` daEv…, appId `6a572a79c0d939a624244645`, workflow
+  `ios-testflight`, branch main). buildId `6a64b315833ea07fdfcf3817`.
+- **TÜM ADIMLAR SUCCESS** — kritik olanlar: **imzalama** (WeatherKit entitlement'lı profil oluştu =
+  capability açılması işe yaradı) + **IPA derle (Swift/WeatherKit ilk kez derlendi, HATA YOK)** +
+  **Publishing (ASC'ye yüklendi)**. status=finished.
+- 🍎 Build App Store Connect'te işleniyor → TestFlight'a düşecek (~10-30 dk Apple tarafı).
+
+**✅ Phase 5 (iOS) YAPILDI — 1.0.3 APPLE İNCELEMESİNE GÖNDERİLDİ (2026-07-25, kullanıcı "A gönder"):**
+- Tümü **ASC REST API** ile (tarayıcısız, doğrulanabilir) — `tools/asc-api.js` (JWT ES256, Node crypto
+  `dsaEncoding:ieee-p1363`, Key `JYW9GVD5XJ`, Issuer `ce8ece0f-3696-4b3a-96e3-32a060b4e4f8`, `.p8`
+  `~/.playwright-mcp/AuthKey-JYW9GVD5XJ.p8`). 🪤 Git Bash `/apps/..`'i Windows yoluna çeviriyor →
+  `MSYS_NO_PATHCONV=1` şart.
+- Akış: 1.0.2 reviewSubmission (`148b0cbe`) **canceled** → 1.0.2 sürümü (`d8389187`) DEVELOPER_REJECTED
+  (düzenlenebilir) → versionString **1.0.3** → build **#5** (`e94b9162`, VALID) bağlandı → en-US whatsNew
+  → yeni reviewSubmission (`4017b12e`) + version item + **submitted:true → WAITING_FOR_REVIEW**.
+- **Pro aboneliği `sipling_pro_monthly` (6791177254) = APPROVED** (canlı, bağlı — kayıp yok).
+- ⚠️ Cihazda test edilmedi (kullanıcı "A gönder" dedi); riskli özellik sıcak-gün VARSAYILAN KAPALI +
+  Apple incelemesi çalıştırır. TestFlight'ta 1.0.3 (build 5) hazır — istenirse yine denenebilir.
+
+**✅ ANDROID DA GÖNDERİLDİ — Play kapalı test 1.0.3 (versionCode 5) İNCELEMEDE (2026-07-25):**
+- AAB (`app/build/app/outputs/bundle/release/app-release.aab`, 52.6MB) Play kapalı test "Alpha"ya yüklendi
+  (`tools/aab-yukle.js` >50MB fileChooser+CDP) → sürüm notu en-US+tr → İleri → Kaydet → Yayın özeti →
+  **"1 değişikliği incelemeye gönder" → onay → İncelenmekte** (gönderim butonu kalktı, teyitli).
+- 🪤 **Play Console SPA render tuzağı:** deep-link `console/developers/app/..` içeriği BASMIYOR (76 char,
+  "Geliştirici hesabı seçin"de takılı). Çözüm: **doğru bağlam** `console/u/0/developers/<devId>/app/..`
+  (devId `7286802637861068803`). Basit querySelector shadow-DOM görmüyor → `tools/_drv.js` **Playwright
+  locator** komutları (`pwrole`/`pwtext`/`pwfind`, shadow-DOM deler). Screenshot font-bekleme'de takılıyor →
+  hep locator+eval kullan.
+- Play üretim erişimi hâlâ 12testçi/14gün'e bağlı (bu kapalı-test güncellemesi o şarta da sayılır).
+
+**🎉 SONUÇ: 1.0.3 İKİ MAĞAZAYA DA GÖNDERİLDİ (iOS App Store incelemesi + Android Play kapalı test incelemesi).**
+
+**(eski plan notları:)**
+- ~~Phase 4 — TestFlight~~ (kullanıcı doğrudan production'a gitti):
+  + profil-sonu −/+. İşlenince TestFlight'ta görünür.
+- **Android AAB (1.0.3, versionCode 5) ✅ DERLENDİ** (`app/build/app/outputs/bundle/release/app-release.aab`,
+  52.6 MB, WeatherKit yok=iOS'a özel; reklam+onboarding var). **Yükleme BEKLETİLDİ** → TestFlight
+  doğrulaması sonrası Play kapalı teste yükle (`tools/aab-yukle.js`, 9360 oturumu açık). Boşa iş olmasın diye
+  ortak kod TestFlight'ta doğrulanınca yüklenecek. Play appId `4974431994893643882`, track `4699878750164991262`.
+- **Phase 5 — Production (TestFlight OK olunca, TEK SEFER):** ASC submit (App Store) + Play kapalı test
+  yükleme. Pro aboneliği (`sipling_pro_monthly`) bağlı kalsın. Android üretim erişimi hâlâ 12testçi/14gün'e bağlı.
+
+**(Aşağısı Phase 2 öncesi plandı — yukarıda gerçekleşti:)**
 1. **Phase 2 — Apple WeatherKit capability:** developer.apple.com → Identifiers → `com.sipling.app` →
    WeatherKit'i AÇ. **Apple girişi/2FA gerek (kullanıcı).** ⚠️ Bu açılmadan Codemagic imzalama profili
    entitlement'ı içermez → build imzada PATLAR.
@@ -606,3 +954,15 @@ Release APK: `app/build/app/outputs/flutter-apk/app-release.apk` — **upload ke
 | minSdk | **26** (Health Connect şartı) — Android 7.x cihazlar düştü |
 | Firebase projesi | `sipling-app` (Sipling'e özel). 🚨 Randevio'nun `randevio-dbf59`'una dokunma. |
 | Play geliştirici hesabı | `randevusayfasi@gmail.com` · ID `7286802637861068803` |
+
+---
+
+## 🚀 PLAY ÜRETİM ERİŞİMİ — 14 GÜN KAPALI TEST KURALLARI (2026-07-28)
+> Bu proje ücretli **Testers Community** servisinde kapalı testte (15 testçi / 16 gün). ÜRETİME (herkese açık) geçiş için SÜRE dolunca aşağıdakiler YAPILMIŞ olmalı — **güncelleme yaparken göz önünde bulundur** ki süre bitince onay alalım:
+> 1. **14 günde EN AZ 3 yeni kapalı-test sürümü yayınla** (küçük değişiklik yeter; Google "geliştirici feedbacke göre güncelliyor" görsün). ← EN KRİTİK madde.
+> 2. **Pre-launch (lansman öncesi) rapordaki sorunları düzelt** → toplam **10'un altında** sorun kalsın.
+> 3. **Üretim erişim formu cevapları: her soruya 250+ karakter, DETAYLI** (muğlak/kısa YAZMA). Servis form cevaplarını gönderiyor → kullan ama detaylandır.
+> 4. **Sürüm notları NET** ("minor bug fixes" değil; ne değişti açık yaz).
+> 5. Testçi etkileşimi 14 gün sürsün (servis hallediyor; ekstra kendi testçin de olabilir).
+> 6. **14 gün + 3 sürüm dolunca** Play Console → Üretim → üretim erişimine **yeniden başvur** (panelden Production Access Report indir, form cevaplarını oradan al).
+> Kaynak: testerscommunity.com/blog/google-play-production-access-rejected · aynısı Randevio'da da uygulanıyor.

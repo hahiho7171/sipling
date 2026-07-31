@@ -1,0 +1,65 @@
+- generic [ref=f12e2]:
+  - banner [ref=f12e4]:
+    - generic [ref=f12e5]:
+      - generic [ref=f12e6]:
+        - button "Ana menü" [ref=f12e7] [cursor=pointer]
+        - link "Gruplar" [ref=f12e12] [cursor=pointer]:
+          - /url: ./my-groups
+      - generic [ref=f12e15]:
+        - search [ref=f12e17]:
+          - generic [ref=f12e21]:
+            - listbox "Arama kapsamı seçici" [ref=f12e23] [cursor=pointer]:
+              - option "İleti Dizileri" [selected] [ref=f12e24]
+              - option "Tüm gruplar ve iletiler"
+            - generic [ref=f12e34]:
+              - textbox [disabled] [ref=f12e35]: sipling-water-testers@googlegroups.com grubundaki görüşmelerde arama yapın
+              - combobox "sipling-water-testers@googlegroups.com grubundaki görüşmelerde arama yapın" [ref=f12e36]
+          - button "Gelişmiş arama" [ref=f12e37] [cursor=pointer]
+          - button "Search" [ref=f12e41] [cursor=pointer]
+        - button "Ayarlar" [ref=f12e48] [cursor=pointer]
+      - generic [ref=f12e55]:
+        - button "Google uygulamaları" [ref=f12e59] [cursor=pointer]
+        - 'button "Google Hesabı: asım gökcek (randevusayfasi@gmail.com)" [ref=f12e65] [cursor=pointer]'
+  - main [ref=f12e69]:
+    - generic [ref=f12e75]:
+      - button "Grubu favorilere ekle" [ref=f12e77] [cursor=pointer]
+      - navigation [ref=f12e83]:
+        - heading "Grup yolu" [level=1] [ref=f12e84]
+        - list "Grup yolu" [ref=f12e85]:
+          - listitem [ref=f12e86]:
+            - generic [ref=f12e87]: Sipling Testers
+      - generic [ref=f12e88]: 1 üye
+      - button "Gruptan ayrıl" [disabled] [ref=f12e90]
+    - generic [ref=f12e101]:
+      - generic [ref=f12e102]: sipling-water-testers@googlegroups.com
+      - generic [ref=f12e103]: "Katılma tarihi: 15 Tem 2026"
+    - generic [ref=f12e104]:
+      - heading "Sahipler" [level=2] [ref=f12e105]
+      - generic [ref=f12e106]:
+        - generic [ref=f12e107]:
+          - img "asım gökcek için profil resmi" [ref=f12e112]
+          - generic [ref=f12e113]:
+            - generic [ref=f12e114]: asım gökcek
+            - generic [ref=f12e115]: randevusayfasi@gmail.com
+        - button "Grup sahipleri ve yöneticileri ile iletişime geç" [ref=f12e117] [cursor=pointer]
+    - generic [ref=f12e118]:
+      - heading "Dil" [level=2] [ref=f12e119]
+      - generic [ref=f12e120]: Türkçe
+    - generic [ref=f12e121]:
+      - heading "Gizlilik" [level=2] [ref=f12e122]
+      - generic [ref=f12e123]:
+        - generic [ref=f12e124]:
+          - generic [ref=f12e128]: Grup üyeleri
+          - generic [ref=f12e130]: grubu görebilir
+        - generic [ref=f12e131]:
+          - generic [ref=f12e135]: Grup üyeleri
+          - generic [ref=f12e137]: üyeleri görüntüleyebilir
+        - generic [ref=f12e138]:
+          - generic [ref=f12e142]: Grup üyeleri
+          - generic [ref=f12e144]: ileti dizilerini görüntüleyebilir
+        - generic [ref=f12e145]:
+          - generic [ref=f12e149]: Grup üyeleri
+          - generic [ref=f12e151]: ileti gönderebilir
+        - generic [ref=f12e152]:
+          - generic [ref=f12e156]: Web'deki herkes
+          - generic [ref=f12e158]: gruba katılabilir

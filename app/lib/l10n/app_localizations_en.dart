@@ -1110,4 +1110,59 @@ class LEn extends L {
   String notifHotDayBody(int temp) {
     return 'It\'s $temp°C today — aim to sip a bit more often.';
   }
+
+  @override
+  String get setThemeTitle => 'Theme';
+
+  @override
+  String get themeSystem => 'Follow system';
+
+  @override
+  String get themeLight => 'Light';
+
+  @override
+  String get themeDark => 'Dark';
+
+  @override
+  String get setHowTo => 'How Sipling works';
+
+  @override
+  String get tourNext => 'Next';
+
+  @override
+  String get tourBack => 'Back';
+
+  @override
+  String get tourSkip => 'Skip';
+
+  @override
+  String get tourDone => 'Got it';
+
+  @override
+  String get tourT1 => 'Drink, water your sapling';
+
+  @override
+  String get tourB1 =>
+      'Tap a cup on the home screen to log a sip. Every glass waters your sapling — tapped one by mistake? Use the undo arrow.';
+
+  @override
+  String get tourT2 => 'Your daily goal';
+
+  @override
+  String get tourB2 =>
+      'Sipling works out a goal from your height, weight, age and activity. Change it any time in Settings, or recalculate it on the “Water and your body” screen.';
+
+  @override
+  String get tourT3 => 'Reminders that fit your day';
+
+  @override
+  String get tourB3 =>
+      'Turn reminders on in Settings, then set your waking hours and how often you want a nudge. Once you reach your goal, the rest of the day stays quiet.';
+
+  @override
+  String get tourT4 => 'Grow your forest';
+
+  @override
+  String get tourB4 =>
+      'Reach your goal and your sapling becomes a tree in your forest. Trees never wither — a missed day costs you nothing.';
 }

@@ -1105,4 +1105,59 @@ class LPl extends L {
   String notifHotDayBody(int temp) {
     return 'Dziś jest $temp°C — pij trochę częściej.';
   }
+
+  @override
+  String get setThemeTitle => 'Motyw';
+
+  @override
+  String get themeSystem => 'Jak w systemie';
+
+  @override
+  String get themeLight => 'Jasny';
+
+  @override
+  String get themeDark => 'Ciemny';
+
+  @override
+  String get setHowTo => 'Jak działa Sipling';
+
+  @override
+  String get tourNext => 'Dalej';
+
+  @override
+  String get tourBack => 'Wstecz';
+
+  @override
+  String get tourSkip => 'Pomiń';
+
+  @override
+  String get tourDone => 'Rozumiem';
+
+  @override
+  String get tourT1 => 'Pij i podlewaj sadzonkę';
+
+  @override
+  String get tourB1 =>
+      'Dotknij szklanki na ekranie głównym, aby zapisać łyk. Każda szklanka podlewa sadzonkę — dotknięte przez pomyłkę? Użyj strzałki cofania.';
+
+  @override
+  String get tourT2 => 'Twój dzienny cel';
+
+  @override
+  String get tourB2 =>
+      'Sipling wylicza cel na podstawie wzrostu, wagi, wieku i aktywności. Zmień go w Ustawieniach albo przelicz na ekranie „Woda i Twoje ciało”.';
+
+  @override
+  String get tourT3 => 'Przypomnienia na Twoją miarę';
+
+  @override
+  String get tourB3 =>
+      'Włącz przypomnienia w Ustawieniach, a potem ustaw godziny czuwania i częstotliwość. Po osiągnięciu celu reszta dnia jest cicha.';
+
+  @override
+  String get tourT4 => 'Wyhoduj swój las';
+
+  @override
+  String get tourB4 =>
+      'Po osiągnięciu celu sadzonka staje się drzewem w Twoim lesie. Drzewa nigdy nie usychają — opuszczony dzień nic nie kosztuje.';
 }

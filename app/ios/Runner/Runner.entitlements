@@ -13,12 +13,11 @@
 		<string>group.com.sipling.app</string>
 	</array>
 	<!--
-	  Apple WeatherKit — "Sıcak gün uyarısı" için (yalnız iOS). Ücretsiz kota
-	  Apple Developer üyeliğine dahil. ⚠️ Apple Developer portalında da App ID
-	  (com.sipling.app) için WeatherKit capability AÇILMALI, yoksa imzalama profili
-	  bu entitlement'ı içermez ve WeatherKit çağrısı yetki hatası verir.
+	  🚨 WeatherKit entitlement'ı KALDIRILDI (2026-07-31, Guideline 5.2.5 reddi).
+	  Apple bu entitlement'ı görünce " Weather" markası + yasal kaynak linki +
+	  fiziksel cihaz ekran videosu şart koşuyor. "Sıcak gün uyarısı" özelliği
+	  kullanıcı kararıyla iOS'tan çıkarıldı; entitlement kalırsa Apple özelliği
+	  hâlâ var sanıp aynı maddeden yeniden reddeder. GERİ EKLEME.
 	-->
-	<key>com.apple.developer.weatherkit</key>
-	<true/>
 </dict>
 </plist>

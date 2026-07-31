@@ -2105,6 +2105,108 @@ abstract class L {
   /// In en, this message translates to:
   /// **'It\'s {temp}°C today — aim to sip a bit more often.'**
   String notifHotDayBody(int temp);
+
+  /// No description provided for @setThemeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Theme'**
+  String get setThemeTitle;
+
+  /// No description provided for @themeSystem.
+  ///
+  /// In en, this message translates to:
+  /// **'Follow system'**
+  String get themeSystem;
+
+  /// No description provided for @themeLight.
+  ///
+  /// In en, this message translates to:
+  /// **'Light'**
+  String get themeLight;
+
+  /// No description provided for @themeDark.
+  ///
+  /// In en, this message translates to:
+  /// **'Dark'**
+  String get themeDark;
+
+  /// No description provided for @setHowTo.
+  ///
+  /// In en, this message translates to:
+  /// **'How Sipling works'**
+  String get setHowTo;
+
+  /// No description provided for @tourNext.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get tourNext;
+
+  /// No description provided for @tourBack.
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get tourBack;
+
+  /// No description provided for @tourSkip.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get tourSkip;
+
+  /// No description provided for @tourDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Got it'**
+  String get tourDone;
+
+  /// No description provided for @tourT1.
+  ///
+  /// In en, this message translates to:
+  /// **'Drink, water your sapling'**
+  String get tourT1;
+
+  /// No description provided for @tourB1.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap a cup on the home screen to log a sip. Every glass waters your sapling — tapped one by mistake? Use the undo arrow.'**
+  String get tourB1;
+
+  /// No description provided for @tourT2.
+  ///
+  /// In en, this message translates to:
+  /// **'Your daily goal'**
+  String get tourT2;
+
+  /// No description provided for @tourB2.
+  ///
+  /// In en, this message translates to:
+  /// **'Sipling works out a goal from your height, weight, age and activity. Change it any time in Settings, or recalculate it on the “Water and your body” screen.'**
+  String get tourB2;
+
+  /// No description provided for @tourT3.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminders that fit your day'**
+  String get tourT3;
+
+  /// No description provided for @tourB3.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn reminders on in Settings, then set your waking hours and how often you want a nudge. Once you reach your goal, the rest of the day stays quiet.'**
+  String get tourB3;
+
+  /// No description provided for @tourT4.
+  ///
+  /// In en, this message translates to:
+  /// **'Grow your forest'**
+  String get tourT4;
+
+  /// No description provided for @tourB4.
+  ///
+  /// In en, this message translates to:
+  /// **'Reach your goal and your sapling becomes a tree in your forest. Trees never wither — a missed day costs you nothing.'**
+  String get tourB4;
 }
 
 class _LDelegate extends LocalizationsDelegate<L> {

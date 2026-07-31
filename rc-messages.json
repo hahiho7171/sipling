@@ -1,0 +1,9 @@
+[
+  {
+    "id": "258697d8-8950-4fc0-886c-964df1fac3f6",
+    "attrs": {
+      "messageBody": "<h3>App Review Guideline Issue</h3>\n<em>This is an automated message. The review of this submission cannot proceed. See below for more information.</em>\n\nThe submission offers auto-renewable subscriptions but does not include a functional link to the Terms of Use (EULA) in the app's metadata.\n\n If you are using the <a href=\"https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\">standard Apple Terms of Use (EULA)</a>, include a link to the Terms of Use in the App Description. If you are using a custom EULA, <a href=\"https://developer.apple.com/help/app-store-connect/manage-app-information/provide-a-custom-license-agreement\">add it in App Store Connect</a>.",
+      "createdDate": "2026-07-25T22:45:24.41Z"
+    }
+  }
+]

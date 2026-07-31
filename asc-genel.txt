@@ -1,0 +1,129 @@
+Sipling: Water Tracker
+Distribution
+Distribution
+Analytics
+TestFlight
+Xcode Cloud
+iOS App Version 1.0.3
+
+Waiting for Review
+
+Save
+
+You can edit some information while your version is waiting for review. To submit a new build, you must remove this version from review.
+
+The assets and metadata below appear on your app’s product page, when users install your app, and will be used for web engine search results once you release your app.
+
+English (U.S.)
+?
+Previews and Screenshots
+?
+
+Adding accurate screenshots of your app on the newest devices can help you represent the app's user experience. Keep in mind that we'll use these screenshots for all display sizes and localizations. Screenshots are only required for iOS apps, and only the first 3 will be used on the app installation sheets.
+
+iPhone
+iPad
+
+View All Sizes in Media Manager
+
+iPhone
+6.5" Display
+Promotional Text
+?
+
+170
+
+Description
+?
+
+1.686
+
+What's New in This Version
+?
+
+3.732
+
+Keywords
+?
+
+11
+
+Support URL
+?
+Marketing URL
+?
+Version
+?
+Copyright
+?
+
+183
+
+Routing App Coverage File
+?
+Choose File
+App Clip
+Build
+BUILD
+	
+VERSION
+	
+HAS APP CLIP
+
+
+7
+	
+1.0.3
+	
+
+NO
+
+Included Assets
+
+App Icon
+
+Game Center
+
+Game Center components can now be added for review directly from the Game Center section. You can no longer select them from the app version page. Learn More
+
+App Review Information
+Sign-In Information
+?
+
+Provide a user name and password so we can sign in to your app. We’ll need this to complete your app review.
+
+Sign-in required
+Contact Information
+?
+Notes
+?
+
+Chinese law requires apps with news, religious, book, and magazine content to have relevant permits in order to be available on the App Store in China mainland. If applicable, enter information about your permits below. Learn More
+
+2.499
+
+Attachment
+?
+Choose File (Optional)
+App Store Version Release
+
+To make your app available on the App Store, you can automatically release it after it’s been approved by App Review. You can also manually release it on the App Store at a later date.
+
+Manually release this version
+Automatically release this version
+Automatically release this version after App Review, no earlier than
+
+Your local date and time.
+
+Phased Release for App Store Automatic Updates
+
+Phased release for automatic updates lets you gradually release this update over a 7-day period to users who have turned on automatic updates from the App Store. Keep in mind that this version will still be available to all users as a manual update from the App Store. You can pause the phased release for up to 30 days or release this update to all users at any time. Learn More
+
+Release update to all users immediately
+Release update over 7-day period using phased release
+Reset iOS App Store Summary RatingEdit
+
+You can reset your app’s App Store summary rating for all countries or regions when you release this version. Keep in mind that once this version is released, you won’t be able to restore the rating. Your app’s existing customer reviews will still appear on the App Store. View Ratings and Reviews
+
+Keep existing rating
+Reset rating when this version is released

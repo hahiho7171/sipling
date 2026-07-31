@@ -1,0 +1,70 @@
+- generic [ref=f3e1]:
+  - banner "App Store Connect" [ref=f3e3]:
+    - generic [ref=f3e4]:
+      - heading [level=1] [ref=f3e9]:
+        - link "App Store Connect" [ref=f3e10] [cursor=pointer]:
+          - /url: /
+      - navigation "Global":
+        - generic:
+          - list:
+            - listitem [ref=f3e11]:
+              - link "Apps" [ref=f3e12] [cursor=pointer]:
+                - /url: /apps
+            - listitem [ref=f3e13]:
+              - link "Trends" [ref=f3e14] [cursor=pointer]:
+                - /url: /trends
+            - listitem [ref=f3e15]:
+              - link "Reports" [ref=f3e16] [cursor=pointer]:
+                - /url: /itc/payments_and_financial_reports
+            - listitem [ref=f3e17]:
+              - link "Business" [ref=f3e18] [cursor=pointer]:
+                - /url: /business
+            - listitem [ref=f3e19]:
+              - link "Users and Access" [ref=f3e20] [cursor=pointer]:
+                - /url: /access/users
+      - button "TUĞBA GÖKCEK TUGBA GOKCEK Account name menu" [ref=f3e21] [cursor=pointer]
+  - generic [ref=f3e24]:
+    - button "Apps menu, Sipling, selected" [ref=f3e50] [cursor=pointer]:
+      - generic [ref=f3e51]:
+        - generic "Sipling" [ref=f3e52]:
+          - img "Sipling" [ref=f3e53]
+        - generic [ref=f3e54]: Sipling
+    - navigation "Apps" [ref=f3e26]:
+      - generic [ref=f3e27] [cursor=pointer]: Distribution
+      - list:
+        - listitem:
+          - link "Distribution":
+            - /url: /apps/6789913186/distribution
+        - listitem:
+          - link "Analytics":
+            - /url: /apps/6789913186/analytics
+        - listitem:
+          - link "TestFlight":
+            - /url: /teams/ce8ece0f-3696-4b3a-96e3-32a060b4e4f8/apps/6789913186/testflight
+        - listitem:
+          - link "Xcode Cloud":
+            - /url: /teams/ce8ece0f-3696-4b3a-96e3-32a060b4e4f8/apps/6789913186/ci
+  - generic [ref=f3e32]:
+    - generic:
+      - generic:
+        - generic:
+          - main
+  - contentinfo [ref=f3e34]:
+    - generic [ref=f3e35]:
+      - list [ref=f3e36]:
+        - listitem [ref=f3e37]:
+          - link "App Store Connect" [ref=f3e38] [cursor=pointer]:
+            - /url: /apps
+      - list [ref=f3e39]:
+        - listitem [ref=f3e40]: Copyright © 2026 Apple Inc. All rights reserved. |
+        - listitem [ref=f3e41]:
+          - link "Terms of Service" [ref=f3e42] [cursor=pointer]:
+            - /url: /WebObjects/iTunesConnect.woa/wa/termsOfService
+          - text: "|"
+        - listitem [ref=f3e43]:
+          - link "Privacy Policy" [ref=f3e44] [cursor=pointer]:
+            - /url: https://www.apple.com/legal/privacy
+          - text: "|"
+        - listitem [ref=f3e45]:
+          - link "Contact Us" [ref=f3e46] [cursor=pointer]:
+            - /url: /contact-us

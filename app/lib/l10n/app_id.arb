@@ -328,5 +328,22 @@
   "setHotDayCitySet": "Pilih",
   "setHotDayCityHint": "mis. Istanbul",
   "notifHotDayTitle": "Hari ini panas 🌡️",
-  "notifHotDayBody": "Hari ini {temp}°C — minumlah sedikit lebih sering."
+  "notifHotDayBody": "Hari ini {temp}°C — minumlah sedikit lebih sering.",
+  "setThemeTitle": "Tema",
+  "themeSystem": "Ikuti sistem",
+  "themeLight": "Terang",
+  "themeDark": "Gelap",
+  "setHowTo": "Cara kerja Sipling",
+  "tourNext": "Lanjut",
+  "tourBack": "Kembali",
+  "tourSkip": "Lewati",
+  "tourDone": "Mengerti",
+  "tourT1": "Minum, sirami tunasmu",
+  "tourB1": "Ketuk gelas di layar utama untuk mencatat tegukan. Setiap gelas menyirami tunasmu — salah ketuk? Pakai panah urungkan.",
+  "tourT2": "Target harianmu",
+  "tourB2": "Sipling menghitung target dari tinggi, berat, usia, dan aktivitasmu. Ubah kapan saja di Pengaturan, atau hitung ulang di layar “Air dan tubuhmu”.",
+  "tourT3": "Pengingat sesuai harimu",
+  "tourB3": "Nyalakan pengingat di Pengaturan, lalu tentukan jam bangunmu dan seberapa sering ingin diingatkan. Begitu target tercapai, sisa hari jadi senyap.",
+  "tourT4": "Tumbuhkan hutanmu",
+  "tourB4": "Target tercapai, tunasmu menjadi pohon di hutanmu. Pohon tidak pernah layu — hari yang terlewat tidak merugikanmu."
 }

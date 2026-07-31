@@ -1102,4 +1102,59 @@ class LId extends L {
   String notifHotDayBody(int temp) {
     return 'Hari ini $temp°C — minumlah sedikit lebih sering.';
   }
+
+  @override
+  String get setThemeTitle => 'Tema';
+
+  @override
+  String get themeSystem => 'Ikuti sistem';
+
+  @override
+  String get themeLight => 'Terang';
+
+  @override
+  String get themeDark => 'Gelap';
+
+  @override
+  String get setHowTo => 'Cara kerja Sipling';
+
+  @override
+  String get tourNext => 'Lanjut';
+
+  @override
+  String get tourBack => 'Kembali';
+
+  @override
+  String get tourSkip => 'Lewati';
+
+  @override
+  String get tourDone => 'Mengerti';
+
+  @override
+  String get tourT1 => 'Minum, sirami tunasmu';
+
+  @override
+  String get tourB1 =>
+      'Ketuk gelas di layar utama untuk mencatat tegukan. Setiap gelas menyirami tunasmu — salah ketuk? Pakai panah urungkan.';
+
+  @override
+  String get tourT2 => 'Target harianmu';
+
+  @override
+  String get tourB2 =>
+      'Sipling menghitung target dari tinggi, berat, usia, dan aktivitasmu. Ubah kapan saja di Pengaturan, atau hitung ulang di layar “Air dan tubuhmu”.';
+
+  @override
+  String get tourT3 => 'Pengingat sesuai harimu';
+
+  @override
+  String get tourB3 =>
+      'Nyalakan pengingat di Pengaturan, lalu tentukan jam bangunmu dan seberapa sering ingin diingatkan. Begitu target tercapai, sisa hari jadi senyap.';
+
+  @override
+  String get tourT4 => 'Tumbuhkan hutanmu';
+
+  @override
+  String get tourB4 =>
+      'Target tercapai, tunasmu menjadi pohon di hutanmu. Pohon tidak pernah layu — hari yang terlewat tidak merugikanmu.';
 }

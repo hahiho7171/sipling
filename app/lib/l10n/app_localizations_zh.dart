@@ -1058,6 +1058,58 @@ class LZh extends L {
   String notifHotDayBody(int temp) {
     return '今天 $temp°C——记得多喝几次水。';
   }
+
+  @override
+  String get setThemeTitle => '主题';
+
+  @override
+  String get themeSystem => '跟随系统';
+
+  @override
+  String get themeLight => '浅色';
+
+  @override
+  String get themeDark => '深色';
+
+  @override
+  String get setHowTo => 'Sipling 怎么用';
+
+  @override
+  String get tourNext => '下一步';
+
+  @override
+  String get tourBack => '上一步';
+
+  @override
+  String get tourSkip => '跳过';
+
+  @override
+  String get tourDone => '明白了';
+
+  @override
+  String get tourT1 => '喝水，浇灌你的树苗';
+
+  @override
+  String get tourB1 => '在主页点一下杯子就能记录一次喝水。每一杯都会浇灌你的树苗——点错了？用撤销箭头即可。';
+
+  @override
+  String get tourT2 => '每日目标';
+
+  @override
+  String get tourB2 =>
+      'Sipling 会根据你的身高、体重、年龄和活动量计算目标。可以随时在设置里修改，也可以在“水与你的身体”页面重新计算。';
+
+  @override
+  String get tourT3 => '贴合你作息的提醒';
+
+  @override
+  String get tourB3 => '在设置里打开提醒，设定你的清醒时段和提醒间隔。达成目标后，当天剩下的时间就会安静下来。';
+
+  @override
+  String get tourT4 => '种出你的森林';
+
+  @override
+  String get tourB4 => '达成目标，树苗就会长成森林里的一棵树。树永远不会枯萎——漏掉一天也不会有任何惩罚。';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -2115,4 +2167,56 @@ class LZhHant extends LZh {
   String notifHotDayBody(int temp) {
     return '今天 $temp°C——記得多喝幾次水。';
   }
+
+  @override
+  String get setThemeTitle => '主題';
+
+  @override
+  String get themeSystem => '跟隨系統';
+
+  @override
+  String get themeLight => '淺色';
+
+  @override
+  String get themeDark => '深色';
+
+  @override
+  String get setHowTo => 'Sipling 怎麼用';
+
+  @override
+  String get tourNext => '下一步';
+
+  @override
+  String get tourBack => '上一步';
+
+  @override
+  String get tourSkip => '略過';
+
+  @override
+  String get tourDone => '明白了';
+
+  @override
+  String get tourT1 => '喝水，澆灌你的樹苗';
+
+  @override
+  String get tourB1 => '在主畫面點一下杯子就能記錄一次喝水。每一杯都會澆灌你的樹苗——點錯了？用復原箭頭即可。';
+
+  @override
+  String get tourT2 => '每日目標';
+
+  @override
+  String get tourB2 =>
+      'Sipling 會依你的身高、體重、年齡與活動量計算目標。可隨時在設定裡修改，也可在「水與你的身體」頁面重新計算。';
+
+  @override
+  String get tourT3 => '貼合你作息的提醒';
+
+  @override
+  String get tourB3 => '在設定裡開啟提醒，設定你的清醒時段與提醒間隔。達成目標後，當天剩下的時間就會安靜下來。';
+
+  @override
+  String get tourT4 => '種出你的森林';
+
+  @override
+  String get tourB4 => '達成目標，樹苗就會長成森林裡的一棵樹。樹永遠不會枯萎——漏掉一天也不會有任何懲罰。';
 }

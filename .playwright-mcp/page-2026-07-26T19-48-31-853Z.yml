@@ -1,0 +1,32 @@
+- generic [ref=f34e3]:
+  - button "Ana içeriğe atla" [ref=f34e5] [cursor=pointer]
+  - generic [ref=f34e8]:
+    - banner [ref=f34e9]:
+      - generic [ref=f34e10]:
+        - generic [ref=f34e11]:
+          - button "Menü" [ref=f34e13] [cursor=pointer]:
+            - img [ref=f34e16]: menu
+          - link "AdMob ana sayfasına git" [ref=f34e18] [cursor=pointer]:
+            - /url: /v2/home
+        - generic [ref=f34e24]:
+          - img [ref=f34e27]: search
+          - generic [ref=f34e28]:
+            - generic: Uygulama, reklam birimi, uyumlulaştırma grubu, rapor ve kampanya arayın
+            - combobox "Uygulamalarınızı, reklam birimlerinizi, uyumlulaştırma gruplarınızı, raporlarınızı ve kampanyalarınızı arayabileceğiniz arama kutusu" [ref=f34e29]
+        - generic [ref=f34e30]:
+          - button "Bildirimleri aç" [ref=f34e33] [cursor=pointer]:
+            - img [ref=f34e38]: notifications
+          - button "Google hesabı" [ref=f34e42] [cursor=pointer]:
+            - img "Google hesabı (randevusayfasi@gmail.com)" [ref=f34e43]
+    - main [ref=f34e45]:
+      - generic [ref=f34e47]:
+        - generic [ref=f34e48]:
+          - generic:
+            - generic:
+              - generic "Reklam birimleri"
+        - generic [ref=f34e54]:
+          - text: © 2026 Google
+          - link "Gizlilikopen_in_new" [ref=f34e55] [cursor=pointer]:
+            - /url: https://www.google.com/intl/tr/policies/privacy
+          - link "Şartlaropen_in_new" [ref=f34e56] [cursor=pointer]:
+            - /url: https://adsense.google.com/adsense/terms

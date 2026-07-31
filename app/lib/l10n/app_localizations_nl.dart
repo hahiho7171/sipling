@@ -1119,4 +1119,59 @@ class LNl extends L {
   String notifHotDayBody(int temp) {
     return 'Het is $temp°C — drink vandaag wat vaker.';
   }
+
+  @override
+  String get setThemeTitle => 'Thema';
+
+  @override
+  String get themeSystem => 'Systeem volgen';
+
+  @override
+  String get themeLight => 'Licht';
+
+  @override
+  String get themeDark => 'Donker';
+
+  @override
+  String get setHowTo => 'Zo werkt Sipling';
+
+  @override
+  String get tourNext => 'Volgende';
+
+  @override
+  String get tourBack => 'Terug';
+
+  @override
+  String get tourSkip => 'Overslaan';
+
+  @override
+  String get tourDone => 'Duidelijk';
+
+  @override
+  String get tourT1 => 'Drink, geef je boompje water';
+
+  @override
+  String get tourB1 =>
+      'Tik op het startscherm op een beker om een slok vast te leggen. Elk glas geeft je boompje water — per ongeluk getikt? Gebruik de pijl om ongedaan te maken.';
+
+  @override
+  String get tourT2 => 'Je dagdoel';
+
+  @override
+  String get tourB2 =>
+      'Sipling berekent je doel op basis van lengte, gewicht, leeftijd en activiteit. Wijzig het wanneer je wilt in Instellingen of bereken het opnieuw bij ‘Water en je lichaam’.';
+
+  @override
+  String get tourT3 => 'Herinneringen die bij je passen';
+
+  @override
+  String get tourB3 =>
+      'Zet herinneringen aan in Instellingen en stel je wakkere uren en de frequentie in. Zodra je je doel haalt, blijft de rest van de dag stil.';
+
+  @override
+  String get tourT4 => 'Laat je bos groeien';
+
+  @override
+  String get tourB4 =>
+      'Haal je je doel, dan wordt je boompje een boom in je bos. Bomen verdorren nooit — een gemiste dag kost je niets.';
 }

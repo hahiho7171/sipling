@@ -328,5 +328,22 @@
   "setHotDayCitySet": "Elegir",
   "setHotDayCityHint": "Ej. Estambul",
   "notifHotDayTitle": "Hoy hace calor 🌡️",
-  "notifHotDayBody": "Hoy hace {temp}°C — intenta beber un poco más a menudo."
+  "notifHotDayBody": "Hoy hace {temp}°C — intenta beber un poco más a menudo.",
+  "setThemeTitle": "Tema",
+  "themeSystem": "Seguir al sistema",
+  "themeLight": "Claro",
+  "themeDark": "Oscuro",
+  "setHowTo": "Cómo funciona Sipling",
+  "tourNext": "Siguiente",
+  "tourBack": "Atrás",
+  "tourSkip": "Saltar",
+  "tourDone": "Entendido",
+  "tourT1": "Bebe y riega tu plantón",
+  "tourB1": "Toca un vaso en la pantalla principal para registrar un sorbo. Cada vaso riega tu plantón; ¿lo tocaste sin querer? Usa la flecha de deshacer.",
+  "tourT2": "Tu objetivo diario",
+  "tourB2": "Sipling calcula tu objetivo según tu altura, peso, edad y actividad. Cámbialo cuando quieras en Ajustes o recalcúlalo en la pantalla «El agua y tu cuerpo».",
+  "tourT3": "Recordatorios a tu medida",
+  "tourB3": "Activa los recordatorios en Ajustes y define tus horas de vigilia y cada cuánto quieres un aviso. Al alcanzar tu objetivo, el resto del día queda en silencio.",
+  "tourT4": "Haz crecer tu bosque",
+  "tourB4": "Al cumplir tu objetivo, tu plantón se convierte en un árbol de tu bosque. Los árboles nunca se secan: un día perdido no te cuesta nada."
 }
